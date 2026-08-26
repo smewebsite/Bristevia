@@ -1,0 +1,3368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>2026 Constitution | Imperial Sovereign of Bristevia</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=UnifrakturCook:wght@700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+  --royal-blue: #071a4d;
+  --deep-blue: #020d28;
+  --imperial-blue: #0b2c78;
+  --blue-light: #174ea6;
+
+  --gold: #d4af37;
+  --gold-light: #f4d675;
+  --gold-dark: #8c6a18;
+
+  --ivory: #f7f0dc;
+  --text: #e8e2d2;
+  --muted: #b8b4a8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #123a91 0%,
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      var(--deep-blue),
+      var(--royal-blue),
+      #061946
+    );
+
+  color: var(--text);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  line-height: 1.75;
+
+  min-height: 100vh;
+
+  padding-bottom: 60px;
+}
+
+
+/* ================================
+   ROYAL NAVIGATION
+================================ */
+
+nav {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  padding: 15px;
+
+  background:
+    rgba(2, 13, 40, 0.95);
+
+  backdrop-filter: blur(12px);
+
+  border-bottom:
+    1px solid var(--gold);
+
+  box-shadow:
+    0 5px 30px rgba(0,0,0,0.35);
+}
+
+nav a {
+
+  color: var(--ivory);
+
+  text-decoration: none;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 1.5px;
+
+  padding: 8px 13px;
+
+  transition: 0.3s;
+}
+
+nav a:hover {
+
+  color: var(--gold-light);
+
+  transform: translateY(-2px);
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+
+  text-align: center;
+
+  padding:
+    80px 20px 65px;
+
+  border-bottom:
+    1px solid var(--gold);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(23,78,166,0.45),
+      transparent 65%
+    );
+}
+
+.crest {
+
+  font-size: 4rem;
+
+  color: var(--gold);
+
+  text-shadow:
+    0 0 15px rgba(212,175,55,0.45);
+
+  margin-bottom: 15px;
+}
+
+header h1 {
+
+  font-family: "Cinzel", serif;
+
+  color: var(--gold-light);
+
+  font-size:
+    clamp(2rem, 6vw, 4.5rem);
+
+  letter-spacing: 5px;
+
+  line-height: 1.2;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    2px 2px 0 var(--gold-dark),
+    0 0 25px rgba(212,175,55,0.25);
+}
+
+header h2 {
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  color: var(--ivory);
+
+  font-size:
+    clamp(1rem, 3vw, 1.5rem);
+
+  font-weight: 400;
+
+  letter-spacing: 3px;
+
+  margin-top: 15px;
+}
+
+.latin {
+
+  font-family:
+    "UnifrakturCook",
+    cursive;
+
+  color: var(--gold);
+
+  font-size: 1.8rem;
+
+  margin-top: 20px;
+}
+
+.subtitle {
+
+  color: var(--muted);
+
+  font-style: italic;
+
+  font-size: 1.1rem;
+
+  margin-top: 12px;
+}
+
+
+/* ================================
+   CONTENT
+================================ */
+
+.container {
+
+  max-width: 1050px;
+
+  margin:
+    50px auto;
+
+  padding:
+    0 20px;
+}
+
+
+/* ================================
+   PREAMBLE
+================================ */
+
+.preamble {
+
+  border:
+    1px solid var(--gold);
+
+  padding:
+    45px 35px;
+
+  margin-bottom:
+    45px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(14,53,126,0.85),
+      rgba(4,25,69,0.92)
+    );
+
+  box-shadow:
+    0 15px 45px rgba(0,0,0,0.3);
+}
+
+.preamble h2 {
+
+  text-align: center;
+
+  font-family: "Cinzel", serif;
+
+  color: var(--gold-light);
+
+  letter-spacing: 4px;
+
+  margin-bottom: 25px;
+}
+
+.preamble p {
+
+  text-align: justify;
+
+  font-size: 1.18rem;
+}
+
+
+/* ================================
+   ARTICLE
+================================ */
+
+.article {
+
+  margin-bottom: 45px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(11,44,120,0.8),
+      rgba(3,20,55,0.9)
+    );
+
+  border:
+    1px solid rgba(212,175,55,0.65);
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.25);
+}
+
+.article-header {
+
+  padding:
+    25px 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(212,175,55,0.12),
+      transparent
+    );
+
+  border-bottom:
+    1px solid
+    rgba(212,175,55,0.5);
+}
+
+.article-header h2 {
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  color:
+    var(--gold-light);
+
+  font-size:
+    clamp(1.25rem, 4vw, 2rem);
+
+  letter-spacing:
+    2px;
+
+  line-height:
+    1.4;
+}
+
+.article-content {
+
+  padding:
+    30px;
+}
+
+
+/* ================================
+   SECTIONS
+================================ */
+
+.section {
+
+  margin-bottom:
+    28px;
+}
+
+.section-title {
+
+  color:
+    var(--gold-light);
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  font-weight:
+    600;
+
+  font-size:
+    1.15rem;
+
+  margin-bottom:
+    10px;
+
+  letter-spacing:
+    1px;
+}
+
+.section p {
+
+  font-size:
+    1.08rem;
+
+  margin-bottom:
+    12px;
+
+  text-align:
+    justify;
+}
+
+
+/* ================================
+   SUBSECTIONS
+================================ */
+
+.subsection {
+
+  margin:
+    18px 0;
+
+  padding-left:
+    20px;
+
+  border-left:
+    2px solid
+    rgba(212,175,55,0.4);
+}
+
+.subsection-title {
+
+  color:
+    var(--gold);
+
+  font-weight:
+    700;
+
+  font-size:
+    1.05rem;
+
+  margin-bottom:
+    8px;
+}
+
+
+/* ================================
+   LISTS
+================================ */
+
+ol,
+ul {
+
+  margin:
+    12px 0 12px 30px;
+}
+
+li {
+
+  margin-bottom:
+    9px;
+
+  font-size:
+    1.05rem;
+}
+
+.letter-list {
+
+  list-style-type:
+    lower-alpha;
+}
+
+.number-list {
+
+  list-style-type:
+    decimal;
+}
+
+
+/* ================================
+   CONSTITUTIONAL QUOTE
+================================ */
+
+.constitution-quote {
+
+  margin:
+    25px 0;
+
+  padding:
+    25px;
+
+  border-top:
+    1px solid var(--gold);
+
+  border-bottom:
+    1px solid var(--gold);
+
+  text-align:
+    center;
+
+  font-style:
+    italic;
+
+  font-size:
+    1.2rem;
+
+  color:
+    var(--ivory);
+}
+
+
+/* ================================
+   FINAL DECLARATION
+================================ */
+
+.witness {
+
+  margin-top:
+    50px;
+
+  padding:
+    40px 30px;
+
+  border:
+    1px solid var(--gold);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(11,44,120,0.9),
+      rgba(2,13,40,0.95)
+    );
+
+  text-align:
+    center;
+}
+
+.witness h2 {
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  color:
+    var(--gold-light);
+
+  letter-spacing:
+    3px;
+
+  margin-bottom:
+    25px;
+}
+
+.witness p {
+
+  font-size:
+    1.15rem;
+
+  font-style:
+    italic;
+}
+
+
+/* ================================
+   ROYAL SEAT
+================================ */
+
+.royal-seat {
+
+  margin-top:
+    30px;
+
+  padding:
+    30px;
+
+  border:
+    1px solid
+    rgba(212,175,55,0.5);
+
+  background:
+    rgba(3,16,47,0.55);
+}
+
+.royal-seat h3 {
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  color:
+    var(--gold);
+
+  margin-bottom:
+    15px;
+
+  letter-spacing:
+    2px;
+}
+
+.royal-seat p {
+
+  margin:
+    7px 0;
+
+  font-size:
+    1.1rem;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+
+  text-align:
+    center;
+
+  margin-top:
+    60px;
+
+  padding:
+    40px 20px;
+
+  background:
+    #020d28;
+
+  border-top:
+    1px solid var(--gold);
+}
+
+footer .crest {
+
+  font-size:
+    2.5rem;
+}
+
+footer h3 {
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  color:
+    var(--gold-light);
+
+  letter-spacing:
+    4px;
+
+  margin:
+    10px 0;
+}
+
+footer p {
+
+  color:
+    #aaa99e;
+
+  font-size:
+    0.9rem;
+}
+
+
+/* ================================
+   BACK TO TOP
+================================ */
+
+.back-top {
+
+  display:
+    block;
+
+  text-align:
+    center;
+
+  margin-top:
+    30px;
+
+  color:
+    var(--gold);
+
+  text-decoration:
+    none;
+
+  font-family:
+    "Cinzel",
+    serif;
+
+  letter-spacing:
+    2px;
+}
+
+.back-top:hover {
+
+  color:
+    var(--gold-light);
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 650px) {
+
+  nav {
+
+    justify-content:
+      flex-start;
+
+    overflow-x:
+      auto;
+
+    flex-wrap:
+      nowrap;
+
+    white-space:
+      nowrap;
+  }
+
+  nav a {
+
+    font-size:
+      0.65rem;
+
+    padding:
+      7px 9px;
+  }
+
+  header {
+
+    padding:
+      55px 15px;
+  }
+
+  header h1 {
+
+    letter-spacing:
+      3px;
+  }
+
+  .article-content {
+
+    padding:
+      20px 18px;
+  }
+
+  .article-header {
+
+    padding:
+      20px;
+  }
+
+  .preamble {
+
+    padding:
+      30px 20px;
+  }
+
+  .section p {
+
+    text-align:
+      left;
+  }
+
+  ol,
+  ul {
+
+    margin-left:
+      22px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body id="top">
+
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<nav>
+
+  <a href="index.html">IMPERIUM</a>
+
+  <a href="realm.html">THE REALM</a>
+
+  <a href="sovereign.html">THE SOVEREIGN</a>
+
+  <a href="imperial-court.html">IMPERIAL COURT</a>
+
+  <a href="supreme-tribunal.html">SUPREME TRIBUNAL</a>
+
+  <a href="constitution.html">CONSTITUTION</a>
+
+  <a href="decrees.html">DECREES</a>
+
+</nav>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header>
+
+  <div class="crest">⚜</div>
+
+  <h1>
+    The 2026 Constitution
+  </h1>
+
+  <h2>
+    OF THE IMPERIAL SOVEREIGN OF BRISTEVIA
+  </h2>
+
+  <div class="latin">
+    Constitutio Imperii Bristeviae
+  </div>
+
+  <p class="subtitle">
+    Under the Eternal Crown • In the Name of Bristevia
+  </p>
+
+</header>
+
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
+<main class="container">
+
+
+<!-- ==========================================
+     PREAMBLE
+========================================== -->
+
+<section class="preamble">
+
+  <h2>PREAMBLE</h2>
+
+  <p>
+    By the grace of the Eternal Crown, under the dominion
+    of His Majesty the Souverion and Her Majesty the Souveria,
+    We, the sovereign people of Bristevia, in unity and loyalty,
+    establish this Constitution as the foundation of our eternal
+    Empire guided by order, wisdom, and sovereign will to secure
+    justice, uphold honor, maintain peace, and safeguard the
+    everlasting authority of the Imperial Sovereign.
+  </p>
+
+  <p class="constitution-quote">
+    Thus, in the name of Bristevia and under Heaven’s light,
+    we ordain and promulgate this Constitution.
+  </p>
+
+</section>
+
+
+<!-- ==========================================
+     ARTICLE I
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE I — THE IMPERIAL SOVEREIGN OF BRISTEVIA</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section">
+<p>
+Bristevia is a sovereign and eternal monarchy,
+composed of provinces and the capital city of Stephara.
+</p>
+</div>
+
+<div class="section">
+<p>
+Its government shall be known as the Imperial Sovereign
+of Bristevia (ISB), exercising authority under the divine
+right and constitutional rule of the Souverion.
+</p>
+</div>
+
+<div class="section">
+<p>
+Sovereignty resides in the Souverion and the Bristevian
+People, whose allegiance is pledged to the Eternal Crown.
+</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE II
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE II — DECLARATION OF PRINCIPLES AND IMPERIAL POLICIES</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+The State shall embody the ideals of loyalty, justice,
+and unity under the benevolent reign of the Souverion.
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+The authority of the Souverion is absolute and indivisible,
+yet bound by the Constitution. His decrees must conform
+to the law of the realm.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+<p>
+The Souverion and the Constitution stand as equal pillars
+of sovereignty. No amendment may diminish the supremacy
+of the Souverion.
+</p></div>
+
+<div class="section"><div class="section-title">Section 4.</div>
+<p>
+The government shall promote the welfare of all Bristevians
+and preserve harmony among its provinces.
+</p></div>
+
+<div class="section"><div class="section-title">Section 5.</div>
+<p>
+The Imperial Sovereign shall pursue peace and friendship
+with other realms, guided by honor and mutual respect.
+</p></div>
+
+<div class="section"><div class="section-title">Section 6.</div>
+<p>
+Separation of powers and checks and balances must be observed.
+</p></div>
+
+<div class="section"><div class="section-title">Section 7.</div>
+<p>
+The Constitution is the highest law, and all laws must be
+bound by this Constitution.
+</p></div>
+
+<div class="section"><div class="section-title">Section 8.</div>
+<p>
+The separation of the Church and the State shall be inviolable.
+</p></div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE III
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE III — THE IMPERIAL BILL OF RIGHTS</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+All Bristevians are entitled to liberty, dignity, and justice.
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+No person shall be deprived of life, liberty, or property
+without due process of law, nor denied equal protection
+under the laws of the realm.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+<p>
+Freedom of thought, belief, expression, and peaceful assembly
+shall be respected, provided they do not threaten the unity
+of the Crown or the security of Bristevia.
+</p></div>
+
+<div class="section"><div class="section-title">Section 4.</div>
+<p>
+The death penalty may be imposed, unless for compelling
+reasons involving heinous crimes, the Imperial Assembly
+hereafter provides for its prohibition or limitation.
+</p></div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE IV
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE IV — CITIZENSHIP</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>Citizenship shall be defined by Imperial Law.</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+Natural-born Bristevians are those whose father or mother
+is a subject of Bristevia.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+<p>
+Citizenship may be acquired or lost in accordance with
+laws enacted by the Imperial Assembly.
+</p></div>
+
+<div class="section"><div class="section-title">Section 4.</div>
+<p>
+Each Province shall determine its list of citizens and must
+provide the exact population count during the census.
+</p></div>
+
+<div class="section"><div class="section-title">Section 5.</div>
+<p>
+Registration of citizenship and related affairs shall be
+conducted by the Ministry assigned by law.
+</p></div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE V
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE V — SUFFRAGE</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+Suffrage shall be exercised by all citizens of Bristevia
+not otherwise disqualified by law.
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+Voting may be conducted manually or by secure means
+prescribed by the Electoral Code.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+<p>
+The Prime Minister shall be chosen jointly by both the
+Magnum Consilium and the Domus Curialum, voting as one
+Imperial Assembly. The Prime Minister shall be nominated
+from among the Members of either House and must secure
+the votes of two-thirds (2/3) of all Members of both Houses.
+</p></div>
+
+<div class="section"><div class="section-title">Section 4.</div>
+<p>
+The Speaker of the Domus Curialum shall preside over its
+sessions and must secure a majority vote of all its Members.
+</p></div>
+
+<div class="section"><div class="section-title">Section 5.</div>
+<p>
+The Chairman, who shall preside over the Magnum Consilium,
+must likewise secure a majority vote of all its Members.
+</p></div>
+
+<div class="section"><div class="section-title">Section 6.</div>
+<p>
+The presiders of both Houses must abandon their political
+parties before being nominated to ensure impartiality.
+</p></div>
+
+<div class="section"><div class="section-title">Section 7.</div>
+<p>
+Registered citizens shall have the right to vote for Members
+of the Imperial Assembly and local government officials.
+</p></div>
+
+<div class="section"><div class="section-title">Section 8.</div>
+<p>
+No candidate shall be elected to more than one position
+at the same time.
+</p></div>
+
+<div class="section"><div class="section-title">Section 9.</div>
+<p>
+After the election and before assuming office, the consolidated
+list of winners must be submitted to the Supreme Tribunal (ST)
+for evaluation and shall immediately assume office upon
+declaration and approval if no violation is found. Exemptions
+to this provision are the Prime Minister, the Speaker,
+and the Chairman.
+</p></div>
+
+<div class="section"><div class="section-title">Section 10.</div>
+<p>
+During the election, each candidate must present their name
+along with their political party.
+</p>
+
+<p><strong>Example:</strong> Name (Party).</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE VI
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE VI — THE LEGISLATIVE DEPARTMENT</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+The legislative power shall be vested in a bicameral
+Imperial Assembly of Bristevia, consisting of the Magnum
+Consilium (Upper House of Consuls) and the Domus Curialum
+(Lower House of Ministers).
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+The Magnum Consilium shall be composed of one Member
+from each province, representing provincial interests.
+The number of seats may increase if new provinces are
+created by law.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+<p>
+The Domus Curialum shall consist of one Member
+representing each district.
+</p></div>
+
+<div class="section"><div class="section-title">Section 4.</div>
+<p>
+The Prime Minister, elected jointly by both Houses as
+provided in Article V, shall head the government and
+preside over its administration.
+</p></div>
+
+<div class="section"><div class="section-title">Section 5.</div>
+<p>
+The Speaker of the Domus Curialum shall preside over
+its sessions. The Chairman shall preside over the
+Magnum Consilium.
+</p></div>
+
+<div class="section"><div class="section-title">Section 6.</div>
+<p>
+Laws shall be initiated exclusively by the Imperial Assembly.
+If the Souverion desires to propose a law, He shall refer it
+to a Member of the Domus Curialum for introduction in
+proper form.
+</p></div>
+
+<div class="constitution-quote">
+LAW-MAKING PROCEDURES
+</div>
+
+<div class="section"><div class="section-title">Section 7.</div>
+<p>
+Every bill passed by the Imperial Assembly shall embrace
+only one subject, which shall be expressed in the title.
+</p></div>
+
+<div class="section"><div class="section-title">Section 8.</div>
+<p>
+No bill shall become law unless it has passed three readings
+on separate days. Printed copies in final form must be
+distributed to Members at least three days before passage,
+except when the Souverion certifies the bill as urgent.
+</p></div>
+
+<div class="section"><div class="section-title">Section 9.</div>
+<p>
+Upon the last reading, no amendment shall be allowed,
+and the vote shall be taken immediately and recorded.
+</p></div>
+
+<div class="section"><div class="section-title">Section 10.</div>
+<p>
+Every bill passed by both Houses shall, before becoming
+law, be presented to the Souverion. If He approves,
+He shall sign it; otherwise, He shall veto it and return
+it with objections. If, after reconsideration, two-thirds
+(2/3) of both Houses approve it, the bill shall become law.
+The Souverion may veto specific items in appropriation,
+revenue, or tariff bills without affecting the remainder.
+</p></div>
+
+<div class="constitution-quote">
+READINGS OF BILLS
+</div>
+
+<div class="section"><div class="section-title">Section 11.</div>
+
+<p><strong>(a) First Reading —</strong>
+The bill shall be introduced by the Speaker or Chairman,
+stating its number, title, and author, and referred to the
+proper committee.
+</p>
+
+<p><strong>(b) Committee Action —</strong>
+The committee shall conduct hearings, propose amendments,
+and prepare a report, decided upon by at least ten percent
+(10%) of the Members of the House. Committee seats shall
+reflect proportional representation from political parties
+and organizations registered within the Imperial Realm.
+</p>
+
+<p><strong>(c) Second Reading —</strong>
+Debate and amendment by the House.
+</p>
+
+<p><strong>(d) Third Reading —</strong>
+Final vote and tally of all Members.
+</p>
+
+<p><strong>(e) Transmission —</strong>
+The approved bill shall be sent to the other House for
+concurrence, where it shall undergo the same process.
+</p>
+
+<p><strong>(f) Conference Committee —</strong>
+A joint committee shall reconcile differing versions of
+the bill.
+</p>
+
+<p><strong>(g) Enrollment and Authentication —</strong>
+The final bill shall be prepared and transmitted to the
+Souverion for approval.
+</p>
+
+</div>
+
+<div class="constitution-quote">
+FORMAT OF BILLS AND LAWS
+</div>
+
+<div class="section"><div class="section-title">Section 12. Bill Format:</div>
+
+<ul>
+<li>HB Number – Title</li>
+<li>Constitutional Basis (Article and Section only)</li>
+<li>Proposed Provision</li>
+<li>Author’s Name</li>
+<li>Souverion’s Action: The Souverion may approve, veto, or return the bill.</li>
+</ul>
+
+</div>
+
+<div class="section"><div class="section-title">Section 13. Law Format:</div>
+
+<ul>
+<li>SA Number</li>
+<li>Constitutional Basis (Article and Section only)</li>
+<li>Proposed Provision</li>
+<li>Author’s Name</li>
+</ul>
+
+<p>
+After approval, the law shall be numbered as a Sovereign
+Act (SA) and recorded sequentially (e.g., SA1, SA2, etc.).
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">Section 14.</div>
+<p>
+The Magnum Consilium, the Domus Curialum, or any of
+their respective committees may conduct inquiries in aid
+of legislation.
+</p></div>
+
+<div class="section"><div class="section-title">Section 15.</div>
+<p>
+No amendment may diminish the sovereignty of the Souverion
+or the authority of His Crown.
+</p></div>
+
+<div class="section"><div class="section-title">Section 16.</div>
+<p>
+Only political parties registered under Section 16(b) shall
+be free to organize, provided they uphold the sovereignty
+of the Realm and the Constitution.
+</p>
+
+<p>
+<strong>(a)</strong> Political parties shall register with the
+Commission on Imperial Elections, which shall regulate
+their organization, finances, and participation in elections.
+</p>
+
+<p>
+<strong>(b)</strong> Recognized political parties shall include:
+Green Party, Liberal Party, Democratic Party, Republican
+Party, National Unity, Progressive Alliance, Socialist Party,
+Communist Party, Centrist, Labor, Conservative, Radical,
+and Independent.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">Section 17.</div>
+<p>
+Each House of the Imperial Assembly may determine the
+rules of its proceedings, discipline its Members for
+disorderly conduct, and, with the concurrence of two-thirds
+(2/3) of all Members, suspend or expel a Member.
+The penalty of suspension shall not exceed sixty (60) days.
+</p></div>
+
+<div class="section"><div class="section-title">Section 18. Commission on Appointments</div>
+<p>
+There shall be a Commission on Appointments, composed
+of the Chairman of the Magnum Consilium as ex officio
+Chairman, twelve Members of the Magnum Consilium,
+and twelve Members of the Domus Curialum, elected by
+their respective Houses based on proportional representation
+from registered political parties.
+</p>
+
+<p>
+The Chairman shall not vote except in the event of a tie.
+The Commission shall act upon all nominations and
+appointments within thirty (30) session days and decide
+by majority vote of all its Members.
+</p>
+</div>
+
+<div class="section"><div class="section-title">Section 19.</div>
+<p>
+All appropriation, revenue, or tariff decrees, as well as
+decrees authorizing increases in public debt, decrees of
+local application, and private decrees, shall originate
+exclusively in the Domus Curialum. The Magnum Consilium
+may propose or concur with amendments in accordance
+with legislative procedure.
+</p></div>
+
+<div class="constitution-quote">
+APPROPRIATIONS AND FISCAL AUTHORITY
+</div>
+
+<div class="section"><div class="section-title">Section 20.</div>
+<p>
+No law shall authorize the transfer of appropriations;
+however, the Souverion, Prime Minister, Chairman of the
+Magnum Consilium, Speaker of the Domus Curialum,
+Chief Justice of the Supreme Tribunal, and Heads of
+Constitutional Commissions may, by Imperial Law,
+augment any item in the General Appropriations Decree
+for their respective offices from savings in other items.
+</p>
+
+<p>
+Discretionary funds appropriated for particular officials
+shall be disbursed solely for public purposes, supported
+by vouchers, and subject to guidelines prescribed by
+Imperial Law to ensure transparency and accountability.
+</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE VII
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE VII — THE IMPERIAL EXECUTIVE</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+The executive power shall be vested in the Souverion
+of Bristevia, the Supreme Monarch and Head of State,
+and the Prime Minister as Head of Government.
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+The Souverion shall reign by right of succession and
+divine ordination, and shall be assisted by the Prime
+Minister and the Imperial Cabinet in matters of governance.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+<p>
+The Souverion’s acts and decisions shall conform to this
+Constitution. Her actions may be questioned before the
+Supreme Tribunal, but her sovereignty shall remain
+absolute and undiminished.
+</p></div>
+
+<div class="section"><div class="section-title">Section 4.</div>
+<p>
+The Prime Minister shall direct the government’s policies
+and implement its laws. He may be removed by a two-thirds
+(2/3) vote of both Houses voting jointly. The Souverion
+may endorse the removal of the Prime Minister before
+the Imperial Assembly, but cannot remove the Prime
+Minister unilaterally unless provided by law.
+</p></div>
+
+<div class="section"><div class="section-title">Section 5.</div>
+<p>
+The Souveria shall serve as Co-Sovereign and symbol
+of unity and grace of the Empire.
+</p></div>
+
+<div class="section"><div class="section-title">
+Section 6. The Imperial Cabinet of Ministries
+</div>
+
+<p>
+The Imperial Cabinet shall consist of the Ministries for
+Justice, Finance, Defense, Foreign Affairs, Education,
+Health, Agriculture, Labor, Infrastructure, Social Welfare,
+and Provincial Administration, under the direction of the
+Prime Minister. Additional Ministries may be created by law.
+</p>
+
+<p>
+All Ministers shall be chosen from Members of the
+Domus Curialum (House of Minister).
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">Section 7.</div>
+<p>
+The Prime Minister shall make all executive and administrative
+appointments in accordance with Imperial Law.
+</p>
+
+<p>
+All key officials of the Realm, including Ministers of the Crown,
+Ambassadors, and heads of Imperial agencies, shall be subject
+to confirmation by the Imperial Assembly through the
+Commission on Appointments.
+</p>
+
+<p>
+Members of the Supreme Tribunal and other Justices of the
+Imperial Judiciary shall be appointed directly by the Souverion.
+</p>
+</div>
+
+<div class="section"><div class="section-title">Section 8.</div>
+<p>
+The Prime Minister shall have control of all executive
+Imperial ministries, bureaus, and offices, and shall ensure
+that the laws are faithfully executed.
+</p></div>
+
+<div class="section"><div class="section-title">
+Section 9. Council Chamber of Advisers
+</div>
+
+<p>
+The Souverion shall appoint a Council Chamber of Advisers
+to provide counsel on matters of state. All members shall
+be appointed solely by the Souverion, and their duties,
+powers, and terms shall be determined by Imperial Law.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE VIII
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE VIII — THE JUDICIARY</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+The judicial power shall be vested in one Supreme Tribunal
+and such Special Courts and lower Regional Courts as may
+be established by law.
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+The Supreme Tribunal shall be composed of eight (8)
+Justices and one (1) Chief Justice, all appointed by the
+Souverion without a fixed term.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+
+<p><strong>A.</strong>
+Justices shall hold a permanent seat and are prohibited
+from being nominated or appointed to any other position.
+</p>
+
+<p><strong>B.</strong>
+All cases involving the constitutionality of a Treaty,
+Imperial or Foreign Accord, Executive Decree, or Law
+shall be heard by the Supreme Tribunal en banc.
+</p>
+
+<p>
+Likewise, all other cases which, under the Rules of the
+Tribunal, are required to be heard en banc—including
+those concerning the constitutionality, validity, or execution
+of Sovereign Edicts, Royal Proclamations, Ministerial Orders,
+Imperial Ordinances, or administrative regulations—shall
+be decided with the concurrence of a majority of the Justices
+who actually took part in the deliberations and voted thereon.
+</p>
+
+<p><strong>C.</strong>
+Cases or matters heard by a Division of the Tribunal shall
+be resolved with the concurrence of a majority of the Justices
+who participated and voted, but never fewer than three (3)
+of such Members.
+</p>
+
+<p>
+When the required number of concurring votes is not obtained,
+the case shall be referred to the Tribunal en banc for final
+judgment.
+</p>
+
+<p>
+No doctrine or principle of law laid down by the Supreme
+Tribunal in a decision rendered en banc or in division may
+be modified or reversed except by the Tribunal sitting en banc.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">Section 4.</div>
+<p>
+The judicial power includes the authority to settle controversies
+involving rights and to determine whether any act of government
+conforms to this Constitution. The Tribunal shall deliberate,
+debate, and dialogue in the performance of its duties.
+</p></div>
+
+<div class="section"><div class="section-title">
+Section 5. Powers and Jurisdiction of the Supreme Tribunal
+</div>
+
+<p>
+The Supreme Tribunal of Bristevia shall possess the
+following powers:
+</p>
+
+<p><strong>A.</strong>
+Exercise original jurisdiction over all cases affecting
+Ambassadors, Imperial Envoys, and other public ministers,
+and over petitions for Certiorari, Prohibition, Mandamus,
+Quo Warranto, and Habeas Corpus.
+</p>
+
+<p><strong>B.</strong>
+Review, revise, reverse, modify, or affirm, on appeal or
+certiorari, as provided by Imperial Law or the Rules of
+the Tribunal, the final judgments and orders of lower courts
+in the following cases:
+</p>
+
+<ol>
+<li>
+All cases in which the constitutionality or validity of any
+Treaty, Imperial or Foreign Accord, Executive Decree,
+Royal Proclamation, Ministerial Order, Instruction,
+Ordinance, or Regulation is in question;
+</li>
+
+<li>
+All cases involving the legality of any tax, impost, levy,
+assessment, toll, or related penalty imposed under the
+laws of the Realm;
+</li>
+
+<li>
+All cases wherein the jurisdiction of any lower court or
+tribunal is in issue;
+</li>
+
+<li>
+All criminal cases in which the penalty imposed is life
+imprisonment (reclusio perpetua) or higher; and
+</li>
+
+<li>
+All cases in which only an error or question of law is involved.
+</li>
+</ol>
+
+<p><strong>C.</strong>
+Assign temporarily Judges of lower courts to other stations
+as public interest may require; however, such temporary
+assignment shall not exceed six (6) months without the
+consent of the Judge concerned.
+</p>
+
+<p><strong>D.</strong>
+Order a change of venue or place of trial to prevent
+miscarriage of justice and to ensure impartial proceedings.
+</p>
+
+<p><strong>E.</strong>
+Appoint all officials and employees of the Judiciary in
+accordance with the Civil Service Law.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 6. Stare Decisis
+</div>
+<p>
+Decisions of the Supreme Tribunal applying or interpreting
+the laws or the Constitution of the Imperial Sovereign of
+Bristevia (ISB) shall form part of the legal system of Bristevia.
+</p></div>
+
+<div class="section"><div class="section-title">Section 7.</div>
+<p>
+There shall be Special Courts of Appeal for Administrative,
+Family, Criminal, Civil, Commercial, and Military matters.
+Each Special Court shall consist of three (3) Judges, who
+shall deliberate on cases and vote to reach a decision.
+</p></div>
+
+<div class="section"><div class="section-title">Section 8.</div>
+<p>
+The Rules of Court shall be enacted by the Supreme Tribunal.
+Any Justice may propose amendments, which shall be approved
+by the Tribunal itself.
+</p></div>
+
+<div class="section"><div class="section-title">Section 9.</div>
+<p>
+The Supreme Tribunal may repeal or nullify any law found
+to be unconstitutional.
+</p></div>
+
+<div class="section"><div class="section-title">Section 10.</div>
+<p>
+The Executive and Legislative branches are bound by the
+decisions of the Judiciary.
+</p></div>
+
+<div class="section"><div class="section-title">Section 11.</div>
+<p>
+Regional Courts shall serve as courts of first instance,
+each presided over by a single Judge, whose decisions
+may be appealed to the Special Courts.
+</p></div>
+
+<div class="section"><div class="section-title">Section 12.</div>
+<p>
+The Supreme Tribunal shall have the exclusive power to
+promulgate rules concerning the protection and enforcement
+of constitutional rights, pleading, practice, and procedure
+in all Courts; the admission to the practice of law; the
+organization of the Imperial Bar; and the provision of
+legal assistance to the under-privileged.
+</p>
+
+<p>
+Such rules shall ensure a simplified and inexpensive
+procedure for the speedy disposition of cases, and shall
+be uniform for all Courts of equal grade, provided that
+they shall not diminish, enlarge, or modify substantive rights.
+</p>
+
+<p>
+The rules of procedure of Special Courts and quasi-judicial
+bodies shall remain effective unless disapproved by the
+Supreme Tribunal.
+</p>
+</div>
+
+<div class="section"><div class="section-title">Section 13.</div>
+<p>
+Every Region must consist of at least one (1) Regional Court.
+</p></div>
+
+<div class="section"><div class="section-title">Section 14.</div>
+<p>
+The Supreme Tribunal shall have administrative supervision
+over all courts and the personnel thereof.
+</p></div>
+
+<div class="section"><div class="section-title">
+Section 15. Qualifications of Judges of Lower Tribunals
+</div>
+<p>
+The Imperial Assembly shall prescribe by law the qualifications
+and standards for Judges of the Regional and Special Tribunalia,
+provided that no person shall be appointed as Judge thereof
+unless he or she is a citizen of Bristevia, duly recognized by
+the Imperial Bar Association, and has been admitted to the
+practice of law in accordance with the Rules of the Supreme
+Tribunal.
+</p>
+
+<p>
+Every Member of the Judiciary shall be a person of proven
+competence, integrity, probity, and independence, upholding
+the honor of justice and the sanctity of the Constitution
+under the Eternal Crown.
+</p>
+</div>
+
+<div class="section"><div class="section-title">
+Section 16. Form and Clarity of Judicial Decisions
+</div>
+<p>
+No decision shall be rendered by any Court or Tribunal
+without clearly and distinctly stating the facts and the law
+upon which it is founded.
+</p>
+
+<p>
+No petition for review or motion for reconsideration of any
+decision shall be refused due course or denied without
+expressly declaring the legal grounds for such denial.
+</p>
+</div>
+
+<div class="section"><div class="section-title">
+Section 17. Limitation on the Expansion of Jurisdiction
+</div>
+<p>
+No law shall be enacted increasing the appellate jurisdiction
+of the Supreme Tribunal beyond that provided in this Constitution
+without the advice and concurrence of the Tribunal itself.
+</p></div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE IX
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE IX — LOCAL GOVERNMENT ADMINISTRATION</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+The territorial and political subdivisions of Bristevia are
+Provinces, Cities, Towns, and Villages, each governed in
+accordance with national law and under the supervision
+of the Imperial Government. Autonomous Regions may be
+created by law but shall remain under the supervision of
+the National Government.
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+A Governor shall lead each Province, and a Mayor shall
+govern each City or Town. Their powers, duties, and
+qualifications shall be defined by law.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+<p>
+Local government in the Imperial Sovereign of Bristevia
+shall be organized into the following hierarchical levels:
+</p>
+
+<ol>
+<li>National Government;</li>
+<li>Provincial Government;</li>
+<li>City or Town Government; and</li>
+<li>Village (Community) Government.</li>
+</ol>
+</div>
+
+<div class="section"><div class="section-title">
+Section 4. Composition of the National Government
+</div>
+
+<p>The National Government shall consist of:</p>
+
+<ol>
+<li>The Souverion;</li>
+<li>The Prime Minister and the Imperial Cabinet Ministers;</li>
+<li>The Imperial Assembly;</li>
+<li>The Supreme Tribunal; and</li>
+<li>All national ministries, commissions, and agencies established by law.</li>
+</ol>
+
+</div>
+
+<div class="section"><div class="section-title">Section 5.</div>
+<p>
+A single District shall consist of a population of at least
+two hundred thousand (200,000) inhabitants per Province.
+Districts exist solely for representation in the House of
+Ministers and do not possess independent governments;
+they are composed of groups of Villages.
+</p></div>
+
+<div class="section"><div class="section-title">Section 6.</div>
+<p>
+The lowest local subdivision shall be the Village, headed
+by a Chief, which is incorporated into Cities, Towns,
+or Districts.
+</p></div>
+
+<div class="section"><div class="section-title">Section 7.</div>
+<p>
+The creation of Provinces, Districts, Cities, Towns, or
+Villages shall be determined exclusively by the Imperial
+Assembly.
+</p></div>
+
+<div class="section"><div class="section-title">Section 8.</div>
+<p>
+A Region shall consist of no fewer than two (2) Provinces,
+as determined by the Imperial Assembly through the official
+Bristevia Atlas and Map, approved and provided by the
+Souverion. Each Region shall also serve as the basis for
+the jurisdiction of the Regional Court.
+</p></div>
+
+<div class="section"><div class="section-title">Section 9.</div>
+<p>
+The Imperial Assembly shall enact a Local Government Code
+that defines the structure, powers, responsibilities, and
+financial autonomy of local government units in accordance
+with this Constitution.
+</p></div>
+
+<div class="section"><div class="section-title">Section 10.</div>
+<p>
+The Prime Minister of Bristevia, as Head of the Imperial
+Executive, shall exercise general supervision over all
+Provincial and Local Governments, ensuring that their acts
+conform to the laws and the Constitution of the Realm.
+</p>
+
+<p>
+Provinces shall, in turn, supervise their component Cities
+and Towns, and Cities and Towns shall supervise their
+component Villages, ensuring that the acts, ordinances,
+and resolutions of their subordinate units remain within
+the bounds of their lawful powers and prescribed functions.
+</p>
+</div>
+
+<div class="section"><div class="section-title">Section 11.</div>
+<p>
+Local Government Units may, in accordance with Imperial
+Law, associate, consolidate, or coordinate their efforts,
+services, and resources for purposes that are mutually
+beneficial to their Provinces, Cities, Towns, or Villages.
+</p></div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE X
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE X — NATIONAL DEFENSE AND SECURITY</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+The defense of the Realm shall rest upon the Imperial
+Armed Forces of Bristevia, composed of the Army, Navy,
+and Air Guard. The structure, hierarchy, organization,
+and duties of the armed forces shall be established by law.
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+The Souverion is the Commander-in-Chief of all armed forces.
+The Prime Minister shall serve as General Commander,
+empowered to call the armed forces into service to preserve
+sovereignty and enforce the laws.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+<p>
+The Minister of Defense, under the direction of the Prime
+Minister, shall administer, coordinate, and supervise national
+defense and internal security.
+</p></div>
+
+<div class="section"><div class="section-title">Section 4.</div>
+<p>The Imperial Assembly shall have the power to:</p>
+<ol>
+<li>Declare war;</li>
+<li>Appropriate funds for defense and security; and</li>
+<li>Ratify treaties concerning national defense and security.</li>
+</ol>
+</div>
+
+<div class="section"><div class="section-title">Section 5.</div>
+<p>
+Military service may be rendered voluntarily or compulsorily,
+as provided by law.
+</p></div>
+
+<div class="section"><div class="section-title">Section 6.</div>
+<p>
+The armed forces shall remain non-partisan and loyal to
+the Souverion, the Constitution, and the people of Bristevia.
+</p></div>
+
+<div class="section"><div class="section-title">
+Section 7. Martial Authority and the Privilege of the Writ
+</div>
+
+<p><strong>(a)</strong>
+The Souverion, as Commander-in-Chief of all Imperial Armed
+Forces, may, when necessary to preserve order and protect
+the Realm, call the forces into service to prevent or suppress
+rebellion, invasion, or lawless violence.
+</p>
+
+<p><strong>(b)</strong>
+In cases of invasion or rebellion, when public safety so requires,
+the Souverion, with advice from the Prime Minister and the
+Minister of Defense, may suspend the privilege of the Writ
+of Habeas Corpus or declare Martial Rule over the entire
+Realm or any part thereof, for a period not exceeding sixty
+(60) days.
+</p>
+
+<p><strong>(c)</strong>
+The Supreme Tribunal may, upon petition of any citizen,
+review the sufficiency of the factual basis for such suspension
+or proclamation, and shall render its decision within thirty
+(30) days from filing.
+</p>
+
+<p><strong>(d)</strong>
+A state of Martial Rule does not suspend the operation of
+the Constitution, nor supplant the authority of civil courts
+or legislative assemblies, nor confer jurisdiction upon military
+tribunals over civilians where civil courts continue to function.
+</p>
+
+<p><strong>(e)</strong>
+Suspension of the privilege of the Writ shall apply only to
+persons judicially charged with rebellion, treason, or offenses
+directly connected with invasion.
+</p>
+
+<p><strong>(f)</strong>
+During such suspension, any person arrested shall be
+judicially charged within three (3) days; otherwise, the
+person shall be released immediately.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE XI
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE XI — FINANCE AND TAXATION</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+The power to tax and appropriate funds shall reside in
+the Domus Curialum, with the concurrence of the Magnum
+Consilium, and subject to the assent of the Souverion.
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+No tax or expenditure shall be imposed or made except by law.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+<p>
+All revenues shall be held in the Imperial Treasury and
+disbursed solely for public purposes as authorized by the
+Domus Curialum with the concurrence of the Magnum Consilium.
+</p></div>
+
+<div class="section"><div class="section-title">Section 4.</div>
+<p>
+The Minister of Finance shall manage the Imperial Treasury,
+oversee collections and expenditures, and report annually
+to the Domus Curialum.
+</p></div>
+
+<div class="section"><div class="section-title">Section 5.</div>
+<p>
+The Imperial Auditor-General shall examine all accounts
+of the Realm to ensure honesty, integrity, and accountability
+in the use of public funds.
+</p></div>
+
+<div class="section"><div class="section-title">
+Section 6. Principles and Powers of Taxation
+</div>
+
+<p><strong>(a)</strong>
+The rule of taxation shall be uniform and equitable.
+The Domus Curialum shall establish and maintain a
+progressive system of taxation in accordance with the
+principles of justice and the welfare of the Realm.
+</p>
+
+<p><strong>(b)</strong>
+The Domus Curialum may, by law, authorize the Prime
+Minister, with the approval of the Souverion, to fix within
+prescribed limits, and subject to such conditions and
+restrictions as may be imposed by law, the tariff rates,
+import and export quotas, tonnage and wharfage dues,
+and other duties or imposts, within the framework of the
+Imperial Development Program.
+</p>
+
+<p><strong>(c)</strong>
+Charitable institutions, temples, churches, sanctuaries,
+monasteries, mosques, non-profit burial grounds, and all
+lands, buildings, and improvements actually, directly, and
+exclusively used for religious, charitable, or educational
+purposes, shall be exempt from taxation.
+</p>
+
+<p><strong>(d)</strong>
+No law granting any tax exemption shall be enacted without
+the concurrence of a majority of all Members of the
+Domus Curialum.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 7. Use and Custody of Public Funds
+</div>
+
+<p><strong>(a)</strong>
+No money shall be withdrawn from the Imperial Treasury
+except pursuant to an appropriation enacted by Imperial Law.
+</p>
+
+<p><strong>(b)</strong>
+No public money or property shall be appropriated, applied,
+paid, or employed, directly or indirectly, for the use or benefit
+of any sect, church, denomination, or religious institution,
+nor for the support of any priest, preacher, minister, or
+religious dignitary as such, except when such person is
+assigned to the Imperial Armed Forces, or to any penal
+institution, state orphanage, or sanatorium under authority
+of law.
+</p>
+
+<p><strong>(c)</strong>
+All money collected under any tax levied for a special
+purpose shall be treated as a Special Fund and expended
+solely for that purpose. When the objective for which the
+fund was created has been fulfilled or abandoned, the
+remaining balance shall be transferred to the General
+Treasury of the Imperial Government.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 8. Emergency Fiscal Powers
+</div>
+
+<p><strong>(a)</strong>
+In cases of national emergency, war, invasion, rebellion,
+natural disaster, or other extraordinary circumstances,
+the Prime Minister, with the approval of the Souverion,
+may authorize temporary taxation, reallocation of
+appropriations, or the issuance of emergency public debt,
+subject to the limitations prescribed by law.
+</p>
+
+<p><strong>(b)</strong>
+Any measures enacted under this Section shall be reported
+within thirty (30) days to the Domus Curialum, and shall
+remain in force for no longer than six (6) months unless
+extended by an act of the Domus Curialum with the
+concurrence of the Magnum Consilium.
+</p>
+
+<p><strong>(c)</strong>
+Emergency fiscal measures shall not infringe upon the
+sovereignty of the Souverion, the Constitution, or the
+established rights of citizens, and shall be used solely for
+the purposes for which they were enacted.
+</p>
+
+<p><strong>(d)</strong>
+The Supreme Tribunal may review any emergency fiscal
+measure upon petition by a citizen or legislative member
+to ensure its legality and proportionality, and shall render
+its decision within thirty (30) days of filing.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE XII
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE XII — ACCOUNTABILITY OF PUBLIC OFFICERS</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+Public office is a trust. Officials and employees of the
+Realm shall serve with integrity, responsibility, and loyalty
+to the Constitution and the Souverion.
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+All public officers shall be accountable for their actions
+and may be removed or disciplined for betrayal of public
+trust, corruption, neglect of duty, or violation of law.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+<p>
+The Domus Curialum shall have the power to investigate
+acts and conduct of public officials in aid of legislation,
+with concurrence of the Magnum Consilium when necessary.
+</p></div>
+
+<div class="section"><div class="section-title">Section 4.</div>
+<p>
+The Supreme Tribunal shall have jurisdiction over cases
+involving misconduct, impeachment, or suspension of
+high officials.
+</p></div>
+
+<div class="section"><div class="section-title">Section 5.</div>
+<p>
+The law shall provide for the declaration of assets,
+liabilities, and interests of all public officers to ensure
+transparency and prevent corruption.
+</p></div>
+
+<div class="section"><div class="section-title">Section 6.</div>
+<p>
+No person shall hold more than one public office at a time,
+except for the Co-Sovereign.
+</p></div>
+
+<div class="section"><div class="section-title">
+Section 7. Royal Clemency and Amnesty
+</div>
+
+<p><strong>(a)</strong>
+Except in cases of impeachment or as otherwise provided
+in this Constitution, the Souverion may, by virtue of His
+royal prerogative, grant reprieves, commutations, and
+pardons, and remit fines and forfeitures after conviction
+by final judgment.
+</p>
+
+<p><strong>(b)</strong>
+The Souverion may likewise grant amnesty, with the
+concurrence of a majority of all Members of the
+Imperial Assembly.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE XIII
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE XIII — THE CONSTITUTIONAL COMMISSIONS</h2>
+</div>
+
+<div class="article-content">
+
+<div class="constitution-quote">
+A. COMMON PROVISIONS
+</div>
+
+<div class="section"><div class="section-title">
+Section 1. Establishment and Independence
+</div>
+
+<p>
+The Constitutional Commissions, which shall be independent
+and co-equal, are:
+</p>
+
+<ol>
+<li>the Imperial Civil Service Commission;</li>
+<li>the Imperial Commission on Elections; and</li>
+<li>the Imperial Commission on Audit.</li>
+</ol>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 2. Appointment and Tenure
+</div>
+
+<p><strong>(a)</strong>
+The Prime Minister, with the concurrence of the Imperial
+Assembly, shall appoint the Chairmen and Members of the
+Constitutional Commissions.
+</p>
+
+<p><strong>(b)</strong>
+All appointments to the Supreme Tribunal and Constitutional
+Commissions shall be formally confirmed and sealed by
+the Souverion.
+</p>
+
+<p><strong>(c)</strong>
+No Member of a Constitutional Commission shall hold any
+other office or employment, nor engage in business,
+professional practice, or financial interest connected with
+the functions of their office.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 3. Compensation and Fiscal Autonomy
+</div>
+
+<p><strong>(a)</strong>
+The salaries of the Chairmen and Commissioners shall be
+fixed by law and shall not be decreased during their tenure.
+</p>
+
+<p><strong>(b)</strong>
+Each Commission shall enjoy fiscal autonomy, and their
+approved appropriations shall be automatically and
+regularly released.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 4. Internal Powers
+</div>
+
+<p>Each Commission shall:</p>
+
+<ol>
+<li>Appoint its officials and employees according to law;</li>
+<li>Promulgate its own procedural rules, provided they do not alter substantive rights;</li>
+<li>Decide by majority vote any case brought before it within sixty (60) days of submission; and</li>
+<li>Perform other functions as may be provided by Imperial Law.</li>
+</ol>
+
+<p>
+Decisions of the Commissions may be reviewed by the
+Supreme Tribunal through certiorari within thirty (30) days
+from notice.
+</p>
+
+</div>
+
+
+<div class="constitution-quote">
+B. THE IMPERIAL CIVIL SERVICE COMMISSION
+</div>
+
+<div class="section"><div class="section-title">
+Section 1. Composition and Appointment
+</div>
+
+<p>
+The Imperial Civil Service Commission shall be composed
+of a Chairman and two Commissioners, appointed by the
+Prime Minister, confirmed by the Imperial Assembly, and
+sealed by the Souverion, each for a non-renewable term
+of seven (7) years.
+</p></div>
+
+<div class="section"><div class="section-title">
+Section 2. Scope and Merit System
+</div>
+
+<p>
+The Civil Service shall encompass all branches, ministries,
+and instrumentalities of the Imperial Government, including
+Imperial corporations with original charters.
+</p>
+
+<p>
+Appointments shall be based solely on merit and fitness,
+determined by examination or qualification, except for
+positions that are policy-determining or highly technical.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 3. Discipline and Conduct
+</div>
+
+<p><strong>(a)</strong>
+No civil servant shall be removed or suspended except
+for lawful cause.
+</p>
+
+<p><strong>(b)</strong>
+All officers and employees shall take an oath of loyalty
+to the Constitution and remain non-partisan in political matters.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 4. Administrative Standards
+</div>
+
+<p>The Commission shall:</p>
+
+<ol>
+<li>Establish a career service founded on integrity and merit;</li>
+<li>Promote efficiency, courtesy, and accountability; and</li>
+<li>Recommend standardized compensation for all Imperial officials and employees.</li>
+</ol>
+
+</div>
+
+
+<div class="constitution-quote">
+C. THE IMPERIAL COMMISSION ON ELECTIONS
+</div>
+
+<div class="section"><div class="section-title">
+Section 1. Composition and Appointment
+</div>
+
+<p>
+The Imperial Commission on Elections shall be composed
+of a Chairman and six Commissioners, appointed by the
+Prime Minister, confirmed by the Imperial Assembly,
+and ratified by the Souverion for non-renewable terms
+of seven (7) years.
+</p>
+
+<p>
+A majority of its Members, including the Chairman,
+shall be Members of the Imperial Bar.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 2. Powers and Jurisdiction
+</div>
+
+<p>The Commission shall:</p>
+
+<ol>
+<li>Enforce and administer all laws concerning elections, referenda, and plebiscites;</li>
+<li>Exercise exclusive jurisdiction over electoral contests involving regional, provincial, and city officials;</li>
+<li>Register political parties and ensure adherence to the Constitution;</li>
+<li>Deputize law enforcement agencies, including the Imperial Armed Forces, for the conduct of free and fair elections;</li>
+<li>Investigate and prosecute election violations; and</li>
+<li>Submit a comprehensive election report to the Souverion and the Imperial Assembly after each electoral event.</li>
+</ol>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 3. Autonomy and Operation
+</div>
+
+<p><strong>(a)</strong>
+The Commission may sit en banc or in divisions and
+promulgate rules of procedure to ensure efficient
+resolution of electoral cases.
+</p>
+
+<p><strong>(b)</strong>
+It shall supervise the use of public utilities, media,
+and franchises during election periods to guarantee
+equal access for all candidates.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 4. Election Period
+</div>
+
+<p>
+Unless otherwise provided by law, the election period
+shall commence ninety (90) days before and end thirty
+(30) days after the election day.
+</p>
+
+<p>
+All bona fide candidates shall be protected from
+harassment or discrimination.
+</p>
+
+</div>
+
+
+<div class="constitution-quote">
+D. THE IMPERIAL COMMISSION ON AUDIT
+</div>
+
+<div class="section"><div class="section-title">
+Section 1. Composition and Appointment
+</div>
+
+<p>
+The Imperial Commission on Audit shall be composed of
+a Chairman and two Commissioners, appointed by the
+Prime Minister, confirmed by the Imperial Assembly,
+and sealed by the Souverion for non-renewable seven-year
+terms.
+</p>
+
+<p>
+Members shall be either Certified Public Accountants with
+at least ten (10) years of auditing experience, or Members
+of the Imperial Bar with at least ten (10) years of legal practice.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 2. Powers and Duties
+</div>
+
+<p>The Commission shall:</p>
+
+<ol>
+<li>Examine, audit, and settle all accounts related to the revenues, receipts, and expenditures of the Imperial Government;</li>
+<li>Define the scope and standards of audit, and promulgate rules to prevent misuse of public funds;</li>
+<li>Audit government-owned corporations and state institutions, including entities receiving public subsidies; and</li>
+<li>Submit an annual report to the Souverion and the Imperial Assembly on the financial condition and operation of the Realm.</li>
+</ol>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 3. Prohibition
+</div>
+
+<p>
+No law shall exempt any government entity or investment
+of public funds from the jurisdiction of the Imperial
+Commission on Audit.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 4. Security of Tenure
+</div>
+
+<p>
+No civil or public officer shall be removed, even by the
+Souverion, except for cause provided by law and after
+due process.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE XIV
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE XIV — THE FAMILY</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+The family is the foundation of the Bristevian Realm
+and shall be protected by the State.
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+Marriage, as a sacred union, is recognized as the moral
+basis of society, guided by divine and customary law.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+<p>
+The State recognizes the sanctity of family life and shall
+protect and strengthen the family as a basic autonomous
+social institution.
+</p></div>
+
+<div class="section"><div class="section-title">Section 4.</div>
+<p>
+Parents shall have the primary right and duty to care for,
+nurture, and educate their children. The State shall support
+parents in fulfilling these responsibilities through appropriate
+laws and social programs.
+</p></div>
+
+<div class="section"><div class="section-title">Section 5.</div>
+<p>
+The State shall equally protect the life of the mother and
+the life of the unborn from conception. No law shall be
+passed dissolving marriage.
+</p></div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE XV
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE XV — EDUCATION, SCIENCE, CULTURE, AND NATIONAL DEVELOPMENT</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+The State shall promote education, science, culture,
+and national defense in accordance with this Constitution.
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+The Souverion shall provide guidance and strategic oversight
+over programs for education, science, culture, and national
+development. The Prime Minister and the Imperial Cabinet
+shall implement policies, manage resources, and execute
+programs in accordance with the Souverion’s guidance
+and the law.
+</p></div>
+
+<div class="section"><div class="section-title">Section 3.</div>
+<p>
+All citizens shall have the right to access quality education
+and opportunities for cultural, scientific, and technological
+advancement, subject to the laws of the Realm.
+</p></div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE XVI
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE XVI — AMENDMENTS OR REVISIONS</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+
+<p>
+Amendments to this Constitution may be proposed by:
+</p>
+
+<ol>
+<li>
+A three-fourths (3/4) vote of all Members of the
+Imperial Assembly; or
+</li>
+
+<li>
+A Constitutional Assembly convened by Imperial Decree.
+</li>
+</ol>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE XVII
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE XVII — ACCOUNTABILITY AND IMPEACHMENT</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">Section 1.</div>
+<p>
+The House of Ministers shall have the exclusive power
+to initiate all cases of impeachment.
+</p></div>
+
+<div class="section"><div class="section-title">Section 2.</div>
+<p>
+The Magnum Concilium shall have the sole authority to
+try and decide all cases of impeachment.
+</p></div>
+
+<div class="section"><div class="section-title">
+Section 3. Impeachable Officers Include:
+</div>
+
+<ol>
+<li>The Prime Minister;</li>
+<li>Members of the Supreme Tribunal;</li>
+<li>Members of the Magnum Concilium and the Domus Curialum;</li>
+<li>Imperial Ministers;</li>
+<li>The Speaker of the House of Ministers;</li>
+<li>The Chairman of the House of Consuls;</li>
+<li>Governors, Mayors, and appointed officials of the Empire; and</li>
+<li>Members of the Constitutional Commissions.</li>
+</ol>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 4. Grounds for Impeachment
+</div>
+
+<p>
+Treason, corruption, abuse of power, violation of the
+Constitution, dereliction of duty, or betrayal of the
+public trust.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 5. Filing and Procedure
+</div>
+
+<p>
+A verified complaint may be filed by any Minister or any
+citizen, endorsed by a Member of the Assembly. It shall
+be referred to the proper Committee.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 6. Vote for Impeachment
+</div>
+
+<p>
+A vote of one-third (1/3) of all Members of the House
+of Ministers shall be required to approve the Articles
+of Impeachment.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 7. Trial by the Magnum Concilium
+</div>
+
+<p><strong>(a)</strong>
+The Magnum Concilium shall have the sole power to
+try and decide all impeachment cases.
+</p>
+
+<p><strong>(b)</strong>
+When the Prime Minister is on trial, the Chief Justice
+of the Supreme Tribunal shall preside but shall not vote.
+</p>
+
+<p><strong>(c)</strong>
+No person shall be convicted without the concurrence
+of two-thirds (2/3) of all Members of the Magnum Concilium.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 8. Judgment
+</div>
+
+<p>
+Judgment in impeachment shall extend only to removal
+from office and disqualification to hold any office under
+the Empire. However, the convicted person shall remain
+liable to prosecution under law.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 9. Limitation
+</div>
+
+<p>
+No impeachment proceeding shall be initiated against
+the same official more than once within a year.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 10. Rules of Procedure
+</div>
+
+<p>
+The Imperial Assembly shall promulgate its rules on
+impeachment to ensure fairness, due process, and the
+preservation of the dignity of the Realm.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 11. The Office of the Imperial Sentinel
+</div>
+
+<p><strong>(a)</strong>
+There shall be an independent Office of the Imperial
+Sentinel, composed of the Sentinel, one Overall Deputy,
+and at least one Deputy each for the North, South, East,
+West, and Central Regions. A separate Deputy for the
+Imperial Armed Forces may also be appointed.
+</p>
+
+<p><strong>(b)</strong>
+Officials and employees of the Office of the Imperial
+Sentinel, other than the Deputies, shall be appointed
+by the Sentinel in accordance with Civil Service laws.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 12. Special Prosecutor
+</div>
+
+<p>
+The existing Office of the Special Prosecutor shall continue
+to function and exercise its powers as may be provided
+by law, except those now vested in the Office of the
+Imperial Sentinel.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 13. Duties of the Imperial Sentinel
+</div>
+
+<p>The Imperial Sentinel shall:</p>
+
+<ol type="a">
+<li>Investigate, on its own or upon complaint, any act or omission of public officials or employees that appears unlawful, unjust, or improper.</li>
+
+<li>Direct officials or employees to perform duties required by law or to prevent abuses in office.</li>
+
+<li>Recommend to the proper authority the removal, suspension, or prosecution of officials found at fault, and ensure compliance.</li>
+
+<li>Examine documents or contracts involving the disbursement or use of public funds and report irregularities to the Imperial Commission on Audit.</li>
+
+<li>Request assistance and information from any government body as necessary to discharge its mandate.</li>
+
+<li>Publicize matters of investigation when warranted by public interest.</li>
+
+<li>Recommend measures to eliminate corruption, inefficiency, and red tape in government.</li>
+
+<li>Promulgate its own rules of procedure and perform other duties as may be provided by law.</li>
+</ol>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 14. Fiscal Autonomy
+</div>
+
+<p>
+The Office of the Imperial Sentinel shall enjoy fiscal
+autonomy, and its annual appropriations shall be
+automatically and regularly released.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 15. Recovery of Public Property
+</div>
+
+<p>
+The right of the Empire to recover properties unlawfully
+acquired by public officials or employees shall not be
+barred by prescription, laches, or estoppel.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 16. Restrictions on Loans
+</div>
+
+<p>
+No loan or financial accommodation from any state-owned
+financial institution shall be granted to the Prime Minister,
+Deputy Prime Ministers, Members of the Imperial Assembly,
+the Supreme Tribunal, the Constitutional Commissions,
+the Imperial Sentinel, or any entity in which they hold
+controlling interest, during their tenure.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 17. Declaration of Assets
+</div>
+
+<p>
+All public officers and employees shall, upon assumption
+of office and as often thereafter as required by law, submit
+a declaration of their assets, liabilities, and net worth.
+In the case of high officials of the Empire, such declarations
+shall be made public as prescribed by law.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 18. Allegiance of Public Officers
+</div>
+
+<p>
+Public officers and employees owe allegiance to the
+Imperial Sovereign of Bristevia at all times. Any who
+seek to change allegiance or acquire foreign citizenship
+during their tenure shall be subject to penalties provided
+by law.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE XVIII
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE XVIII — APPOINTMENTS AND ELECTIVE OFFICES</h2>
+</div>
+
+<div class="article-content">
+
+<div class="constitution-quote">
+DIVISION A — APPOINTIVE OFFICIALS
+</div>
+
+<div class="section"><div class="section-title">
+Section 1. Authority to Appoint
+</div>
+
+<p><strong>(a)</strong>
+The power to appoint officials to public office shall be
+vested in the Prime Minister and such other appointing
+authorities as may be designated by law.
+</p>
+
+<p><strong>(b)</strong>
+At the local level, appointments shall be exercised by
+Governors and City or Town Mayors within the limits of
+their jurisdiction and as provided by law.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 2. Nature of Appointment
+</div>
+
+<p><strong>(a)</strong>
+Appointments shall be made solely based on merit,
+integrity, and fitness, with due regard to competence
+and moral character.
+</p>
+
+<p><strong>(b)</strong>
+No appointment shall be based on political favor,
+kinship, or any personal consideration.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 3. Appointive Positions
+</div>
+
+<p>
+The following offices shall be filled by appointment,
+unless otherwise provided by law:
+</p>
+
+<ol type="a">
+<li>Ministers and Heads of National Departments and Agencies;</li>
+<li>Regional Directors for Departments and Agencies;</li>
+<li>Ambassadors and Diplomatic Officers;</li>
+<li>Judges of the Regional Courts and of Special Courts;</li>
+<li>Members of National and Local Boards, Commissions, and Advisory Bodies created by law; and</li>
+<li>All other officers not designated as elective under this Constitution.</li>
+</ol>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 4. Nomination and Confirmation
+</div>
+
+<ol type="a">
+<li>All appointments made by the Prime Minister, Governor, or Mayor shall be submitted to the respective Assembly or Council for confirmation.</li>
+
+<li>The Committee on Appointments shall evaluate the qualifications of nominees and submit its recommendation to the full House or Council for approval.</li>
+
+<li>A nominee shall be confirmed by a majority vote of the confirming body before assuming office.</li>
+
+<li>Upon confirmation, the appointment shall be submitted to the Souverion for Royal Assent and publication in the Official Gazette.</li>
+</ol>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 5. Legislative Oversight
+</div>
+
+<p>
+The Imperial Assembly shall exercise oversight over the
+appointment process to ensure adherence to the law,
+prevent abuse of discretion, and uphold the standards
+of public service.
+</p>
+
+</div>
+
+<div class="constitution-quote">
+DIVISION B — ELECTIVE OFFICIALS
+</div>
+
+<div class="section"><div class="section-title">
+Section 6. Elective Positions Not Subject to Appointment
+</div>
+
+<p><strong>(a)</strong>
+No person shall be appointed to a position that is
+elective in nature.
+</p>
+
+<p><strong>(b)</strong>
+Offices such as Consuls of the House of Consuls,
+Ministers of the House of Minister, City or Town Mayors,
+and Provincial Governors shall be filled only through
+election by the people.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE XIX
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE XIX — TERRITORY</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">
+Section 1. Territorial Integrity
+</div>
+
+<p>
+The national territory of the Imperial Sovereign of
+Bristevia shall consist of all the lands, islands, waters,
+and airspace now belonging to the Realm, including
+territories acquired in accordance with law. The integrity
+of the Realm shall be inviolable and protected by the
+Imperial Government.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 2. Subdivisions of Territory
+</div>
+
+<p>
+The Realm shall be divided into Provinces, Districts,
+Cities, Towns, Villages, and Regions in accordance with
+Articles IX and subsequent laws. The creation, modification,
+or abolition of any territorial unit shall be determined
+exclusively by the Imperial Assembly.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 3. Autonomous Regions
+</div>
+
+<p>
+Autonomous Regions may be established by law to promote
+self-governance of distinct peoples or areas, but they shall
+remain under the supervision and jurisdiction of the
+National Government. The structure, powers, and functions
+of Autonomous Regions shall be defined by law.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 4. Territorial Limits and Disputes
+</div>
+
+<p><strong>(a)</strong>
+Boundaries of Provinces, Cities, Towns, Villages,
+Districts, and Regions shall be fixed and published
+in the official Bristevia Atlas and Map, approved
+by the Souverion.
+</p>
+
+<p><strong>(b)</strong>
+Disputes over boundaries or jurisdiction between
+territorial units shall be resolved by the Imperial Assembly,
+subject to judicial review by the Supreme Tribunal
+if necessary.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 5. Defense of the Realm
+</div>
+
+<p>
+All territorial units shall be subject to the authority
+of the Imperial Armed Forces and the Prime Minister
+for purposes of national defense, security, and
+maintenance of law and order, as provided under Article X.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 6. Territorial Administration
+</div>
+
+<p>
+Provincial Governors, City or Town Mayors, and Village
+Chiefs shall exercise administrative authority within
+their respective territories in accordance with this
+Constitution, the Local Government Code, and laws
+enacted by the Imperial Assembly.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     ARTICLE XX
+========================================== -->
+
+<section class="article">
+
+<div class="article-header">
+<h2>ARTICLE XX — GENERAL PROVISIONS</h2>
+</div>
+
+<div class="article-content">
+
+<div class="section"><div class="section-title">
+Section 1. Supremacy of the Constitution
+</div>
+
+<p>
+This Constitution is the supreme law of the Imperial
+Sovereign of Bristevia. All laws, decrees, orders, and
+acts of the government shall conform to its provisions.
+Any law or act inconsistent with this Constitution shall
+be null and void.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 2. Oaths of Office
+</div>
+
+<p>
+All public officials and employees of the Realm, including
+elective and appointive officials, shall take an oath to
+uphold and defend the Constitution and to serve the
+Souverion and the people of Bristevia with integrity.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 3. Official Language
+</div>
+
+<p>
+The official language of the Imperial Sovereign of
+Bristevia shall be established by law. All government
+proceedings, documents, and records shall conform to
+this language, except as otherwise provided by law for
+minority or indigenous communities.
+</p>
+
+</div>
+
+<div class="section"><div class="section-title">
+Section 4. National Symbols
+</div>
+
+<p>
+The flag, anthem, seal, and other symbols of the Imperial
+Sovereign of Bristevia shall be established by law.
+They shall represent the unity, sovereignty, and identity
+of the Realm.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ==========================================
+     IN WITNESS THEREOF
+========================================== -->
+
+<section class="witness">
+
+<h2>IN WITNESS THEREOF</h2>
+
+<p>
+We, the sovereign people of Bristevia, under the divine
+guardianship of His Majesty the Souverion and Her Majesty
+the Souveria, do hereby ordain, decree, and promulgate
+this Constitution of the Imperial Sovereign of Bristevia,
+to stand for the glory, order, and eternity of the
+Bristevian Empire.
+</p>
+
+<p style="margin-top:25px;">
+Proclaimed in the City of Stephara,
+this Day of the Eternal Crown.
+</p>
+
+
+<!-- ==========================================
+     ROYAL SEAT
+========================================== -->
+
+<div class="royal-seat">
+
+<h3>⚜ ROYAL SEAT ⚜</h3>
+
+<p>
+<strong>Souverion:</strong>
+His Majesty, Stephen XXVI (Stephen Estomago)
+</p>
+
+<p>
+<strong>Souveria:</strong>
+Her Majesty, Jay Britney I (Jay Britney Balbin)
+</p>
+
+</div>
+
+
+<!-- ==========================================
+     SUPREME TRIBUNAL
+========================================== -->
+
+<div class="royal-seat">
+
+<h3>⚖ SUPREME TRIBUNAL</h3>
+
+<p><strong>Chief Justice:</strong> Jay Britney Balbin</p>
+
+<p><strong>Justice:</strong> Andrea Estomago</p>
+
+<p><strong>Justice:</strong> Ronjie Estomago</p>
+
+<p><strong>Justice:</strong> Gabriel Estomago</p>
+
+<p><strong>Justice:</strong> Jaeya Brielle Balbin</p>
+
+<p><strong>Justice:</strong> Niccolo Machiavelli</p>
+
+<p><strong>Justice:</strong> Robert Greene</p>
+
+<p><strong>Justice:</strong> Zhuge Liang</p>
+
+<p><strong>Justice:</strong> Marcus Aurelius</p>
+
+</div>
+
+
+<!-- ==========================================
+     SOLICITOR GENERAL
+========================================== -->
+
+<div class="royal-seat">
+
+<h3>⚜ SOLICITOR GENERAL ⚜</h3>
+
+<p>
+<strong>Solicitor General:</strong>
+Harvey Specter
+</p>
+
+<p>
+<em>Executive Department</em>
+</p>
+
+</div>
+
+</section>
+
+
+<a href="#top" class="back-top">
+⚜ RETURN TO THE CROWN ⚜
+</a>
+
+</main>
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+<div class="crest">⚜</div>
+
+<h3>
+IMPERIAL SOVEREIGN OF BRISTEVIA
+</h3>
+
+<p>
+Constitutio Imperii Bristeviae
+</p>
+
+<p>
+© 2026 The Imperial Sovereign Realm of Bristevia
+</p>
+
+</footer>
+
+</body>
+</html>
