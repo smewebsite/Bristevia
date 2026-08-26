@@ -4,33 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Bristevia | Imperial Sovereign</title>
+  <title>Imperial Sovereign of Bristevia</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=UnifrakturCook:wght@700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-
-    :root {
-      --royal-blue: #071a4d;
-      --deep-blue: #03102f;
-      --imperial-blue: #0b2c78;
-      --blue-light: #174ea6;
-
-      --gold: #d4af37;
-      --gold-light: #f4d675;
-      --gold-dark: #8c6a18;
-
-      --ivory: #f7f0dc;
-      --text: #e9e4d4;
-
-      --glass: rgba(10, 38, 99, 0.72);
-      --border: rgba(212, 175, 55, 0.75);
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -42,950 +23,501 @@
     }
 
     body {
+      font-family: "Cormorant Garamond", serif;
       background:
-        radial-gradient(circle at 50% 10%, #123a91 0%, transparent 35%),
-        linear-gradient(
-          135deg,
-          var(--deep-blue),
-          var(--royal-blue),
-          #061946
-        );
-
-      color: var(--text);
-
-      font-family: "Cormorant Garamond", Georgia, serif;
-
-      line-height: 1.7;
-
+        radial-gradient(circle at center, rgba(12, 61, 115, 0.45), rgba(2, 12, 30, 0.96)),
+        #020b18;
+      color: #f8f0d0;
       min-height: 100vh;
-
       overflow-x: hidden;
     }
 
-    /* =========================================
-       IMPERIAL BACKGROUND
-    ========================================= */
+    /* =========================
+       HERO / FLAG BACKGROUND
+       ========================= */
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-
-      pointer-events: none;
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
 
       background:
         linear-gradient(
-          rgba(255,255,255,0.02) 1px,
-          transparent 1px
+          rgba(1, 15, 36, 0.60),
+          rgba(1, 15, 36, 0.82)
         ),
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,0.02) 1px,
-          transparent 1px
+        url("bristevia-flag.png");
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Dark royal overlay */
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(20, 90, 160, 0.15),
+          rgba(0, 0, 0, 0.70)
         );
 
-      background-size: 50px 50px;
+      z-index: 1;
+    }
 
-      mask-image: linear-gradient(
-        to bottom,
-        black,
+    /* Gold aura */
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      border-radius: 50%;
+
+      background: radial-gradient(
+        circle,
+        rgba(212, 175, 55, 0.15),
+        rgba(212, 175, 55, 0.04),
+        transparent 70%
+      );
+
+      animation: aura 7s ease-in-out infinite alternate;
+
+      z-index: 1;
+    }
+
+    @keyframes aura {
+      from {
+        transform: scale(0.9);
+        opacity: 0.5;
+      }
+
+      to {
+        transform: scale(1.15);
+        opacity: 1;
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      padding: 40px 20px;
+    }
+
+    /* =========================
+       IMPERIAL SYMBOL
+       ========================= */
+
+    .imperial-symbol {
+      font-size: 72px;
+      color: #d4af37;
+      text-shadow:
+        0 0 10px rgba(212,175,55,0.7),
+        0 0 30px rgba(212,175,55,0.35);
+
+      margin-bottom: 10px;
+
+      animation: royalGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes royalGlow {
+      0%, 100% {
+        text-shadow:
+          0 0 10px rgba(212,175,55,0.6),
+          0 0 25px rgba(212,175,55,0.25);
+      }
+
+      50% {
+        text-shadow:
+          0 0 20px rgba(212,175,55,1),
+          0 0 50px rgba(212,175,55,0.5);
+      }
+    }
+
+    .small-title {
+      font-family: "Cinzel", serif;
+      letter-spacing: 7px;
+      font-size: 15px;
+      color: #d4af37;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .main-title {
+      font-family: "Cinzel", serif;
+      font-size: clamp(42px, 7vw, 88px);
+      font-weight: 700;
+      letter-spacing: 4px;
+
+      color: #f7e7a9;
+
+      text-shadow:
+        0 3px 0 #8b6914,
+        0 0 20px rgba(212,175,55,0.35);
+
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      font-family: "Cinzel", serif;
+      margin-top: 18px;
+      font-size: clamp(18px, 3vw, 28px);
+      letter-spacing: 5px;
+      color: #ffffff;
+    }
+
+    .motto {
+      margin-top: 30px;
+      font-size: 22px;
+      font-style: italic;
+      letter-spacing: 2px;
+      color: #e9e1c7;
+    }
+
+    .motto::before,
+    .motto::after {
+      content: " ✦ ";
+      color: #b21f2d;
+    }
+
+    /* =========================
+       ROYAL DIVIDER
+       ========================= */
+
+    .divider {
+      width: 280px;
+      height: 2px;
+      margin: 35px auto;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #d4af37,
+        #fff1a8,
+        #d4af37,
         transparent
       );
 
-      z-index: -1;
+      box-shadow: 0 0 15px rgba(212,175,55,0.5);
     }
 
-    /* =========================================
-       HEADER
-    ========================================= */
+    /* =========================
+       NAVIGATION
+       ========================= */
 
-    header {
-      min-height: 72vh;
+    nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+
+      z-index: 5;
 
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
 
-      text-align: center;
+      padding: 18px 15px;
 
-      padding: 4rem 1.5rem;
+      background:
+        linear-gradient(
+          rgba(2, 18, 42, 0.92),
+          rgba(2, 11, 27, 0.97)
+        );
 
-      border-bottom: 1px solid var(--border);
+      border-top: 1px solid rgba(212,175,55,0.5);
+      box-shadow:
+        0 -5px 25px rgba(0,0,0,0.4),
+        0 -1px 0 rgba(212,175,55,0.15);
+    }
 
+    nav a {
       position: relative;
+
+      font-family: "Cinzel", serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+
+      color: #f5e6a8;
+      text-decoration: none;
+
+      padding: 10px 17px;
+
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+    }
+
+    nav a::after {
+      content: "";
+
+      position: absolute;
+      left: 50%;
+      bottom: 3px;
+
+      width: 0;
+      height: 2px;
+
+      background: #d4af37;
+
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+
+      box-shadow: 0 0 10px rgba(212,175,55,0.8);
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      transform: translateY(-2px);
+
+      text-shadow:
+        0 0 10px rgba(212,175,55,0.8);
+    }
+
+    nav a:hover::after {
+      width: 70%;
+    }
+
+    /* =========================
+       IMPERIAL SEAL
+       ========================= */
+
+    .seal {
+      margin: 35px auto 0;
+
+      width: 90px;
+      height: 90px;
+
+      border: 2px solid #d4af37;
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: #d4af37;
+
+      font-family: "Cinzel", serif;
+      font-size: 36px;
+
+      box-shadow:
+        0 0 0 5px rgba(212,175,55,0.08),
+        0 0 25px rgba(212,175,55,0.35);
 
       background:
         radial-gradient(
           circle,
-          rgba(30, 79, 170, 0.55),
-          transparent 55%
+          rgba(8, 46, 87, 0.8),
+          rgba(1, 15, 35, 0.9)
         );
     }
 
-    /* Decorative top line */
+    /* =========================
+       LOWER IMPERIAL PANEL
+       ========================= */
 
-    header::before {
-      content: "✦ ━━━━━━━━━━━━━ ✦";
-
-      position: absolute;
-
-      top: 35px;
-
-      color: var(--gold);
-
-      font-size: 1rem;
-
-      letter-spacing: 5px;
-
-      opacity: 0.9;
-    }
-
-    .royal-symbol {
-      font-size: 4rem;
-
-      color: var(--gold);
-
-      text-shadow:
-        0 0 10px rgba(212,175,55,0.5),
-        0 0 30px rgba(212,175,55,0.2);
-
-      margin-bottom: 1rem;
-
-      animation: royalGlow 4s infinite alternate;
-    }
-
-    @keyframes royalGlow {
-      from {
-        text-shadow:
-          0 0 8px rgba(212,175,55,0.3);
-      }
-
-      to {
-        text-shadow:
-          0 0 20px rgba(212,175,55,0.7),
-          0 0 40px rgba(212,175,55,0.2);
-      }
-    }
-
-    header h1 {
-
-      font-family: "Cinzel", serif;
-
-      font-size: clamp(3rem, 10vw, 7rem);
-
-      font-weight: 700;
-
-      letter-spacing: 12px;
-
-      text-transform: uppercase;
-
-      color: var(--gold-light);
-
-      text-shadow:
-        2px 2px 0 var(--gold-dark),
-        0 0 20px rgba(212,175,55,0.35);
-
-      margin-bottom: 0.5rem;
-    }
-
-    header .latin {
-
-      font-family: "Cinzel", serif;
-
-      font-size: 1rem;
-
-      letter-spacing: 6px;
-
-      color: #d8c27a;
-
-      text-transform: uppercase;
-
-      margin-bottom: 1.5rem;
-    }
-
-    header p {
-
-      font-size: 1.45rem;
-
-      font-style: italic;
-
-      color: var(--ivory);
-
-      max-width: 700px;
-    }
-
-    .imperial-motto {
-
-      margin-top: 2rem;
-
-      font-family: "UnifrakturCook", cursive;
-
-      font-size: 1.8rem;
-
-      color: var(--gold-light);
-    }
-
-    /* =========================================
-       NAVIGATION
-    ========================================= */
-
-    nav {
-<nav>
-  <a href="index.html">IMPERIAL COURT</a>
-  <a href="constitution.html">CONSTITUTION</a>
-  <a href="government.html">GOVERNMENT</a>
-  <a href="judiciary.html">SUPREME TRIBUNAL</a>
-  <a href="legislature.html">IMPERIAL ASSEMBLY</a>
-  <a href="decrees.html">ROYAL DECREES</a>
-  <a href="atlas.html">BRISTEVIA ATLAS</a>
-</nav>
-      position: sticky;
-
-      top: 0;
-
-      z-index: 100;
-
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 10px;
-
-      padding: 1rem;
-
-      background:
-        rgba(3, 16, 47, 0.92);
-
-      backdrop-filter: blur(12px);
-
-      border-bottom: 1px solid var(--border);
-
-      box-shadow:
-        0 5px 30px rgba(0,0,0,0.25);
-    }
-
-    nav a {
-
+    .imperial-intro {
       position: relative;
 
-      padding: 0.6rem 1.2rem;
-
-      color: #e8dfc7;
-
-      text-decoration: none;
-
-      font-family: "Cinzel", serif;
-
-      font-size: 0.8rem;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      transition: 0.3s ease;
-    }
-
-    nav a::after {
-
-      content: "";
-
-      position: absolute;
-
-      left: 50%;
-
-      bottom: 2px;
-
-      width: 0;
-
-      height: 1px;
-
-      background: var(--gold);
-
-      transition: 0.3s ease;
-
-      transform: translateX(-50%);
-    }
-
-    nav a:hover {
-
-      color: var(--gold-light);
-
-      transform: translateY(-2px);
-    }
-
-    nav a:hover::after {
-
-      width: 70%;
-    }
-
-    /* =========================================
-       MAIN CONTAINER
-    ========================================= */
-
-    .container {
-
-      max-width: 1100px;
-
-      margin: 4rem auto;
-
-      padding: 0 1.5rem;
-    }
-
-    /* =========================================
-       IMPERIAL SECTIONS
-    ========================================= */
-
-    .section {
-
-      position: relative;
-
-      margin-bottom: 3rem;
-
-      padding: 3rem;
-
       background:
         linear-gradient(
-          145deg,
-          rgba(14, 53, 126, 0.78),
-          rgba(4, 25, 69, 0.9)
+          180deg,
+          #03152d,
+          #020b18
         );
 
-      border: 1px solid var(--border);
+      padding: 90px 20px;
 
-      box-shadow:
-        0 15px 40px rgba(0,0,0,0.25),
-        inset 0 0 30px rgba(212,175,55,0.035);
+      text-align: center;
 
-      overflow: hidden;
+      border-top: 1px solid rgba(212,175,55,0.25);
     }
 
-    /* Decorative corners */
-
-    .section::before,
-    .section::after {
-
-      content: "✦";
-
-      position: absolute;
-
-      color: var(--gold);
-
-      font-size: 1.5rem;
-    }
-
-    .section::before {
-
-      top: 12px;
-
-      left: 16px;
-    }
-
-    .section::after {
-
-      bottom: 12px;
-
-      right: 16px;
-    }
-
-    /* =========================================
-       SECTION HEADINGS
-    ========================================= */
-
-    .section h2 {
-
+    .imperial-intro h2 {
       font-family: "Cinzel", serif;
 
-      color: var(--gold-light);
+      color: #d4af37;
 
-      font-size: 2rem;
-
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
-      text-align: center;
-
-      margin-bottom: 1.5rem;
-    }
-
-    .section h2::after {
-
-      content: "◆";
-
-      display: block;
-
-      font-size: 0.7rem;
-
-      margin-top: 0.7rem;
-
-      color: var(--gold);
-    }
-
-    .section p {
-
-      font-size: 1.2rem;
-
-      text-align: center;
-
-      max-width: 800px;
-
-      margin: auto;
-
-      color: #e8e2d2;
-    }
-
-    /* =========================================
-       IMPERIAL DECREE
-    ========================================= */
-
-    .decree {
-
-      text-align: center;
-
-      font-size: 1.35rem;
-
-      font-style: italic;
-
-      padding: 2rem;
-
-      border-top: 1px solid var(--gold-dark);
-
-      border-bottom: 1px solid var(--gold-dark);
-
-      margin-top: 1.5rem;
-    }
-
-    .decree::before {
-
-      content: "❝";
-
-      display: block;
-
-      font-size: 3rem;
-
-      color: var(--gold);
-
-      line-height: 1;
-    }
-
-    /* =========================================
-       PILLARS
-    ========================================= */
-
-    .pillars {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
-
-      gap: 1.5rem;
-
-      margin-top: 2rem;
-    }
-
-    .pillar {
-
-      padding: 2rem 1.5rem;
-
-      text-align: center;
-
-      background:
-        linear-gradient(
-          160deg,
-          rgba(18, 67, 153, 0.7),
-          rgba(5, 28, 75, 0.8)
-        );
-
-      border: 1px solid rgba(212,175,55,0.5);
-
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-    }
-
-    .pillar:hover {
-
-      transform: translateY(-8px);
-
-      box-shadow:
-        0 12px 35px rgba(0,0,0,0.35),
-        0 0 20px rgba(212,175,55,0.12);
-    }
-
-    .pillar-icon {
-
-      font-size: 2.4rem;
-
-      color: var(--gold);
-
-      margin-bottom: 1rem;
-    }
-
-    .pillar h3 {
-
-      font-family: "Cinzel", serif;
-
-      color: var(--gold-light);
-
-      font-size: 1.1rem;
-
-      letter-spacing: 2px;
-
-      margin-bottom: 0.8rem;
-    }
-
-    .pillar p {
-
-      font-size: 1rem;
-
-      color: #d7d3c8;
-    }
-
-    /* =========================================
-       ROYAL COURT
-    ========================================= */
-
-    .court {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(auto-fit, minmax(200px, 1fr));
-
-      gap: 1.2rem;
-
-      margin-top: 2rem;
-    }
-
-    .court-card {
-
-      text-align: center;
-
-      padding: 1.5rem;
-
-      border: 1px solid rgba(212,175,55,0.35);
-
-      background: rgba(3,16,47,0.45);
-    }
-
-    .court-card span {
-
-      display: block;
-
-      font-family: "Cinzel", serif;
-
-      font-size: 0.8rem;
-
-      letter-spacing: 2px;
-
-      color: var(--gold);
-
-      margin-bottom: 0.5rem;
-    }
-
-    .court-card strong {
-
-      font-size: 1.2rem;
-
-      color: var(--ivory);
-    }
-
-    /* =========================================
-       ROYAL AUDIENCE BUTTON
-    ========================================= */
-
-    .royal-button {
-
-      display: inline-block;
-
-      margin-top: 1.8rem;
-
-      padding: 0.9rem 2rem;
-
-      border: 1px solid var(--gold);
-
-      color: var(--gold-light);
-
-      text-decoration: none;
-
-      font-family: "Cinzel", serif;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(212,175,55,0.12),
-          rgba(212,175,55,0.03)
-        );
-
-      transition: 0.3s ease;
-    }
-
-    .royal-button:hover {
-
-      background: var(--gold);
-
-      color: var(--deep-blue);
-
-      box-shadow:
-        0 0 25px rgba(212,175,55,0.3);
-    }
-
-    /* =========================================
-       FOOTER
-    ========================================= */
-
-    footer {
-
-      text-align: center;
-
-      padding: 3rem 1rem;
-
-      border-top: 1px solid var(--border);
-
-      background: #020d28;
-    }
-
-    footer .crest {
-
-      font-size: 2rem;
-
-      color: var(--gold);
-
-      margin-bottom: 0.7rem;
-    }
-
-    footer h3 {
-
-      font-family: "Cinzel", serif;
-
-      color: var(--gold-light);
-
+      font-size: 32px;
       letter-spacing: 4px;
 
-      margin-bottom: 0.5rem;
+      margin-bottom: 20px;
     }
 
-    footer p {
+    .imperial-intro p {
+      max-width: 850px;
+      margin: auto;
 
-      color: #aaa99e;
+      color: #d8d8d8;
 
-      font-size: 0.9rem;
+      font-size: 19px;
+      line-height: 1.8;
     }
 
-    /* =========================================
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      text-align: center;
+
+      padding: 30px 15px;
+
+      background: #010812;
+
+      border-top: 1px solid rgba(178,31,45,0.5);
+
+      color: #9d9d9d;
+
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    footer strong {
+      color: #d4af37;
+      font-family: "Cinzel", serif;
+    }
+
+    /* =========================
        MOBILE
-    ========================================= */
+       ========================= */
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
 
-      header {
-
-        min-height: 65vh;
+      .hero {
+        background-attachment: scroll;
       }
 
-      header h1 {
-
-        font-size: 3rem;
-
-        letter-spacing: 6px;
+      .imperial-symbol {
+        font-size: 55px;
       }
 
-      header p {
-
-        font-size: 1.15rem;
+      .main-title {
+        letter-spacing: 2px;
       }
 
-      .imperial-motto {
+      .subtitle {
+        letter-spacing: 2px;
+      }
 
-        font-size: 1.4rem;
+      .motto {
+        font-size: 18px;
       }
 
       nav {
-
-        gap: 2px;
+        position: relative;
+        bottom: auto;
       }
 
       nav a {
-
-        font-size: 0.65rem;
-
-        padding: 0.5rem 0.6rem;
+        font-size: 11px;
+        padding: 9px 10px;
       }
 
-      .section {
-
-        padding: 2rem 1.2rem;
-      }
-
-      .section h2 {
-
-        font-size: 1.45rem;
-      }
-
-      .section p {
-
-        font-size: 1.05rem;
+      .hero {
+        min-height: 100svh;
       }
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- =====================================
-       IMPERIAL HEADER
-  ====================================== -->
+  <!-- =========================
+       IMPERIAL HERO
+       ========================= -->
 
-  <header>
+  <section class="hero">
 
-    <div class="royal-symbol">⚜</div>
+    <div class="hero-content">
 
-    <h1>Bristevia</h1>
+      <div class="imperial-symbol">⚜</div>
 
-    <div class="latin">
-      Imperium Bristeviae
+      <div class="small-title">
+        By the Grace of the Eternal Crown
+      </div>
+
+      <h1 class="main-title">
+        BRISTEVIA
+      </h1>
+
+      <div class="subtitle">
+        IMPERIAL SOVEREIGN OF BRISTEVIA
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="motto">
+        Crown · Nation · Sovereignty
+      </div>
+
+      <div class="seal">
+        ⚜
+      </div>
+
     </div>
+
+    <!-- =========================
+         NAVIGATION
+         ========================= -->
+
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="constitution.html">CONSTITUTION</a>
+      <a href="government.html">GOVERNMENT</a>
+      <a href="judiciary.html">SUPREME TRIBUNAL</a>
+      <a href="legislature.html">IMPERIAL ASSEMBLY</a>
+      <a href="decrees.html">ROYAL DECREES</a>
+      <a href="atlas.html">BRISTEVIA ATLAS</a>
+    </nav>
+
+  </section>
+
+
+  <!-- =========================
+       IMPERIAL INTRODUCTION
+       ========================= -->
+
+  <section class="imperial-intro">
+
+    <h2>THE IMPERIAL REALM</h2>
 
     <p>
-      The Sovereign Realm of Bristevia
+      Welcome to the official digital seat of the
+      <strong>Imperial Sovereign of Bristevia</strong> —
+      a realm founded upon sovereignty, tradition,
+      law, unity, and the enduring authority of the Crown.
     </p>
 
-    <div class="imperial-motto">
-      “Honor • Sovereignty • Eternity”
-    </div>
+  </section>
 
-  </header>
 
-
-  <!-- =====================================
-       NAVIGATION
-  ====================================== -->
-
-  <nav>
-
-    <a href="#about">Imperium</a>
-
-    <a href="#realm">Realm</a>
-
-    <a href="#court">Court</a>
-
-    <a href="#decree">Decree</a>
-
-  </nav>
-
-
-  <!-- =====================================
-       MAIN
-  ====================================== -->
-
-  <main class="container">
-
-
-    <!-- IMPERIAL PROCLAMATION -->
-
-    <section id="about" class="section">
-
-      <h2>Imperial Proclamation</h2>
-
-      <p>
-        Let it be known throughout the realm that Bristevia
-        stands as a sovereign symbol of dignity, strength,
-        wisdom, and noble governance.
-      </p>
-
-      <div class="decree">
-
-        By the authority of the Imperial Crown,
-        the realm shall stand united beneath the banner
-        of Bristevia, guided by honor and ordered by wisdom.
-
-      </div>
-
-    </section>
-
-
-    <!-- PILLARS -->
-
-    <section id="realm" class="section">
-
-      <h2>Pillars of the Realm</h2>
-
-      <div class="pillars">
-
-        <div class="pillar">
-
-          <div class="pillar-icon">♛</div>
-
-          <h3>Sovereignty</h3>
-
-          <p>
-            The Crown shall preserve the independence,
-            dignity, and authority of the realm.
-          </p>
-
-        </div>
-
-
-        <div class="pillar">
-
-          <div class="pillar-icon">⚔</div>
-
-          <h3>Honor</h3>
-
-          <p>
-            Integrity and courage shall remain the
-            foundation of every noble undertaking.
-          </p>
-
-        </div>
-
-
-        <div class="pillar">
-
-          <div class="pillar-icon">⚖</div>
-
-          <h3>Justice</h3>
-
-          <p>
-            Law shall govern the realm, and justice
-            shall stand above privilege.
-          </p>
-
-        </div>
-
-
-        <div class="pillar">
-
-          <div class="pillar-icon">✦</div>
-
-          <h3>Prosperity</h3>
-
-          <p>
-            The realm shall cultivate knowledge,
-            civilization, and enduring prosperity.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ROYAL COURT -->
-
-    <section id="court" class="section">
-
-      <h2>The Imperial Court</h2>
-
-      <p>
-        The institutions of Bristevia serve the Crown,
-        the law, and the people of the realm.
-      </p>
-
-      <div class="court">
-
-        <div class="court-card">
-
-          <span>I</span>
-
-          <strong>
-            The Sovereign
-          </strong>
-
-        </div>
-
-
-        <div class="court-card">
-
-          <span>II</span>
-
-          <strong>
-            Imperial Council
-          </strong>
-
-        </div>
-
-
-        <div class="court-card">
-
-          <span>III</span>
-
-          <strong>
-            Supreme Tribunal
-          </strong>
-
-        </div>
-
-
-        <div class="court-card">
-
-          <span>IV</span>
-
-          <strong>
-            Royal Chancellery
-          </strong>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- DECREE -->
-
-    <section id="decree" class="section">
-
-      <h2>Royal Audience</h2>
-
-      <p>
-        Those who seek audience with the Imperial Court
-        may submit petitions, decrees, and official
-        correspondence through the Royal Chancellery.
-      </p>
-
-      <div style="text-align:center;">
-
-        <a href="#" class="royal-button">
-          Enter the Chancellery
-        </a>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-  <!-- =====================================
+  <!-- =========================
        FOOTER
-  ====================================== -->
+       ========================= -->
 
   <footer>
 
-    <div class="crest">
-      ⚜
-    </div>
-
-    <h3>BRISTEVIA</h3>
-
     <p>
-      Imperium Bristevi
+      <strong>⚜ IMPERIAL SOVEREIGN OF BRISTEVIA ⚜</strong>
     </p>
 
     <p>
-      © 2026 The Imperial Sovereign of Bristevia
+      © 2026 The Imperial Sovereign of Bristevia.
+      All Rights Reserved.
     </p>
 
   </footer>
