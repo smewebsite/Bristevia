@@ -45,6 +45,7 @@
       text-align: center;
       overflow: hidden;
 
+      /* Updated background path or embedded image */
       background:
         linear-gradient(
           rgba(1, 15, 36, 0.55),
@@ -56,6 +57,8 @@
       background-position: center;
       background-attachment: fixed;
     }
+
+    /* Dark royal overlay */
 
     .hero::before {
       content: "";
@@ -71,6 +74,8 @@
 
       z-index: 1;
     }
+
+    /* Gold aura */
 
     .hero::after {
       content: "";
@@ -107,8 +112,7 @@
       position: relative;
       z-index: 2;
       max-width: 1100px;
-      width: 100%;
-      padding: 40px 20px 150px;
+      padding: 40px 20px;
     }
 
     /* =========================
@@ -118,7 +122,6 @@
     .imperial-symbol {
       font-size: 72px;
       color: #d4af37;
-
       text-shadow:
         0 0 10px rgba(212,175,55,0.7),
         0 0 30px rgba(212,175,55,0.35);
@@ -210,11 +213,91 @@
     }
 
     /* =========================
+       NAVIGATION
+       ========================= */
+
+    nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+
+      z-index: 5;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      padding: 18px 15px;
+
+      background:
+        linear-gradient(
+          rgba(2, 18, 42, 0.92),
+          rgba(2, 11, 27, 0.97)
+        );
+
+      border-top: 1px solid rgba(212,175,55,0.5);
+      box-shadow:
+        0 -5px 25px rgba(0,0,0,0.4),
+        0 -1px 0 rgba(212,175,55,0.15);
+    }
+
+    nav a {
+      position: relative;
+
+      font-family: "Cinzel", serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+
+      color: #f5e6a8;
+      text-decoration: none;
+
+      padding: 10px 17px;
+
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+    }
+
+    nav a::after {
+      content: "";
+
+      position: absolute;
+      left: 50%;
+      bottom: 3px;
+
+      width: 0;
+      height: 2px;
+
+      background: #d4af37;
+
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+
+      box-shadow: 0 0 10px rgba(212,175,55,0.8);
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      transform: translateY(-2px);
+
+      text-shadow:
+        0 0 10px rgba(212,175,55,0.8);
+    }
+
+    nav a:hover::after {
+      width: 70%;
+    }
+
+    /* =========================
        IMPERIAL SEAL
        ========================= */
 
     .seal {
-      margin: 35px auto 25px;
+      margin: 35px auto 0;
 
       width: 90px;
       height: 90px;
@@ -244,305 +327,6 @@
     }
 
     /* =========================
-       IMPERIAL SEARCH
-       ========================= */
-
-    .search-section {
-      position: relative;
-      z-index: 10;
-
-      width: 100%;
-      max-width: 720px;
-
-      margin: 25px auto 0;
-    }
-
-    .search-title {
-      font-family: "Cinzel", serif;
-
-      color: #d4af37;
-
-      font-size: 14px;
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 12px;
-
-      text-shadow:
-        0 0 10px rgba(212,175,55,0.4);
-    }
-
-    .search-box {
-      display: flex;
-      align-items: center;
-
-      width: 100%;
-
-      padding: 5px;
-
-      border: 1px solid rgba(212,175,55,0.7);
-
-      border-radius: 50px;
-
-      background:
-        rgba(1, 12, 29, 0.88);
-
-      box-shadow:
-        0 0 20px rgba(212,175,55,0.15),
-        inset 0 0 15px rgba(0,0,0,0.4);
-
-      transition:
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
-    }
-
-    .search-box:focus-within {
-      border-color: #fff1a8;
-
-      box-shadow:
-        0 0 25px rgba(212,175,55,0.4),
-        inset 0 0 15px rgba(0,0,0,0.5);
-    }
-
-    .search-icon {
-      font-size: 22px;
-
-      color: #d4af37;
-
-      padding-left: 18px;
-      padding-right: 8px;
-    }
-
-    #siteSearch {
-      flex: 1;
-
-      border: none;
-      outline: none;
-
-      background: transparent;
-
-      color: #ffffff;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 18px;
-
-      padding: 13px 8px;
-    }
-
-    #siteSearch::placeholder {
-      color: #aaa;
-      font-style: italic;
-    }
-
-    .search-button {
-      border: none;
-
-      background:
-        linear-gradient(
-          135deg,
-          #d4af37,
-          #9b7617
-        );
-
-      color: #071426;
-
-      font-family: "Cinzel", serif;
-
-      font-size: 12px;
-      font-weight: 700;
-
-      letter-spacing: 1px;
-
-      padding: 13px 22px;
-
-      border-radius: 40px;
-
-      cursor: pointer;
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .search-button:hover {
-      transform: scale(1.04);
-
-      box-shadow:
-        0 0 15px rgba(212,175,55,0.7);
-    }
-
-    /* =========================
-       SEARCH RESULTS
-       ========================= */
-
-    #searchResults {
-      display: none;
-
-      margin-top: 12px;
-
-      padding: 15px;
-
-      text-align: left;
-
-      border: 1px solid rgba(212,175,55,0.4);
-
-      border-radius: 15px;
-
-      background:
-        rgba(1, 12, 29, 0.96);
-
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.5);
-    }
-
-    .result-item {
-      display: block;
-
-      padding: 12px 15px;
-
-      margin-bottom: 6px;
-
-      border-radius: 8px;
-
-      color: #f5e6a8;
-
-      text-decoration: none;
-
-      font-family: "Cinzel", serif;
-
-      font-size: 13px;
-
-      letter-spacing: 1px;
-
-      border-bottom: 1px solid rgba(212,175,55,0.12);
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .result-item:hover {
-      background: rgba(212,175,55,0.12);
-
-      color: #ffffff;
-    }
-
-    .result-description {
-      display: block;
-
-      margin-top: 4px;
-
-      color: #aaa;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 14px;
-
-      letter-spacing: 0;
-    }
-
-    .no-results {
-      color: #aaa;
-
-      text-align: center;
-
-      padding: 10px;
-
-      font-style: italic;
-    }
-
-    /* =========================
-       NAVIGATION
-       ========================= */
-
-    nav {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-
-      z-index: 5;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-
-      padding: 18px 15px;
-
-      background:
-        linear-gradient(
-          rgba(2, 18, 42, 0.92),
-          rgba(2, 11, 27, 0.97)
-        );
-
-      border-top: 1px solid rgba(212,175,55,0.5);
-
-      box-shadow:
-        0 -5px 25px rgba(0,0,0,0.4),
-        0 -1px 0 rgba(212,175,55,0.15);
-    }
-
-    nav a {
-      position: relative;
-
-      font-family: "Cinzel", serif;
-
-      font-size: 13px;
-
-      font-weight: 600;
-
-      letter-spacing: 1.5px;
-
-      color: #f5e6a8;
-
-      text-decoration: none;
-
-      padding: 10px 17px;
-
-      transition:
-        color 0.3s ease,
-        transform 0.3s ease,
-        text-shadow 0.3s ease;
-    }
-
-    nav a::after {
-      content: "";
-
-      position: absolute;
-
-      left: 50%;
-      bottom: 3px;
-
-      width: 0;
-      height: 2px;
-
-      background: #d4af37;
-
-      transform: translateX(-50%);
-
-      transition: width 0.3s ease;
-
-      box-shadow:
-        0 0 10px rgba(212,175,55,0.8);
-    }
-
-    nav a:hover {
-      color: #ffffff;
-
-      transform: translateY(-2px);
-
-      text-shadow:
-        0 0 10px rgba(212,175,55,0.8);
-    }
-
-    nav a:hover::after {
-      width: 70%;
-    }
-
-    /* =========================
        LOWER IMPERIAL PANEL
        ========================= */
 
@@ -569,7 +353,6 @@
       color: #d4af37;
 
       font-size: 32px;
-
       letter-spacing: 4px;
 
       margin-bottom: 20px;
@@ -577,13 +360,11 @@
 
     .imperial-intro p {
       max-width: 850px;
-
       margin: auto;
 
       color: #d8d8d8;
 
       font-size: 19px;
-
       line-height: 1.8;
     }
 
@@ -603,13 +384,11 @@
       color: #9d9d9d;
 
       font-size: 14px;
-
       letter-spacing: 1px;
     }
 
     footer strong {
       color: #d4af37;
-
       font-family: "Cinzel", serif;
     }
 
@@ -621,11 +400,6 @@
 
       .hero {
         background-attachment: scroll;
-        min-height: 100svh;
-      }
-
-      .hero-content {
-        padding: 35px 15px 30px;
       }
 
       .imperial-symbol {
@@ -644,33 +418,6 @@
         font-size: 18px;
       }
 
-      .search-section {
-        max-width: 95%;
-      }
-
-      .search-title {
-        font-size: 12px;
-        letter-spacing: 2px;
-      }
-
-      .search-box {
-        border-radius: 20px;
-      }
-
-      .search-icon {
-        padding-left: 12px;
-      }
-
-      #siteSearch {
-        font-size: 16px;
-        min-width: 0;
-      }
-
-      .search-button {
-        padding: 11px 14px;
-        font-size: 10px;
-      }
-
       nav {
         position: relative;
         bottom: auto;
@@ -679,6 +426,10 @@
       nav a {
         font-size: 11px;
         padding: 9px 10px;
+      }
+
+      .hero {
+        min-height: 100svh;
       }
     }
   </style>
@@ -718,78 +469,28 @@
         ⚜
       </div>
 
-
-      <!-- =========================
-           IMPERIAL SEARCH BAR
-           ========================= -->
-
-      <div class="search-section">
-
-        <div class="search-title">
-          ✦ Search the Imperial Realm ✦
-        </div>
-
-        <div class="search-box">
-
-          <span class="search-icon">⌕</span>
-
-          <input
-            type="text"
-            id="siteSearch"
-            placeholder="Search Constitution, History, Provinces, Valtherra..."
-            autocomplete="off"
-          >
-
-          <button
-            class="search-button"
-            onclick="searchSite()"
-          >
-            SEARCH
-          </button>
-
-        </div>
-
-        <div id="searchResults"></div>
-
-      </div>
-
     </div>
-
 
     <!-- =========================
          NAVIGATION
          ========================= -->
 
     <nav>
-
       <a href="index.html">HOME</a>
-
-      <a href="constitution.html">CONSTITUTION</a>
-
-      <a href="history.html">HISTORY</a>
-
-      <a href="government.html">GOVERNMENT</a>
-
-      <a href="judiciary.html">SUPREME TRIBUNAL</a>
-
-      <a href="legislature.html">IMPERIAL ASSEMBLY</a>
-
-      <a href="decrees.html">ROYAL DECREES</a>
-
-      <a href="provinces.html">PROVINCES</a>
-
-      <a href="data.html">DATA</a>
-
-      <a href="atlas.html">BRISTEVIA ATLAS</a>
-
-      <a href="valtherra.html">VALTHERRA</a>
-
-      <a href="others.html">OTHERS</a>
-
+<a href="constitution.html">CONSTITUTION</a>
+<a href="history.html">HISTORY</a>
+<a href="government.html">GOVERNMENT</a>
+<a href="judiciary.html">SUPREME TRIBUNAL</a>
+<a href="legislature.html">IMPERIAL ASSEMBLY</a>
+<a href="decrees.html">ROYAL DECREES</a>
+<a href="provinces.html">PROVINCES</a>
+<a href="data.html">DATA</a>
+<a href="atlas.html">BRISTEVIA ATLAS</a>
+<a href="valtherra.html">VALTHERRA</a>
+<a href="others.html">OTHERS</a>
     </nav>
 
   </section>
-
 
   <!-- =========================
        IMPERIAL INTRODUCTION
@@ -801,13 +502,12 @@
 
     <p>
       Welcome to the official digital seat of the
-      <strong>Imperial Sovereign of Bristevia</strong>,
+      <strong>Imperial Sovereign of Bristevia</strong> 
       a realm founded upon sovereignty, tradition,
       law, unity, and the enduring authority of the Crown.
     </p>
 
   </section>
-
 
   <!-- =========================
        FOOTER
@@ -825,338 +525,6 @@
     </p>
 
   </footer>
-
-
-  <!-- =========================
-       SEARCH ENGINE
-       ========================= -->
-
-  <script>
-
-    /*
-     * ==========================================
-     * BRISTEVIA IMPERIAL SEARCH INDEX
-     * ==========================================
-     *
-     * Add more pages here as your website grows.
-     */
-
-    const imperialPages = [
-
-      {
-        title: "Home",
-        url: "index.html",
-        keywords: "home bristevia imperial sovereign crown nation sovereignty",
-        description: "The official digital seat of the Imperial Sovereign of Bristevia."
-      },
-
-      {
-        title: "Constitution",
-        url: "constitution.html",
-        keywords: "constitution law constitutional government rights crown sovereignty",
-        description: "The Constitution of the Imperial Sovereign of Bristevia."
-      },
-
-      {
-        title: "History",
-        url: "history.html",
-        keywords: "history historical eras timeline bristevia past",
-        description: "The history and historical eras of Bristevia."
-      },
-
-      {
-        title: "Government",
-        url: "government.html",
-        keywords: "government executive sovereign ministers administration state",
-        description: "The governmental structure of Bristevia."
-      },
-
-      {
-        title: "Supreme Tribunal",
-        url: "judiciary.html",
-        keywords: "supreme tribunal judiciary courts justice judges law",
-        description: "The Supreme Tribunal and judicial system of Bristevia."
-      },
-
-      {
-        title: "Imperial Assembly",
-        url: "legislature.html",
-        keywords: "imperial assembly legislature parliament ministers domus curialum senate laws",
-        description: "The legislative institutions of the Imperial Sovereign of Bristevia."
-      },
-
-      {
-        title: "Royal Decrees",
-        url: "decrees.html",
-        keywords: "royal decrees decree sovereign crown legislation executive orders",
-        description: "Royal Decrees issued under the authority of the Crown."
-      },
-
-      {
-        title: "Provinces",
-        url: "provinces.html",
-        keywords: "provinces province regions territories local government",
-        description: "Explore the provinces and territorial divisions of Bristevia."
-      },
-
-      {
-        title: "Data",
-        url: "data.html",
-        keywords: "data population demographics statistics economy facts",
-        description: "Official statistical and demographic information about Bristevia."
-      },
-
-      {
-        title: "Bristevia Atlas",
-        url: "atlas.html",
-        keywords: "atlas map maps geography provinces territory borders",
-        description: "Maps and geographical information concerning Bristevia."
-      },
-
-      {
-        title: "Valtherra",
-        url: "valtherra.html",
-        keywords: "valtherra continent countries geography history nations",
-        description: "Explore the continent of Valtherra and its nations."
-      },
-
-      {
-        title: "Others",
-        url: "others.html",
-        keywords: "others resources documents miscellaneous information",
-        description: "Additional information and resources concerning Bristevia."
-      },
-
-      /* HISTORY ERAS */
-
-      {
-        title: "History — Era 1",
-        url: "history-era1.html",
-        keywords: "era 1 history ancient bristevia origins",
-        description: "Era 1 of Bristevian history."
-      },
-
-      {
-        title: "History — Era 2",
-        url: "history-era2.html",
-        keywords: "era 2 history ancient bristevia",
-        description: "Era 2 of Bristevian history."
-      },
-
-      {
-        title: "History — Era 3",
-        url: "history-era3.html",
-        keywords: "era 3 age fractures rising kingdoms bristevia",
-        description: "Era 3 — Age of Fractures and Rising Kingdoms."
-      },
-
-      {
-        title: "History — Era 4",
-        url: "history-era4.html",
-        keywords: "era 4 history bristevia",
-        description: "Era 4 of Bristevian history."
-      },
-
-      {
-        title: "History — Era 5",
-        url: "history-era5.html",
-        keywords: "era 5 history bristevia",
-        description: "Era 5 of Bristevian history."
-      },
-
-      {
-        title: "History — Era 6",
-        url: "history-era6.html",
-        keywords: "era 6 history bristevia",
-        description: "Era 6 of Bristevian history."
-      },
-
-      {
-        title: "History — Era 7",
-        url: "history-era7.html",
-        keywords: "era 7 history bristevia",
-        description: "Era 7 of Bristevian history."
-      },
-
-      {
-        title: "History — Era 8",
-        url: "history-era8.html",
-        keywords: "era 8 age unification wars southern expansion bristevia",
-        description: "Era 8 — Age of Unification Wars and Southern Expansion."
-      },
-
-      {
-        title: "History — Era 9",
-        url: "history-era9.html",
-        keywords: "era 9 history bristevia",
-        description: "Era 9 of Bristevian history."
-      },
-
-      {
-        title: "History — Era 10",
-        url: "history-era10.html",
-        keywords: "era 10 history bristevia",
-        description: "Era 10 of Bristevian history."
-      },
-
-      {
-        title: "History — Era 11",
-        url: "history-era11.html",
-        keywords: "era 11 history bristevia",
-        description: "Era 11 of Bristevian history."
-      },
-
-      {
-        title: "History — Era 12",
-        url: "history-era12.html",
-        keywords: "era 12 history bristevia",
-        description: "Era 12 of Bristevian history."
-      },
-
-      {
-        title: "History — Era 13",
-        url: "history-era13.html",
-        keywords: "era 13 history bristevia",
-        description: "Era 13 of Bristevian history."
-      },
-
-      {
-        title: "History — Era 14",
-        url: "history-era14.html",
-        keywords: "era 14 history bristevia",
-        description: "Era 14 of Bristevian history."
-      }
-
-    ];
-
-
-    /* =========================
-       SEARCH FUNCTION
-       ========================= */
-
-    function searchSite() {
-
-      const input =
-        document
-        .getElementById("siteSearch")
-        .value
-        .toLowerCase()
-        .trim();
-
-      const resultsBox =
-        document.getElementById("searchResults");
-
-
-      if (input === "") {
-
-        resultsBox.style.display = "none";
-
-        resultsBox.innerHTML = "";
-
-        return;
-      }
-
-
-      const results =
-        imperialPages.filter(page => {
-
-          const searchableText =
-            (
-              page.title +
-              " " +
-              page.keywords +
-              " " +
-              page.description
-            ).toLowerCase();
-
-          return searchableText.includes(input);
-
-        });
-
-
-      resultsBox.innerHTML = "";
-
-
-      if (results.length === 0) {
-
-        resultsBox.innerHTML =
-          '<div class="no-results">' +
-          'No Imperial records found for "' +
-          input +
-          '".' +
-          '</div>';
-
-        resultsBox.style.display = "block";
-
-        return;
-      }
-
-
-      results.forEach(page => {
-
-        const link =
-          document.createElement("a");
-
-        link.href = page.url;
-
-        link.className = "result-item";
-
-        link.innerHTML =
-          page.title +
-          '<span class="result-description">' +
-          page.description +
-          '</span>';
-
-        resultsBox.appendChild(link);
-
-      });
-
-
-      resultsBox.style.display = "block";
-
-    }
-
-
-    /* =========================
-       ENTER KEY SEARCH
-       ========================= */
-
-    document
-      .getElementById("siteSearch")
-      .addEventListener("keydown", function(event) {
-
-        if (event.key === "Enter") {
-
-          searchSite();
-
-        }
-
-      });
-
-
-    /* =========================
-       LIVE SEARCH
-       ========================= */
-
-    document
-      .getElementById("siteSearch")
-      .addEventListener("input", function() {
-
-        if (this.value.trim() !== "") {
-
-          searchSite();
-
-        } else {
-
-          document
-            .getElementById("searchResults")
-            .style.display = "none";
-
-        }
-
-      });
-
-  </script>
 
 </body>
 </html>
