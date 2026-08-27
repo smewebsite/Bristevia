@@ -3,25 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>History | Imperial Sovereign of Bristevia</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     html {
       scroll-behavior: smooth;
     }
-
     body {
       font-family: "Cormorant Garamond", serif;
       background:
@@ -31,819 +25,533 @@
           rgba(2, 12, 30, 0.96)
         ),
         #020b18;
-
       color: #f8f0d0;
       min-height: 100vh;
       overflow-x: hidden;
     }
-
     /* =========================
        HEADER
        ========================= */
-
     .history-header {
       position: relative;
       min-height: 48vh;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       text-align: center;
-
       padding: 80px 20px;
-
       background:
         linear-gradient(
           rgba(1, 15, 36, 0.78),
           rgba(1, 15, 36, 0.94)
         ),
         url("bristevia-flag.jpg");
-
       background-size: cover;
       background-position: center;
-
-      border-bottom: 1px solid rgba(212,175,55,0.5);
+      border-bottom:
+        1px solid rgba(212,175,55,0.5);
     }
-
     .history-header::after {
       content: "";
-
       position: absolute;
       inset: 0;
-
       background:
         radial-gradient(
           circle at center,
           rgba(212,175,55,0.12),
           transparent 65%
         );
-
       pointer-events: none;
     }
-
     .header-content {
       position: relative;
       z-index: 2;
     }
-
+    /* =========================
+       IMPERIAL SYMBOL
+       ========================= */
     .imperial-symbol {
       font-size: 65px;
       color: #d4af37;
-
       text-shadow:
         0 0 15px rgba(212,175,55,0.7),
         0 0 35px rgba(212,175,55,0.3);
-
       margin-bottom: 15px;
     }
-
+    /* =========================
+       SMALL TITLE
+       ========================= */
     .small-title {
       font-family: "Cinzel", serif;
-
       color: #d4af37;
-
       font-size: 14px;
       letter-spacing: 6px;
-
       text-transform: uppercase;
-
       margin-bottom: 18px;
     }
-
+    /* =========================
+       MAIN TITLE
+       ========================= */
     h1 {
       font-family: "Cinzel", serif;
-
       font-size: clamp(42px, 7vw, 78px);
-
       color: #f7e7a9;
-
       letter-spacing: 5px;
-
       text-shadow:
         0 3px 0 #8b6914,
         0 0 25px rgba(212,175,55,0.35);
     }
-
     .header-subtitle {
       margin-top: 18px;
-
       font-family: "Cinzel", serif;
-
       font-size: clamp(17px, 3vw, 25px);
-
       letter-spacing: 4px;
-
       color: #ffffff;
     }
-
     /* =========================
        MAIN HISTORY INDEX
        ========================= */
-
     .history-index {
       max-width: 1200px;
-
       margin: auto;
-
       padding: 90px 25px;
     }
-
     .section-title {
       text-align: center;
-
       font-family: "Cinzel", serif;
-
       color: #d4af37;
-
       font-size: 32px;
-
       letter-spacing: 4px;
-
       margin-bottom: 15px;
     }
-
     .section-description {
       max-width: 850px;
-
       margin: 0 auto 60px;
-
       text-align: center;
-
       color: #d8d8d8;
-
       font-size: 19px;
-
       line-height: 1.8;
     }
-
     /* =========================
        ERA GRID
        ========================= */
-
     .era-grid {
       display: grid;
-
       grid-template-columns:
         repeat(auto-fit, minmax(250px, 1fr));
-
       gap: 25px;
     }
-
+    /* =========================
+       ERA CARD
+       ========================= */
     .era-card {
       position: relative;
-
-      min-height: 210px;
-
+      min-height: 190px;
       padding: 30px 25px;
-
       display: flex;
-
       flex-direction: column;
-
       justify-content: center;
-
+      align-items: center;
       text-align: center;
-
       text-decoration: none;
-
       color: #f8f0d0;
-
       background:
         linear-gradient(
           145deg,
           rgba(5,35,68,0.96),
           rgba(2,15,32,0.98)
         );
-
-      border: 1px solid rgba(212,175,55,0.35);
-
+      border:
+        1px solid rgba(212,175,55,0.35);
       box-shadow:
         0 10px 30px rgba(0,0,0,0.35);
-
       transition:
         transform 0.35s ease,
         border-color 0.35s ease,
         box-shadow 0.35s ease;
     }
-
     .era-card::before {
       content: "";
-
       position: absolute;
-
       top: 0;
       left: 50%;
-
       width: 0;
       height: 2px;
-
       background: #d4af37;
-
       transform: translateX(-50%);
-
       transition: width 0.35s ease;
     }
-
     .era-card:hover {
       transform: translateY(-8px);
-
       border-color: #d4af37;
-
       box-shadow:
         0 15px 40px rgba(0,0,0,0.55),
         0 0 25px rgba(212,175,55,0.15);
     }
-
     .era-card:hover::before {
       width: 80%;
     }
-
+    /* =========================
+       ERA NUMBER
+       ========================= */
     .era-number {
       font-family: "Cinzel", serif;
-
       font-size: 15px;
-
       letter-spacing: 4px;
-
       color: #d4af37;
-
       margin-bottom: 12px;
     }
-
+    /* =========================
+       ERA TITLE
+       ========================= */
     .era-title {
       font-family: "Cinzel", serif;
-
       font-size: 21px;
-
       line-height: 1.4;
-
       color: #f7e7a9;
     }
-
-    .era-description {
-      margin-top: 12px;
-
-      color: #bfc5cd;
-
-      font-size: 16px;
-
-      line-height: 1.5;
-    }
-
+    /* =========================
+       ERA ARROW
+       ========================= */
     .era-arrow {
       margin-top: 18px;
-
       color: #d4af37;
-
       font-family: "Cinzel", serif;
-
       font-size: 13px;
-
       letter-spacing: 2px;
     }
-
     /* =========================
-       NAVIGATION
+       MAIN NAVIGATION
        ========================= */
-
     .main-navigation {
       display: flex;
-
       justify-content: center;
-
       flex-wrap: wrap;
-
       gap: 5px;
-
       padding: 18px 15px;
-
       background:
         linear-gradient(
           rgba(2,18,42,0.96),
           rgba(2,11,27,0.99)
         );
-
-      border-bottom: 1px solid rgba(212,175,55,0.45);
-
+      border-bottom:
+        1px solid rgba(212,175,55,0.45);
       box-shadow:
         0 5px 25px rgba(0,0,0,0.4);
     }
-
     .main-navigation a {
       font-family: "Cinzel", serif;
-
       font-size: 12px;
-
       letter-spacing: 1.5px;
-
       color: #f5e6a8;
-
       text-decoration: none;
-
       padding: 10px 15px;
-
       transition: 0.3s ease;
     }
-
     .main-navigation a:hover,
     .main-navigation a.active {
       color: #ffffff;
-
       text-shadow:
         0 0 10px rgba(212,175,55,0.8);
     }
-
     /* =========================
        FOOTER
        ========================= */
-
     footer {
       text-align: center;
-
       padding: 35px 15px;
-
       background: #010812;
-
-      border-top: 1px solid rgba(178,31,45,0.5);
-
+      border-top:
+        1px solid rgba(178,31,45,0.5);
       color: #9d9d9d;
-
       font-size: 14px;
-
       letter-spacing: 1px;
     }
-
     footer strong {
       color: #d4af37;
-
       font-family: "Cinzel", serif;
     }
-
     /* =========================
        MOBILE
        ========================= */
-
     @media (max-width: 700px) {
-
       .history-header {
         min-height: 42vh;
       }
-
       .imperial-symbol {
         font-size: 50px;
       }
-
       h1 {
         letter-spacing: 2px;
       }
-
       .header-subtitle {
         letter-spacing: 2px;
       }
-
       .history-index {
         padding: 65px 18px;
       }
-
       .era-grid {
         grid-template-columns: 1fr;
       }
-
       .era-card {
-        min-height: 180px;
+        min-height: 175px;
       }
-
       .main-navigation a {
         font-size: 10px;
         padding: 8px 9px;
       }
     }
-
   </style>
 </head>
-
 <body>
-
   <!-- =========================
        MAIN NAVIGATION
        ========================= -->
-
   <nav class="main-navigation">
-
-    <a href="index.html">HOME</a>
-
-    <a href="constitution.html">CONSTITUTION</a>
-
-    <a href="history.html" class="active">HISTORY</a>
-
-    <a href="government.html">GOVERNMENT</a>
-
-    <a href="judiciary.html">SUPREME TRIBUNAL</a>
-
-    <a href="legislature.html">IMPERIAL ASSEMBLY</a>
-
-    <a href="decrees.html">ROYAL DECREES</a>
-
-    <a href="atlas.html">BRISTEVIA ATLAS</a>
-
+    <a href="index.html">
+      HOME
+    </a>
+    <a href="constitution.html">
+      CONSTITUTION
+    </a>
+    <a href="history.html" class="active">
+      HISTORY
+    </a>
+    <a href="government.html">
+      GOVERNMENT
+    </a>
+    <a href="judiciary.html">
+      SUPREME TRIBUNAL
+    </a>
+    <a href="legislature.html">
+      IMPERIAL ASSEMBLY
+    </a>
+    <a href="decrees.html">
+      ROYAL DECREES
+    </a>
+    <a href="atlas.html">
+      BRISTEVIA ATLAS
+    </a>
   </nav>
-
-
   <!-- =========================
        HISTORY HEADER
        ========================= -->
-
   <header class="history-header">
-
     <div class="header-content">
-
-      <div class="imperial-symbol">⚜</div>
-
+      <div class="imperial-symbol">
+        ⚜
+      </div>
       <div class="small-title">
         Annals of the Imperial Realm
       </div>
-
-      <h1>HISTORY</h1>
-
+      <h1>
+        HISTORY
+      </h1>
       <div class="header-subtitle">
         THE FOURTEEN ERAS OF BRISTEVIA
       </div>
-
     </div>
-
   </header>
-
-
   <!-- =========================
        HISTORY INDEX
        ========================= -->
-
   <main class="history-index">
-
     <h2 class="section-title">
       THE IMPERIAL CHRONICLE
     </h2>
-
     <p class="section-description">
       Explore the fourteen historical eras that shaped the
       lands, peoples, kingdoms, institutions, and sovereign
       traditions that would ultimately become the
       Imperial Sovereign of Bristevia.
     </p>
-
-
     <!-- =========================
-         ERA NAVIGATION
+         14 ERA NAVIGATION
          ========================= -->
-
     <div class="era-grid">
-
-
       <!-- ERA 1 -->
-
       <a href="era1.html" class="era-card">
-
         <div class="era-number">
           ERA I
         </div>
-
         <div class="era-title">
           ERA 1
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 2 -->
-
       <a href="era2.html" class="era-card">
-
         <div class="era-number">
           ERA II
         </div>
-
         <div class="era-title">
           ERA 2
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 3 -->
-
       <a href="era3.html" class="era-card">
-
         <div class="era-number">
           ERA III
         </div>
-
         <div class="era-title">
           ERA 3
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 4 -->
-
       <a href="era4.html" class="era-card">
-
         <div class="era-number">
           ERA IV
         </div>
-
         <div class="era-title">
           ERA 4
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 5 -->
-
       <a href="era5.html" class="era-card">
-
         <div class="era-number">
           ERA V
         </div>
-
         <div class="era-title">
           ERA 5
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 6 -->
-
       <a href="era6.html" class="era-card">
-
         <div class="era-number">
           ERA VI
         </div>
-
         <div class="era-title">
           ERA 6
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 7 -->
-
       <a href="era7.html" class="era-card">
-
         <div class="era-number">
           ERA VII
         </div>
-
         <div class="era-title">
           ERA 7
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 8 -->
-
       <a href="era8.html" class="era-card">
-
         <div class="era-number">
           ERA VIII
         </div>
-
         <div class="era-title">
           ERA 8
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 9 -->
-
       <a href="era9.html" class="era-card">
-
         <div class="era-number">
           ERA IX
         </div>
-
         <div class="era-title">
           ERA 9
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 10 -->
-
       <a href="era10.html" class="era-card">
-
         <div class="era-number">
           ERA X
         </div>
-
         <div class="era-title">
           ERA 10
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 11 -->
-
       <a href="era11.html" class="era-card">
-
         <div class="era-number">
           ERA XI
         </div>
-
         <div class="era-title">
           ERA 11
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 12 -->
-
       <a href="era12.html" class="era-card">
-
         <div class="era-number">
           ERA XII
         </div>
-
         <div class="era-title">
           ERA 12
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 13 -->
-
       <a href="era13.html" class="era-card">
-
         <div class="era-number">
           ERA XIII
         </div>
-
         <div class="era-title">
           ERA 13
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
-
       <!-- ERA 14 -->
-
       <a href="era14.html" class="era-card">
-
         <div class="era-number">
           ERA XIV
         </div>
-
         <div class="era-title">
           ERA 14
         </div>
-
-        <div class="era-description">
-          Historical content to be added.
-        </div>
-
         <div class="era-arrow">
           ENTER ERA →
         </div>
-
       </a>
-
     </div>
-
   </main>
-
-
   <!-- =========================
        FOOTER
        ========================= -->
-
   <footer>
-
     <p>
       <strong>
         ⚜ IMPERIAL SOVEREIGN OF BRISTEVIA ⚜
       </strong>
     </p>
-
     <p>
       © 2026 The Imperial Sovereign of Bristevia.
       All Rights Reserved.
     </p>
-
   </footer>
-
 </body>
 </html>
