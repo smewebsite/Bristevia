@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ERA 9 — The Frostwall War & Dynastic Union | History of Bristevia</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0b0d12;
+      color: #e8e1d2;
+      font-family: "Libre Baskerville", Georgia, serif;
+      line-height: 1.9;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 75vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(5, 7, 12, 0.55),
+          rgba(5, 7, 12, 0.88)
+        ),
+        url("images/era9-frostwall-war.jpg") center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 1050px;
+      padding: 70px 25px;
+    }
+
+    .era-number {
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #c9a86a;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Cinzel", serif;
+      font-size: clamp(2.3rem, 6vw, 5rem);
+      line-height: 1.15;
+      color: #f2ead9;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+      margin-bottom: 25px;
+    }
+
+    .hero-subtitle {
+      font-family: "Cinzel", serif;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      color: #c9a86a;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+    }
+
+    .hero-description {
+      max-width: 850px;
+      margin: auto;
+      font-size: 1.05rem;
+      color: #d8d1c4;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .era-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(8, 10, 15, 0.96);
+      border-bottom: 1px solid rgba(201, 168, 106, 0.25);
+
+      backdrop-filter: blur(12px);
+    }
+
+    .era-nav-inner {
+      max-width: 1200px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 14px 20px;
+    }
+
+    .nav-brand {
+      font-family: "Cinzel", serif;
+      color: #c9a86a;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a {
+      color: #cfc7b8;
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      font-size: 0.78rem;
+      padding: 8px 12px;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #c9a86a;
+      border-color: rgba(201, 168, 106, 0.4);
+    }
+
+    /* =========================
+       CONTENT
+    ========================= */
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 70px 25px;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      color: #d6cfc2;
+      margin-bottom: 60px;
+    }
+
+    .section {
+      margin-bottom: 75px;
+      scroll-margin-top: 90px;
+    }
+
+    .section-number {
+      font-family: "Cinzel", serif;
+      color: #c9a86a;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-family: "Cinzel", serif;
+      color: #eee5d4;
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
+      line-height: 1.35;
+      margin-bottom: 25px;
+
+      border-left: 3px solid #c9a86a;
+      padding-left: 18px;
+    }
+
+    h3 {
+      font-family: "Cinzel", serif;
+      color: #c9a86a;
+      margin: 30px 0 12px;
+      font-size: 1.25rem;
+    }
+
+    p {
+      margin-bottom: 22px;
+    }
+
+    ul {
+      margin: 20px 0 25px 25px;
+    }
+
+    li {
+      margin-bottom: 9px;
+    }
+
+    strong {
+      color: #f0e5ce;
+    }
+
+    /* =========================
+       HISTORICAL IMAGE SPACES
+    ========================= */
+
+    .historical-image {
+      margin: 45px 0;
+      border: 1px solid rgba(201, 168, 106, 0.4);
+      background: #11141b;
+      overflow: hidden;
+    }
+
+    .historical-image img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-caption {
+      padding: 16px 20px;
+      background: #11141b;
+      border-top: 1px solid rgba(201, 168, 106, 0.25);
+
+      font-size: 0.85rem;
+      color: #aaa292;
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* =========================
+       QUOTE / HISTORICAL NOTE
+    ========================= */
+
+    .historical-note {
+      margin: 40px 0;
+      padding: 30px;
+
+      background: rgba(201, 168, 106, 0.06);
+      border-top: 1px solid rgba(201, 168, 106, 0.35);
+      border-bottom: 1px solid rgba(201, 168, 106, 0.35);
+
+      text-align: center;
+    }
+
+    .historical-note p {
+      font-family: "Cinzel", serif;
+      font-size: 1.15rem;
+      color: #d9bd82;
+      margin: 0;
+    }
+
+    /* =========================
+       END STATE
+    ========================= */
+
+    .end-state {
+      margin-top: 70px;
+      padding: 45px 30px;
+
+      background: linear-gradient(
+        145deg,
+        rgba(201,168,106,0.09),
+        rgba(255,255,255,0.015)
+      );
+
+      border: 1px solid rgba(201,168,106,0.3);
+    }
+
+    .end-state h2 {
+      border-left: none;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .final-line {
+      text-align: center;
+      font-family: "Cinzel", serif;
+      color: #d9bd82;
+      font-size: 1.25rem;
+      margin-top: 35px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      margin-top: 80px;
+      padding: 50px 20px;
+
+      text-align: center;
+
+      background: #07090d;
+      border-top: 1px solid rgba(201,168,106,0.2);
+    }
+
+    footer h3 {
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #8f897e;
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      .hero {
+        min-height: 70vh;
+      }
+
+      .hero-content {
+        padding: 50px 20px;
+      }
+
+      .container {
+        padding: 50px 20px;
+      }
+
+      .historical-image img {
+        height: 280px;
+      }
+
+      .era-nav-inner {
+        display: block;
+      }
+
+      .nav-brand {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="era-number">
+        ERA IX
+      </div>
+
+      <h1>
+        The Pre-Imperial Struggle<br>
+        and the Absorption of Orlencia
+      </h1>
+
+      <div class="hero-subtitle">
+        Bristevia-Centric Consolidation Era
+      </div>
+
+      <p class="hero-description">
+        The Frostwall War, the Northern Expansion, the Dynastic Union with
+        Eldrosia, and the Survival of Bristevia through the Continental Crisis.
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       ERA NAVIGATION
+  ========================= -->
+
+  <nav class="era-nav">
+
+    <div class="era-nav-inner">
+
+      <div class="nav-brand">
+        BRISTEVIA • HISTORY
+      </div>
+
+      <div class="nav-links">
+        <a href="Index-History.html">History</a>
+        <a href="Index-History-Era8.html">← ERA VIII</a>
+        <a href="Index-History-Era9.html">ERA IX</a>
+        <a href="Index-History-Era10.html">ERA X →</a>
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================= -->
+
+  <main class="container">
+
+    <p class="intro">
+      ERA 9 marks the moment when Bristevia moved beyond simple territorial
+      expansion and entered the first stage of continental-scale political
+      transformation. The kingdom confronted the northern threat through the
+      Frostwall War, absorbed Northavian territories, established a dynastic
+      union with Eldrosia, survived the Zalta Civil War and the wider continental
+      conflict, and endured an internal authoritarian crisis under the Caesar
+      faction.
+    </p>
+
+
+    <!-- =========================
+         I
+    ========================= -->
+
+    <section class="section" id="frostwall">
+
+      <div class="section-number">
+        I
+      </div>
+
+      <h2>
+        The Northern Threat and the Frostwall War
+      </h2>
+
+      <p>
+        The Frostwall War began not as an act of conquest, but as a preventive
+        strategic intervention.
+      </p>
+
+      <p>
+        Bristevia observed rising pressure in the northern corridor, where
+        Northavian expansion threatened the stability of Jeayara-linked frontier
+        territories under Eldrosian cultural influence. Eldrosia, recognizing it
+        could not contain northern pressure alone, formally aligned with Bristevia.
+      </p>
+
+      <p>
+        This alliance was not ideological—it was strategic survival.
+      </p>
+
+      <p>
+        Bristevia entered the war through northern mobilization corridors
+        established during earlier military reforms. The campaign extended
+        through:
+      </p>
+
+      <ul>
+        <li>Mountain pass systems in the northern Bristevian alpine frontier</li>
+        <li>Frostbound inland fort routes</li>
+        <li>Coastal reinforcement lines extending from Stephara naval supply networks</li>
+      </ul>
+
+      <p>
+        Despite strong coordination, Bristevian forces faced severe resistance.
+        Early phases of the war nearly collapsed Bristevian northern control due to
+        harsh terrain, fragmented enemy defensive systems, and overextended
+        supply lines across alpine corridors.
+      </p>
+
+      <p>
+        However, the turning point came with the siege and eventual collapse of
+        Frostwall City.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         IMAGE 1
+    ========================= -->
+
+    <figure class="historical-image">
+
+      <img
+        src="images/era9-frostwall-war.jpg"
+        alt="Historical depiction of the Frostwall War and the northern Bristevian campaign"
+      >
+
+      <figcaption class="image-caption">
+        Historical Illustration I — The Frostwall War and the Bristevian Northern Campaign
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =========================
+         II
+    ========================= -->
+
+    <section class="section">
+
+      <div class="section-number">
+        II
+      </div>
+
+      <h2>
+        The Fall of Frostwall City and the Absorption of Northavia
+      </h2>
+
+      <p>
+        Frostwall City was not merely a fortress—it was the northern political
+        and logistical anchor of Northavian authority.
+      </p>
+
+      <p>
+        Its fall represented the breakdown of coordinated Northavian resistance,
+        the collapse of regional command structures, and the opening of northern
+        interior territories to rapid administrative absorption.
+      </p>
+
+      <p>
+        Following the victory, Bristevia moved quickly to stabilize the region.
+        Instead of allowing fragmentation or rebellion, Bristevia implemented:
+      </p>
+
+      <ul>
+        <li>Direct provincial integration systems</li>
+        <li>Military governor appointments from central command</li>
+        <li>Standardized taxation aligned with Stephara–Jaybrienne models</li>
+      </ul>
+
+      <p>
+        Thus, Northavian territories were absorbed into Bristevia, extending the
+        kingdom's influence deeper into the northern arc than ever before.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         III
+    ========================= -->
+
+    <section class="section">
+
+      <div class="section-number">
+        III
+      </div>
+
+      <h2>
+        The Dynastic Union with Eldrosia
+      </h2>
+
+      <p>
+        Despite military success, Bristevia faced a new strategic reality:
+        its former ally Eldrosia had become an equal power capable of future
+        competition.
+      </p>
+
+      <p>
+        To prevent continental rivalry from escalating into full-scale war,
+        a dynastic solution was pursued.
+      </p>
+
+      <p>
+        <strong>
+          King Ram of Bristevia entered into a political marriage with
+          Princess Rosé of Eldrosia.
+        </strong>
+      </p>
+
+      <p>
+        This union achieved:
+      </p>
+
+      <ul>
+        <li>Formal political integration of Eldrosian and Bristevian ruling houses</li>
+        <li>Stabilization of shared maritime and inland trade routes</li>
+        <li>Creation of a unified diplomatic front in continental affairs</li>
+        <li>Prevention of northern alliance fragmentation after the Frostwall War</li>
+      </ul>
+
+      <p>
+        This was not a symbolic marriage—it was a structural merger of two major
+        powers.
+      </p>
+
+      <p>
+        From this point forward, Bristevia and Eldrosia functioned as a single
+        consolidated political entity in practice, even if regional identities
+        remained distinct.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         IMAGE 2
+    ========================= -->
+
+    <figure class="historical-image">
+
+      <img
+        src="images/era9-ram-rose-union.jpg"
+        alt="Historical depiction of King Ram and Princess Rosé during the dynastic union"
+      >
+
+      <figcaption class="image-caption">
+        Historical Illustration II — The Ram–Rosé Dynastic Union of Bristevia and Eldrosia
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =========================
+         IV
+    ========================= -->
+
+    <section class="section">
+
+      <div class="section-number">
+        IV
+      </div>
+
+      <h2>
+        The Continental Crisis: Zalta Civil War Expansion
+      </h2>
+
+      <p>
+        While Bristevia consolidated the north, the southern and central
+        continental system collapsed into chaos.
+      </p>
+
+      <p>
+        The Zalta Civil War, initially an internal succession conflict centered
+        in Tyrosgrad, expanded into a multi-front continental war involving
+        multiple alliances.
+      </p>
+
+      <h3>Thyrosian–Valtherian Coalition</h3>
+
+      <ul>
+        <li>Thyro and Tyrosgrad factions</li>
+        <li>Valtherion remnants</li>
+        <li>Dunava</li>
+        <li>Westnord</li>
+        <li>Zhara</li>
+      </ul>
+
+      <h3>Zalta Coalition System</h3>
+
+      <ul>
+        <li>Zalta — initial authority core</li>
+        <li>Varkaros</li>
+        <li>Caeloria</li>
+        <li>Nivaria</li>
+        <li>Eastnord</li>
+        <li>Neréaux</li>
+      </ul>
+
+      <p>
+        What began as a civil war evolved into a continental systemic war,
+        destabilizing trade routes, naval control, and inland political
+        structures across the archipelago system.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         V
+    ========================= -->
+
+    <section class="section">
+
+      <div class="section-number">
+        V
+      </div>
+
+      <h2>
+        Bristevia During the Continental War
+      </h2>
+
+      <p>
+        Bristevia's role in the wider war was defined by strategic restraint
+        followed by calculated intervention.
+      </p>
+
+      <p>
+        Rather than immediately committing full forces, Bristevia:
+      </p>
+
+      <ul>
+        <li>Secured its northern gains from the Frostwall War</li>
+        <li>Stabilized Eldrosian integration zones</li>
+        <li>Monitored continental fragmentation</li>
+      </ul>
+
+      <p>
+        Once equilibrium shifted and Zalta Coalition forces weakened under
+        multi-front pressure, Bristevia positioned itself as a stabilizing power
+        capable of shaping the post-war order.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         VI
+    ========================= -->
+
+    <section class="section">
+
+      <div class="section-number">
+        VI
+      </div>
+
+      <h2>
+        Internal Bristevian Political Crisis — The Caesar Interregnum
+      </h2>
+
+      <p>
+        During this continental instability, Bristevia also faced internal
+        rupture.
+      </p>
+
+      <p>
+        The Caesar faction, derived from the Octavius political tradition,
+        seized control during a succession crisis.
+      </p>
+
+      <h3>Caesar I</h3>
+
+      <p>
+        Caesar I initiated the usurpation during a period of internal instability,
+        challenging the established dynastic order.
+      </p>
+
+      <h3>Caesar II</h3>
+
+      <p>
+        Caesar II enforced centralized military governance and strengthened
+        the authority of the interregnum regime.
+      </p>
+
+      <h3>Caesar III</h3>
+
+      <p>
+        Caesar III escalated authoritarian control, triggering widespread
+        resistance throughout Bristevia.
+      </p>
+
+      <p>
+        The crisis threatened to fracture Bristevia internally at the exact
+        moment the kingdom was expanding externally.
+      </p>
+
+      <p>
+        However, resistance movements gradually coalesced under loyalist
+        leadership.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         IMAGE 3
+    ========================= -->
+
+    <figure class="historical-image">
+
+      <img
+        src="images/era9-caesar-interregnum.jpg"
+        alt="Historical depiction of the Caesar Interregnum and restoration of House Stephen"
+      >
+
+      <figcaption class="image-caption">
+        Historical Illustration III — The Caesar Interregnum and the Restoration of House Stephen
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =========================
+         VII
+    ========================= -->
+
+    <section class="section">
+
+      <div class="section-number">
+        VII
+      </div>
+
+      <h2>
+        The Restoration of House Stephen
+      </h2>
+
+      <p>
+        The restoration movement culminated under
+        <strong>Stephen XVIII, “The Restorer.”</strong>
+      </p>
+
+      <p>
+        He led coordinated uprisings against Caesar III's regime, resulting in:
+      </p>
+
+      <ul>
+        <li>Collapse of Caesar administrative control</li>
+        <li>Reinstatement of House Stephen legitimacy</li>
+        <li>Reunification of fractured provincial command structures</li>
+      </ul>
+
+      <p>
+        Following restoration, Stephen XIX became the final traditional King
+        before the structural transformation of Bristevian governance.
+      </p>
+
+      <p>
+        The monarchy stabilized, but it now operated within a radically
+        transformed continental environment.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         VIII
+    ========================= -->
+
+    <section class="section">
+
+      <div class="section-number">
+        VIII
+      </div>
+
+      <h2>
+        The Ram–Rosé Union and Strategic Continental Balance
+      </h2>
+
+      <p>
+        Amid both internal recovery and the aftermath of continental war,
+        King Ram finalized the dynastic union with Eldrosia.
+      </p>
+
+      <p>
+        The union achieved three major strategic outcomes:
+      </p>
+
+      <ol>
+        <li>Neutralized potential Bristevia–Eldrosia rivalry</li>
+        <li>Stabilized northern frontier integration after Frostwall expansion</li>
+        <li>Created a dual-core power structure capable of continental influence</li>
+      </ol>
+
+      <div class="historical-note">
+        <p>
+          The Ram–Rosé Union became the foundation of Bristevia's transition
+          from kingdom to proto-imperial system.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         IX
+    ========================= -->
+
+    <section class="section">
+
+      <div class="section-number">
+        IX
+      </div>
+
+      <h2>
+        Legacy of ERA 9
+      </h2>
+
+      <p>
+        ERA 9 is remembered as the era when Bristevia endured three
+        simultaneous pressures:
+      </p>
+
+      <ul>
+        <li>
+          <strong>External war expansion</strong> — Frostwall and Northavian absorption
+        </li>
+
+        <li>
+          <strong>Continental systemic collapse</strong> —
+          Zalta Civil War and its transformation into continental war
+        </li>
+
+        <li>
+          <strong>Internal dynastic crisis</strong> —
+          Caesar usurpation and restoration war
+        </li>
+      </ul>
+
+      <p>
+        Yet instead of fragmentation, Bristevia emerged:
+      </p>
+
+      <ul>
+        <li>Territorially expanded</li>
+        <li>Dynastically unified with Eldrosia</li>
+        <li>Politically restored under House Stephen</li>
+        <li>Strategically positioned as a continental stabilizer</li>
+      </ul>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL TRANSITION
+    ========================= -->
+
+    <section class="end-state">
+
+      <h2>
+        Final Transition
+      </h2>
+
+      <p>
+        By the end of ERA 9, Bristevia was no longer simply a kingdom among many.
+      </p>
+
+      <ul>
+        <li>
+          A continental-scale political structure in formation
+        </li>
+
+        <li>
+          A dynastically unified dual-realm power forming the
+          Bristevia–Eldrosia axis
+        </li>
+
+        <li>
+          A restored monarchy capable of surviving internal usurpation
+          and external continental war
+        </li>
+      </ul>
+
+      <p class="final-line">
+        ERA 9 closes with Bristevia standing at the threshold of imperial
+        transformation—no longer reacting to continental history,
+        but beginning to define it.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <h3>
+      THE HISTORY OF BRISTEVIA
+    </h3>
+
+    <p>
+      ERA IX — The Pre-Imperial Struggle and Dynastic Union
+    </p>
+
+    <p>
+      Central Archipelago Historical Chronicle
+    </p>
+
+  </footer>
+
+</body>
+</html>
