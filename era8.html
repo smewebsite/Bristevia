@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Era 8 | Age of Unification Wars and Southern Expansion</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cormorant Garamond", serif;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(12, 61, 115, 0.45),
+          rgba(2, 12, 30, 0.97)
+        ),
+        #020b18;
+      color: #f8f0d0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       MAIN NAVIGATION
+       ========================= */
+
+    .main-navigation {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      padding: 18px 15px;
+
+      background:
+        linear-gradient(
+          rgba(2,18,42,0.97),
+          rgba(2,11,27,0.99)
+        );
+
+      border-bottom: 1px solid rgba(212,175,55,0.45);
+
+      box-shadow:
+        0 5px 25px rgba(0,0,0,0.4);
+
+      position: relative;
+      z-index: 20;
+    }
+
+    .main-navigation a {
+      font-family: "Cinzel", serif;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      color: #f5e6a8;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: 0.3s ease;
+    }
+
+    .main-navigation a:hover,
+    .main-navigation a.active {
+      color: #ffffff;
+      text-shadow:
+        0 0 10px rgba(212,175,55,0.8);
+    }
+
+    /* =========================
+       ERA HERO
+       ========================= */
+
+    .era-header {
+      position: relative;
+      min-height: 62vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 90px 25px;
+
+      /*
+        HISTORICAL BACKGROUND IMAGE
+        Replace this file with the selected
+        historical artwork for ERA 8.
+      */
+
+      background:
+        linear-gradient(
+          rgba(1, 15, 36, 0.62),
+          rgba(1, 15, 36, 0.92)
+        ),
+        url("era8-history.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+      border-bottom: 1px solid rgba(212,175,55,0.55);
+    }
+
+    .era-header::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(212,175,55,0.18),
+          transparent 65%
+        );
+
+      pointer-events: none;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 1100px;
+    }
+
+    .era-symbol {
+      font-size: 65px;
+      color: #d4af37;
+
+      text-shadow:
+        0 0 15px rgba(212,175,55,0.7),
+        0 0 35px rgba(212,175,55,0.3);
+
+      margin-bottom: 15px;
+    }
+
+    .era-label {
+      font-family: "Cinzel", serif;
+      color: #d4af37;
+
+      font-size: 15px;
+      letter-spacing: 6px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+    }
+
+    .era-header h1 {
+      font-family: "Cinzel", serif;
+
+      font-size: clamp(34px, 6vw, 68px);
+
+      line-height: 1.15;
+
+      color: #f7e7a9;
+
+      letter-spacing: 3px;
+
+      text-shadow:
+        0 3px 0 #8b6914,
+        0 0 25px rgba(212,175,55,0.35);
+    }
+
+    .era-subtitle {
+      margin-top: 25px;
+
+      font-family: "Cinzel", serif;
+
+      font-size: clamp(16px, 2.5vw, 23px);
+
+      letter-spacing: 3px;
+
+      color: #ffffff;
+
+      line-height: 1.6;
+    }
+
+    .era-date {
+      margin-top: 18px;
+
+      color: #d4af37;
+
+      font-family: "Cinzel", serif;
+
+      font-size: 14px;
+
+      letter-spacing: 3px;
+    }
+
+    /* =========================
+       CONTENT
+       ========================= */
+
+    .history-content {
+      max-width: 1100px;
+
+      margin: auto;
+
+      padding: 85px 25px;
+    }
+
+    .intro-box {
+      text-align: center;
+
+      max-width: 900px;
+
+      margin: 0 auto 75px;
+    }
+
+    .intro-box h2 {
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 30px;
+
+      letter-spacing: 4px;
+
+      margin-bottom: 20px;
+    }
+
+    .intro-box p {
+      color: #dedede;
+
+      font-size: 20px;
+
+      line-height: 1.85;
+    }
+
+    /* =========================
+       HISTORICAL IMAGE 1
+       ========================= */
+
+    .historical-image {
+      margin: 55px auto;
+
+      width: 100%;
+      max-width: 1000px;
+
+      border: 1px solid rgba(212,175,55,0.45);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(5,35,68,0.95),
+          rgba(2,15,32,0.98)
+        );
+
+      box-shadow:
+        0 15px 45px rgba(0,0,0,0.5);
+    }
+
+    .historical-image img {
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      max-height: 550px;
+
+      object-fit: cover;
+    }
+
+    .image-caption {
+      padding: 15px 20px;
+
+      text-align: center;
+
+      color: #d4af37;
+
+      font-family: "Cinzel", serif;
+
+      font-size: 13px;
+
+      letter-spacing: 2px;
+
+      line-height: 1.6;
+    }
+
+    /* =========================
+       SECTION
+       ========================= */
+
+    .history-section {
+      margin-bottom: 70px;
+    }
+
+    .section-number {
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 14px;
+
+      letter-spacing: 4px;
+
+      margin-bottom: 10px;
+    }
+
+    .history-section h2 {
+      font-family: "Cinzel", serif;
+
+      color: #f7e7a9;
+
+      font-size: clamp(25px, 4vw, 36px);
+
+      line-height: 1.35;
+
+      margin-bottom: 22px;
+
+      border-left: 3px solid #d4af37;
+
+      padding-left: 18px;
+    }
+
+    .history-section p {
+      color: #d4d7dc;
+
+      font-size: 19px;
+
+      line-height: 1.85;
+
+      margin-bottom: 20px;
+    }
+
+    .history-section ul {
+      margin: 20px 0 20px 30px;
+    }
+
+    .history-section li {
+      color: #d4d7dc;
+
+      font-size: 19px;
+
+      line-height: 1.7;
+
+      margin-bottom: 8px;
+    }
+
+    .history-section strong {
+      color: #f7e7a9;
+    }
+
+    /* =========================
+       IMPORTANT EVENTS
+       ========================= */
+
+    .event-box {
+      margin: 30px 0;
+
+      padding: 25px 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(8,42,78,0.72),
+          rgba(2,17,35,0.92)
+        );
+
+      border:
+
+        1px solid rgba(212,175,55,0.3);
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .event-box h3 {
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 22px;
+
+      margin-bottom: 12px;
+
+      letter-spacing: 2px;
+    }
+
+    .event-box p {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       HISTORICAL IMAGE 2
+       ========================= */
+
+    .historical-image.second {
+      margin-top: 65px;
+      margin-bottom: 75px;
+    }
+
+    /* =========================
+       QUOTE
+       ========================= */
+
+    .historical-quote {
+      margin: 65px auto;
+
+      max-width: 850px;
+
+      text-align: center;
+
+      padding: 35px 30px;
+
+      border-top: 1px solid rgba(212,175,55,0.45);
+      border-bottom: 1px solid rgba(212,175,55,0.45);
+
+      color: #f7e7a9;
+
+      font-family: "Cinzel", serif;
+
+      font-size: 23px;
+
+      line-height: 1.7;
+
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       HISTORICAL IMAGE 3
+       ========================= */
+
+    .historical-image.third {
+      margin-top: 70px;
+      margin-bottom: 80px;
+    }
+
+    /* =========================
+       LEGACY
+       ========================= */
+
+    .legacy-box {
+      margin-top: 50px;
+
+      padding: 40px 30px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(11,51,91,0.8),
+          rgba(2,15,31,0.95)
+        );
+
+      border:
+
+        1px solid rgba(212,175,55,0.45);
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .legacy-box h2 {
+      border: none;
+
+      padding: 0;
+
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 30px;
+
+      margin-bottom: 20px;
+    }
+
+    .legacy-box p {
+      max-width: 850px;
+
+      margin: auto;
+
+      color: #dedede;
+
+      font-size: 20px;
+
+      line-height: 1.8;
+    }
+
+    /* =========================
+       ERA NAVIGATION
+       ========================= */
+
+    .era-navigation {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      max-width: 1100px;
+
+      margin: 80px auto 0;
+
+      padding: 30px 25px;
+
+      border-top: 1px solid rgba(212,175,55,0.35);
+    }
+
+    .era-navigation a {
+      flex: 1;
+
+      text-decoration: none;
+
+      text-align: center;
+
+      padding: 18px;
+
+      font-family: "Cinzel", serif;
+
+      color: #f7e7a9;
+
+      border: 1px solid rgba(212,175,55,0.3);
+
+      background:
+        rgba(3,20,39,0.8);
+
+      transition: 0.3s ease;
+    }
+
+    .era-navigation a:hover {
+      color: #ffffff;
+
+      border-color: #d4af37;
+
+      box-shadow:
+        0 0 20px rgba(212,175,55,0.15);
+    }
+
+    .era-navigation span {
+      display: block;
+
+      color: #d4af37;
+
+      font-size: 12px;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 7px;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      text-align: center;
+
+      padding: 40px 15px;
+
+      background: #010812;
+
+      border-top: 1px solid rgba(178,31,45,0.5);
+
+      color: #9d9d9d;
+
+      font-size: 14px;
+
+      letter-spacing: 1px;
+    }
+
+    footer strong {
+      color: #d4af37;
+
+      font-family: "Cinzel", serif;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 700px) {
+
+      .main-navigation a {
+        font-size: 10px;
+
+        padding: 8px 9px;
+      }
+
+      .era-header {
+        min-height: 55vh;
+
+        padding: 75px 18px;
+      }
+
+      .era-symbol {
+        font-size: 50px;
+      }
+
+      .era-label {
+        font-size: 11px;
+
+        letter-spacing: 4px;
+      }
+
+      .era-header h1 {
+        letter-spacing: 1px;
+      }
+
+      .era-subtitle {
+        letter-spacing: 1.5px;
+      }
+
+      .history-content {
+        padding: 60px 18px;
+      }
+
+      .intro-box h2 {
+        font-size: 25px;
+      }
+
+      .intro-box p,
+      .history-section p,
+      .history-section li {
+        font-size: 18px;
+      }
+
+      .historical-image {
+        margin: 40px auto;
+      }
+
+      .historical-image img {
+        max-height: 350px;
+      }
+
+      .event-box {
+        padding: 22px;
+      }
+
+      .historical-quote {
+        font-size: 19px;
+
+        padding: 28px 20px;
+      }
+
+      .era-navigation {
+        flex-direction: column;
+
+        padding: 25px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       MAIN NAVIGATION
+       ========================= -->
+
+  <nav class="main-navigation">
+
+    <a href="index.html">HOME</a>
+
+    <a href="constitution.html">CONSTITUTION</a>
+
+    <a href="history.html" class="active">HISTORY</a>
+
+    <a href="government.html">GOVERNMENT</a>
+
+    <a href="judiciary.html">SUPREME TRIBUNAL</a>
+
+    <a href="legislature.html">IMPERIAL ASSEMBLY</a>
+
+    <a href="decrees.html">ROYAL DECREES</a>
+
+    <a href="atlas.html">BRISTEVIA ATLAS</a>
+
+  </nav>
+
+
+  <!-- =========================
+       ERA HEADER
+       ========================= -->
+
+  <header class="era-header">
+
+    <div class="header-content">
+
+      <div class="era-symbol">⚔</div>
+
+      <div class="era-label">
+        ERA VIII
+      </div>
+
+      <h1>
+        THE AGE OF UNIFICATION WARS
+        <br>
+        AND SOUTHERN EXPANSION
+      </h1>
+
+      <div class="era-subtitle">
+        Bristevia-Centric Continental Ascendancy
+      </div>
+
+      <div class="era-date">
+        FALL OF SOLARA — EARLY FEDERATION AGE
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN HISTORY
+       ========================= -->
+
+  <main class="history-content">
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="intro-box">
+
+      <h2>
+        THE ERA OF BRISTEVIAN ASCENDANCY
+      </h2>
+
+      <p>
+        ERA 8 marks the moment Bristevia stopped behaving like a
+        regional kingdom reacting to continental chaos and began
+        acting like a structural power shaping the balance of the
+        Central Archipelago itself.
+      </p>
+
+      <p>
+        While other polities—Valterian successor states, northern
+        coalitions, and maritime republics—fought over fragmentation
+        and reunification, Bristevia pursued a different trajectory:
+        selective expansion, military reform, and territorial
+        consolidation in the southern arc.
+      </p>
+
+      <p>
+        This was the era where Bristevia became visibly dominant.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         HISTORICAL IMAGE 1
+         ========================= -->
+
+    <figure class="historical-image">
+
+      <!-- Replace era8-image1.jpg with your historical artwork -->
+
+      <img
+        src="era8-image1.jpg"
+        alt="Historical depiction of Bristevian expansion during Era 8"
+      >
+
+      <figcaption class="image-caption">
+        BRISTEVIAN FORCES DURING THE AGE OF UNIFICATION WARS
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =========================
+         I. INTERNAL STRENGTH
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        I.
+      </div>
+
+      <h2>
+        INTERNAL STRENGTH BEFORE EXPANSION
+      </h2>
+
+      <p>
+        Before its southern campaigns, Bristevia had already
+        undergone significant internal transformation from earlier
+        eras.
+      </p>
+
+      <ul>
+
+        <li>
+          Central authority had been strengthened after the
+          absorption of Orlencia in ERA 7.
+        </li>
+
+        <li>
+          Provincial governance in Stephara and Jaybrienne had
+          stabilized.
+        </li>
+
+        <li>
+          Valloré’s naval legacy provided a functioning maritime
+          projection system.
+        </li>
+
+        <li>
+          Military institutions were standardized under reformist
+          monarchs.
+        </li>
+
+      </ul>
+
+      <p>
+        By the time ERA 8 began, Bristevia was no longer
+        consolidating—it was projecting force outward.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         II. JAMES I
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        II.
+      </div>
+
+      <h2>
+        JAMES I — THE EXPANSIONIST TURNING POINT
+      </h2>
+
+      <p>
+        The first defining monarch of this era was
+        <strong>James I</strong>, remembered in Bristevian records
+        as the <strong>“Southern March King.”</strong>
+      </p>
+
+      <p>
+        Unlike earlier rulers focused on stabilization, James I
+        initiated deliberate expansion into the southern maritime
+        and coastal zones.
+      </p>
+
+      <p>
+        His strategic doctrine was based on three principles:
+      </p>
+
+      <ol>
+
+        <li>
+          Control key southern trade corridors.
+        </li>
+
+        <li>
+          Secure coastal chokepoints to prevent rival naval
+          encirclement.
+        </li>
+
+        <li>
+          Eliminate fragmented resistance states before they
+          unified.
+        </li>
+
+      </ol>
+
+      <p>
+        Under his command, Bristevian forces began advancing toward
+        the southern urban centers, most importantly Solara.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         III. FALL OF SOLARA
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        III.
+      </div>
+
+      <h2>
+        THE FALL OF SOLARA CITY
+      </h2>
+
+      <p>
+        The most decisive event of ERA 8 was the
+        <strong>Fall of Solara City</strong>, a heavily fortified
+        southern coastal hub that had developed into a
+        semi-autonomous maritime center after earlier imperial
+        collapses.
+      </p>
+
+      <p>
+        Solara was significant because:
+      </p>
+
+      <ul>
+
+        <li>
+          It controlled southern maritime routes.
+        </li>
+
+        <li>
+          It served as a cultural and trade bridge between inland
+          and island polities.
+        </li>
+
+        <li>
+          It was one of the last remaining independent urban
+          strongholds in the southern arc.
+        </li>
+
+      </ul>
+
+      <div class="event-box">
+
+        <h3>
+          THE SIEGE OF SOLARA
+        </h3>
+
+        <p>
+          Bristevian forces combined land armies with
+          Valloré-influenced naval units to execute a coordinated
+          siege. The campaign demonstrated advanced siege logistics,
+          naval blockade integration, and unified command under
+          centralized Bristevian doctrine.
+        </p>
+
+      </div>
+
+      <p>
+        When Solara fell, it did not merely change ownership—it
+        signaled that southern independence was no longer viable
+        against Bristevian coordination.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         IV. STEPHEN XVI
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        IV.
+      </div>
+
+      <h2>
+        STEPHEN XVI — MILITARY REFORM AND SCALE TRANSFORMATION
+      </h2>
+
+      <p>
+        Following the initial southern victories,
+        <strong>Stephen XVI</strong> emerged as the key institutional
+        reformer of ERA 8.
+      </p>
+
+      <p>
+        He did not initiate the expansion—but he made it sustainable.
+      </p>
+
+      <ul>
+
+        <li>
+          Expansion of the Bristevian standing army into regional
+          corps systems.
+        </li>
+
+        <li>
+          Standardization of officer training across Stephara and
+          Jaybrienne.
+        </li>
+
+        <li>
+          Integration of naval and land command structures into a
+          unified operational doctrine.
+        </li>
+
+        <li>
+          Creation of logistical supply chains capable of
+          multi-region campaigns.
+        </li>
+
+      </ul>
+
+      <div class="event-box">
+
+        <h3>
+          THE SCALE TRANSFORMATION
+        </h3>
+
+        <p>
+          Before Stephen XVI, Bristevia could win battles.
+          After Stephen XVI, Bristevia could sustain wars across
+          multiple theaters.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         HISTORICAL IMAGE 2
+         ========================= -->
+
+    <figure class="historical-image second">
+
+      <!-- Replace era8-image2.jpg with your historical artwork -->
+
+      <img
+        src="era8-image2.jpg"
+        alt="Historical depiction of the Fall of Solara City"
+      >
+
+      <figcaption class="image-caption">
+        THE FALL OF SOLARA CITY — LAND AND NAVAL FORCES IN COORDINATED ASSAULT
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =========================
+         V. CONTINENTAL CONTEXT
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        V.
+      </div>
+
+      <h2>
+        THE BROADER CONTINENTAL CONTEXT
+      </h2>
+
+      <p>
+        While Bristevia expanded southward, the wider Central
+        Archipelago experienced simultaneous fragmentation and
+        consolidation.
+      </p>
+
+      <ul>
+
+        <li>
+          Northern territories reorganized into new tribal-kingdom
+          structures.
+        </li>
+
+        <li>
+          Former imperial zones redefined alliances and coalitions.
+        </li>
+
+        <li>
+          Maritime republics and successor states competed for
+          control of trade routes.
+        </li>
+
+      </ul>
+
+      <p>
+        These developments were relevant to Bristevia mainly because
+        they created vacuum zones of power that Bristevia could
+        expand into without facing unified resistance.
+      </p>
+
+      <p>
+        Solara’s fall was not isolated—it was part of a systemic
+        shift.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         VI. SOUTHERN STRATEGY
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        VI.
+      </div>
+
+      <h2>
+        SOUTHERN EXPANSION STRATEGY OF BRISTEVIA
+      </h2>
+
+      <p>
+        Bristevia’s southern advance during ERA 8 followed a
+        consistent pattern:
+      </p>
+
+      <ol>
+
+        <li>
+          Reconnaissance and naval mapping of southern coastal nodes.
+        </li>
+
+        <li>
+          Targeted siege of urban centers rather than rural
+          occupation.
+        </li>
+
+        <li>
+          Immediate administrative absorption after conquest.
+        </li>
+
+        <li>
+          Replacement of local elites with Bristevian provincial
+          governors.
+        </li>
+
+      </ol>
+
+      <p>
+        This ensured that conquered regions did not revert to
+        independence after military withdrawal.
+      </p>
+
+      <p>
+        Solara became the prototype for this model.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         VII. INTERNAL STABILITY
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        VII.
+      </div>
+
+      <h2>
+        INTERNAL STABILITY DURING EXPANSION
+      </h2>
+
+      <p>
+        Despite outward expansion, Bristevia avoided internal
+        collapse due to:
+      </p>
+
+      <ul>
+
+        <li>
+          Strong dynastic continuity from Stephen line successors.
+        </li>
+
+        <li>
+          Bureaucratic consolidation from earlier stabilizing
+          monarchs.
+        </li>
+
+        <li>
+          Regional cooperation between Stephara and Jaybrienne
+          administrations.
+        </li>
+
+        <li>
+          Naval protection of internal trade routes through Valloré
+          legacy systems.
+        </li>
+
+      </ul>
+
+      <p>
+        Unlike earlier regional kingdoms that expanded and
+        fractured, Bristevia expanded and stabilized simultaneously.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         HISTORICAL QUOTE
+         ========================= -->
+
+    <div class="historical-quote">
+
+      “The era when the kingdom stopped reacting to the world—
+      and began structuring it.”
+
+    </div>
+
+
+    <!-- =========================
+         HISTORICAL IMAGE 3
+         ========================= -->
+
+    <figure class="historical-image third">
+
+      <!-- Replace era8-image3.jpg with your historical artwork -->
+
+      <img
+        src="era8-image3.jpg"
+        alt="Historical depiction of Bristevian southern expansion"
+      >
+
+      <figcaption class="image-caption">
+        THE BRISTEVIAN SOUTHERN EXPANSION AND THE RISE OF CONTINENTAL POWER
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =========================
+         VIII. STRATEGIC POSITION
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        VIII.
+      </div>
+
+      <h2>
+        STRATEGIC POSITION AFTER ERA 8
+      </h2>
+
+      <p>
+        By the end of ERA 8, Bristevia had achieved a new
+        geopolitical identity:
+      </p>
+
+      <ul>
+
+        <li>
+          A dominant inland-coastal hybrid state.
+        </li>
+
+        <li>
+          A military power capable of sustained multi-front
+          campaigns.
+        </li>
+
+        <li>
+          A central authority recognized across southern maritime
+          corridors.
+        </li>
+
+        <li>
+          A system of governance capable of absorbing conquered
+          territories without collapse.
+        </li>
+
+      </ul>
+
+      <p>
+        The Fall of Solara City became a symbolic marker of this
+        transformation.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         IX. LEGACY
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        IX.
+      </div>
+
+      <h2>
+        LEGACY OF ERA 8
+      </h2>
+
+      <p>
+        ERA 8 is remembered in Bristevian historical tradition as
+        the era when the kingdom stopped reacting to the world and
+        began structuring it.
+      </p>
+
+      <p>
+        Its most enduring outcomes were:
+      </p>
+
+      <ul>
+
+        <li>
+          The permanent integration of southern territories into
+          Bristevia’s administrative sphere.
+        </li>
+
+        <li>
+          The establishment of large-scale military reform under
+          Stephen XVI.
+        </li>
+
+        <li>
+          The transformation of Bristevia from regional power to
+          continental actor.
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL LEGACY
+         ========================= -->
+
+    <div class="legacy-box">
+
+      <h2>
+        THE PSYCHOLOGICAL TRANSFORMATION
+      </h2>
+
+      <p>
+        Bristevia was no longer expanding for survival.
+        <br><br>
+        <strong>
+          It was expanding because it could.
+        </strong>
+      </p>
+
+    </div>
+
+
+  </main>
+
+
+  <!-- =========================
+       ERA NAVIGATION
+       ========================= -->
+
+  <div class="era-navigation">
+
+    <a href="era7.html">
+
+      <span>
+        PREVIOUS ERA
+      </span>
+
+      ← ERA VII
+
+    </a>
+
+    <a href="history.html">
+
+      <span>
+        HISTORY INDEX
+      </span>
+
+      ⚜ ALL ERAS
+
+    </a>
+
+    <a href="era9.html">
+
+      <span>
+        NEXT ERA
+      </span>
+
+      ERA IX →
+
+    </a>
+
+  </div>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    <p>
+      <strong>
+        ⚜ IMPERIAL SOVEREIGN OF BRISTEVIA ⚜
+      </strong>
+    </p>
+
+    <p>
+      © 2026 The Imperial Sovereign of Bristevia.
+      All Rights Reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
