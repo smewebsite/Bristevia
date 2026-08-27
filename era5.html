@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ERA 5 | Imperial Sovereign of Bristevia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cormorant Garamond", serif;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(12, 61, 115, 0.45),
+          rgba(2, 12, 30, 0.97)
+        ),
+        #020b18;
+      color: #f8f0d0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    .main-navigation {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      padding: 18px 15px;
+
+      background:
+        linear-gradient(
+          rgba(2,18,42,0.97),
+          rgba(2,11,27,0.99)
+        );
+
+      border-bottom: 1px solid rgba(212,175,55,0.45);
+
+      box-shadow:
+        0 5px 25px rgba(0,0,0,0.4);
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .main-navigation a {
+      font-family: "Cinzel", serif;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      color: #f5e6a8;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: 0.3s ease;
+    }
+
+    .main-navigation a:hover,
+    .main-navigation a.active {
+      color: #ffffff;
+
+      text-shadow:
+        0 0 10px rgba(212,175,55,0.8);
+    }
+
+    /* =========================
+       ERA HEADER
+       ========================= */
+
+    .era-header {
+      position: relative;
+
+      min-height: 72vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 100px 25px;
+
+      background:
+        linear-gradient(
+          rgba(1, 12, 30, 0.66),
+          rgba(1, 15, 36, 0.90)
+        ),
+        url("era5-image1.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+      border-bottom: 1px solid rgba(212,175,55,0.5);
+    }
+
+    .era-header::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(212,175,55,0.18),
+          transparent 65%
+        );
+
+      pointer-events: none;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 1100px;
+    }
+
+    .imperial-symbol {
+      font-size: 68px;
+
+      color: #d4af37;
+
+      text-shadow:
+        0 0 15px rgba(212,175,55,0.7),
+        0 0 35px rgba(212,175,55,0.3);
+
+      margin-bottom: 20px;
+    }
+
+    .era-label {
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 15px;
+
+      letter-spacing: 6px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+    .era-header h1 {
+      font-family: "Cinzel", serif;
+
+      font-size: clamp(34px, 6vw, 68px);
+
+      line-height: 1.2;
+
+      color: #f7e7a9;
+
+      letter-spacing: 4px;
+
+      text-shadow:
+        0 3px 0 #8b6914,
+        0 0 25px rgba(212,175,55,0.35);
+    }
+
+    .era-subtitle {
+      margin-top: 25px;
+
+      font-family: "Cinzel", serif;
+
+      font-size: clamp(17px, 3vw, 25px);
+
+      letter-spacing: 3px;
+
+      color: #ffffff;
+    }
+
+    .era-date {
+      margin-top: 18px;
+
+      color: #d4af37;
+
+      font-family: "Cinzel", serif;
+
+      font-size: 15px;
+
+      letter-spacing: 3px;
+    }
+
+    /* =========================
+       CONTENT CONTAINER
+       ========================= */
+
+    .history-content {
+      max-width: 1050px;
+
+      margin: auto;
+
+      padding: 85px 25px;
+    }
+
+    /* =========================
+       INTRODUCTION
+       ========================= */
+
+    .intro-section {
+      text-align: center;
+
+      margin-bottom: 75px;
+    }
+
+    .section-kicker {
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 14px;
+
+      letter-spacing: 5px;
+
+      margin-bottom: 18px;
+    }
+
+    .intro-section h2 {
+      font-family: "Cinzel", serif;
+
+      color: #f7e7a9;
+
+      font-size: clamp(27px, 4vw, 40px);
+
+      line-height: 1.4;
+
+      margin-bottom: 25px;
+    }
+
+    .intro-section p {
+      color: #d6d6d6;
+
+      font-size: 20px;
+
+      line-height: 1.9;
+
+      text-align: justify;
+    }
+
+    /* =========================
+       HISTORICAL IMAGE
+       ========================= */
+
+    .historical-image {
+      margin: 65px 0;
+
+      border: 1px solid rgba(212,175,55,0.45);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(5,35,68,0.95),
+          rgba(2,15,32,0.98)
+        );
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.45);
+    }
+
+    .historical-image img {
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      max-height: 600px;
+
+      object-fit: cover;
+    }
+
+    .image-caption {
+      padding: 15px 20px;
+
+      text-align: center;
+
+      color: #cfcfcf;
+
+      font-size: 16px;
+
+      font-style: italic;
+
+      border-top: 1px solid rgba(212,175,55,0.25);
+    }
+
+    /* =========================
+       CHAPTERS
+       ========================= */
+
+    .chapter {
+      margin-bottom: 70px;
+    }
+
+    .chapter-number {
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 15px;
+
+      letter-spacing: 4px;
+
+      margin-bottom: 10px;
+    }
+
+    .chapter h2 {
+      font-family: "Cinzel", serif;
+
+      color: #f7e7a9;
+
+      font-size: clamp(25px, 4vw, 36px);
+
+      line-height: 1.4;
+
+      margin-bottom: 25px;
+
+      padding-bottom: 12px;
+
+      border-bottom: 1px solid rgba(212,175,55,0.25);
+    }
+
+    .chapter h3 {
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 22px;
+
+      margin-top: 30px;
+
+      margin-bottom: 12px;
+    }
+
+    .chapter p {
+      color: #d4d4d4;
+
+      font-size: 19px;
+
+      line-height: 1.9;
+
+      margin-bottom: 22px;
+
+      text-align: justify;
+    }
+
+    /* =========================
+       LISTS
+       ========================= */
+
+    .chapter ul,
+    .chapter ol {
+      margin: 20px 0 25px 30px;
+
+      color: #d4d4d4;
+
+      font-size: 19px;
+
+      line-height: 1.8;
+    }
+
+    .chapter li {
+      margin-bottom: 7px;
+    }
+
+    .chapter strong {
+      color: #f5e6a8;
+    }
+
+    /* =========================
+       HISTORICAL QUOTE
+       ========================= */
+
+    .historical-quote {
+      margin: 35px 0;
+
+      padding: 28px 30px;
+
+      border-left: 3px solid #d4af37;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(212,175,55,0.10),
+          rgba(212,175,55,0.02)
+        );
+
+      color: #f7e7a9;
+
+      font-size: 22px;
+
+      font-style: italic;
+
+      line-height: 1.7;
+    }
+
+    /* =========================
+       TWO-COLUMN STRUCTURE
+       ========================= */
+
+    .dual-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 25px;
+
+      margin: 30px 0;
+    }
+
+    .info-card {
+      padding: 28px 25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(5,35,68,0.94),
+          rgba(2,15,32,0.98)
+        );
+
+      border: 1px solid rgba(212,175,55,0.30);
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.30);
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+
+      color: #f7e7a9;
+    }
+
+    .info-card ul {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       END STATE
+       ========================= */
+
+    .end-state {
+      margin-top: 80px;
+
+      padding: 45px 35px;
+
+      text-align: center;
+
+      border-top: 1px solid rgba(212,175,55,0.45);
+
+      border-bottom: 1px solid rgba(212,175,55,0.45);
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(212,175,55,0.10),
+          transparent 70%
+        );
+    }
+
+    .end-state h2 {
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 30px;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 20px;
+    }
+
+    .end-state p {
+      max-width: 850px;
+
+      margin: auto;
+
+      color: #e0e0e0;
+
+      font-size: 21px;
+
+      line-height: 1.9;
+    }
+
+    /* =========================
+       ERA NAVIGATION
+       ========================= */
+
+    .era-navigation {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      max-width: 1050px;
+
+      margin: 0 auto;
+
+      padding: 0 25px 80px;
+    }
+
+    .era-navigation a {
+      flex: 1;
+
+      padding: 18px 20px;
+
+      text-align: center;
+
+      font-family: "Cinzel", serif;
+
+      font-size: 13px;
+
+      letter-spacing: 2px;
+
+      color: #f5e6a8;
+
+      text-decoration: none;
+
+      border: 1px solid rgba(212,175,55,0.35);
+
+      background:
+        rgba(3,20,40,0.85);
+
+      transition: 0.3s ease;
+    }
+
+    .era-navigation a:hover {
+      color: #ffffff;
+
+      border-color: #d4af37;
+
+      box-shadow:
+        0 0 20px rgba(212,175,55,0.15);
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      text-align: center;
+
+      padding: 35px 15px;
+
+      background: #010812;
+
+      border-top: 1px solid rgba(178,31,45,0.5);
+
+      color: #9d9d9d;
+
+      font-size: 14px;
+
+      letter-spacing: 1px;
+    }
+
+    footer strong {
+      color: #d4af37;
+
+      font-family: "Cinzel", serif;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 700px) {
+
+      .main-navigation {
+        position: relative;
+      }
+
+      .main-navigation a {
+        font-size: 10px;
+
+        padding: 8px 9px;
+      }
+
+      .era-header {
+        min-height: 62vh;
+
+        padding: 80px 18px;
+      }
+
+      .imperial-symbol {
+        font-size: 50px;
+      }
+
+      .era-header h1 {
+        letter-spacing: 2px;
+      }
+
+      .era-subtitle {
+        letter-spacing: 1.5px;
+      }
+
+      .history-content {
+        padding: 60px 18px;
+      }
+
+      .intro-section p,
+      .chapter p {
+        font-size: 18px;
+
+        text-align: left;
+      }
+
+      .chapter ul,
+      .chapter ol {
+        font-size: 18px;
+
+        margin-left: 25px;
+      }
+
+      .dual-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .historical-image {
+        margin: 45px 0;
+      }
+
+      .historical-image img {
+        max-height: 400px;
+      }
+
+      .historical-quote {
+        font-size: 19px;
+
+        padding: 22px;
+      }
+
+      .end-state {
+        padding: 35px 20px;
+      }
+
+      .era-navigation {
+        flex-direction: column;
+
+        padding: 0 18px 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       MAIN NAVIGATION
+       ========================= -->
+
+  <nav class="main-navigation">
+
+    <a href="index.html">HOME</a>
+
+    <a href="constitution.html">CONSTITUTION</a>
+
+    <a href="history.html" class="active">HISTORY</a>
+
+    <a href="government.html">GOVERNMENT</a>
+
+    <a href="judiciary.html">SUPREME TRIBUNAL</a>
+
+    <a href="legislature.html">IMPERIAL ASSEMBLY</a>
+
+    <a href="decrees.html">ROYAL DECREES</a>
+
+    <a href="atlas.html">BRISTEVIA ATLAS</a>
+
+  </nav>
+
+
+  <!-- =========================
+       ERA HEADER
+       ========================= -->
+
+  <header class="era-header">
+
+    <div class="header-content">
+
+      <div class="imperial-symbol">⚜</div>
+
+      <div class="era-label">
+        THE FIFTH ERA
+      </div>
+
+      <h1>
+        IMPERIAL FOUNDATION<br>
+        &amp; THE BIRTH OF<br>
+        STEPHARA AUTHORITY
+      </h1>
+
+      <div class="era-subtitle">
+        The Fragmented Imperial Order Before Bristevia
+      </div>
+
+      <div class="era-date">
+        CENTRAL ARCHIPELAGO CHRONICLE
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN CONTENT
+       ========================= -->
+
+  <main class="history-content">
+
+
+    <!-- =========================
+         INTRODUCTION
+         ========================= -->
+
+    <section class="intro-section">
+
+      <div class="section-kicker">
+        ERA 5
+      </div>
+
+      <h2>
+        THE FIRST SHAPE OF BRISTEVIA
+      </h2>
+
+      <p>
+        ERA 5 is the period in which the Central Archipelago stops
+        being a conquered administrative space and begins to evolve
+        into a proto-regional identity system. Valtherium power is
+        no longer absolute; instead, it becomes fragmented,
+        negotiated, and locally adapted.
+      </p>
+
+      <p>
+        This is the era where the earliest recognizable structure of
+        Bristevia appears—not as a nation, but as a principality
+        network centered on Stephara, in the Festona region, under
+        imperial pressure.
+      </p>
+
+      <p>
+        At the same time, surrounding continental instability reshapes
+        every border: Valtherium naval dominance collapses, northern
+        kingdoms fracture into rival states, western and eastern
+        powers reorganize territorial claims, and local archipelagic
+        leaders gain limited autonomy under imperial retreat.
+      </p>
+
+      <p>
+        Within this shifting world, the Stephara region becomes the
+        most stable surviving administrative core of the Central
+        Archipelago.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         HISTORICAL IMAGE 1
+         ========================= -->
+
+    <figure class="historical-image">
+
+      <img
+        src="era5-image1.jpg"
+        alt="Historical scene depicting the Central Archipelago during the rise of Stephara authority"
+      >
+
+      <figcaption class="image-caption">
+        The Central Archipelago during the age of imperial fragmentation
+        and the emergence of Stephara authority.
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =========================
+         CHAPTER I
+         ========================= -->
+
+    <section class="chapter">
+
+      <div class="chapter-number">
+        I
+      </div>
+
+      <h2>
+        THE AFTERMATH OF THE MAXIMO SEA DEFEAT —
+        VALTHERIUM RETREAT
+      </h2>
+
+      <p>
+        The Valtherium defeat in the Battle of Maximo Sea marked a
+        strategic turning point. Although the empire was not
+        immediately destroyed, its consequences were severe.
+      </p>
+
+      <ul>
+        <li>Loss of naval supremacy</li>
+        <li>Disruption of long-distance maritime control</li>
+        <li>Weakening of overseas administrative cohesion</li>
+      </ul>
+
+      <p>
+        For the Central Archipelago, this meant one thing:
+        imperial enforcement weakened—but did not disappear.
+      </p>
+
+      <p>
+        Instead of full withdrawal, Valtherium shifted into a
+        decentralized governance model, delegating authority to
+        regional governors and loyal noble houses.
+      </p>
+
+      <p>
+        This restructuring directly enabled the rise of local
+        political identities.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         CHAPTER II
+         ========================= -->
+
+    <section class="chapter">
+
+      <div class="chapter-number">
+        II
+      </div>
+
+      <h2>
+        THE PRINCIPALITY OF STEPHARA —
+        THE FIRST STRUCTURED REGIONAL CORE
+      </h2>
+
+      <h3>
+        The Establishment of Stephara
+      </h3>
+
+      <p>
+        Amid imperial fragmentation, Prince Stephen II formalized
+        the most important political development of ERA 5:
+        the establishment of the <strong>Principality of Stephara.</strong>
+      </p>
+
+      <div class="dual-grid">
+
+        <div class="info-card">
+
+          <h3>
+            Core Territories
+          </h3>
+
+          <ul>
+            <li>Festona Strait region</li>
+            <li>Brionne inland basin</li>
+            <li>Valloré administrative center</li>
+          </ul>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>
+            Political Character
+          </h3>
+
+          <ul>
+            <li>Hereditary leadership</li>
+            <li>Internal military organization</li>
+            <li>Tributary relationship with Valtherium</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <p>
+        Though still formally under Valtherium authority, Stephara
+        was unique because it combined coastal, inland, and
+        administrative zones into a single governing structure.
+      </p>
+
+      <p>
+        It retained a hereditary leadership line under the House of
+        Stephen and maintained an internal military organization that,
+        while limited, was increasingly structured.
+      </p>
+
+      <h3>
+        Stephen II — “The Unifier of Stephara”
+      </h3>
+
+      <p>
+        Stephen II is recorded as the first leader to integrate
+        Festona and Brionne governance, centralize Valloré as an
+        administrative hub, and formalize tributary loyalty instead
+        of direct imperial rule.
+      </p>
+
+      <div class="historical-quote">
+        Stephara was not independent—but it was no longer purely
+        imperial. It became a buffer principality, stabilizing the
+        archipelago during Valtherium decline.
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHAPTER III
+         ========================= -->
+
+    <section class="chapter">
+
+      <div class="chapter-number">
+        III
+      </div>
+
+      <h2>
+        THE STEPHEN LINE —
+        FORMATION OF EARLY STATE INSTITUTIONS
+      </h2>
+
+      <p>
+        The House of Stephen becomes the administrative backbone of
+        Stephara during this period.
+      </p>
+
+      <h3>
+        Stephen I — “Archduke of the Archipelago”
+      </h3>
+
+      <ul>
+        <li>Appointed under Valtherium authority</li>
+        <li>Governed Festona, Brionne, and Valloré jointly</li>
+        <li>Established dynastic legitimacy tied to both Brionne and imperial service</li>
+      </ul>
+
+      <p>
+        This created a hybrid identity in which local lineage
+        authority fused with imperial appointment legitimacy.
+      </p>
+
+      <h3>
+        Institutional Evolution Under the Early Stephens
+      </h3>
+
+      <ol>
+        <li>
+          <strong>Stephen III</strong> → co-rule and early bureaucratic delegation
+        </li>
+
+        <li>
+          <strong>Stephen IV</strong> → High Consul system,
+          the first formal administrative liaison role
+        </li>
+
+        <li>
+          <strong>Stephen V</strong> → creation of Archipelagic military legions
+        </li>
+
+        <li>
+          <strong>Stephen VI</strong> → stabilization of tributary governance
+        </li>
+
+        <li>
+          <strong>Stephen VII</strong> → Brionne provincial administration
+        </li>
+
+        <li>
+          <strong>Stephen VIII</strong> → Valloré naval command restructuring
+        </li>
+
+        <li>
+          <strong>Stephen IX</strong> → final tributary-era ruler before structural transition
+        </li>
+      </ol>
+
+      <p>
+        This progression marks a major shift:
+        governance is no longer tribal or purely feudal—it becomes
+        institutional.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         HISTORICAL IMAGE 2
+         ========================= -->
+
+    <figure class="historical-image">
+
+      <img
+        src="era5-image2.jpg"
+        alt="Historical depiction of Prince Stephen II and the early Stephara administration"
+      >
+
+      <figcaption class="image-caption">
+        The House of Stephen and the emergence of the Stephara
+        administrative order.
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =========================
+         CHAPTER IV
+         ========================= -->
+
+    <section class="chapter">
+
+      <div class="chapter-number">
+        IV
+      </div>
+
+      <h2>
+        NORTHERN AND CONTINENTAL FRACTURES —
+        INDIRECT IMPACT ON STEPHARA
+      </h2>
+
+      <h3>
+        The Nords Civil War
+      </h3>
+
+      <p>
+        The Nord collapse into East Nords under Ryth and West Nords
+        under Osbord destabilized northern trade routes connected to
+        the archipelago.
+      </p>
+
+      <ul>
+        <li>Migration pressure increased into Stepharan northern ports</li>
+        <li>Military refugees entered Brionne inland zones</li>
+        <li>Trade routes shifted southward toward Valloré-controlled corridors</li>
+      </ul>
+
+      <h3>
+        Battle of Vessex
+      </h3>
+
+      <p>
+        The conflict between Prince Ryth and Prince Osbord resulted
+        in the permanent division of the Nords.
+      </p>
+
+      <ul>
+        <li>Permanent Nord division</li>
+        <li>Treaty of Vessex formalizing separation</li>
+        <li>West Nords gaining control of the Dunava river region</li>
+      </ul>
+
+      <p>
+        The Dunava seizure reduced northern trade flow into Stephara,
+        increased the importance of Valloré as an inland logistics
+        hub, and strengthened Stephara's self-sufficiency.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         CHAPTER V
+         ========================= -->
+
+    <section class="chapter">
+
+      <div class="chapter-number">
+        V
+      </div>
+
+      <h2>
+        THE STEPHARA–VALTHERIUM TENSION BALANCE
+      </h2>
+
+      <p>
+        As Valtherium weakened, it increasingly relied on Stephara
+        as a stabilizing buffer.
+      </p>
+
+      <p>
+        However, Stephara's leadership under the Stephen line began
+        to shift subtly.
+      </p>
+
+      <ul>
+        <li>More autonomous decision-making in internal governance</li>
+        <li>Expansion of local military organization</li>
+        <li>Increasing control over inland taxation systems</li>
+      </ul>
+
+      <div class="historical-quote">
+        Stephara was still a Valtherium principality—but functionally
+        operated as a semi-sovereign regional state.
+      </div>
+
+      <p>
+        This duality becomes a defining characteristic of early
+        Bristevian political identity.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         CHAPTER VI
+         ========================= -->
+
+    <section class="chapter">
+
+      <div class="chapter-number">
+        VI
+      </div>
+
+      <h2>
+        EASTERN POWER SHIFTS —
+        ZALTA AND THE OCTAVIUS REVOLUTION
+      </h2>
+
+      <p>
+        One of the most significant indirect developments impacting
+        Stephara was the rise of Zalta independence movements under
+        General Octavius.
+      </p>
+
+      <h3>
+        Coup of Emperor Caratinos
+      </h3>
+
+      <ul>
+        <li>Internal Valtherium political assassination crisis</li>
+        <li>Octavius fled the imperial center after accusing corruption in succession</li>
+      </ul>
+
+      <h3>
+        Battle of Dochi — Zalta Region
+      </h3>
+
+      <ul>
+        <li>Octavius defeated Valtherium forces</li>
+        <li>Established independent authority in western Zalta</li>
+      </ul>
+
+      <h3>
+        Octavius II
+      </h3>
+
+      <ul>
+        <li>Formalized the Kingdom of Zalta</li>
+        <li>Secured full control of Zaltrian territory</li>
+      </ul>
+
+      <p>
+        The Zalta independence movement proved a critical precedent:
+        imperial authority could be successfully broken by regional
+        military leadership.
+      </p>
+
+      <p>
+        This idea later influences Bristevian political philosophy
+        during independence centuries later.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         CHAPTER VII
+         ========================= -->
+
+    <section class="chapter">
+
+      <div class="chapter-number">
+        VII
+      </div>
+
+      <h2>
+        PRINCIPALITY STABILIZATION AND
+        REGIONAL IDENTITY FORMATION
+      </h2>
+
+      <p>
+        By the late ERA 5 period, Stephara had stabilized into a
+        recognizable political entity.
+      </p>
+
+      <div class="dual-grid">
+
+        <div class="info-card">
+
+          <h3>
+            Government Structure
+          </h3>
+
+          <ul>
+            <li>Hereditary princely leadership under the House of Stephen</li>
+            <li>Consul-based administration through the Valloré system</li>
+            <li>Provincial governors in Brionne and Festona</li>
+            <li>Controlled tributary relationship with Valtherium</li>
+          </ul>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>
+            Territorial Identity
+          </h3>
+
+          <ul>
+            <li>Festona → maritime governance core</li>
+            <li>Brionne → agricultural administrative base</li>
+            <li>Valloré → imperial-meets-local capital center</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <h3>
+        Military Development
+      </h3>
+
+      <ul>
+        <li>Early Archipelagic legions through Stephen V reforms</li>
+        <li>Defensive coastal fleets through Stephen VIII reforms</li>
+        <li>Inland militia integration</li>
+      </ul>
+
+      <p>
+        This is the first time in history that the region operates
+        as a coherent administrative unit, even if still under
+        imperial oversight.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         HISTORICAL IMAGE 3
+         ========================= -->
+
+    <figure class="historical-image">
+
+      <img
+        src="era5-image3.jpg"
+        alt="Historical depiction of Stephara, Valloré, and the Archipelagic legions"
+      >
+
+      <figcaption class="image-caption">
+        Stephara during its consolidation as a semi-autonomous
+        regional principality.
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =========================
+         CHAPTER VIII
+         ========================= -->
+
+    <section class="chapter">
+
+      <div class="chapter-number">
+        VIII
+      </div>
+
+      <h2>
+        END STATE OF ERA 5 —
+        THE PRE-BRISTEVIAN STRUCTURE IS COMPLETE
+      </h2>
+
+      <p>
+        ERA 5 ends with a fragmented but fully formed proto-state
+        system.
+      </p>
+
+      <div class="dual-grid">
+
+        <div class="info-card">
+
+          <h3>
+            Stephara Principality
+          </h3>
+
+          <ul>
+            <li>Semi-autonomous regional authority</li>
+            <li>Led by the House of Stephen</li>
+            <li>Tributary to Valtherium but internally cohesive</li>
+          </ul>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>
+            Valloré System
+          </h3>
+
+          <ul>
+            <li>Administrative and naval coordination hub</li>
+            <li>Bridge between imperial authority and local governance</li>
+          </ul>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>
+            Brionne Province
+          </h3>
+
+          <ul>
+            <li>Fully institutionalized inland region</li>
+            <li>Agricultural and logistical backbone</li>
+          </ul>
+
+        </div>
+
+        <div class="info-card">
+
+          <h3>
+            Festona Strait Zone
+          </h3>
+
+          <ul>
+            <li>Maritime corridor under regulated autonomy</li>
+            <li>Strategic naval passage point</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHAPTER IX
+         ========================= -->
+
+    <section class="chapter">
+
+      <div class="chapter-number">
+        IX
+      </div>
+
+      <h2>
+        HISTORICAL SIGNIFICANCE —
+        THE BIRTH OF BRISTEVIA IN STRUCTURE, NOT NAME
+      </h2>
+
+      <p>
+        ERA 5 does not create Bristevia as a nation.
+        Instead, it creates something more important:
+        a unified administrative skeleton spanning coast, inland,
+        and naval systems under a single regional identity—
+        Stephara.
+      </p>
+
+      <p>
+        For the first time:
+      </p>
+
+      <ul>
+        <li>A ruling house governs all three core zones simultaneously</li>
+        <li>Military, trade, and taxation systems are integrated</li>
+        <li>A semi-independent identity exists inside an empire</li>
+      </ul>
+
+      <div class="historical-quote">
+        “The First Shape of Bristevia.”
+      </div>
+
+      <p>
+        Not as a kingdom.
+        Not as an empire.
+        But as a cohesive regional organism waiting for independence
+        to be defined.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         END STATE
+         ========================= -->
+
+    <section class="end-state">
+
+      <h2>
+        THE LEGACY OF ERA 5
+      </h2>
+
+      <p>
+        The Central Archipelago enters the next age no longer as a
+        collection of imperial districts, but as an organized
+        regional principality whose institutions, ruling dynasty,
+        military structures, and territorial administration provide
+        the foundation upon which Bristevia will eventually emerge.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       ERA NAVIGATION
+       ========================= -->
+
+  <div class="era-navigation">
+
+    <a href="era4.html">
+      ← ERA IV
+    </a>
+
+    <a href="history.html">
+      HISTORY INDEX
+    </a>
+
+    <a href="era6.html">
+      ERA VI →
+    </a>
+
+  </div>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    <p>
+      <strong>
+        ⚜ IMPERIAL SOVEREIGN OF BRISTEVIA ⚜
+      </strong>
+    </p>
+
+    <p>
+      © 2026 The Imperial Sovereign of Bristevia.
+      All Rights Reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
