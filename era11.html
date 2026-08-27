@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ERA 11 — The Second Pan-Continental War | Imperial Sovereign of Bristevia</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --imperial-blue: #101d35;
+      --deep-blue: #07101f;
+      --royal-blue: #1c355d;
+      --gold: #c9a34a;
+      --light-gold: #e4c879;
+      --cream: #f3eee1;
+      --paper: #eee8d8;
+      --ink: #20252c;
+      --muted: #6d6a62;
+      --white: #ffffff;
+      --border: rgba(201, 163, 74, 0.45);
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        linear-gradient(
+          rgba(7, 16, 31, 0.96),
+          rgba(7, 16, 31, 0.96)
+        ),
+        url("images/era11-bg.jpg") center/cover fixed;
+      color: var(--ink);
+      font-family: "Inter", sans-serif;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: relative;
+      min-height: 76vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          rgba(7, 16, 31, 0.50),
+          rgba(7, 16, 31, 0.88)
+        ),
+        url("images/era11-bg.jpg") center/cover no-repeat;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(201, 163, 74, 0.08),
+          transparent
+        );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(1050px, 92%);
+      padding: 70px 20px;
+    }
+
+    .era-number {
+      font-family: "Cinzel", serif;
+      color: var(--light-gold);
+      font-size: 1rem;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-family: "Cinzel", serif;
+      font-size: clamp(2.1rem, 5vw, 4.8rem);
+      line-height: 1.12;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+      text-shadow: 0 5px 25px rgba(0, 0, 0, 0.65);
+    }
+
+    .hero-rule {
+      width: 130px;
+      height: 2px;
+      background: var(--gold);
+      margin: 30px auto;
+    }
+
+    .hero-subtitle {
+      font-family: "Cinzel", serif;
+      color: #e9dfc6;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      letter-spacing: 0.08em;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .hero-description {
+      max-width: 820px;
+      margin: 25px auto 0;
+      color: #d9d8d3;
+      font-size: 0.98rem;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .history-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7, 16, 31, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      width: min(1250px, 94%);
+      margin: auto;
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .nav-brand {
+      font-family: "Cinzel", serif;
+      color: var(--light-gold);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: #e8e4d8;
+      text-decoration: none;
+      font-size: 0.78rem;
+      padding: 7px 11px;
+      border: 1px solid transparent;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--light-gold);
+      border-color: var(--border);
+    }
+
+    .nav-links .current {
+      color: var(--light-gold);
+      border-color: var(--border);
+    }
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    main {
+      width: min(1050px, 92%);
+      margin: 65px auto 100px;
+    }
+
+    .chronicle {
+      background:
+        linear-gradient(
+          rgba(243, 238, 225, 0.98),
+          rgba(243, 238, 225, 0.98)
+        ),
+        url("images/parchment-texture.jpg") center/cover;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(201, 163, 74, 0.38);
+      padding: clamp(28px, 5vw, 70px);
+    }
+
+    .opening {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 65px;
+    }
+
+    .opening .kicker {
+      color: #927329;
+      font-family: "Cinzel", serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .opening h2 {
+      font-family: "Cinzel", serif;
+      color: var(--imperial-blue);
+      font-size: clamp(1.45rem, 3vw, 2.3rem);
+      line-height: 1.3;
+      margin-bottom: 25px;
+    }
+
+    .opening p {
+      color: #41413d;
+      font-size: 1rem;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    .section {
+      margin-top: 65px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 25px;
+    }
+
+    .section-number {
+      min-width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      color: #876a25;
+      font-size: 0.9rem;
+    }
+
+    .section h2 {
+      font-family: "Cinzel", serif;
+      color: var(--imperial-blue);
+      font-size: clamp(1.25rem, 3vw, 1.85rem);
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .section h3 {
+      font-family: "Cinzel", serif;
+      color: #293b59;
+      margin: 28px 0 10px;
+      font-size: 1.15rem;
+    }
+
+    .section p {
+      margin-bottom: 18px;
+      color: #30322f;
+    }
+
+    .section ul {
+      margin: 15px 0 25px 25px;
+    }
+
+    .section li {
+      margin: 7px 0;
+      padding-left: 5px;
+    }
+
+    .section li::marker {
+      color: #a07d2d;
+    }
+
+    .quote {
+      position: relative;
+      margin: 28px 0;
+      padding: 25px 30px;
+      border-left: 4px solid var(--gold);
+      background: rgba(201, 163, 74, 0.09);
+      color: #39404b;
+      font-family: "Cinzel", serif;
+      font-size: 1.05rem;
+      font-style: italic;
+    }
+
+    .quote::before {
+      content: "“";
+      position: absolute;
+      top: -15px;
+      left: 10px;
+      font-size: 4rem;
+      color: rgba(201, 163, 74, 0.3);
+      font-family: Georgia, serif;
+    }
+
+    /* =========================
+       HISTORICAL IMAGE SLOTS
+       EXACTLY 3 IMAGES
+    ========================= */
+
+    .historical-image {
+      margin: 45px 0;
+      border: 1px solid rgba(132, 103, 38, 0.45);
+      background: #d9d0bb;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.13);
+      overflow: hidden;
+    }
+
+    .historical-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: 260px;
+      max-height: 540px;
+      object-fit: cover;
+      filter: sepia(12%) contrast(1.03);
+    }
+
+    .historical-image figcaption {
+      padding: 13px 18px;
+      background: #e5ddcb;
+      border-top: 1px solid rgba(132, 103, 38, 0.25);
+      color: #645d4d;
+      font-family: "Cinzel", serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
+    /* =========================
+       SPECIAL LIST BOX
+    ========================= */
+
+    .regional-box {
+      margin: 30px 0;
+      padding: 25px 30px;
+      border: 1px solid rgba(201, 163, 74, 0.55);
+      background: rgba(255, 255, 255, 0.34);
+    }
+
+    .regional-box h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .regional-box ul {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       ASSESSMENT
+    ========================= */
+
+    .final-assessment {
+      margin-top: 75px;
+      padding: 40px 35px;
+      background: var(--imperial-blue);
+      color: #e8e4d9;
+      border-top: 3px solid var(--gold);
+      text-align: center;
+    }
+
+    .final-assessment h2 {
+      font-family: "Cinzel", serif;
+      color: var(--light-gold);
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      margin-bottom: 22px;
+    }
+
+    .final-assessment p {
+      color: #d8d7d1;
+      margin-bottom: 15px;
+    }
+
+    /* =========================
+       ERA NAVIGATION
+    ========================= */
+
+    .era-navigation {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .era-navigation a {
+      text-decoration: none;
+      padding: 20px;
+      border: 1px solid var(--border);
+      background: rgba(201, 163, 74, 0.07);
+      color: var(--imperial-blue);
+      transition: 0.25s ease;
+    }
+
+    .era-navigation a:hover {
+      background: rgba(201, 163, 74, 0.17);
+      transform: translateY(-2px);
+    }
+
+    .era-navigation .next {
+      text-align: right;
+    }
+
+    .era-navigation small {
+      display: block;
+      color: #8b6d29;
+      font-family: "Cinzel", serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .era-navigation strong {
+      font-family: "Cinzel", serif;
+      font-size: 0.95rem;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+      padding: 55px 20px;
+      background: #050b15;
+      color: #96999d;
+      border-top: 1px solid var(--border);
+    }
+
+    footer .footer-title {
+      font-family: "Cinzel", serif;
+      color: var(--light-gold);
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      font-size: 0.78rem;
+      margin: 5px 0;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .nav-inner {
+        padding: 10px 0;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .nav-links a {
+        font-size: 0.7rem;
+        padding: 5px 7px;
+      }
+
+      header {
+        min-height: 70vh;
+      }
+
+      .chronicle {
+        padding: 30px 22px;
+      }
+
+      .section {
+        margin-top: 50px;
+      }
+
+      .section-header {
+        align-items: flex-start;
+      }
+
+      .section-number {
+        min-width: 42px;
+        height: 42px;
+      }
+
+      .historical-image img {
+        min-height: 200px;
+      }
+
+      .era-navigation {
+        grid-template-columns: 1fr;
+      }
+
+      .era-navigation .next {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .hero-content {
+        padding: 55px 12px;
+      }
+
+      .era-number {
+        font-size: 0.75rem;
+        letter-spacing: 0.28em;
+      }
+
+      .hero-subtitle {
+        font-size: 0.9rem;
+      }
+
+      main {
+        width: 94%;
+      }
+
+      .chronicle {
+        padding: 25px 17px;
+      }
+
+      .section-header {
+        gap: 12px;
+      }
+
+      .section h2 {
+        font-size: 1.15rem;
+      }
+
+      .section p,
+      .section li {
+        font-size: 0.92rem;
+      }
+
+      .quote {
+        padding: 22px;
+      }
+
+      .final-assessment {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       HERO / HISTORICAL BACKGROUND IMAGE #1
+       Replace: images/era11-bg.jpg
+  ========================================================== -->
+
+  <header id="top">
+
+    <div class="hero-content">
+
+      <div class="era-number">
+        Central Archipelago Chronicle
+      </div>
+
+      <h1>
+        ERA 11
+      </h1>
+
+      <div class="hero-rule"></div>
+
+      <div class="hero-subtitle">
+        THE SECOND PAN-CONTINENTAL WAR AND THE BRISTEVIAN CENTURY OF SURVIVAL
+      </div>
+
+      <p class="hero-description">
+        Only Bristevia Record
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================================
+       HISTORY NAVIGATION
+  ========================================================== -->
+
+  <nav class="history-nav">
+
+    <div class="nav-inner">
+
+      <div class="nav-brand">
+        BRISTEVIA
+      </div>
+
+      <div class="nav-links">
+
+        <a href="Index-History.html">
+          History
+        </a>
+
+        <a href="Index-History-Era10.html">
+          ← Era 10
+        </a>
+
+        <a href="#top" class="current">
+          Era 11
+        </a>
+
+        <a href="Index-History-Era12.html">
+          Era 12 →
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =========================================================
+       MAIN CHRONICLE
+  ========================================================== -->
+
+  <main>
+
+    <article class="chronicle">
+
+
+      <!-- INTRODUCTION -->
+
+      <section class="opening">
+
+        <div class="kicker">
+          Era XI
+        </div>
+
+        <h2>
+          The Century of Pressure, and the Survival of Unity
+        </h2>
+
+        <p>
+          By the opening of ERA 11, Bristevia no longer stood as a rising regional power—it had already become the central stabilizing core of the archipelago system established in the aftermath of earlier continental fractures.
+        </p>
+
+        <p>
+          The Five Regions formed under Souverion Stephen XX remained intact, but the political reality beneath them was far less stable than the administrative map suggested.
+        </p>
+
+        <p>
+          This was the era when Bristevia stopped expanding as a kingdom and started surviving as a system.
+        </p>
+
+      </section>
+
+
+      <!-- =====================================================
+           I. POST-IMPERIAL BALANCE
+      ====================================================== -->
+
+      <section class="section" id="section-1">
+
+        <div class="section-header">
+
+          <div class="section-number">
+            I
+          </div>
+
+          <h2>
+            The Post-Imperial Balance and the Fragile Five Regions
+          </h2>
+
+        </div>
+
+        <p>
+          Following the reforms of Stephen XX, Bristevia was divided into the Five Regional System, each governed by princely administrations under centralized Souverion authority:
+        </p>
+
+        <div class="regional-box">
+
+          <ul>
+            <li>
+              <strong>Stephara (Central Heartland)</strong> — political capital and dynastic seat
+            </li>
+
+            <li>
+              <strong>Jaybrienne (Inland Agricultural Core)</strong> — economic stability and food production
+            </li>
+
+            <li>
+              <strong>Luminaris (Eastern Maritime Province)</strong> — naval trade and shipbuilding hub
+            </li>
+
+            <li>
+              <strong>Solara (Southern Coastal Province)</strong> — historically volatile frontier region
+            </li>
+
+            <li>
+              <strong>Northaven–Aethelburg Composite (Northern Defensive Belt)</strong> — mountain fortification zone
+            </li>
+          </ul>
+
+        </div>
+
+        <p>
+          While this structure was meant to prevent regional rebellion, it instead created competing regional identities—especially in Solara and Luminaris, which had long histories of semi-independence before full integration.
+        </p>
+
+        <p>
+          By the time of Stephen XXI, these tensions had not disappeared. They were merely contained.
+        </p>
+
+      </section>
+
+
+      <!-- =====================================================
+           II. STEPHEN XXI
+      ====================================================== -->
+
+      <section class="section" id="section-2">
+
+        <div class="section-header">
+
+          <div class="section-number">
+            II
+          </div>
+
+          <h2>
+            Stephen XXI and the War-Time Centralization
+          </h2>
+
+        </div>
+
+        <p>
+          When the Second Pan-Continental War erupted across Valtherra, Bristevia entered not as a conqueror, but as a balancing power forced into alliance politics.
+        </p>
+
+        <p>
+          Souverion Stephen XXI inherited a state that was:
+        </p>
+
+        <ul>
+
+          <li>
+            militarily strong but politically divided internally,
+          </li>
+
+          <li>
+            economically stable but strained by naval demands,
+          </li>
+
+          <li>
+            and diplomatically surrounded by shifting coalitions.
+          </li>
+
+        </ul>
+
+        <div class="quote">
+          “The sea will not wait for a divided crown.”
+        </div>
+
+        <p>
+          Under his authority, Bristevia consolidated its fleets from Luminaris, Stephara, and Solara into a unified command structure known as the <strong>Bristevian Imperial Maritime Directorate</strong>.
+        </p>
+
+        <p>
+          This prevented regional commanders from acting independently during the escalating continental war.
+        </p>
+
+      </section>
+
+
+      <!-- =====================================================
+           HISTORICAL IMAGE #2
+           Replace: images/era11-image1.jpg
+      ====================================================== -->
+
+      <figure class="historical-image">
+
+        <img
+          src="images/era11-image1.jpg"
+          alt="Historical depiction of the Bristevian Imperial Maritime Directorate during the Second Pan-Continental War"
+          loading="lazy"
+        >
+
+        <figcaption>
+          Bristevian Imperial Maritime Directorate — Wartime Fleet Mobilization
+        </figcaption>
+
+      </figure>
+
+
+      <!-- =====================================================
+           III. INTERNAL STRAIN
+      ====================================================== -->
+
+      <section class="section" id="section-3">
+
+        <div class="section-header">
+
+          <div class="section-number">
+            III
+          </div>
+
+          <h2>
+            The Internal Strain of the Five Regions
+          </h2>
+
+        </div>
+
+        <p>
+          Unlike earlier wars, the Second Pan-Continental War did not begin at Bristevia’s borders—it entered through its institutions.
+        </p>
+
+        <ul>
+
+          <li>
+            <strong>Solara</strong> resisted heavy taxation for naval expansion, reviving old separatist sentiments.
+          </li>
+
+          <li>
+            <strong>Luminaris</strong> pushed for autonomous fleet command, arguing its maritime tradition predated imperial control.
+          </li>
+
+          <li>
+            <strong>Northaven–Aethelburg</strong> demanded defensive prioritization, refusing overseas deployment of its mountain legions.
+          </li>
+
+        </ul>
+
+        <p>
+          Stephen XXI’s government responded not with fragmentation, but with central reassignment of military authority, temporarily suspending regional autonomy during wartime.
+        </p>
+
+        <p>
+          This decision later became controversial but is credited with preserving Bristevia’s territorial integrity.
+        </p>
+
+      </section>
+
+
+      <!-- =====================================================
+           IV. RAM II
+      ====================================================== -->
+
+      <section class="section" id="section-4">
+
+        <div class="section-header">
+
+          <div class="section-number">
+            IV
+          </div>
+
+          <h2>
+            The Rise of Ram II and Dynastic Rebalancing
+          </h2>
+
+        </div>
+
+        <p>
+          As war pressure increased, internal aristocratic factions demanded broader representation in the Souverion system.
+        </p>
+
+        <p>
+          This led to the unprecedented elevation of <strong>Ram II</strong>, the first non-Stephen Souverion of the imperial era.
+        </p>
+
+        <p>
+          Ram II’s rise did not replace the Stephen line, but temporarily balanced it. His authority was primarily administrative and diplomatic, focusing on:
+        </p>
+
+        <ul>
+
+          <li>
+            maintaining cohesion among regional governors,
+          </li>
+
+          <li>
+            stabilizing wartime resource distribution,
+          </li>
+
+          <li>
+            and preventing regional secession movements within Solara and Luminaris.
+          </li>
+
+        </ul>
+
+        <p>
+          His reign is remembered not for conquest, but for preventing internal collapse during external war.
+        </p>
+
+      </section>
+
+
+      <!-- =====================================================
+           V. STEPHEN XXII
+      ====================================================== -->
+
+      <section class="section" id="section-5">
+
+        <div class="section-header">
+
+          <div class="section-number">
+            V
+          </div>
+
+          <h2>
+            Stephen XXII and the Restoration of Imperial Command
+          </h2>
+
+        </div>
+
+        <p>
+          As the war escalated, Bristevia’s naval front faced increasing pressure across the eastern maritime corridors governed from Luminaris.
+        </p>
+
+        <p>
+          At this critical juncture, Stephen XXII returned to centralized authority, restoring the dominance of House Stephen within the Souverion structure.
+        </p>
+
+        <p>
+          Under his command:
+        </p>
+
+        <ul>
+
+          <li>
+            Luminaris fleets were reintegrated under imperial command,
+          </li>
+
+          <li>
+            Solaran naval dissent was militarily contained but politically reintegrated,
+          </li>
+
+          <li>
+            and Stephara regained full strategic control over war coordination.
+          </li>
+
+        </ul>
+
+        <p>
+          His leadership marked the recentralization phase of the war, ensuring Bristevia did not fracture under coalition strain.
+        </p>
+
+      </section>
+
+
+      <!-- =====================================================
+           VI. STEPHEN XXIII
+      ====================================================== -->
+
+      <section class="section" id="section-6">
+
+        <div class="section-header">
+
+          <div class="section-number">
+            VI
+          </div>
+
+          <h2>
+            Stephen XXIII and the Final Phase of Continental War
+          </h2>
+
+        </div>
+
+        <p>
+          The final stage of the war saw Bristevia transition from survival to arbitration power.
+        </p>
+
+        <p>
+          Under Stephen XXIII, Bristevia became:
+        </p>
+
+        <ul>
+
+          <li>
+            the primary diplomatic host of continental negotiations,
+          </li>
+
+          <li>
+            the logistical center for post-war stabilization talks,
+          </li>
+
+          <li>
+            and the de facto mediator between exhausted coalition systems.
+          </li>
+
+        </ul>
+
+        <p>
+          It was during this phase that Stephara City became the symbolic neutral ground of Valtherra diplomacy, where surviving powers agreed to cease large-scale continental escalation.
+        </p>
+
+        <p>
+          Bristevian fleets, though still active, shifted from offensive warfare to maritime enforcement of ceasefire corridors.
+        </p>
+
+      </section>
+
+
+      <!-- =====================================================
+           HISTORICAL IMAGE #3
+           Replace: images/era11-image2.jpg
+      ====================================================== -->
+
+      <figure class="historical-image">
+
+        <img
+          src="images/era11-image2.jpg"
+          alt="Historical depiction of the Stephara diplomatic negotiations and United Valterra framework"
+          loading="lazy"
+        >
+
+        <figcaption>
+          The Imperial Hall of Stephara — The Final Arbitration of the Second Pan-Continental War
+        </figcaption>
+
+      </figure>
+
+
+      <!-- =====================================================
+           VII. UNITED VALTERRA
+      ====================================================== -->
+
+      <section class="section" id="section-7">
+
+        <div class="section-header">
+
+          <div class="section-number">
+            VII
+          </div>
+
+          <h2>
+            Stephara City and the Formation of the United Valterra Framework
+          </h2>
+
+        </div>
+
+        <p>
+          At the conclusion of the war, surviving nations gathered in Stephara City, within the central province of Bristevia.
+        </p>
+
+        <p>
+          This was not merely a diplomatic summit—it was the moment Bristevia transitioned from participant in continental war to architect of continental order.
+        </p>
+
+        <p>
+          From Bristevian historical records:
+        </p>
+
+        <ul>
+
+          <li>
+            the Imperial Hall of Stephara hosted the final arbitration sessions,
+          </li>
+
+          <li>
+            Luminaris naval docks enforced neutral passage agreements,
+          </li>
+
+          <li>
+            and Jaybrienne supplied the logistical support for refugee stabilization efforts.
+          </li>
+
+        </ul>
+
+        <p>
+          The resulting framework, known as the <strong>United Valterra accord system</strong>, was heavily shaped by Bristevian diplomatic design principles:
+        </p>
+
+        <ul>
+
+          <li>
+            balance of regional sovereignty,
+          </li>
+
+          <li>
+            controlled maritime corridors,
+          </li>
+
+          <li>
+            and centralized conflict arbitration mechanisms.
+          </li>
+
+        </ul>
+
+      </section>
+
+
+      <!-- =====================================================
+           VIII. RESULTING TRANSFORMATION
+      ====================================================== -->
+
+      <section class="section" id="section-8">
+
+        <div class="section-header">
+
+          <div class="section-number">
+            VIII
+          </div>
+
+          <h2>
+            The Resulting Bristevian Transformation
+          </h2>
+
+        </div>
+
+        <p>
+          By the end of ERA 11, Bristevia had fundamentally changed:
+        </p>
+
+        <ul>
+
+          <li>
+            It was no longer simply a kingdom with regions.
+          </li>
+
+          <li>
+            It had become a continental stabilizer-state.
+          </li>
+
+          <li>
+            Its Souverion system was no longer purely dynastic, but institutional.
+          </li>
+
+          <li>
+            Its Five Regions were no longer administrative divisions, but semi-autonomous political pillars under imperial arbitration.
+          </li>
+
+        </ul>
+
+        <p>
+          Most importantly, Bristevia had survived a war that reshaped the entire Valtherran order without collapsing into internal fragmentation.
+        </p>
+
+      </section>
+
+
+      <!-- =====================================================
+           IX. FINAL HISTORICAL ASSESSMENT
+      ====================================================== -->
+
+      <section class="section" id="section-9">
+
+        <div class="section-header">
+
+          <div class="section-number">
+            IX
+          </div>
+
+          <h2>
+            Final Historical Assessment of ERA 11
+          </h2>
+
+        </div>
+
+        <div class="quote">
+          “The Century of Pressure, and the Survival of Unity”
+        </div>
+
+        <p>
+          ERA 11 is remembered in Bristevian historiography as:
+        </p>
+
+        <div class="regional-box">
+
+          <h3>
+            The Four Defining Souverions
+          </h3>
+
+          <ul>
+
+            <li>
+              <strong>Stephen XXI</strong> — wartime consolidation
+            </li>
+
+            <li>
+              <strong>Ram II</strong> — administrative balance
+            </li>
+
+            <li>
+              <strong>Stephen XXII</strong> — restoration of central authority
+            </li>
+
+            <li>
+              <strong>Stephen XXIII</strong> — diplomatic closure of continental war
+            </li>
+
+          </ul>
+
+        </div>
+
+        <p>
+          And it confirmed the defining truth of Bristevia’s evolution:
+        </p>
+
+        <div class="quote">
+          That its greatest threat was never foreign invasion alone—but internal division under external pressure.
+        </div>
+
+        <p>
+          And it survived both.
+        </p>
+
+      </section>
+
+
+      <!-- =====================================================
+           FINAL ASSESSMENT
+      ====================================================== -->
+
+      <section class="final-assessment">
+
+        <h2>
+          ERA 11 — The Survival of Unity
+        </h2>
+
+        <p>
+          Bristevia entered ERA 11 as an imperial structure tested by internal regional tensions and continental war.
+        </p>
+
+        <p>
+          It emerged as something greater: a centralized, institutionally mature power capable of surviving systemic conflict and shaping the political order that followed.
+        </p>
+
+        <p>
+          The Second Pan-Continental War did not destroy Bristevia.
+          It proved that Bristevia could survive itself.
+        </p>
+
+      </section>
+
+
+      <!-- =====================================================
+           ERA NAVIGATION
+      ====================================================== -->
+
+      <div class="era-navigation">
+
+        <a href="Index-History-Era10.html">
+
+          <small>
+            Previous Era
+          </small>
+
+          <strong>
+            ← ERA 10 — Imperial Transformation
+          </strong>
+
+        </a>
+
+
+        <a href="Index-History-Era12.html" class="next">
+
+          <small>
+            Next Era
+          </small>
+
+          <strong>
+            ERA 12 — Continue the Chronicle →
+          </strong>
+
+        </a>
+
+      </div>
+
+
+    </article>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer>
+
+    <div class="footer-title">
+      IMPERIAL SOVEREIGN OF BRISTEVIA
+    </div>
+
+    <p>
+      Central Archipelago Historical Chronicle
+    </p>
+
+    <p>
+      ERA 11 — The Second Pan-Continental War and the Bristevian Century of Survival
+    </p>
+
+    <p>
+      © Bristevian Historical Archives
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
