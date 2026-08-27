@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Era 7 | Imperial Sovereign of Bristevia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cormorant Garamond", serif;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(12, 61, 115, 0.45),
+          rgba(2, 12, 30, 0.98)
+        ),
+        #020b18;
+
+      color: #f8f0d0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       MAIN NAVIGATION
+       ========================= */
+
+    .main-navigation {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+
+      padding: 18px 15px;
+
+      background:
+        linear-gradient(
+          rgba(2,18,42,0.96),
+          rgba(2,11,27,0.99)
+        );
+
+      border-bottom: 1px solid rgba(212,175,55,0.45);
+
+      box-shadow:
+        0 5px 25px rgba(0,0,0,0.4);
+
+      position: relative;
+      z-index: 20;
+    }
+
+    .main-navigation a {
+      font-family: "Cinzel", serif;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+
+      color: #f5e6a8;
+      text-decoration: none;
+
+      padding: 10px 15px;
+
+      transition: 0.3s ease;
+    }
+
+    .main-navigation a:hover,
+    .main-navigation a.active {
+      color: #ffffff;
+
+      text-shadow:
+        0 0 10px rgba(212,175,55,0.8);
+    }
+
+    /* =========================
+       ERA HERO
+       ========================= */
+
+    .era-hero {
+
+      min-height: 72vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 100px 25px;
+
+      position: relative;
+
+      background:
+        linear-gradient(
+          rgba(1, 12, 30, 0.60),
+          rgba(1, 12, 30, 0.88)
+        ),
+        url("era7-bg.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+      border-bottom: 1px solid rgba(212,175,55,0.55);
+    }
+
+    .era-hero::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(212,175,55,0.18),
+          transparent 62%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 1100px;
+    }
+
+    .imperial-symbol {
+      font-size: 70px;
+
+      color: #d4af37;
+
+      text-shadow:
+        0 0 15px rgba(212,175,55,0.8),
+        0 0 40px rgba(212,175,55,0.35);
+
+      margin-bottom: 20px;
+    }
+
+    .era-label {
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 15px;
+
+      letter-spacing: 6px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+    .era-hero h1 {
+
+      font-family: "Cinzel", serif;
+
+      font-size: clamp(38px, 6vw, 70px);
+
+      line-height: 1.15;
+
+      color: #f7e7a9;
+
+      letter-spacing: 4px;
+
+      text-shadow:
+        0 3px 0 #8b6914,
+        0 0 25px rgba(212,175,55,0.35);
+    }
+
+    .hero-subtitle {
+
+      margin-top: 25px;
+
+      font-family: "Cinzel", serif;
+
+      font-size: clamp(17px, 2.5vw, 25px);
+
+      letter-spacing: 3px;
+
+      color: #ffffff;
+    }
+
+    .hero-period {
+
+      margin-top: 15px;
+
+      color: #d4af37;
+
+      font-size: 20px;
+
+      letter-spacing: 2px;
+    }
+
+    /* =========================
+       ERA NAVIGATION
+       ========================= */
+
+    .era-navigation {
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      padding: 22px 15px;
+
+      background:
+        rgba(1,10,25,0.97);
+
+      border-bottom: 1px solid rgba(212,175,55,0.25);
+    }
+
+    .era-navigation a {
+
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      text-decoration: none;
+
+      font-size: 11px;
+
+      letter-spacing: 1.5px;
+
+      padding: 9px 14px;
+
+      border: 1px solid rgba(212,175,55,0.3);
+
+      transition: 0.3s ease;
+    }
+
+    .era-navigation a:hover {
+
+      background: rgba(212,175,55,0.12);
+
+      border-color: #d4af37;
+
+      color: #ffffff;
+    }
+
+    .era-navigation .current {
+
+      background: rgba(212,175,55,0.18);
+
+      border-color: #d4af37;
+
+      color: #ffffff;
+    }
+
+    /* =========================
+       CONTENT
+       ========================= */
+
+    .era-content {
+
+      max-width: 1100px;
+
+      margin: auto;
+
+      padding: 90px 25px;
+    }
+
+    .intro {
+
+      text-align: center;
+
+      max-width: 900px;
+
+      margin: 0 auto 70px;
+    }
+
+    .intro h2 {
+
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: clamp(26px, 4vw, 38px);
+
+      letter-spacing: 3px;
+
+      margin-bottom: 25px;
+    }
+
+    .intro p {
+
+      color: #d8d8d8;
+
+      font-size: 20px;
+
+      line-height: 1.9;
+    }
+
+    /* =========================
+       SECTION
+       ========================= */
+
+    .history-section {
+
+      margin-bottom: 75px;
+
+      padding-bottom: 60px;
+
+      border-bottom: 1px solid rgba(212,175,55,0.18);
+    }
+
+    .history-section:last-child {
+
+      border-bottom: none;
+    }
+
+    .section-number {
+
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 14px;
+
+      letter-spacing: 4px;
+
+      margin-bottom: 10px;
+    }
+
+    .history-section h2 {
+
+      font-family: "Cinzel", serif;
+
+      color: #f7e7a9;
+
+      font-size: clamp(25px, 4vw, 36px);
+
+      line-height: 1.3;
+
+      margin-bottom: 25px;
+    }
+
+    .history-section h3 {
+
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 22px;
+
+      margin-top: 30px;
+
+      margin-bottom: 12px;
+    }
+
+    .history-section p {
+
+      color: #d5d8dd;
+
+      font-size: 19px;
+
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       LISTS
+       ========================= */
+
+    .history-list {
+
+      margin: 20px 0 25px 25px;
+
+      color: #d5d8dd;
+
+      font-size: 18px;
+    }
+
+    .history-list li {
+
+      margin-bottom: 9px;
+
+      padding-left: 5px;
+    }
+
+    .numbered-list {
+
+      counter-reset: item;
+
+      list-style: none;
+
+      margin: 25px 0;
+    }
+
+    .numbered-list li {
+
+      counter-increment: item;
+
+      margin-bottom: 18px;
+
+      padding: 18px 20px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(5,35,68,0.65),
+          rgba(2,15,32,0.75)
+        );
+
+      border-left: 2px solid #d4af37;
+
+      color: #d8d8d8;
+
+      font-size: 18px;
+    }
+
+    .numbered-list li::before {
+
+      content: counter(item) ".";
+
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      margin-right: 10px;
+    }
+
+    /* =========================
+       HISTORICAL IMAGE
+       ========================= */
+
+    .historical-image {
+
+      margin: 40px 0;
+
+      border: 1px solid rgba(212,175,55,0.45);
+
+      background:
+        rgba(2,15,32,0.9);
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.45);
+
+      overflow: hidden;
+    }
+
+    .historical-image img {
+
+      width: 100%;
+
+      height: auto;
+
+      min-height: 280px;
+
+      max-height: 600px;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+    .image-caption {
+
+      padding: 16px 20px;
+
+      text-align: center;
+
+      color: #c7c7c7;
+
+      font-size: 16px;
+
+      font-style: italic;
+
+      border-top: 1px solid rgba(212,175,55,0.25);
+    }
+
+    /* =========================
+       KEY EVENTS BOX
+       ========================= */
+
+    .event-box {
+
+      margin: 30px 0;
+
+      padding: 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(8,42,78,0.75),
+          rgba(2,15,32,0.9)
+        );
+
+      border:
+
+        1px solid rgba(212,175,55,0.35);
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .event-box h3 {
+
+      margin-top: 0;
+
+      color: #d4af37;
+    }
+
+    .event-box p {
+
+      margin-bottom: 10px;
+    }
+
+    /* =========================
+       QUOTE / SIGNIFICANCE
+       ========================= */
+
+    .historical-quote {
+
+      margin: 45px auto;
+
+      max-width: 900px;
+
+      text-align: center;
+
+      padding: 40px 30px;
+
+      border-top: 1px solid rgba(212,175,55,0.4);
+
+      border-bottom: 1px solid rgba(212,175,55,0.4);
+
+      color: #f7e7a9;
+
+      font-family: "Cinzel", serif;
+
+      font-size: clamp(20px, 3vw, 29px);
+
+      line-height: 1.6;
+
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       END STATE
+       ========================= */
+
+    .end-state {
+
+      padding: 55px 35px;
+
+      margin-top: 30px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(7,38,73,0.8),
+          rgba(1,12,27,0.95)
+        );
+
+      border: 1px solid rgba(212,175,55,0.4);
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .end-state h2 {
+
+      font-family: "Cinzel", serif;
+
+      color: #d4af37;
+
+      font-size: 30px;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 25px;
+    }
+
+    .end-state p {
+
+      max-width: 850px;
+
+      margin: 0 auto 20px;
+
+      color: #d8d8d8;
+
+      font-size: 19px;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+
+      text-align: center;
+
+      padding: 40px 15px;
+
+      background: #010812;
+
+      border-top: 1px solid rgba(178,31,45,0.5);
+
+      color: #9d9d9d;
+
+      font-size: 14px;
+
+      letter-spacing: 1px;
+    }
+
+    footer strong {
+
+      color: #d4af37;
+
+      font-family: "Cinzel", serif;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 700px) {
+
+      .main-navigation a {
+
+        font-size: 10px;
+
+        padding: 8px 9px;
+      }
+
+      .era-hero {
+
+        min-height: 65vh;
+
+        padding: 80px 18px;
+      }
+
+      .imperial-symbol {
+
+        font-size: 50px;
+      }
+
+      .era-hero h1 {
+
+        letter-spacing: 2px;
+      }
+
+      .hero-subtitle {
+
+        letter-spacing: 1.5px;
+      }
+
+      .era-content {
+
+        padding: 65px 18px;
+      }
+
+      .history-section p {
+
+        font-size: 18px;
+      }
+
+      .historical-image img {
+
+        min-height: 200px;
+      }
+
+      .event-box {
+
+        padding: 22px;
+      }
+
+      .end-state {
+
+        padding: 35px 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       MAIN NAVIGATION
+       ========================= -->
+
+  <nav class="main-navigation">
+
+    <a href="index.html">HOME</a>
+
+    <a href="constitution.html">
+      CONSTITUTION
+    </a>
+
+    <a href="history.html" class="active">
+      HISTORY
+    </a>
+
+    <a href="government.html">
+      GOVERNMENT
+    </a>
+
+    <a href="judiciary.html">
+      SUPREME TRIBUNAL
+    </a>
+
+    <a href="legislature.html">
+      IMPERIAL ASSEMBLY
+    </a>
+
+    <a href="decrees.html">
+      ROYAL DECREES
+    </a>
+
+    <a href="atlas.html">
+      BRISTEVIA ATLAS
+    </a>
+
+  </nav>
+
+
+  <!-- =========================
+       ERA NAVIGATION
+       ========================= -->
+
+  <nav class="era-navigation">
+
+    <a href="era1.html">ERA I</a>
+
+    <a href="era2.html">ERA II</a>
+
+    <a href="era3.html">ERA III</a>
+
+    <a href="era4.html">ERA IV</a>
+
+    <a href="era5.html">ERA V</a>
+
+    <a href="era6.html">ERA VI</a>
+
+    <a href="era7.html" class="current">ERA VII</a>
+
+    <a href="era8.html">ERA VIII</a>
+
+    <a href="era9.html">ERA IX</a>
+
+    <a href="era10.html">ERA X</a>
+
+    <a href="era11.html">ERA XI</a>
+
+    <a href="era12.html">ERA XII</a>
+
+    <a href="era13.html">ERA XIII</a>
+
+    <a href="era14.html">ERA XIV</a>
+
+  </nav>
+
+
+  <!-- =========================
+       ERA HERO
+       ========================= -->
+
+  <header class="era-hero">
+
+    <div class="hero-content">
+
+      <div class="imperial-symbol">
+        ⚜
+      </div>
+
+      <div class="era-label">
+        ERA VII
+      </div>
+
+      <h1>
+        THE PRE-IMPERIAL STRUGGLE
+        <br>
+        AND THE ABSORPTION OF ORLENCIA
+      </h1>
+
+      <div class="hero-subtitle">
+        BRISTEVIA-CENTRIC CONSOLIDATION ERA
+      </div>
+
+      <div class="hero-period">
+        CINDORA TO LUNEBROOK
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       CONTENT
+       ========================= -->
+
+  <main class="era-content">
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="intro">
+
+      <h2>
+        THE THRESHOLD ERA
+      </h2>
+
+      <p>
+        By ERA 7, Bristevia was no longer a fragile coastal
+        principality struggling under external influence—it had
+        become a rising inland-maritime power whose identity was
+        forged through constant war, absorption, and political
+        survival.
+      </p>
+
+      <p>
+        The old order of fragmented coastal kingdoms,
+        especially the remnants of Orlencia, was collapsing,
+        and Bristevia stood at the center of that transformation.
+      </p>
+
+      <p>
+        What defined this era was not just expansion,
+        but consolidation: Bristevia was learning
+        how to become Bristevia.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         I. WEAKENING OF ORLENCIA
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        I
+      </div>
+
+      <h2>
+        THE WEAKENING OF ORLENCIA AND THE SHIFT IN POWER
+      </h2>
+
+      <p>
+        Orlencia, once a dominant maritime kingdom that had
+        controlled much of the western coastal trade network—
+        including earlier influence over Festona and Brionne—
+        had already been structurally weakened by previous
+        defeats and internal fragmentation.
+      </p>
+
+      <p>
+        By ERA 7, it was no longer a unified kingdom but a
+        fractured political shell, struggling to maintain
+        control over its remaining territories.
+      </p>
+
+      <p>
+        Its authority in Festona and Brionne had already been
+        eroded by the rising Bristevian administrative structure
+        centered in Stephara and Jaybrienne.
+      </p>
+
+      <p>
+        Local governors, once loyal to Orlencia, increasingly
+        shifted allegiance toward Bristevia's more stable
+        central authority.
+      </p>
+
+      <div class="event-box">
+
+        <h3>
+          THE SHIFT IN LOYALTY
+        </h3>
+
+        <p>
+          The weakening of Orlencia created a political vacuum
+          across the western territories.
+        </p>
+
+        <p>
+          Bristevia's growing administrative stability allowed
+          local authorities to transfer allegiance without
+          immediately destroying existing institutions.
+        </p>
+
+      </div>
+
+      <p>
+        This shift set the stage for direct conflict.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         II. CINDORA AND LUNEBROOK
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        II
+      </div>
+
+      <h2>
+        THE BATTLES OF CINDORA AND LUNEBROOK
+      </h2>
+
+      <p>
+        The formal Bristevian expansion into Orlencian territory
+        began with two decisive military engagements:
+        the Battle of Cindora and the Battle of Lunebrook.
+      </p>
+
+
+      <h3>
+        THE BATTLE OF CINDORA
+      </h3>
+
+      <p>
+        Fought in contested inland-coastal transition zones,
+        Cindora marked the first organized Bristevian offensive
+        campaign beyond its established core territories.
+      </p>
+
+      <p>
+        Under King Robert I, Bristevian forces employed
+        coordinated infantry formations and early naval support
+        from Valloré's successor fleets.
+      </p>
+
+      <p>
+        Cindora was not a battle of annihilation—it was a battle
+        of displacement.
+      </p>
+
+      <p>
+        Orlencian defensive lines collapsed under sustained
+        pressure, forcing retreat rather than destruction.
+      </p>
+
+
+      <!-- IMAGE 2 -->
+
+      <div class="historical-image">
+
+        <img
+          src="era7-cindora.jpg"
+          alt="Historical depiction of the Battle of Cindora"
+        >
+
+        <div class="image-caption">
+          The Battle of Cindora — The first major Bristevian
+          offensive beyond its established core territories.
+        </div>
+
+      </div>
+
+
+      <h3>
+        THE BATTLE OF LUNEBROOK
+      </h3>
+
+      <p>
+        If Cindora was the opening strike, Lunebrook was
+        the collapse.
+      </p>
+
+      <p>
+        At Lunebrook, Orlencia attempted to regroup its remaining
+        forces into a final defensive coalition.
+      </p>
+
+      <p>
+        However, Bristevia's improved centralized command
+        structure—strengthened by earlier reforms under kings
+        like Gabriel I and Stephen XIV—allowed it to coordinate
+        land and coastal maneuvers simultaneously.
+      </p>
+
+      <p>
+        The result was decisive.
+      </p>
+
+      <p>
+        Orlencian command authority broke, and regional governors
+        began surrendering independently.
+      </p>
+
+      <p>
+        With Lunebrook, Orlencia ceased to function as a kingdom.
+      </p>
+
+
+      <!-- IMAGE 3 -->
+
+      <div class="historical-image">
+
+        <img
+          src="era7-lunebrook.jpg"
+          alt="Historical depiction of the Battle of Lunebrook and the fall of Orlencia"
+        >
+
+        <div class="image-caption">
+          The Battle of Lunebrook — The decisive collapse of
+          Orlencian political and military authority.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         III. FALL OF ORLENCIA
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        III
+      </div>
+
+      <h2>
+        THE FALL OF ORLENCIA AND TERRITORIAL ABSORPTION
+      </h2>
+
+      <p>
+        Following the defeat, Orlencia formally dissolved.
+        Unlike earlier collapses in the region's history,
+        this was not replaced by another foreign empire.
+      </p>
+
+      <p>
+        Instead, its territories were absorbed directly
+        into Bristevia.
+      </p>
+
+      <p>
+        This absorption fundamentally reshaped Bristevia.
+      </p>
+
+      <ul class="history-list">
+
+        <li>
+          Festona became the political heart of the northern
+          coastal administration.
+        </li>
+
+        <li>
+          Brionne, later Jaybrienne, was fully integrated as
+          an inland agricultural and population base.
+        </li>
+
+        <li>
+          Coastal trade routes previously controlled by
+          Orlencian nobility were restructured under
+          Bristevian maritime law.
+        </li>
+
+      </ul>
+
+      <p>
+        The significance was not just territorial—it was
+        institutional.
+      </p>
+
+      <p>
+        Bristevia did not simply conquer Orlencia;
+        it replaced it.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         IV. BRISTEVIAN MONARCHS
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        IV
+      </div>
+
+      <h2>
+        THE ROLE OF THE BRISTEVIAN MONARCHS
+      </h2>
+
+
+      <h3>
+        ROBERT I — THE WAR-TIME KING
+      </h3>
+
+      <p>
+        Robert I emerged as the primary military monarch
+        of this era.
+      </p>
+
+      <p>
+        His reign was defined by defensive consolidation
+        and calculated expansion.
+      </p>
+
+      <p>
+        He did not seek empire for prestige, but for survival
+        against residual Orlencian resistance and regional
+        instability.
+      </p>
+
+      <ul class="history-list">
+
+        <li>
+          Bristevia transitioned from defensive posture
+          to controlled expansion.
+        </li>
+
+        <li>
+          Military organization became standardized across
+          Stephara and Jaybrienne.
+        </li>
+
+        <li>
+          Former Orlencian fortifications were repurposed
+          into Bristevian garrisons.
+        </li>
+
+      </ul>
+
+      <div class="historical-quote">
+        "Stability through conflict."
+      </div>
+
+
+      <h3>
+        STEPHEN XV — THE STABILIZER KING
+      </h3>
+
+      <p>
+        Stephen XV inherited a rapidly expanding but politically
+        unstable state.
+      </p>
+
+      <p>
+        His role was not conquest, but integration.
+      </p>
+
+      <ul class="history-list">
+
+        <li>
+          Administrative consolidation of newly absorbed
+          Orlencian territories.
+        </li>
+
+        <li>
+          Standardization of taxation between coastal
+          and inland regions.
+        </li>
+
+        <li>
+          Reduction of noble fragmentation in newly acquired
+          lands.
+        </li>
+
+      </ul>
+
+      <p>
+        Where Robert I won the land, Stephen XV ensured
+        it would remain Bristevian.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         V. INTERNAL STRUCTURE
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        V
+      </div>
+
+      <h2>
+        INTERNAL STRUCTURE OF EARLY EXPANSION BRISTEVIA
+      </h2>
+
+      <p>
+        With Orlencia dissolved, Bristevia faced a new challenge:
+        integration.
+      </p>
+
+      <p>
+        The state was now composed of formerly independent
+        or semi-independent zones.
+      </p>
+
+      <ul class="history-list">
+
+        <li>
+          Stephara — core dynastic region
+        </li>
+
+        <li>
+          Jaybrienne — inland agricultural expansion zone
+        </li>
+
+        <li>
+          Valloré — naval and trade command center legacy
+        </li>
+
+        <li>
+          Former Orlencian districts — newly absorbed
+          coastal-administrative regions
+        </li>
+
+      </ul>
+
+      <p>
+        Each region possessed different traditions,
+        governance styles, and loyalties.
+      </p>
+
+      <p>
+        To prevent fragmentation, Bristevia introduced:
+      </p>
+
+      <ul class="history-list">
+
+        <li>
+          Unified provincial governors loyal directly to the crown.
+        </li>
+
+        <li>
+          A centralized maritime code replacing Orlencian
+          trade law.
+        </li>
+
+        <li>
+          Military rotation systems to prevent local warlordism.
+        </li>
+
+      </ul>
+
+      <p>
+        This was the beginning of Bristevia as a structured
+        state rather than a coalition of territories.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         VI. PRE-IMPERIAL TRANSFORMATION
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        VI
+      </div>
+
+      <h2>
+        THE PRE-IMPERIAL TRANSFORMATION
+      </h2>
+
+      <p>
+        ERA 7 is often described by historians of Bristevia
+        as the "Threshold Era."
+      </p>
+
+      <p>
+        It was the moment when Bristevia stopped being
+        a regional kingdom competing for survival and
+        began becoming a territorial state capable of
+        permanent expansion.
+      </p>
+
+      <div class="event-box">
+
+        <h3>
+          THREE DEFINING TRANSFORMATIONS
+        </h3>
+
+        <ol class="numbered-list">
+
+          <li>
+            <strong>Military centralization</strong> —
+            armies no longer belonged to regional lords.
+          </li>
+
+          <li>
+            <strong>Territorial absorption</strong> —
+            conquered lands were integrated, not vassalized.
+          </li>
+
+          <li>
+            <strong>Administrative unity</strong> —
+            governance began to follow a single imperial logic.
+          </li>
+
+        </ol>
+
+      </div>
+
+      <p>
+        This period laid the structural foundation for the
+        later imperial transformation under Stephen XX and beyond.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         VII. LEGACY
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        VII
+      </div>
+
+      <h2>
+        LEGACY OF ERA 7
+      </h2>
+
+      <p>
+        By the end of ERA 7, Bristevia had achieved something
+        unprecedented in its earlier history.
+      </p>
+
+      <ul class="history-list">
+
+        <li>
+          It had permanently eliminated a rival maritime
+          kingdom in Orlencia.
+        </li>
+
+        <li>
+          It had unified coastal and inland regions under
+          a single authority.
+        </li>
+
+        <li>
+          It had developed the first coherent model of
+          centralized governance.
+        </li>
+
+      </ul>
+
+      <p>
+        The memory of Cindora and Lunebrook became more than
+        military history—it became a national origin mythos
+        for Bristevian unity.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL HISTORICAL SIGNIFICANCE
+         ========================= -->
+
+    <section class="end-state">
+
+      <h2>
+        THE THRESHOLD OF EMPIRE
+      </h2>
+
+      <p>
+        ERA 7 transformed Bristevia from a kingdom concerned
+        primarily with survival into a state capable of
+        permanent territorial expansion.
+      </p>
+
+      <p>
+        Bristevia had no longer merely absorbed territories.
+        It had developed the institutions necessary to govern them.
+      </p>
+
+      <div class="historical-quote">
+        "Bristevia would no longer just absorb kingdoms.
+        It would become the foundation of empire itself."
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    <p>
+      <strong>
+        ⚜ IMPERIAL SOVEREIGN OF BRISTEVIA ⚜
+      </strong>
+    </p>
+
+    <p>
+      © 2026 The Imperial Sovereign of Bristevia.
+      All Rights Reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
