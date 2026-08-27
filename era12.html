@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Era 12 — Post-War Reorder and the Final Centralization of Bristevia</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #07111f;
+      --navy-2: #0c1c30;
+      --navy-3: #122943;
+      --gold: #d7b56d;
+      --gold-light: #f0d99a;
+      --white: #f5f7fa;
+      --muted: #aeb9c8;
+      --text: #dce3eb;
+      --line: rgba(215, 181, 109, 0.28);
+      --card: rgba(255, 255, 255, 0.045);
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top, rgba(31, 64, 98, 0.38), transparent 38%),
+        linear-gradient(180deg, #07111f 0%, #091522 45%, #050b13 100%);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      min-height: 76vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          rgba(7, 17, 31, 0.70),
+          rgba(7, 17, 31, 0.90)
+        ),
+        url("images/era12-hero.jpg") center/cover no-repeat;
+      opacity: 0.75;
+      z-index: -2;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border: 1px solid rgba(215, 181, 109, 0.15);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 60px rgba(215, 181, 109, 0.025),
+        0 0 0 120px rgba(215, 181, 109, 0.015);
+      z-index: -1;
+    }
+
+    .hero {
+      max-width: 1000px;
+    }
+
+    .era-number {
+      color: var(--gold);
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: var(--white);
+      font-family: "Cinzel", serif;
+      font-size: clamp(2.3rem, 6vw, 5.2rem);
+      line-height: 1.12;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+      margin-bottom: 25px;
+    }
+
+    .hero-subtitle {
+      color: var(--gold-light);
+      font-family: "Cinzel", serif;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      line-height: 1.6;
+      max-width: 850px;
+      margin: 0 auto 35px;
+    }
+
+    .hero-description {
+      max-width: 800px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .hero-line {
+      width: 120px;
+      height: 2px;
+      background: var(--gold);
+      margin: 35px auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    .history-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 12, 21, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .nav-brand {
+      color: var(--gold);
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      white-space: nowrap;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 7px 11px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      font-size: 0.78rem;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+      border-color: var(--line);
+      background: rgba(215, 181, 109, 0.06);
+    }
+
+    .nav-links .active {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* =========================
+       MAIN CONTENT
+    ========================== */
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px 100px;
+    }
+
+    .intro {
+      font-size: 1.08rem;
+      color: #cbd5df;
+      margin-bottom: 55px;
+    }
+
+    .section {
+      margin-bottom: 75px;
+      scroll-margin-top: 90px;
+    }
+
+    .section-number {
+      color: var(--gold);
+      font-family: "Cinzel", serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      color: var(--white);
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
+      line-height: 1.3;
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      color: var(--gold-light);
+      font-family: "Cinzel", serif;
+      font-size: 1.15rem;
+      margin: 30px 0 12px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin: 15px 0 25px 25px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      padding-left: 4px;
+    }
+
+    .highlight {
+      border-left: 3px solid var(--gold);
+      background: var(--card);
+      padding: 24px 28px;
+      margin: 30px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight strong {
+      color: var(--gold-light);
+    }
+
+    .quote {
+      margin: 35px 0;
+      padding: 28px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--gold-light);
+      font-family: "Cinzel", serif;
+      font-size: 1.25rem;
+      font-style: italic;
+    }
+
+    /* =========================
+       IMAGE BLOCKS
+       MAXIMUM: 3 IMAGES
+    ========================== */
+
+    .history-image {
+      margin: 40px 0;
+      border: 1px solid var(--line);
+      background: #050b13;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .history-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .image-caption {
+      padding: 12px 16px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-style: italic;
+      border-top: 1px solid var(--line);
+    }
+
+    /* =========================
+       FINAL ASSESSMENT
+    ========================== */
+
+    .final-box {
+      margin-top: 80px;
+      padding: 45px 35px;
+      border: 1px solid var(--gold);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(215, 181, 109, 0.09),
+          rgba(255,255,255,0.025)
+        );
+      text-align: center;
+    }
+
+    .final-box h2 {
+      color: var(--gold-light);
+    }
+
+    .final-box p {
+      max-width: 850px;
+      margin: 0 auto 20px;
+    }
+
+    .final-statement {
+      color: var(--white);
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.15rem, 3vw, 1.7rem);
+      margin-top: 30px;
+    }
+
+    /* =========================
+       ERA NAV
+    ========================== */
+
+    .era-navigation {
+      margin-top: 80px;
+      padding-top: 35px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .era-navigation a {
+      color: var(--gold-light);
+      text-decoration: none;
+      padding: 15px 20px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      transition: 0.25s ease;
+    }
+
+    .era-navigation a:hover {
+      border-color: var(--gold);
+      background: rgba(215, 181, 109, 0.08);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      text-align: center;
+      padding: 45px 20px;
+      border-top: 1px solid var(--line);
+      background: rgba(0,0,0,0.2);
+    }
+
+    footer .crest-text {
+      color: var(--gold);
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin: 0;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-brand {
+        text-align: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      header {
+        min-height: 70vh;
+      }
+
+      main {
+        padding-top: 55px;
+      }
+
+      .section {
+        margin-bottom: 60px;
+      }
+
+      .era-navigation {
+        flex-direction: column;
+      }
+
+      .era-navigation a {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       HERO
+  ========================================================== -->
+
+  <header id="top">
+    <div class="hero">
+
+      <div class="era-number">ERA 12</div>
+
+      <h1>
+        Post-War Reorder and the Final Centralization of Bristevia
+      </h1>
+
+      <div class="hero-line"></div>
+
+      <div class="hero-subtitle">
+        Central Archipelago Chronicle — The Closure of Fragmented Sovereignty
+      </div>
+
+      <p class="hero-description">
+        The final internal transformation of Bristevia from a regional imperial
+        system into a permanently centralized state under the Souverion.
+      </p>
+
+    </div>
+  </header>
+
+
+  <!-- =========================================================
+       HISTORY NAVIGATION
+  ========================================================== -->
+
+  <nav class="history-nav">
+    <div class="nav-inner">
+
+      <div class="nav-brand">
+        BRISTEVIA HISTORY
+      </div>
+
+      <div class="nav-links">
+        <a href="Index-History.html">History Index</a>
+        <a href="Era10.html">Era 10</a>
+        <a href="Era11.html">Era 11</a>
+        <a href="Era12.html" class="active">Era 12</a>
+        <a href="Era13.html">Era 13</a>
+        <a href="Era14.html">Era 14</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================================================
+       MAIN
+  ========================================================== -->
+
+  <main>
+
+    <p class="intro">
+      By ERA 12, Bristevia had already passed through its defining transformations:
+      from clan networks in the Stephara Strait, to tribal confederations of Festona
+      and Brionne, to regional kingdoms, to imperial consolidation under the
+      Souverion system. What remained was not expansion, but structural survival
+      in a post-war world order shaped in Stephara City during ERA 11.
+      <br><br>
+      ERA 12 is therefore not an age of conquest or fragmentation, but the final
+      closure of internal plural sovereignty within Bristevia itself.
+    </p>
+
+
+    <!-- =====================================================
+         IMAGE 1
+    ====================================================== -->
+
+    <div class="history-image">
+      <img
+        src="images/era12-stephara-assembly.jpg"
+        alt="Stephara City hosting the post-war United Valterra Assembly"
+        loading="lazy"
+      >
+      <div class="image-caption">
+        Stephara City and the post-war diplomatic order that shaped ERA 12.
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         SECTION I
+    ====================================================== -->
+
+    <section class="section" id="section-i">
+
+      <div class="section-number">I</div>
+
+      <h2>
+        The Maximo Island Settlement and Maritime Autonomy
+      </h2>
+
+      <p>
+        One of the last unresolved tensions from the previous continental conflicts
+        centered on the Maximo Islands chain, historically influenced by Solarian
+        migration, Valtherian naval occupation, and later Bristevian maritime
+        oversight through Luminaris.
+      </p>
+
+      <p>
+        By ERA 12, these islands had become a dense network of:
+      </p>
+
+      <ul>
+        <li>merchant city-states,</li>
+        <li>independent harbor enclaves, and</li>
+        <li>semi-pirate trading ports operating under overlapping legal claims.</li>
+      </ul>
+
+      <p>
+        The dispute was formally resolved at the United Valterra Assembly in
+        Stephara City, where Bristevia acted as host and mediator.
+      </p>
+
+      <div class="highlight">
+        <strong>The Settlement established:</strong>
+
+        <ul>
+          <li>the creation of the Free Cities of Thalesson,</li>
+          <li>central administrative hub at San Maximiliano Island,</li>
+          <li>
+            governance through an elected Unified Maritime Leader, chosen by the
+            city coalition rather than imperial appointment.
+          </li>
+        </ul>
+      </div>
+
+      <p>
+        Although autonomous, the Free Cities remained economically tied to
+        Bristevian naval trade routes, ensuring continued indirect influence
+        rather than full separation.
+      </p>
+
+      <p>
+        This settlement marked Bristevia’s shift from territorial expansion to
+        institutional arbitration of maritime sovereignty.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         SECTION II
+    ====================================================== -->
+
+    <section class="section" id="section-ii">
+
+      <div class="section-number">II</div>
+
+      <h2>
+        The Fall of Varkaros and Military Realignment
+      </h2>
+
+      <p>
+        Far from the central archipelago, the Varkaros government system, weakened
+        by prolonged internal instability from earlier continental wars, finally
+        collapsed.
+      </p>
+
+      <p>
+        It was replaced by the Military Dominion of Varkaros, a centralized command
+        state formed to maintain order in a fractured post-war environment.
+      </p>
+
+      <p>
+        While not directly governed by Bristevia, the change had strategic
+        consequences:
+      </p>
+
+      <ul>
+        <li>reduced regional unpredictability in southern maritime corridors,</li>
+        <li>stabilization of trade passage routes affecting Luminaris,</li>
+        <li>
+          decreased naval confrontation risks along Bristevian shipping lanes.
+        </li>
+      </ul>
+
+      <p>
+        Bristevia’s role in this transformation was indirect but significant:
+        it provided diplomatic recognition frameworks through Stephara’s
+        post-war assembly institutions.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         IMAGE 2
+    ====================================================== -->
+
+    <div class="history-image">
+      <img
+        src="images/era12-varkaros-realignment.jpg"
+        alt="Post-war maritime realignment and Bristevian naval routes"
+        loading="lazy"
+      >
+      <div class="image-caption">
+        The post-war maritime realignment surrounding Bristevia and the southern
+        corridors.
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         SECTION III
+    ====================================================== -->
+
+    <section class="section" id="section-iii">
+
+      <div class="section-number">III</div>
+
+      <h2>
+        Stephan XXV and the End of Regional Monarchies
+      </h2>
+
+      <p>
+        The most decisive internal transformation of ERA 12 occurred under
+        Souverion Stephen XXV, whose reforms permanently altered the structure
+        of Bristevian governance.
+      </p>
+
+      <p>
+        At this point, Bristevia still retained remnants of its older political
+        architecture:
+      </p>
+
+      <ul>
+        <li>
+          regional noble houses in Stephara, Jaybrienne, Luminaris, Solara,
+          and Northaven,
+        </li>
+        <li>
+          hereditary governors descended from earlier princely systems,
+        </li>
+        <li>
+          semi-independent aristocratic councils.
+        </li>
+      </ul>
+
+      <h3>
+        The Decree of Singular Sovereignty
+      </h3>
+
+      <p>
+        Stephen XXV enacted the Decree of Singular Sovereignty, which:
+      </p>
+
+      <ul>
+        <li>dissolved all remaining regional royal authority,</li>
+        <li>ended hereditary governance at the provincial level,</li>
+        <li>
+          required all former royal houses to participate in electoral governance
+          systems under central oversight.
+        </li>
+      </ul>
+
+      <div class="quote">
+        From this moment, no province could be ruled by birthright alone.
+      </div>
+
+      <p>
+        From that moment:
+      </p>
+
+      <ul>
+        <li>no province could be ruled by birthright alone, and</li>
+        <li>
+          all administrative legitimacy flowed upward from the Souverion state.
+        </li>
+      </ul>
+
+      <p>
+        This reform is widely regarded as the final transition from dynastic
+        kingdom to centralized imperial-state structure.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         SECTION IV
+    ====================================================== -->
+
+    <section class="section" id="section-iv">
+
+      <div class="section-number">IV</div>
+
+      <h2>
+        Robert II and the Transitional Stability Phase
+      </h2>
+
+      <p>
+        Before and alongside these reforms, Robert II served as a transitional
+        Souverion during a fragile reconstruction period following continental
+        warfare.
+      </p>
+
+      <p>
+        His role was not expansion or reform, but stabilization:
+      </p>
+
+      <ul>
+        <li>rebuilding administrative capacity in damaged regions,</li>
+        <li>restoring maritime trade confidence after prolonged conflict,</li>
+        <li>
+          maintaining unity during the dismantling of older aristocratic systems.
+        </li>
+      </ul>
+
+      <p>
+        Robert II’s reign ensured that Stephen XXV’s reforms could be implemented
+        without triggering immediate provincial rebellion.
+      </p>
+
+      <p>
+        In historical records, Robert II is often described as the
+        <strong>“bridge sovereign”</strong> between wartime governance and fully
+        centralized Bristevian statehood.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         SECTION V
+    ====================================================== -->
+
+    <section class="section" id="section-v">
+
+      <div class="section-number">V</div>
+
+      <h2>
+        The Final Structure of Bristevia After ERA 12
+      </h2>
+
+      <p>
+        By the end of ERA 12, Bristevia had completed its internal historical arc.
+      </p>
+
+      <div class="highlight">
+
+        <ul>
+          <li>
+            <strong>One Souverion</strong> — absolute central authority
+          </li>
+
+          <li>
+            <strong>Electoral provincial governance</strong> — replacing hereditary rule
+          </li>
+
+          <li>
+            <strong>Former royal houses</strong> — transformed into administrative
+            political families
+          </li>
+
+          <li>
+            <strong>Maritime autonomy zones</strong> — Thalesson Free Cities operating
+            under economic integration rather than political control
+          </li>
+        </ul>
+
+      </div>
+
+      <p>
+        The Five Regions still existed geographically, but no longer functioned as
+        semi-sovereign political units. They had become administrative divisions
+        of a unified state apparatus.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         IMAGE 3
+    ====================================================== -->
+
+    <div class="history-image">
+      <img
+        src="images/era12-singular-sovereignty.jpg"
+        alt="The centralized Bristevian state under the Souverion"
+        loading="lazy"
+      >
+      <div class="image-caption">
+        The centralized Bristevian state following the Decree of Singular Sovereignty.
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         SECTION VI
+    ====================================================== -->
+
+    <section class="section" id="section-vi">
+
+      <div class="section-number">VI</div>
+
+      <h2>
+        Historical Interpretation: The End of the “Regional Era”
+      </h2>
+
+      <p>
+        ERA 12 is considered in Bristevian historiography as:
+      </p>
+
+      <div class="quote">
+        “The Closure of Fragmented Sovereignty”
+      </div>
+
+      <p>
+        It marks the final disappearance of:
+      </p>
+
+      <ul>
+        <li>
+          tribal authority structures from early Stephara and Festona,
+        </li>
+
+        <li>
+          regional kingdoms like Orlencia-era successors,
+        </li>
+
+        <li>
+          princely tributary systems from Valtherian influence,
+        </li>
+
+        <li>
+          even imperial semi-autonomy under earlier Souverion generations.
+        </li>
+      </ul>
+
+      <p>
+        What replaced them was not fragmentation—but institutional permanence
+        under centralized law.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         SECTION VII
+    ====================================================== -->
+
+    <section class="section" id="section-vii">
+
+      <div class="section-number">VII</div>
+
+      <h2>
+        Final Historical Significance
+      </h2>
+
+      <p>
+        ERA 12 did not expand Bristevia outward.
+        Instead, it completed its internal evolution:
+      </p>
+
+      <ul>
+        <li>
+          from clans → confederations → kingdoms → empire → centralized state
+        </li>
+
+        <li>
+          from hereditary fragmentation → unified electoral governance under
+          sovereign oversight
+        </li>
+
+        <li>
+          from territorial competition → institutional dominance
+        </li>
+      </ul>
+
+      <p>
+        By its end, Bristevia was no longer defined by who ruled which region.
+      It was defined by a single principle:
+      </p>
+
+      <div class="quote">
+        “All regions exist by the continuity of the Souverion state,
+        not apart from it.”
+      </div>
+
+      <p>
+        And thus, ERA 12 concludes the long historical consolidation of Bristevia
+        into its final pre-modern form.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINAL ASSESSMENT
+    ====================================================== -->
+
+    <section class="final-box">
+
+      <h2>
+        THE END OF FRAGMENTED SOVEREIGNTY
+      </h2>
+
+      <p>
+        ERA 12 represents the completion of Bristevia’s internal political evolution.
+        The regional monarchies disappeared, hereditary provincial authority was
+        dismantled, and the Five Regions became administrative rather than
+        semi-sovereign political structures.
+      </p>
+
+      <p>
+        Bristevia entered the next stage of its history as a centralized state,
+        governed through institutional authority under the Souverion.
+      </p>
+
+      <div class="final-statement">
+        “The regions remained. The separate sovereignties did not.”
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ERA NAVIGATION
+    ====================================================== -->
+
+    <div class="era-navigation">
+
+      <a href="Era11.html">
+        ← ERA 11<br>
+        <small>The Bristevian Century of Survival</small>
+      </a>
+
+      <a href="Index-History.html">
+        HISTORY INDEX<br>
+        <small>Return to the Era Archive</small>
+      </a>
+
+      <a href="Era13.html">
+        ERA 13 →<br>
+        <small>Continue the Chronicle</small>
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer>
+
+    <div class="crest-text">
+      IMPERIAL SOVEREIGN OF BRISTEVIA
+    </div>
+
+    <p>
+      The Historical Chronicle of Bristevia • ERA 12
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================================
+       OPTIONAL ACTIVE NAV SCRIPT
+  ========================================================== -->
+
+  <script>
+    const sections = document.querySelectorAll(".section");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#"+current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
