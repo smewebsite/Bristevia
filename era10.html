@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ERA 10 — The Imperial Transformation | History of Bristevia</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Libre Baskerville", Georgia, serif;
+      background: #080808;
+      color: #e9e2d0;
+      line-height: 1.8;
+    }
+
+    /* ================================
+       HERO SECTION
+    ================================= */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+
+      background:
+        linear-gradient(
+          rgba(5, 5, 5, 0.58),
+          rgba(5, 5, 5, 0.78)
+        ),
+        url("images/history/era10-hero.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      padding: 80px 25px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 55%,
+          #080808 100%
+        );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+    }
+
+    .era-number {
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      color: #c9a961;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Cinzel", serif;
+      font-size: clamp(2.3rem, 6vw, 5.5rem);
+      line-height: 1.15;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f4ead2;
+
+      text-shadow:
+        0 4px 20px rgba(0,0,0,.9);
+    }
+
+    .hero-subtitle {
+      margin-top: 25px;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-style: italic;
+      color: #d2c5a7;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+
+      font-family: "Cinzel", serif;
+      font-size: .75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+
+      color: #c9a961;
+    }
+
+    /* ================================
+       NAVIGATION
+    ================================= */
+
+    .history-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(10,10,10,.96);
+      border-bottom: 1px solid #3d3424;
+
+      padding: 14px 20px;
+
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .history-nav a {
+      font-family: "Cinzel", serif;
+      font-size: .72rem;
+      letter-spacing: 1.5px;
+      color: #b9ae98;
+      text-decoration: none;
+
+      transition: .25s ease;
+    }
+
+    .history-nav a:hover,
+    .history-nav a.active {
+      color: #d4b86a;
+    }
+
+    /* ================================
+       MAIN CONTENT
+    ================================= */
+
+    main {
+      max-width: 1150px;
+      margin: auto;
+      padding: 80px 25px 120px;
+    }
+
+    .intro {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      text-align: center;
+    }
+
+    .intro p {
+      color: #c8c0af;
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 85px;
+    }
+
+    .section-title {
+      font-family: "Cinzel", serif;
+      color: #d5b66b;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      line-height: 1.4;
+
+      border-left: 3px solid #b08a3c;
+      padding-left: 18px;
+
+      margin-bottom: 30px;
+    }
+
+    .section p {
+      color: #d0c8b7;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .section strong {
+      color: #eee2c4;
+    }
+
+    /* ================================
+       HISTORICAL IMAGE CARDS
+       EXACTLY 3 RESERVED SPACES
+    ================================= */
+
+    .historical-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+
+      margin: 45px 0 80px;
+    }
+
+    .historical-image {
+      min-height: 280px;
+
+      border: 1px solid #51442b;
+      background: #111;
+
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .historical-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+
+      object-fit: cover;
+
+      display: block;
+      filter: sepia(.2) brightness(.78);
+    }
+
+    .image-placeholder {
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      padding: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(40,35,25,.95),
+          rgba(15,15,15,.98)
+        );
+
+      color: #8e856f;
+
+      font-family: "Cinzel", serif;
+      font-size: .8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      background: rgba(0,0,0,.82);
+
+      padding: 12px 15px;
+
+      font-family: "Cinzel", serif;
+      font-size: .75rem;
+      letter-spacing: 1px;
+
+      color: #d7bd7a;
+    }
+
+    /* ================================
+       LISTS
+    ================================= */
+
+    ul,
+    ol {
+      margin: 20px 0 25px 30px;
+    }
+
+    li {
+      margin-bottom: 9px;
+      color: #c9c1b0;
+    }
+
+    /* ================================
+       QUOTE / HISTORICAL NOTE
+    ================================= */
+
+    .historical-note {
+      border-top: 1px solid #4a3d27;
+      border-bottom: 1px solid #4a3d27;
+
+      padding: 35px 25px;
+      margin: 50px 0;
+
+      text-align: center;
+    }
+
+    .historical-note p {
+      font-family: "Cinzel", serif;
+      font-size: 1.15rem;
+      color: #d8bd76;
+      font-style: italic;
+    }
+
+    /* ================================
+       TRANSFORMATION BOX
+    ================================= */
+
+    .transformation {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 20px;
+      align-items: stretch;
+
+      margin: 50px 0;
+    }
+
+    .transformation-box {
+      border: 1px solid #4b3d25;
+      background: #11100d;
+      padding: 30px;
+
+      text-align: center;
+    }
+
+    .transformation-box h3 {
+      font-family: "Cinzel", serif;
+      color: #c8a75c;
+      margin-bottom: 15px;
+    }
+
+    .transformation-box p {
+      margin: 0;
+    }
+
+    .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: "Cinzel", serif;
+      font-size: 2rem;
+      color: #c5a65c;
+    }
+
+    /* ================================
+       FINAL SECTION
+    ================================= */
+
+    .final-section {
+      text-align: center;
+
+      padding: 70px 25px;
+
+      border-top: 1px solid #4a3d27;
+      border-bottom: 1px solid #4a3d27;
+    }
+
+    .final-section h2 {
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      color: #d6b86d;
+      margin-bottom: 25px;
+    }
+
+    .final-section p {
+      max-width: 850px;
+      margin: auto;
+      color: #cfc6b4;
+      font-size: 1.05rem;
+    }
+
+    /* ================================
+       FOOTER
+    ================================= */
+
+    footer {
+      background: #050505;
+      border-top: 1px solid #30291d;
+
+      text-align: center;
+      padding: 45px 20px;
+
+      color: #716957;
+      font-size: .8rem;
+    }
+
+    footer .crest-title {
+      font-family: "Cinzel", serif;
+      color: #a99056;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    /* ================================
+       RESPONSIVE
+    ================================= */
+
+    @media (max-width: 800px) {
+
+      .historical-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .transformation {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+
+      .history-nav {
+        gap: 10px;
+      }
+
+      .history-nav a {
+        font-size: .62rem;
+      }
+
+      .hero {
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================
+       HERO
+  ========================================== -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="era-number">
+        ERA X
+      </div>
+
+      <h1>
+        The Imperial Transformation
+        and the Five Regional Order
+      </h1>
+
+      <div class="hero-subtitle">
+        Bristevia-Centric State Reformation and Post-Rebellion Consolidation Era
+      </div>
+
+    </div>
+
+    <div class="scroll-indicator">
+      Scroll to Chronicle
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       HISTORY NAVIGATION
+  ========================================== -->
+
+  <nav class="history-nav">
+
+    <a href="Index-History-Era9.html">← ERA 9</a>
+
+    <a href="index.html">HISTORY</a>
+
+    <a href="Index-History-Era1.html">ERA 1</a>
+    <a href="Index-History-Era2.html">ERA 2</a>
+    <a href="Index-History-Era3.html">ERA 3</a>
+    <a href="Index-History-Era4.html">ERA 4</a>
+    <a href="Index-History-Era5.html">ERA 5</a>
+    <a href="Index-History-Era6.html">ERA 6</a>
+    <a href="Index-History-Era7.html">ERA 7</a>
+    <a href="Index-History-Era8.html">ERA 8</a>
+    <a href="Index-History-Era9.html">ERA 9</a>
+
+    <a href="Index-History-Era10.html" class="active">ERA 10</a>
+
+    <a href="Index-History-Era11.html">ERA 11 →</a>
+
+  </nav>
+
+
+  <!-- =========================================
+       MAIN
+  ========================================== -->
+
+  <main>
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+      <p>
+        ERA 10 marks the definitive break between Bristevia as a kingdom
+        and Bristevia as an imperial structure.
+      </p>
+
+      <p>
+        If previous eras were defined by expansion, absorption, and survival
+        through continental instability, this era is defined by something more
+        fundamental: the redesign of the state itself after rebellion and total
+        naval war.
+      </p>
+
+      <p>
+        The events of this period centered on one core crisis—the
+        <strong>Solara–Caeloria uprising</strong>—and its transformation into
+        a catalyst for full imperial restructuring under
+        <strong>Stephen XX</strong>.
+      </p>
+
+    </section>
+
+
+    <!-- =========================================
+         IMAGE 1
+    ========================================== -->
+
+    <div class="historical-gallery">
+
+      <div class="historical-image">
+
+        <!-- Replace with:
+        images/history/era10-solara-rebellion.jpg
+        -->
+
+        <div class="image-placeholder">
+          Historical Image I<br>
+          Solara Rebellion
+        </div>
+
+        <div class="image-caption">
+          The Solara–Caeloria Uprising
+        </div>
+
+      </div>
+
+
+      <!-- IMAGE 2 -->
+
+      <div class="historical-image">
+
+        <!-- Replace with:
+        images/history/era10-bristevia-gulf.jpg
+        -->
+
+        <div class="image-placeholder">
+          Historical Image II<br>
+          Battle of Bristevia Gulf
+        </div>
+
+        <div class="image-caption">
+          Battle of the Bristevia Gulf
+        </div>
+
+      </div>
+
+
+      <!-- IMAGE 3 -->
+
+      <div class="historical-image">
+
+        <!-- Replace with:
+        images/history/era10-stephen-xx.jpg
+        -->
+
+        <div class="image-placeholder">
+          Historical Image III<br>
+          Stephen XX
+        </div>
+
+        <div class="image-caption">
+          Stephen XX — First Souverion
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================
+         I
+    ========================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        I. The Solara Rebellion and Coastal Fragmentation
+      </h2>
+
+      <p>
+        The Duchy of Solara, integrated into Bristevia after earlier
+        continental wars, had never fully stabilized under central authority.
+        Its coastal elites retained independent maritime identity and
+        maintained clandestine ties with external powers.
+      </p>
+
+      <p>
+        This tension escalated when Solara formally rebelled, aligning itself
+        with Caeloria, a rising maritime-continental power seeking influence
+        within Bristevian coastal corridors.
+      </p>
+
+      <p>
+        The alliance was not symbolic—it was operational:
+      </p>
+
+      <ul>
+        <li>Joint naval coordination in western sea lanes</li>
+        <li>Supply support through Caelorian-controlled Luminaris zones</li>
+        <li>Coordinated strikes against Bristevian coastal infrastructure</li>
+      </ul>
+
+      <p>
+        Solara’s rebellion was not isolated—it was part of a broader attempt
+        to fracture Bristevian maritime dominance.
+      </p>
+
+    </section>
+
+
+    <!-- =========================================
+         II
+    ========================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        II. The Battle of Bristevia Gulf
+      </h2>
+
+      <p>
+        The decisive confrontation of ERA 10 occurred in the
+        <strong>Bristevia Gulf</strong>, a strategic maritime corridor
+        essential for Stephara’s naval security and internal trade stability.
+      </p>
+
+      <p>
+        The rebellion coalition consisted of:
+      </p>
+
+      <ul>
+        <li>Solara rebel fleets</li>
+        <li>Caelorian naval formations</li>
+        <li>Luminaris colonial fleets aligned under Caeloria</li>
+      </ul>
+
+      <p>
+        Their objective was direct: strike Rose Island in Stephara, the
+        symbolic and logistical heart of Bristevian maritime authority.
+      </p>
+
+      <p>
+        Bristevia responded under the command of
+        <strong>Prince-Admiral Stephen XX</strong>, who had already established
+        himself as a reform-minded military strategist.
+      </p>
+
+      <p>
+        The battle unfolded in three phases:
+      </p>
+
+      <ol>
+        <li>Initial enemy penetration into Gulf waters</li>
+        <li>Bristevian naval containment and channel blockade</li>
+        <li>Counteroffensive engagement near Rose Island approaches</li>
+      </ol>
+
+      <p>
+        Despite numerical pressure, Bristevian forces achieved victory through:
+      </p>
+
+      <ul>
+        <li>Centralized fleet coordination</li>
+        <li>Faster signal communication systems</li>
+        <li>Superior knowledge of internal gulf currents</li>
+      </ul>
+
+      <p>
+        The rebellion was decisively broken at sea.
+      </p>
+
+      <p>
+        The battle became a defining moment in Bristevian naval doctrine,
+        demonstrating that internal seas could be controlled as effectively
+        as land provinces.
+      </p>
+
+    </section>
+
+
+    <!-- =========================================
+         III
+    ========================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        III. The Fall of Solara and Execution of Prince Emond
+      </h2>
+
+      <p>
+        Following the naval defeat, Bristevian forces launched coordinated
+        land operations against Solara.
+      </p>
+
+      <p>
+        The rebellion collapsed rapidly due to:
+      </p>
+
+      <ul>
+        <li>Loss of naval supply access</li>
+        <li>Internal fragmentation among Solaran nobility</li>
+        <li>Withdrawal of Caelorian support after Gulf defeat</li>
+      </ul>
+
+      <p>
+        Solara’s ruling figure, <strong>Prince Emond</strong>, was captured
+        and formally charged with rebellion against the Bristevian crown.
+      </p>
+
+      <p>
+        His execution marked:
+      </p>
+
+      <ul>
+        <li>The end of Solaran autonomy</li>
+        <li>The removal of residual coastal resistance leadership structures</li>
+        <li>The consolidation of Bristevian legal authority over rebellion governance</li>
+      </ul>
+
+      <p>
+        Solara ceased to exist as a political entity and was fully integrated
+        into Bristevian administrative control systems.
+      </p>
+
+    </section>
+
+
+    <!-- =========================================
+         IV
+    ========================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        IV. The War with Caeloria and the Luminaris Integration
+      </h2>
+
+      <p>
+        With Solara neutralized, Bristevia redirected its full military
+        capacity toward Caelorian influence zones, particularly the contested
+        Luminaris territories.
+      </p>
+
+      <p>
+        Bristevian strategy focused on:
+      </p>
+
+      <ul>
+        <li>Isolating Caelorian expeditionary fleets</li>
+        <li>Severing supply routes to Luminaris holdings</li>
+        <li>Reclaiming coastal nodes through rapid amphibious operations</li>
+      </ul>
+
+      <p>
+        Caeloria’s influence in the region collapsed under sustained pressure.
+      </p>
+
+      <p>
+        The Luminaris territories, previously under Caelorian control or
+        influence, were absorbed into Bristevia and reorganized as the
+        <strong>Province of Luminaris</strong>, marking the formal expansion
+        of Bristevia into the eastern regional system.
+      </p>
+
+      <p>
+        This was not simply territorial gain—it was administrative
+        transformation:
+      </p>
+
+      <ul>
+        <li>Luminaris was integrated into the Bristevian regional governance model</li>
+        <li>Coastal fort systems were converted into imperial naval stations</li>
+        <li>Trade routes were restructured under Stephara–Luminaris coordination</li>
+      </ul>
+
+    </section>
+
+
+    <!-- =========================================
+         V
+    ========================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        V. Stephen XX — The First Souverion
+      </h2>
+
+      <p>
+        Following the complete suppression of rebellion and territorial
+        restructuring, <strong>Stephen XX</strong> enacted the most significant
+        constitutional transformation in Bristevian history.
+      </p>
+
+      <div class="historical-note">
+
+        <p>
+          He abolished the traditional title of “King” and replaced it with:
+        </p>
+
+        <p>
+          “Souverion of Bristevia”
+        </p>
+
+      </div>
+
+      <p>
+        This change reflected a deeper transformation:
+      </p>
+
+      <ul>
+        <li>
+          Bristevia was no longer a dynastic kingdom competing for survival.
+        </li>
+
+        <li>
+          It was now a centralized imperial system with structured regional governance.
+        </li>
+      </ul>
+
+    </section>
+
+
+    <!-- =========================================
+         VI
+    ========================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        VI. The Five Regional System
+      </h2>
+
+      <p>
+        To stabilize governance over newly expanded territories—including
+        Luminaris and former Solaran zones—Stephen XX implemented the
+        <strong>Five Regional System</strong>.
+      </p>
+
+      <p>
+        This system divided Bristevia into five major administrative regions,
+        each governed by appointed princes under the Souverion’s authority.
+      </p>
+
+      <p>
+        The objectives were:
+      </p>
+
+      <ul>
+        <li>Prevent regional autonomy from evolving into rebellion</li>
+        <li>Standardize law and taxation across diverse territories</li>
+        <li>Integrate coastal, inland, and newly absorbed eastern provinces</li>
+      </ul>
+
+      <p>
+        This system replaced older fragmented provincial structures and
+        became the foundation of Bristevian imperial governance.
+      </p>
+
+    </section>
+
+
+    <!-- =========================================
+         VII
+    ========================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        VII. Causes and Consequences of Imperial Transformation
+      </h2>
+
+      <p>
+        The transformation under Stephen XX was not sudden—it was the result
+        of cumulative pressure:
+      </p>
+
+      <ul>
+        <li>Repeated coastal rebellions, particularly the Solara precedent</li>
+        <li>External interference through Caelorian involvement</li>
+        <li>The need for unified naval command after the Bristevia Gulf</li>
+        <li>The necessity of integrating newly conquered Luminaris territories</li>
+      </ul>
+
+      <div class="transformation">
+
+        <div class="transformation-box">
+
+          <h3>THE OLD ORDER</h3>
+
+          <p>
+            Kingdom with provinces
+          </p>
+
+        </div>
+
+        <div class="arrow">
+          →
+        </div>
+
+        <div class="transformation-box">
+
+          <h3>THE NEW ORDER</h3>
+
+          <p>
+            Centralized imperial system with governed regions
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         VIII
+    ========================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        VIII. Legacy of ERA 10
+      </h2>
+
+      <p>
+        ERA 10 is remembered as the moment Bristevia permanently resolved
+        its internal instability through institutional redesign rather than
+        military suppression alone.
+      </p>
+
+      <p>
+        Its defining outcomes were:
+      </p>
+
+      <ul>
+        <li>Destruction of Solara as a political force</li>
+        <li>Defeat and removal of Caelorian influence from Bristevian maritime space</li>
+        <li>Full integration of Luminaris into the eastern imperial structure</li>
+        <li>Creation of the Five Regional System</li>
+        <li>Proclamation of the Souverion as supreme centralized authority</li>
+      </ul>
+
+    </section>
+
+
+    <!-- =========================================
+         FINAL TRANSITION
+    ========================================== -->
+
+    <section class="final-section">
+
+      <h2>
+        Final Transition
+      </h2>
+
+      <p>
+        By the end of ERA 10, Bristevia had completed its most important
+        transformation.
+      </p>
+
+      <br>
+
+      <p>
+        It was no longer a kingdom expanding through conquest.
+        It was now a centralized imperial state with structured regional
+        governance, unified naval command, and a sovereign authority above
+        kingship itself.
+      </p>
+
+      <br>
+
+      <p>
+        This era stands as the true beginning of
+        <strong>Imperial Bristevia</strong>—not in name alone, but in
+        structure, identity, and permanence.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer>
+
+    <div class="crest-title">
+      THE IMPERIAL SOVEREIGN OF BRISTEVIA
+    </div>
+
+    <p>
+      History of Bristevia — ERA 10
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
