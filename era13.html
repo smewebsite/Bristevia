@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Era 13 — The Valterra Cold War | Imperial Sovereign of Bristevia</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #07111f;
+      --navy-2: #0c1b2e;
+      --navy-3: #10263d;
+      --gold: #d4af37;
+      --gold-light: #f0d878;
+      --cream: #f4efe3;
+      --text: #e9edf2;
+      --muted: #aeb9c6;
+      --border: rgba(212, 175, 55, 0.28);
+      --card: rgba(12, 27, 46, 0.88);
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(212,175,55,0.08), transparent 35%),
+        linear-gradient(180deg, #050d18 0%, var(--navy) 45%, #040a12 100%);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 13, 24, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 15px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--gold);
+      text-decoration: none;
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      padding: 7px 10px;
+      border-radius: 5px;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold-light);
+      background: rgba(212,175,55,0.09);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 25px 90px;
+
+      background:
+        linear-gradient(
+          rgba(3, 10, 18, 0.67),
+          rgba(3, 10, 18, 0.88)
+        ),
+        url("images/era13-cold-war.jpg") center/cover no-repeat;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 1050px;
+    }
+
+    .era-label {
+      color: var(--gold);
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      letter-spacing: 5px;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: "Cinzel", serif;
+      font-size: clamp(2.2rem, 6vw, 5rem);
+      line-height: 1.12;
+      color: #fff;
+      text-shadow: 0 5px 30px rgba(0,0,0,0.6);
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero-subtitle {
+      max-width: 850px;
+      margin: auto;
+      color: #d2d8df;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .hero-quote {
+      max-width: 800px;
+      margin: 38px auto 0;
+      padding: 25px 30px;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      font-family: "Cinzel", serif;
+      color: var(--gold-light);
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+
+    /* =========================
+       MAIN CONTENT
+    ========================= */
+
+    main {
+      max-width: 1120px;
+      margin: auto;
+      padding: 70px 22px;
+    }
+
+    .intro {
+      background: linear-gradient(
+        145deg,
+        rgba(16,38,61,0.92),
+        rgba(7,17,31,0.92)
+      );
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 38px;
+      margin-bottom: 65px;
+      box-shadow: var(--shadow);
+    }
+
+    .intro p {
+      color: #d9dee5;
+      margin-bottom: 20px;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section {
+      margin-bottom: 75px;
+      scroll-margin-top: 100px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .roman {
+      min-width: 55px;
+      height: 55px;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      border-radius: 50%;
+      background: rgba(212,175,55,0.06);
+    }
+
+    .section h2 {
+      font-family: "Cinzel", serif;
+      color: var(--gold-light);
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.3;
+    }
+
+    .section p {
+      color: #d4dbe3;
+      margin-bottom: 20px;
+    }
+
+    .section strong {
+      color: #fff;
+    }
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-left: 3px solid var(--gold);
+      border-radius: 8px;
+      padding: 25px 28px;
+      margin: 25px 0;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    }
+
+    .card h3 {
+      font-family: "Cinzel", serif;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 16px 0 22px 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: #d3dae2;
+    }
+
+    li::marker {
+      color: var(--gold);
+    }
+
+    /* =========================
+       THREE IMAGE LIMIT
+    ========================= */
+
+    .historical-image {
+      margin: 35px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: #091522;
+    }
+
+    .historical-image img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .historical-image figcaption {
+      padding: 13px 18px;
+      background: #091522;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* =========================
+       SPECIAL QUOTES
+    ========================= */
+
+    .chronicle-quote {
+      margin: 35px 0;
+      padding: 30px 35px;
+      border-left: 4px solid var(--gold);
+      background: linear-gradient(
+        90deg,
+        rgba(212,175,55,0.08),
+        transparent
+      );
+      font-family: "Cinzel", serif;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    .chronicle-quote small {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-family: "Inter", sans-serif;
+      font-size: 0.78rem;
+      font-style: normal;
+    }
+
+    /* =========================
+       ERA SUMMARY
+    ========================= */
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .summary-item {
+      padding: 22px;
+      border: 1px solid rgba(212,175,55,0.2);
+      background: rgba(12,27,46,0.75);
+      border-radius: 8px;
+    }
+
+    .summary-item strong {
+      display: block;
+      color: var(--gold-light);
+      font-family: "Cinzel", serif;
+      margin-bottom: 8px;
+    }
+
+    /* =========================
+       FINAL LINE
+    ========================= */
+
+    .final-record {
+      margin-top: 85px;
+      padding: 55px 30px;
+      text-align: center;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      background:
+        radial-gradient(
+          circle,
+          rgba(212,175,55,0.09),
+          transparent 65%
+        );
+    }
+
+    .final-record h2 {
+      font-family: "Cinzel", serif;
+      color: var(--gold);
+      font-size: 1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .final-record p {
+      max-width: 850px;
+      margin: auto;
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      line-height: 1.6;
+      color: #fff;
+      font-style: italic;
+    }
+
+    /* =========================
+       ERA NAVIGATION
+    ========================= */
+
+    .era-navigation {
+      margin-top: 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .era-navigation a {
+      display: block;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(12,27,46,0.75);
+      text-decoration: none;
+      transition: 0.25s ease;
+    }
+
+    .era-navigation a:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+      background: rgba(212,175,55,0.07);
+    }
+
+    .era-navigation span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+
+    .era-navigation strong {
+      color: var(--gold-light);
+      font-family: "Cinzel", serif;
+    }
+
+    .next-era {
+      text-align: right;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: #030811;
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    footer h3 {
+      font-family: "Cinzel", serif;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding-bottom: 3px;
+      }
+
+      .hero {
+        min-height: 80vh;
+        padding: 80px 20px;
+      }
+
+      .intro {
+        padding: 25px;
+      }
+
+      .section {
+        margin-bottom: 60px;
+      }
+
+      .historical-image img {
+        height: 280px;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .era-navigation {
+        grid-template-columns: 1fr;
+      }
+
+      .next-era {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       TOP NAVIGATION
+  ========================= -->
+
+  <nav class="top-nav">
+    <div class="nav-inner">
+
+      <a href="index.html" class="brand">
+        IMPERIAL SOVEREIGN OF BRISTEVIA
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="Index-History.html">History</a>
+        <a href="Era12.html">Era 12</a>
+        <a href="Era13.html" class="active">Era 13</a>
+        <a href="Era14.html">Era 14</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="era-label">
+        ERA XIII
+      </div>
+
+      <h1>
+        The Valterra Cold War<br>
+        <span>and the Age of Fractured Shadows</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Bristevian Historical Record — The Age of Systemic Rivalry,
+        Maritime Dominance, and Institutional Survival
+      </p>
+
+      <div class="hero-quote">
+        “The continuation of war by other means,
+        carried through sea routes, markets, and silence.”
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         INTRODUCTION
+    ========================= -->
+
+    <section class="intro">
+
+      <p>
+        By ERA 13, Bristevia no longer existed in a world defined by conquest
+        or post-war reconstruction. Instead, it operated within a permanent
+        equilibrium of tension, where open continental wars had ceased, but
+        systemic rivalry replaced them as the dominant form of conflict.
+      </p>
+
+      <p>
+        Bristevian historians describe this era not as peace, but as:
+      </p>
+
+      <div class="chronicle-quote">
+        “The continuation of war by other means, carried through sea routes,
+        markets, and silence.”
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         I. BRISTEVIAN POSITION
+    ========================= -->
+
+    <section class="section" id="position">
+
+      <div class="section-header">
+        <div class="roman">I</div>
+        <h2>The Bristevian Position After ERA 12</h2>
+      </div>
+
+      <p>
+        Following the consolidation reforms of Stephen XXV, Bristevia entered
+        ERA 13 as a fully centralized sovereign maritime state.
+      </p>
+
+      <div class="card">
+
+        <h3>Internal Structure of Bristevia</h3>
+
+        <ul>
+          <li>A singular Souverion authority.</li>
+          <li>
+            Fully integrated regional administrations:
+            Stephara, Jaybrienne, Luminaris, Solara,
+            and Northaven–Aethelburg.
+          </li>
+          <li>
+            Legally subordinate but economically significant
+            provincial elites.
+          </li>
+        </ul>
+
+      </div>
+
+      <p>
+        Unlike earlier eras, regional identities no longer threatened
+        fragmentation—but they continued to influence policy.
+      </p>
+
+      <ul>
+        <li><strong>Luminaris</strong> — naval autonomy pressure.</li>
+        <li><strong>Solara</strong> — economic independence movements.</li>
+        <li>
+          <strong>Northaven</strong> — military traditionalist resistance
+          to central naval prioritization.
+        </li>
+      </ul>
+
+    </section>
+
+
+    <!-- =========================
+         II. RAM III
+    ========================= -->
+
+    <section class="section" id="ram-iii">
+
+      <div class="section-header">
+        <div class="roman">II</div>
+        <h2>Ram III and the Stabilization of the Cold War State</h2>
+      </div>
+
+      <p>
+        At the beginning of ERA 13, Ram III ascended as Souverion during a
+        period of rising external tension and internal bureaucratic strain.
+      </p>
+
+      <p>
+        His reign is defined by three structural priorities.
+      </p>
+
+      <div class="card">
+
+        <h3>1. Maritime Continuity Doctrine</h3>
+
+        <p>
+          Bristevia expanded and stabilized its control of sea routes
+          not through conquest, but through:
+        </p>
+
+        <ul>
+          <li>Convoy protection systems.</li>
+          <li>Insurance-backed trade corridors.</li>
+          <li>Regulated maritime arbitration zones.</li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <h3>2. Internal Cohesion Management</h3>
+
+        <p>
+          To prevent fragmentation after Stephen XXV's centralization reforms,
+          Ram III:
+        </p>
+
+        <ul>
+          <li>Reinforced the electoral administrative system.</li>
+          <li>Limited resurgence of regional aristocratic influence.</li>
+          <li>
+            Strengthened direct oversight of provincial governors.
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <h3>3. Diplomatic Balancing within UV Structures</h3>
+
+        <p>
+          Bristevia positioned itself as a stabilizing core within the
+          United Valterra (UV) system, ensuring:
+        </p>
+
+        <ul>
+          <li>Stephara remained the primary diplomatic arbitration hub.</li>
+          <li>
+            Bristevian legal frameworks influenced maritime law.
+          </li>
+          <li>
+            Trade regulation standards aligned with Bristevian
+            shipping dominance.
+          </li>
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         IMAGE 2 OF 3
+    ========================= -->
+
+    <figure class="historical-image">
+
+      <img
+        src="images/era13-stephara-diplomacy.jpg"
+        alt="Stephara diplomatic center during the Valterra Cold War">
+
+      <figcaption>
+        Stephara City — diplomatic center of the United Valterra system
+        and principal arbitration hub of ERA 13.
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =========================
+         III. MARITIME BLOC
+    ========================= -->
+
+    <section class="section" id="maritime-bloc">
+
+      <div class="section-header">
+        <div class="roman">III</div>
+        <h2>The Bristevian Maritime Bloc</h2>
+      </div>
+
+      <p>
+        During ERA 13, Bristevia did not pursue territorial expansion.
+        Instead, it built what historians call the
+        <strong>Maritime Bloc System</strong>.
+      </p>
+
+      <p>
+        This bloc was not an empire in the traditional sense—it was a network
+        of dependency structured through sea control and trade regulation.
+      </p>
+
+      <div class="card">
+
+        <h3>Key Features</h3>
+
+        <ul>
+          <li>
+            Dominance of Stephara Strait shipping lanes.
+          </li>
+
+          <li>
+            Luminaris-controlled shipbuilding and fleet maintenance corridors.
+          </li>
+
+          <li>
+            Solara acting as southern logistics and fuel redistribution hub.
+          </li>
+
+          <li>
+            Jaybrienne serving as inland supply stabilization center.
+          </li>
+        </ul>
+
+      </div>
+
+      <p>
+        Eldrosia remained integrated as a dynastic-aligned partner,
+        ensuring continuity of historical union ties, while other former
+        regions remained economically bound through treaty obligations
+        rather than conquest.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         IMAGE 3 OF 3
+    ========================= -->
+
+    <figure class="historical-image">
+
+      <img
+        src="images/era13-maritime-bloc.jpg"
+        alt="Bristevian Imperial Maritime Fleet during the Cold War era">
+
+      <figcaption>
+        The Bristevian Maritime Bloc — sea power, trade regulation,
+        and strategic dependency replaced territorial conquest.
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =========================
+         IV. SYSTEMIC CONFLICT
+    ========================= -->
+
+    <section class="section" id="systemic-conflict">
+
+      <div class="section-header">
+        <div class="roman">IV</div>
+        <h2>The Shift from War to Systemic Conflict</h2>
+      </div>
+
+      <p>
+        ERA 13 marks the end of traditional warfare for Bristevia.
+        Instead, conflict became structured around non-military pressure
+        systems.
+      </p>
+
+      <div class="card">
+
+        <h3>1. Maritime Economic Control</h3>
+
+        <p>
+          Bristevia leveraged:
+        </p>
+
+        <ul>
+          <li>Shipping tariffs.</li>
+          <li>Insurance regulation systems.</li>
+          <li>Port access treaties.</li>
+        </ul>
+
+        <p>
+          These mechanisms allowed Bristevia to maintain dominance
+          over global trade flow.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>2. Intelligence Competition</h3>
+
+        <p>
+          Rather than battlefield confrontation, Bristevian security doctrine
+          focused on:
+        </p>
+
+        <ul>
+          <li>Counterintelligence operations in neutral zones.</li>
+          <li>Surveillance of trade networks.</li>
+          <li>
+            Diplomatic infiltration prevention within UV councils.
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="card">
+
+        <h3>3. Proxy Influence Containment</h3>
+
+        <p>
+          Bristevia engaged not in occupation, but in:
+        </p>
+
+        <ul>
+          <li>Financial stabilization interventions.</li>
+          <li>Treaty enforcement coalitions.</li>
+          <li>Maritime security partnerships.</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         V. BUFFER SYSTEMS
+    ========================= -->
+
+    <section class="section" id="buffers">
+
+      <div class="section-header">
+        <div class="roman">V</div>
+        <h2>Neutral and Buffer Systems Surrounding Bristevia</h2>
+      </div>
+
+      <p>
+        Bristevia's strategic environment in ERA 13 was defined by
+        semi-autonomous buffer regions that were not fully controlled
+        but heavily influenced.
+      </p>
+
+      <div class="card">
+
+        <h3>Thalesson Free Cities</h3>
+
+        <p>
+          The Maximo Maritime Network served as a major trade arbitration
+          zone influenced by Bristevian shipping law.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Varkaros Confederation</h3>
+
+        <p>
+          An unstable maritime buffer used for indirect trade mediation.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Nordavian Frontier Zones</h3>
+
+        <p>
+          A militarized but economically dependent northern corridor.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Glaciara Constitutional Monarchy</h3>
+
+        <p>
+          Politically neutral but strategically pressured in matters
+          of trade alignment.
+        </p>
+
+      </div>
+
+      <p>
+        Bristevia's influence in these zones was not territorial—it was
+        structural, enforced through economic and naval systems rather
+        than occupation.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         VI. COUNTERWEIGHTS
+    ========================= -->
+
+    <section class="section" id="counterweights">
+
+      <div class="section-header">
+        <div class="roman">VI</div>
+        <h2>The Valtherion and Caelorian Counterweights</h2>
+      </div>
+
+      <p>
+        From Bristevia's perspective, ERA 13 opposition forces were not
+        traditional enemies but systemic counterweights.
+      </p>
+
+      <div class="card">
+
+        <h3>Valtherion</h3>
+
+        <p>
+          An inland industrial logistics power challenging maritime
+          dependency systems.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Caeloria</h3>
+
+        <p>
+          A covert maritime disruption network interfering with
+          trade stability.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Zharamir-Aligned Remnants</h3>
+
+        <p>
+          Localized instability affecting southern trade corridors.
+        </p>
+
+      </div>
+
+      <p>
+        Bristevian policy did not seek destruction of these blocs,
+        but containment through economic resilience and maritime
+        dominance maintenance.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         VII. UNITED VALTERRA
+    ========================= -->
+
+    <section class="section" id="uv">
+
+      <div class="section-header">
+        <div class="roman">VII</div>
+        <h2>United Valterra and Bristevian Influence</h2>
+      </div>
+
+      <p>
+        Although formally neutral, the United Valterra (UV) system
+        functioned as a contested diplomatic arena.
+      </p>
+
+      <div class="card">
+
+        <h3>Bristevian Influence</h3>
+
+        <ul>
+          <li>
+            Procedural control of maritime law arbitration.
+          </li>
+
+          <li>
+            Funding stabilization programs in buffer states.
+          </li>
+
+          <li>
+            Diplomatic dominance in Stephara-hosted sessions.
+          </li>
+        </ul>
+
+      </div>
+
+      <p>
+        However, UV also became a site of constant political resistance,
+        with competing blocs attempting to limit Bristevian maritime
+        authority through legal and economic countermeasures.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         VIII. INTERNAL TENSIONS
+    ========================= -->
+
+    <section class="section" id="internal-tensions">
+
+      <div class="section-header">
+        <div class="roman">VIII</div>
+        <h2>Internal Bristevian Tensions in ERA 13</h2>
+      </div>
+
+      <p>
+        Despite external stability, Bristevia faced internal systemic pressure.
+      </p>
+
+      <div class="summary-grid">
+
+        <div class="summary-item">
+          <strong>Solara</strong>
+          Periodic labor and autonomy movements.
+        </div>
+
+        <div class="summary-item">
+          <strong>Luminaris</strong>
+          Maritime guild demands for regulatory relaxation.
+        </div>
+
+        <div class="summary-item">
+          <strong>Northaven</strong>
+          Military traditionalists resisting naval budget prioritization.
+        </div>
+
+        <div class="summary-item">
+          <strong>Jaybrienne</strong>
+          Agricultural taxation disputes linked to trade financing systems.
+        </div>
+
+      </div>
+
+      <p style="margin-top:25px;">
+        Ram III's administration managed these pressures through institutional
+        negotiation rather than force, preserving internal unity while
+        preventing fragmentation.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         IX. CHARACTER OF ERA 13
+    ========================= -->
+
+    <section class="section" id="character">
+
+      <div class="section-header">
+        <div class="roman">IX</div>
+        <h2>Historical Character of ERA 13</h2>
+      </div>
+
+      <div class="chronicle-quote">
+
+        “The Age Where War Became Structure,
+        and Structure Became Survival”
+
+        <small>
+          — Bristevian historiographical designation for ERA 13
+        </small>
+
+      </div>
+
+      <p>
+        The defining characteristics of the era were:
+      </p>
+
+      <ul>
+        <li>
+          No direct continental wars between major blocs.
+        </li>
+
+        <li>
+          Permanent economic and intelligence competition.
+        </li>
+
+        <li>
+          Maritime dominance replacing territorial conquest.
+        </li>
+
+        <li>
+          Diplomatic institutions functioning as controlled battlegrounds.
+        </li>
+      </ul>
+
+    </section>
+
+
+    <!-- =========================
+         X. FINAL SUMMARY
+    ========================= -->
+
+    <section class="section" id="summary">
+
+      <div class="section-header">
+        <div class="roman">X</div>
+        <h2>Final Summary of Bristevian ERA 13</h2>
+      </div>
+
+      <p>
+        By the end of ERA 13, Bristevia remained one of the principal
+        stabilizing powers of the Valterra system.
+      </p>
+
+      <div class="summary-grid">
+
+        <div class="summary-item">
+          <strong>Unified State</strong>
+          Bristevia remained a unified centralized Souverion state
+          under Ram III.
+        </div>
+
+        <div class="summary-item">
+          <strong>Five Regions</strong>
+          The Five Regions existed as administrative systems,
+          not sovereign divisions.
+        </div>
+
+        <div class="summary-item">
+          <strong>Maritime Dominance</strong>
+          Global influence was defined by maritime control rather
+          than territorial expansion.
+        </div>
+
+        <div class="summary-item">
+          <strong>Systemic Conflict</strong>
+          Conflict permanently shifted into economic, intelligence,
+          and diplomatic layers.
+        </div>
+
+      </div>
+
+      <div class="card" style="margin-top:30px;">
+
+        <h3>The United Valterra Order</h3>
+
+        <p>
+          The United Valterra system functioned as a managed but unstable
+          global order in which Bristevia remained a central institutional
+          and maritime power.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL HISTORICAL RECORD
+    ========================= -->
+
+    <section class="final-record">
+
+      <h2>Final Line of ERA 13</h2>
+
+      <p>
+        “The oceans no longer decided who ruled the world.
+        They decided who survived within it.”
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         ERA NAVIGATION
+    ========================= -->
+
+    <div class="era-navigation">
+
+      <a href="Era12.html">
+        <span>← Previous Era</span>
+        <strong>ERA 12 — Post-War Reorder and Final Centralization</strong>
+      </a>
+
+      <a href="Era14.html" class="next-era">
+        <span>Next Era →</span>
+        <strong>ERA 14 — Continue the Bristevian Chronicle</strong>
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <h3>Imperial Sovereign of Bristevia</h3>
+
+    <p>
+      Historical Archives • Central Archipelago Chronicle
+    </p>
+
+    <p style="margin-top:8px;">
+      ERA 13 — The Valterra Cold War and the Age of Fractured Shadows
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       SIMPLE ACTIVE NAV SCRIPT
+  ========================= -->
+
+  <script>
+
+    const sections = document.querySelectorAll(".section");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+
+      let current = "";
+
+      sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
