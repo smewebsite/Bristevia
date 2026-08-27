@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Era VI | The Shattering of Empires & The Founding of Bristevia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cormorant Garamond", serif;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(12, 61, 115, 0.45),
+          rgba(2, 12, 30, 0.97)
+        ),
+        #020b18;
+      color: #f8f0d0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       MAIN NAVIGATION
+       ========================= */
+
+    .main-navigation {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      padding: 18px 15px;
+
+      background:
+        linear-gradient(
+          rgba(2,18,42,0.97),
+          rgba(2,11,27,0.99)
+        );
+
+      border-bottom: 1px solid rgba(212,175,55,0.45);
+
+      box-shadow:
+        0 5px 25px rgba(0,0,0,0.4);
+
+      position: relative;
+      z-index: 20;
+    }
+
+    .main-navigation a {
+      font-family: "Cinzel", serif;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      color: #f5e6a8;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: 0.3s ease;
+    }
+
+    .main-navigation a:hover,
+    .main-navigation a.active {
+      color: #ffffff;
+      text-shadow:
+        0 0 10px rgba(212,175,55,0.8);
+    }
+
+    /* =========================
+       ERA HERO
+       ========================= */
+
+    .era-hero {
+      position: relative;
+      min-height: 78vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      padding: 100px 25px;
+
+      background:
+        linear-gradient(
+          rgba(1, 13, 31, 0.70),
+          rgba(1, 13, 31, 0.94)
+        ),
+        url("era6-historical-background.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+      border-bottom: 1px solid rgba(212,175,55,0.55);
+    }
+
+    .era-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(212,175,55,0.14),
+          transparent 65%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 1100px;
+    }
+
+    .imperial-symbol {
+      font-size: 70px;
+      color: #d4af37;
+
+      text-shadow:
+        0 0 15px rgba(212,175,55,0.7),
+        0 0 35px rgba(212,175,55,0.3);
+
+      margin-bottom: 20px;
+    }
+
+    .era-label {
+      font-family: "Cinzel", serif;
+      color: #d4af37;
+      font-size: 16px;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .era-hero h1 {
+      font-family: "Cinzel", serif;
+      font-size: clamp(36px, 6vw, 72px);
+      line-height: 1.15;
+      color: #f7e7a9;
+      letter-spacing: 3px;
+
+      text-shadow:
+        0 3px 0 #8b6914,
+        0 0 25px rgba(212,175,55,0.35);
+    }
+
+    .era-period {
+      margin-top: 25px;
+
+      font-family: "Cinzel", serif;
+      font-size: clamp(16px, 2.5vw, 23px);
+
+      letter-spacing: 3px;
+      color: #ffffff;
+    }
+
+    .era-tagline {
+      max-width: 850px;
+      margin: 25px auto 0;
+
+      font-size: 21px;
+      line-height: 1.7;
+
+      color: #d8d8d8;
+    }
+
+    /* =========================
+       CONTENT
+       ========================= */
+
+    .era-content {
+      max-width: 1050px;
+      margin: auto;
+      padding: 80px 25px;
+    }
+
+    .intro-box {
+      padding: 35px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(5,35,68,0.90),
+          rgba(2,15,32,0.95)
+        );
+
+      border-left: 3px solid #d4af37;
+      border-right: 1px solid rgba(212,175,55,0.25);
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.35);
+
+      margin-bottom: 70px;
+    }
+
+    .intro-box p {
+      font-size: 21px;
+      line-height: 1.85;
+      color: #e4e4e4;
+    }
+
+    /* =========================
+       SECTIONS
+       ========================= */
+
+    .history-section {
+      margin-bottom: 75px;
+    }
+
+    .section-number {
+      font-family: "Cinzel", serif;
+      font-size: 15px;
+      letter-spacing: 4px;
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
+
+    .history-section h2 {
+      font-family: "Cinzel", serif;
+      font-size: clamp(25px, 4vw, 38px);
+      line-height: 1.3;
+
+      color: #f7e7a9;
+
+      margin-bottom: 25px;
+
+      text-shadow:
+        0 0 15px rgba(212,175,55,0.15);
+    }
+
+    .history-section h3 {
+      font-family: "Cinzel", serif;
+      color: #d4af37;
+      font-size: 23px;
+      margin: 30px 0 15px;
+    }
+
+    .history-section p {
+      font-size: 20px;
+      line-height: 1.85;
+      color: #dddddd;
+      margin-bottom: 20px;
+    }
+
+    .history-section ul {
+      margin: 15px 0 25px 25px;
+    }
+
+    .history-section li {
+      font-size: 19px;
+      line-height: 1.7;
+      color: #d4d4d4;
+      margin-bottom: 7px;
+    }
+
+    .quote-box {
+      margin: 30px 0;
+      padding: 28px 30px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(212,175,55,0.08),
+          rgba(5,35,68,0.55)
+        );
+
+      border-top: 1px solid rgba(212,175,55,0.4);
+      border-bottom: 1px solid rgba(212,175,55,0.4);
+
+      text-align: center;
+    }
+
+    .quote-box p {
+      font-family: "Cinzel", serif;
+      font-size: 22px;
+      color: #f7e7a9;
+      margin: 0;
+    }
+
+    /* =========================
+       THREE HISTORICAL IMAGES
+       ========================= */
+
+    .historical-image {
+      margin: 45px 0;
+      border: 1px solid rgba(212,175,55,0.45);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(5,35,68,0.96),
+          rgba(2,15,32,0.98)
+        );
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.45);
+
+      overflow: hidden;
+    }
+
+    .historical-image img {
+      display: block;
+      width: 100%;
+      height: 430px;
+
+      object-fit: cover;
+
+      transition: transform 0.5s ease;
+    }
+
+    .historical-image:hover img {
+      transform: scale(1.025);
+    }
+
+    .image-caption {
+      padding: 18px 20px;
+      text-align: center;
+
+      font-family: "Cinzel", serif;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+
+      color: #d4af37;
+      background: rgba(1,10,23,0.95);
+    }
+
+    /* =========================
+       STATE SUMMARY
+       ========================= */
+
+    .state-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .state-card {
+      padding: 25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(5,35,68,0.92),
+          rgba(2,15,32,0.98)
+        );
+
+      border: 1px solid rgba(212,175,55,0.3);
+
+      text-align: center;
+    }
+
+    .state-card h4 {
+      font-family: "Cinzel", serif;
+      color: #d4af37;
+      font-size: 19px;
+      margin-bottom: 12px;
+    }
+
+    .state-card p {
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* =========================
+       FINAL SIGNIFICANCE
+       ========================= */
+
+    .final-box {
+      margin-top: 30px;
+      padding: 45px 35px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(10,45,82,0.9),
+          rgba(2,12,27,0.98)
+        );
+
+      border: 1px solid rgba(212,175,55,0.5);
+
+      text-align: center;
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .final-box h2 {
+      font-family: "Cinzel", serif;
+      color: #d4af37;
+      font-size: 31px;
+      margin-bottom: 25px;
+    }
+
+    .final-box p {
+      font-size: 21px;
+      line-height: 1.8;
+      color: #e5e5e5;
+    }
+
+    .final-box strong {
+      color: #f7e7a9;
+    }
+
+    /* =========================
+       ERA NAVIGATION
+       ========================= */
+
+    .era-navigation {
+      max-width: 1050px;
+      margin: 0 auto 80px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      padding: 0 25px;
+    }
+
+    .era-navigation a {
+      flex: 1;
+
+      padding: 18px 20px;
+
+      text-align: center;
+
+      font-family: "Cinzel", serif;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+
+      color: #f5e6a8;
+      text-decoration: none;
+
+      border: 1px solid rgba(212,175,55,0.35);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(5,35,68,0.9),
+          rgba(2,15,32,0.95)
+        );
+
+      transition: 0.3s ease;
+    }
+
+    .era-navigation a:hover {
+      border-color: #d4af37;
+      color: #ffffff;
+
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      text-align: center;
+      padding: 35px 15px;
+
+      background: #010812;
+
+      border-top: 1px solid rgba(178,31,45,0.5);
+
+      color: #9d9d9d;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    footer strong {
+      color: #d4af37;
+      font-family: "Cinzel", serif;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 700px) {
+
+      .main-navigation a {
+        font-size: 10px;
+        padding: 8px 9px;
+      }
+
+      .era-hero {
+        min-height: 70vh;
+        padding: 80px 18px;
+      }
+
+      .imperial-symbol {
+        font-size: 50px;
+      }
+
+      .era-label {
+        letter-spacing: 4px;
+      }
+
+      .era-hero h1 {
+        letter-spacing: 1px;
+      }
+
+      .era-period {
+        letter-spacing: 1px;
+      }
+
+      .era-tagline {
+        font-size: 18px;
+      }
+
+      .era-content {
+        padding: 60px 18px;
+      }
+
+      .intro-box {
+        padding: 25px 20px;
+      }
+
+      .intro-box p,
+      .history-section p {
+        font-size: 18px;
+      }
+
+      .history-section li {
+        font-size: 17px;
+      }
+
+      .historical-image img {
+        height: 260px;
+      }
+
+      .era-navigation {
+        flex-direction: column;
+        padding: 0 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       MAIN NAVIGATION
+       ========================= -->
+
+  <nav class="main-navigation">
+
+    <a href="index.html">HOME</a>
+
+    <a href="constitution.html">CONSTITUTION</a>
+
+    <a href="history.html" class="active">HISTORY</a>
+
+    <a href="government.html">GOVERNMENT</a>
+
+    <a href="judiciary.html">SUPREME TRIBUNAL</a>
+
+    <a href="legislature.html">IMPERIAL ASSEMBLY</a>
+
+    <a href="decrees.html">ROYAL DECREES</a>
+
+    <a href="atlas.html">BRISTEVIA ATLAS</a>
+
+  </nav>
+
+
+  <!-- =========================
+       ERA HERO
+       ========================= -->
+
+  <header class="era-hero">
+
+    <div class="hero-content">
+
+      <div class="imperial-symbol">⚜</div>
+
+      <div class="era-label">
+        ERA VI
+      </div>
+
+      <h1>
+        THE SHATTERING OF EMPIRES<br>
+        &amp; THE FOUNDING OF BRISTEVIA
+      </h1>
+
+      <div class="era-period">
+        CENTRAL ARCHIPELAGO CHRONICLE
+      </div>
+
+      <p class="era-tagline">
+        From Imperial Collapse to the First Crown of Bristevia
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN CONTENT
+       ========================= -->
+
+  <main class="era-content">
+
+
+    <!-- INTRODUCTION -->
+
+    <div class="intro-box">
+
+      <p>
+        ERA 6 is the most decisive transformation in the entire
+        pre-Bristevian timeline. Unlike previous eras shaped by
+        gradual fragmentation or external pressure, this period
+        is defined by total imperial collapse, multi-front wars,
+        and the formal birth of Bristevia as a sovereign kingdom.
+      </p>
+
+      <p>
+        For the first time in history, the Central Archipelago
+        ceases to exist as a Valtherium dependency system.
+        Instead, it becomes a contested post-imperial mosaic
+        of emerging kingdoms, with Bristevia rising at its center.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         I
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        I
+      </div>
+
+      <h2>
+        THE FINAL WARS OF VALTHERIUM —
+        COLLAPSE OF CENTRAL AUTHORITY
+      </h2>
+
+      <p>
+        ERA 6 begins with the weakening of Valtherium control
+        across all former territories. Internal fragmentation
+        and external revolts converge into a single collapse cycle.
+      </p>
+
+      <h3>
+        Dunava Rebellion and West Nord Pressure
+      </h3>
+
+      <p>
+        The Dunava region, previously under West Nord pressure,
+        shifts alliances during this instability:
+      </p>
+
+      <ul>
+        <li>Dunava rebels against West Nord authority.</li>
+        <li>Temporarily aligns with Valtherium for survival.</li>
+        <li>Becomes a strategic inland conflict zone tied to broader imperial collapse.</li>
+      </ul>
+
+      <p>
+        This instability directly affects trade routes feeding
+        the Stephara–Brionne corridor.
+      </p>
+
+
+      <h3>
+        Battle of Draxenor — The Turning Point
+      </h3>
+
+      <p>
+        The decisive conflict involving Stephara-aligned forces
+        and Eldrosia coalition support leads to the downfall
+        of Valtherium authority in the Central Archipelago.
+      </p>
+
+      <ul>
+        <li>Valtherium forces suffer irreversible defeat.</li>
+        <li>Imperial command structure in the archipelago collapses.</li>
+        <li>Regional governors abandon centralized loyalty.</li>
+      </ul>
+
+
+      <div class="historical-image">
+
+        <img
+          src="era6-image1.jpg"
+          alt="The Battle of Draxenor and the collapse of Valtherium"
+        >
+
+        <div class="image-caption">
+          THE BATTLE OF DRAXENOR — THE FALL OF VALTHERIUM AUTHORITY
+        </div>
+
+      </div>
+
+
+      <h3>
+        Stephen X — The Founding King
+      </h3>
+
+      <p>
+        Following the victory, Stephen X declares sovereignty
+        and is crowned:
+      </p>
+
+      <div class="quote-box">
+
+        <p>
+          KING OF BRISTEVIA
+        </p>
+
+      </div>
+
+      <p>
+        The name “Bristevia” emerges formally at this moment,
+        derived from the unified Stepharan identity that had
+        developed over previous eras.
+      </p>
+
+      <p>
+        Stephen X’s legitimacy is reinforced by:
+      </p>
+
+      <ul>
+        <li>Marriage alliance with Princess Bri of Valtherium.</li>
+        <li>Control over Stephara and Jaybrienne territories.</li>
+        <li>Recognition from allied regional powers weakened by Valtherium collapse.</li>
+      </ul>
+
+
+      <h3>
+        Formation of the First Kingdom Structure
+      </h3>
+
+      <p>
+        Bristevia is organized into its first two foundational
+        provinces:
+      </p>
+
+      <ul>
+        <li><strong>Stephara Province</strong> — maritime and strait core.</li>
+        <li><strong>Jaybrienne Province</strong> — inland administrative basin.</li>
+      </ul>
+
+      <p>
+        This marks the official birth of the Bristevian state.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         II
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        II
+      </div>
+
+      <h2>
+        POST-VALTHERIUM REALIGNMENT —
+        NEW KINGDOM ORDER
+      </h2>
+
+      <p>
+        With Valtherium defeated, the Central Archipelago
+        rapidly reorganizes.
+      </p>
+
+      <h3>
+        Orlencia Restoration and Recognition
+      </h3>
+
+      <p>
+        Following the defeat of Valtherium forces:
+      </p>
+
+      <ul>
+        <li>Orlencia re-emerges as a recognized kingdom.</li>
+        <li>
+          Its independence is indirectly secured through
+          Bristevian military contribution at Draxenor.
+        </li>
+        <li>
+          Orlencia establishes itself as a secondary maritime
+          power in the western corridor.
+        </li>
+      </ul>
+
+      <p>
+        This creates the first multi-kingdom equilibrium
+        surrounding Bristevia.
+      </p>
+
+
+      <h3>
+        Zalta Ascendancy — Northern Valtherium Successor State
+      </h3>
+
+      <p>
+        Zalta becomes one of the most powerful successor states
+        after the Valtherium collapse.
+      </p>
+
+      <h3>
+        Battle of Tyrosgrad
+      </h3>
+
+      <ul>
+        <li>Zalta defeats remaining Valtherium forces.</li>
+        <li>Secures former Thyro territories.</li>
+        <li>Establishes full sovereignty.</li>
+      </ul>
+
+      <h3>
+        Formation of Solmara Province
+      </h3>
+
+      <ul>
+        <li>Former Sol region integrated into Zalta administration.</li>
+        <li>Becomes the Solmara Province under Zalta rule.</li>
+      </ul>
+
+      <p>
+        Zalta’s rise indirectly stabilizes Bristevia’s northern
+        border by eliminating Valtherium remnants.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         III
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        III
+      </div>
+
+      <h2>
+        THE GREAT VALTHERIUM CIVIL WAR —
+        FINAL IMPERIAL DEATH
+      </h2>
+
+      <p>
+        The assassination of Emperor Hiptogoras triggers total
+        imperial fragmentation.
+      </p>
+
+      <ul>
+        <li>Poisoned during a banquet.</li>
+        <li>No direct heir left.</li>
+        <li>Generals and royal houses fight for succession.</li>
+      </ul>
+
+      <div class="quote-box">
+
+        <p>
+          THE GREAT VALTHERIUM CIVIL WAR
+        </p>
+
+      </div>
+
+      <h3>
+        Consequences for Bristevia
+      </h3>
+
+      <p>
+        The final collapse of imperial administrative oversight
+        leads to the fragmentation of former Valtherium territories
+        into smaller kingdoms:
+      </p>
+
+      <ul>
+        <li>Agpolipos</li>
+        <li>Teratenova</li>
+        <li>Dones</li>
+        <li>Valtero</li>
+        <li>Ashgap</li>
+        <li>Vonex</li>
+        <li>Kharavek</li>
+        <li>Varkavo</li>
+      </ul>
+
+    </section>
+
+
+    <!-- =========================
+         IMAGE 2
+         ========================= -->
+
+    <div class="historical-image">
+
+      <img
+        src="era6-image2.jpg"
+        alt="The coronation of King Stephen X and the founding of Bristevia"
+      >
+
+      <div class="image-caption">
+        THE CORONATION OF STEPHEN X — THE FIRST CROWN OF BRISTEVIA
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         IV
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        IV
+      </div>
+
+      <h2>
+        THE PACT OF POST-IMPERIAL STABILITY
+      </h2>
+
+      <p>
+        Following Valtherium collapse, regional powers attempt
+        to prevent further chaos.
+      </p>
+
+      <h3>
+        The Northern Balance Pact
+      </h3>
+
+      <p>
+        A formal agreement is signed between:
+      </p>
+
+      <ul>
+        <li>West Nord successor authorities.</li>
+        <li>Dunava leadership.</li>
+        <li>Zalta kingdom.</li>
+      </ul>
+
+      <p>
+        The key condition of the agreement was that Zalta
+        agreed not to expand into fragmented Valtherium
+        successor states.
+      </p>
+
+      <p>
+        This stabilizes the broader geopolitical environment,
+        allowing Bristevia to consolidate internally without
+        immediate external invasion.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         V
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        V
+      </div>
+
+      <h2>
+        THE EARLY DYNASTIC STRUCTURE OF BRISTEVIA
+      </h2>
+
+      <p>
+        With external threats reduced, Bristevia begins internal
+        consolidation under the House of Stephen.
+      </p>
+
+      <h3>
+        Stephen XI — Consolidation King
+      </h3>
+
+      <ul>
+        <li>Son of Stephen X.</li>
+        <li>Strengthened Stephara–Jaybrienne unity.</li>
+        <li>Expanded early royal administrative structure.</li>
+      </ul>
+
+      <h3>
+        First Dynastic Break — House of Ram Intervention
+      </h3>
+
+      <p>
+        <strong>Ram I</strong> establishes cadet branch rule
+        during succession instability and temporarily replaces
+        the direct Stephen lineage.
+      </p>
+
+      <p>
+        This marks the first interruption of pure Stephen succession.
+      </p>
+
+      <h3>
+        Stephen XII — Brief Restoration
+      </h3>
+
+      <ul>
+        <li>Son of Stephen XI.</li>
+        <li>Reclaims throne briefly.</li>
+        <li>Dies early, causing renewed instability.</li>
+      </ul>
+
+      <h3>
+        Military and Political Transition Era
+      </h3>
+
+      <ul>
+        <li>
+          <strong>Ron I</strong> — Military-backed ruler stabilizing
+          post-crisis governance.
+        </li>
+
+        <li>
+          <strong>Stephen XIII</strong> — Restores House of Stephen
+          main line.
+        </li>
+
+        <li>
+          <strong>Gabriel I</strong> — Major administrative reformer
+          who strengthens the central bureaucracy of Bristevia.
+        </li>
+
+        <li>
+          <strong>Stephen XIV</strong> — Weak monarch whose reign
+          begins the era of noble-controlled governance.
+        </li>
+      </ul>
+
+    </section>
+
+
+    <!-- =========================
+         VI
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        VI
+      </div>
+
+      <h2>
+        FORMATION OF THE BRISTEVIAN STATE IDENTITY
+      </h2>
+
+      <p>
+        By the late ERA 6 period, Bristevia is no longer a newly
+        declared kingdom—it is a functioning state system.
+      </p>
+
+      <div class="state-grid">
+
+        <div class="state-card">
+
+          <h4>
+            TERRITORIAL CORE
+          </h4>
+
+          <p>
+            Stephara Province → maritime power base
+          </p>
+
+          <p>
+            Jaybrienne Province → inland governance center
+          </p>
+
+        </div>
+
+
+        <div class="state-card">
+
+          <h4>
+            MILITARY STRUCTURE
+          </h4>
+
+          <p>
+            Consolidated royal command under the Stephen dynasty.
+          </p>
+
+          <p>
+            Veterans of Draxenor form permanent royal guard systems.
+          </p>
+
+        </div>
+
+
+        <div class="state-card">
+
+          <h4>
+            ADMINISTRATIVE STRUCTURE
+          </h4>
+
+          <p>
+            Early bureaucratic reforms from Gabriel I.
+          </p>
+
+          <p>
+            Noble councils influence governance during weak reigns.
+          </p>
+
+        </div>
+
+
+        <div class="state-card">
+
+          <h4>
+            DIPLOMATIC POSITION
+          </h4>
+
+          <p>
+            Allied with emerging post-Valtherium kingdoms.
+          </p>
+
+          <p>
+            Recognized as a legitimate successor state of regional stability.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         IMAGE 3
+         ========================= -->
+
+    <div class="historical-image">
+
+      <img
+        src="era6-image3.jpg"
+        alt="Early Bristevian kingdom and post-Valtherium successor states"
+      >
+
+      <div class="image-caption">
+        THE NEW KINGDOM ORDER — BRISTEVIA AMONG THE SUCCESSOR STATES
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         VII
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        VII
+      </div>
+
+      <h2>
+        END STATE OF ERA 6 —
+        THE BIRTH OF BRISTEVIA AS A KINGDOM
+      </h2>
+
+      <p>
+        ERA 6 concludes with a fully transformed political reality:
+      </p>
+
+      <ul>
+        <li>Valtherium Empire has collapsed completely.</li>
+        <li>Regional successor kingdoms have emerged.</li>
+        <li>Bristevia has formalized sovereignty under King Stephen X.</li>
+        <li>Dynastic instability begins but does not erase state formation.</li>
+        <li>Two-province structure establishes the territorial foundation.</li>
+      </ul>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL HISTORICAL SIGNIFICANCE
+         ========================= -->
+
+    <section class="history-section">
+
+      <div class="section-number">
+        FINAL HISTORICAL SIGNIFICANCE
+      </div>
+
+      <h2>
+        THE MOMENT BRISTEVIA BECAME A KINGDOM
+      </h2>
+
+      <div class="final-box">
+
+        <h2>
+          FROM IMPERIAL INHERITANCE TO SOVEREIGN STATE
+        </h2>
+
+        <p>
+          ERA 6 is remembered as the moment when Bristevia
+          stopped being an inherited imperial region and became
+          a self-defined kingdom born from the ruins of empire.
+        </p>
+
+        <br>
+
+        <p>
+          It is the era where:
+        </p>
+
+        <br>
+
+        <p>
+          <strong>Identity becomes sovereignty.</strong>
+        </p>
+
+        <p>
+          <strong>Provincial structure becomes national foundation.</strong>
+        </p>
+
+        <p>
+          <strong>Dynastic lineage becomes state legitimacy.</strong>
+        </p>
+
+        <br>
+
+        <p>
+          And from this point forward:
+        </p>
+
+        <br>
+
+        <p>
+          <strong>
+            Bristevia is no longer emerging.
+            It exists.
+          </strong>
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       ERA NAVIGATION
+       ========================= -->
+
+  <div class="era-navigation">
+
+    <a href="era5.html">
+      ← ERA V<br>
+      IMPERIAL FOUNDATION
+    </a>
+
+    <a href="history.html">
+      ⚜ HISTORY INDEX
+    </a>
+
+    <a href="era7.html">
+      ERA VII<br>
+      NEXT ERA →
+    </a>
+
+  </div>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    <p>
+      <strong>
+        ⚜ IMPERIAL SOVEREIGN OF BRISTEVIA ⚜
+      </strong>
+    </p>
+
+    <p>
+      © 2026 The Imperial Sovereign of Bristevia.
+      All Rights Reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
