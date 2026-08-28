@@ -12,6 +12,10 @@
 
 <style>
 
+/* =========================================================
+   GENERAL
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +28,7 @@ html {
 
 body {
     font-family: "Cormorant Garamond", serif;
+
     background:
         radial-gradient(
             circle at center,
@@ -31,26 +36,37 @@ body {
             rgba(2,12,30,0.98)
         ),
         #020b18;
+
     color: #f8f0d0;
+
     min-height: 100vh;
+
     overflow-x: hidden;
 }
 
-/* =========================
+
+/* =========================================================
    MAIN NAVIGATION
-   ========================= */
+========================================================= */
 
 .main-navigation {
+
     position: sticky;
+
     top: 0;
+
     z-index: 100;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     flex-wrap: wrap;
 
     gap: 5px;
+
     padding: 15px;
 
     background:
@@ -59,19 +75,25 @@ body {
             rgba(2,11,27,0.99)
         );
 
-    border-bottom: 1px solid rgba(212,175,55,0.45);
+    border-bottom:
+        1px solid rgba(212,175,55,0.45);
 
     box-shadow:
         0 5px 25px rgba(0,0,0,0.5);
 }
 
 .main-navigation a {
+
     font-family: "Cinzel", serif;
+
     font-size: 12px;
+
     font-weight: 600;
+
     letter-spacing: 1.3px;
 
     color: #f5e6a8;
+
     text-decoration: none;
 
     padding: 10px 14px;
@@ -81,15 +103,17 @@ body {
 
 .main-navigation a:hover,
 .main-navigation a.active {
+
     color: #ffffff;
 
     text-shadow:
         0 0 10px rgba(212,175,55,0.9);
 }
 
-/* =========================
+
+/* =========================================================
    ERA HERO
-   ========================= */
+========================================================= */
 
 .era-hero {
 
@@ -98,47 +122,66 @@ body {
     min-height: 78vh;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
 
     padding: 100px 25px;
 
-    /*
-       HISTORICAL HERO IMAGE
-       Replace this file with your preferred
-       historical illustration/photo.
-    */
-
     background:
+
         linear-gradient(
             rgba(1,15,36,0.55),
             rgba(1,15,36,0.88)
-        ),
-        url("era2-history.jpg");
+        );
 
-    background-size: cover;
-    background-position: center;
-
-    border-bottom: 1px solid rgba(212,175,55,0.5);
+    border-bottom:
+        1px solid rgba(212,175,55,0.5);
 
     overflow: hidden;
 }
+
+
+/* Hero uploaded image */
+
+.hero-uploaded-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    display: none;
+}
+
+
+/* Hero dark overlay */
 
 .era-hero::before {
 
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background:
-        radial-gradient(
-            circle at center,
-            rgba(212,175,55,0.18),
-            transparent 55%
+        linear-gradient(
+            rgba(1,15,36,0.55),
+            rgba(1,15,36,0.88)
         );
+
+    z-index: 1;
 
     pointer-events: none;
 }
@@ -150,6 +193,7 @@ body {
     position: absolute;
 
     width: 600px;
+
     height: 600px;
 
     border-radius: 50%;
@@ -161,7 +205,12 @@ body {
             transparent 70%
         );
 
-    animation: imperialAura 8s ease-in-out infinite alternate;
+    animation:
+        imperialAura 8s ease-in-out infinite alternate;
+
+    z-index: 2;
+
+    pointer-events: none;
 }
 
 @keyframes imperialAura {
@@ -176,6 +225,62 @@ body {
         opacity: 1;
     }
 }
+
+
+/* Hero upload control */
+
+.hero-upload {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    right: 25px;
+
+    z-index: 20;
+}
+
+.hero-upload label {
+
+    display: inline-block;
+
+    padding: 10px 15px;
+
+    cursor: pointer;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1.2px;
+
+    color: #f7e7a9;
+
+    background:
+        rgba(1,12,27,0.88);
+
+    border:
+        1px solid rgba(212,175,55,0.65);
+
+    transition: 0.3s ease;
+}
+
+.hero-upload label:hover {
+
+    color: #ffffff;
+
+    border-color: #d4af37;
+
+    transform: translateY(-2px);
+}
+
+.hero-upload input {
+
+    display: none;
+}
+
+
+/* Hero content */
 
 .hero-content {
 
@@ -198,18 +303,21 @@ body {
         0 0 15px rgba(212,175,55,0.8),
         0 0 40px rgba(212,175,55,0.35);
 
-    animation: royalGlow 4s ease-in-out infinite;
+    animation:
+        royalGlow 4s ease-in-out infinite;
 }
 
 @keyframes royalGlow {
 
     0%,100% {
+
         text-shadow:
             0 0 10px rgba(212,175,55,0.6),
             0 0 25px rgba(212,175,55,0.25);
     }
 
     50% {
+
         text-shadow:
             0 0 25px rgba(212,175,55,1),
             0 0 55px rgba(212,175,55,0.5);
@@ -296,9 +404,10 @@ body {
         0 0 15px rgba(212,175,55,0.5);
 }
 
-/* =========================
+
+/* =========================================================
    ARTICLE
-   ========================= */
+========================================================= */
 
 .history-content {
 
@@ -321,14 +430,16 @@ body {
 
     margin-bottom: 60px;
 
-    border-left: 3px solid #d4af37;
+    border-left:
+        3px solid #d4af37;
 
     padding-left: 25px;
 }
 
-/* =========================
+
+/* =========================================================
    SECTION HEADINGS
-   ========================= */
+========================================================= */
 
 .history-section {
 
@@ -351,7 +462,8 @@ body {
 
     padding-bottom: 12px;
 
-    border-bottom: 1px solid rgba(212,175,55,0.3);
+    border-bottom:
+        1px solid rgba(212,175,55,0.3);
 }
 
 .history-section p {
@@ -367,15 +479,17 @@ body {
     margin-bottom: 22px;
 }
 
-/* =========================
+
+/* =========================================================
    HISTORICAL IMAGE BLOCKS
-   ========================= */
+========================================================= */
 
 .history-image {
 
     margin: 45px 0;
 
-    border: 1px solid rgba(212,175,55,0.45);
+    border:
+        1px solid rgba(212,175,55,0.45);
 
     background:
         linear-gradient(
@@ -390,9 +504,28 @@ body {
     overflow: hidden;
 }
 
-.history-image img {
 
-    display: block;
+/* =========================================================
+   EASY IMAGE UPLOAD SYSTEM
+========================================================= */
+
+.upload-container {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 430px;
+
+    overflow: hidden;
+}
+
+
+/* Uploaded image */
+
+.upload-container img {
+
+    display: none;
 
     width: 100%;
 
@@ -400,40 +533,27 @@ body {
 
     object-fit: cover;
 
-    transition: transform 0.6s ease;
+    transition:
+        transform 0.6s ease;
 }
 
-.history-image:hover img {
+.upload-container:hover img {
 
     transform: scale(1.025);
 }
 
-.history-image figcaption {
 
-    padding: 15px 20px;
+/* Placeholder */
 
-    text-align: center;
+.upload-placeholder {
 
-    font-family: "Cinzel", serif;
-
-    font-size: 13px;
-
-    letter-spacing: 1.5px;
-
-    color: #d4af37;
-
-    background: rgba(1,12,27,0.95);
-}
-
-/* =========================
-   IMAGE PLACEHOLDER
-   ========================= */
-
-.image-placeholder {
+    width: 100%;
 
     height: 430px;
 
     display: flex;
+
+    flex-direction: column;
 
     justify-content: center;
 
@@ -459,9 +579,132 @@ body {
     font-size: 18px;
 }
 
-/* =========================
+
+/* Upload button */
+
+.upload-button {
+
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 12px 22px;
+
+    cursor: pointer;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    color: #020b18;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7e7a9,
+            #d4af37
+        );
+
+    border:
+        1px solid #f7e7a9;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.35);
+}
+
+.upload-button:hover {
+
+    transform: translateY(-3px);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(212,175,55,0.35);
+}
+
+
+/* Hide actual file input */
+
+.image-upload-input {
+
+    display: none;
+}
+
+
+/* Change image button */
+
+.change-image-button {
+
+    position: absolute;
+
+    bottom: 15px;
+
+    right: 15px;
+
+    z-index: 10;
+
+    padding: 9px 15px;
+
+    cursor: pointer;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: #f7e7a9;
+
+    background:
+        rgba(1,12,27,0.88);
+
+    border:
+        1px solid rgba(212,175,55,0.65);
+
+    transition: 0.3s ease;
+}
+
+.change-image-button:hover {
+
+    color: #ffffff;
+
+    border-color: #d4af37;
+
+    background:
+        rgba(2,18,42,0.95);
+}
+
+
+/* Caption */
+
+.history-image figcaption {
+
+    padding: 15px 20px;
+
+    text-align: center;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+
+    color: #d4af37;
+
+    background:
+        rgba(1,12,27,0.95);
+}
+
+
+/* =========================================================
    BULLET LISTS
-   ========================= */
+========================================================= */
 
 .history-list {
 
@@ -486,9 +729,10 @@ body {
     color: #d4af37;
 }
 
-/* =========================
+
+/* =========================================================
    NUMBERED KINGDOMS
-   ========================= */
+========================================================= */
 
 .kingdom {
 
@@ -503,7 +747,8 @@ body {
             rgba(2,15,32,0.85)
         );
 
-    border-left: 3px solid #d4af37;
+    border-left:
+        3px solid #d4af37;
 
     box-shadow:
         0 8px 25px rgba(0,0,0,0.25);
@@ -529,9 +774,10 @@ body {
     text-align: left;
 }
 
-/* =========================
+
+/* =========================================================
    ERA CONCLUSION
-   ========================= */
+========================================================= */
 
 .era-conclusion {
 
@@ -541,9 +787,11 @@ body {
 
     text-align: center;
 
-    border-top: 1px solid rgba(212,175,55,0.4);
+    border-top:
+        1px solid rgba(212,175,55,0.4);
 
-    border-bottom: 1px solid rgba(212,175,55,0.4);
+    border-bottom:
+        1px solid rgba(212,175,55,0.4);
 
     background:
         radial-gradient(
@@ -568,9 +816,10 @@ body {
     font-style: italic;
 }
 
-/* =========================
+
+/* =========================================================
    ERA NAVIGATION
-   ========================= */
+========================================================= */
 
 .era-navigation {
 
@@ -610,7 +859,8 @@ body {
             rgba(2,15,32,0.95)
         );
 
-    border: 1px solid rgba(212,175,55,0.35);
+    border:
+        1px solid rgba(212,175,55,0.35);
 
     transition: 0.3s ease;
 }
@@ -627,9 +877,10 @@ body {
         0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* =========================
+
+/* =========================================================
    FOOTER
-   ========================= */
+========================================================= */
 
 footer {
 
@@ -639,7 +890,8 @@ footer {
 
     background: #010812;
 
-    border-top: 1px solid rgba(178,31,45,0.5);
+    border-top:
+        1px solid rgba(178,31,45,0.5);
 
     color: #9d9d9d;
 
@@ -655,9 +907,10 @@ footer strong {
     font-family: "Cinzel", serif;
 }
 
-/* =========================
+
+/* =========================================================
    MOBILE
-   ========================= */
+========================================================= */
 
 @media (max-width: 700px) {
 
@@ -726,10 +979,41 @@ footer strong {
         text-align: left;
     }
 
-    .history-image img,
-    .image-placeholder {
+    .upload-container {
 
         height: 280px;
+    }
+
+    .upload-container img {
+
+        height: 280px;
+    }
+
+    .upload-placeholder {
+
+        height: 280px;
+
+        padding: 20px;
+
+        font-size: 15px;
+    }
+
+    .upload-button {
+
+        padding: 10px 16px;
+
+        font-size: 10px;
+    }
+
+    .change-image-button {
+
+        bottom: 10px;
+
+        right: 10px;
+
+        padding: 7px 11px;
+
+        font-size: 9px;
     }
 
     .history-list {
@@ -755,47 +1039,127 @@ footer strong {
 
         font-size: 20px;
     }
+
+    .hero-upload {
+
+        bottom: 15px;
+
+        right: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   UPLOAD SUCCESS MESSAGE
+========================================================= */
+
+.upload-message {
+
+    position: fixed;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 999;
+
+    display: none;
+
+    padding: 12px 22px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #020b18;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7e7a9,
+            #d4af37
+        );
+
+    border:
+        1px solid #fff1a8;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.5);
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- =========================
+
+<!-- =========================================================
      MAIN NAVIGATION
-     ========================= -->
+========================================================= -->
 
 <nav class="main-navigation">
 
-    <a href="index.html">HOME</a>
+    <a href="index.html">
+        HOME
+    </a>
 
-    <a href="constitution.html">CONSTITUTION</a>
+    <a href="constitution.html">
+        CONSTITUTION
+    </a>
 
-    <a href="history.html" class="active">HISTORY</a>
+    <a href="history.html" class="active">
+        HISTORY
+    </a>
 
-    <a href="government.html">GOVERNMENT</a>
+    <a href="government.html">
+        GOVERNMENT
+    </a>
 
-    <a href="judiciary.html">SUPREME TRIBUNAL</a>
+    <a href="judiciary.html">
+        SUPREME TRIBUNAL
+    </a>
 
-    <a href="legislature.html">IMPERIAL ASSEMBLY</a>
+    <a href="legislature.html">
+        IMPERIAL ASSEMBLY
+    </a>
 
-    <a href="decrees.html">ROYAL DECREES</a>
+    <a href="decrees.html">
+        ROYAL DECREES
+    </a>
 
-    <a href="atlas.html">BRISTEVIA ATLAS</a>
+    <a href="atlas.html">
+        BRISTEVIA ATLAS
+    </a>
 
 </nav>
 
 
-<!-- =========================
+<!-- =========================================================
      ERA HERO
-     ========================= -->
+========================================================= -->
 
 <header class="era-hero">
 
+    <!-- HERO IMAGE -->
+
+    <img
+        id="heroImage"
+        class="hero-uploaded-image"
+        alt="Era II historical background"
+    >
+
+
     <div class="hero-content">
 
-        <div class="imperial-symbol">⚜</div>
+        <div class="imperial-symbol">
+            ⚜
+        </div>
 
         <div class="era-label">
             The Imperial Chronicle
@@ -821,674 +1185,1216 @@ footer strong {
 
     </div>
 
+
+    <!-- HERO IMAGE UPLOAD -->
+
+    <div class="hero-upload">
+
+        <label for="heroUpload">
+            ⚜ UPLOAD HERO IMAGE
+        </label>
+
+        <input
+            type="file"
+            id="heroUpload"
+            accept="image/*"
+            onchange="uploadHeroImage(this)"
+        >
+
+    </div>
+
 </header>
 
 
-<!-- =========================
+<!-- =========================================================
      HISTORY CONTENT
-     ========================= -->
+========================================================= -->
 
 <main class="history-content">
 
 
-    <!-- INTRODUCTION -->
+<!-- =========================================================
+     INTRODUCTION
+========================================================= -->
 
-    <div class="introduction">
+<div class="introduction">
 
-        By the beginning of the first millennium after AD 1,
-        the Central Archipelago—still not yet called Bristevia—
-        entered a far more violent and interconnected age.
-        The earlier tribal confederations of Festona and Brionne
-        had already begun dissolving into early regional kingdoms,
-        but now their development was no longer isolated.
+    By the beginning of the first millennium after AD 1,
+    the Central Archipelago—still not yet called Bristevia—
+    entered a far more violent and interconnected age.
+    The earlier tribal confederations of Festona and Brionne
+    had already begun dissolving into early regional kingdoms,
+    but now their development was no longer isolated.
 
-        They were pulled into the gravitational force of
-        continental empires: Valtherium rising in the west,
-        Thyro expanding across the seas, the Horian frontier
-        pushing northward, and the desert powers of Zahra
-        and Arak’han collapsing in brutal succession.
+    They were pulled into the gravitational force of
+    continental empires: Valtherium rising in the west,
+    Thyro expanding across the seas, the Horian frontier
+    pushing northward, and the desert powers of Zahra
+    and Arak’han collapsing in brutal succession.
 
-        This was the era when the archipelago ceased to be
-        a quiet maritime crossroads and became a contested
-        strategic heartland.
+    This was the era when the archipelago ceased to be
+    a quiet maritime crossroads and became a contested
+    strategic heartland.
+
+</div>
+
+
+<!-- =========================================================
+     HISTORICAL IMAGE 1
+========================================================= -->
+
+<figure class="history-image">
+
+    <div class="upload-container">
+
+        <img
+            id="era2Image1"
+            alt="Historical illustration of the Central Archipelago during the Age of Imperial Ascent"
+        >
+
+        <div
+            id="era2Placeholder1"
+            class="upload-placeholder"
+        >
+
+            <div>
+                THE CENTRAL ARCHIPELAGO
+            </div>
+
+            <div style="margin-top:8px; font-size:13px;">
+                UPLOAD HISTORICAL IMAGE
+            </div>
+
+            <label
+                for="era2Upload1"
+                class="upload-button"
+            >
+                ⚜ UPLOAD IMAGE
+            </label>
+
+            <input
+                type="file"
+                id="era2Upload1"
+                class="image-upload-input"
+                accept="image/*"
+                onchange="
+                    uploadHistoricalImage(
+                        this,
+                        'era2Image1',
+                        'era2Placeholder1',
+                        'era2Change1'
+                    )
+                "
+            >
+
+        </div>
+
+
+        <label
+            for="era2Upload1"
+            id="era2Change1"
+            class="change-image-button"
+            style="display:none;"
+        >
+            CHANGE IMAGE
+        </label>
 
     </div>
 
 
-    <!-- =========================
-         HISTORICAL IMAGE 1
-         ========================= -->
-
-    <figure class="history-image">
-
-        <img src="era2-image1.jpg"
-             alt="Historical illustration of the Central Archipelago during the Age of Imperial Ascent">
-
-        <figcaption>
-            THE CENTRAL ARCHIPELAGO — THE STRATEGIC MARITIME HEARTLAND
-        </figcaption>
-
-    </figure>
-
-
-    <!-- =========================
-         I. HORIAN EXPANSION
-         ========================= -->
-
-    <section class="history-section">
-
-        <h2>
-            I. THE HORIAN EXPANSION AND THE NORTHERN SHIFT
-        </h2>
-
-        <p>
-            In the early centuries of ERA 2, the Horian polities
-            began expanding northward across contested frontier
-            zones. Their expansion reached the territories of
-            Neréaux, a region lying at the northern edge of what
-            would later be associated with Brionne’s outer influence.
-        </p>
-
-        <p>
-            The occupation of Neréaux marked the first major
-            external pressure on the northern clans of the
-            archipelago’s sphere. Although Neréaux was not fully
-            absorbed into later Bristevian identity, its fall
-            disrupted trade and migration routes between the
-            northern highland clans and the inland Brionne settlements.
-        </p>
-
-        <p>
-            At the same time, the Moroz tribal federation,
-            centered around what would later become Morozvsk,
-            attempted to resist external northern incursions.
-            However, Moroz forces were ultimately defeated by
-            the expanding Nordic coalitions—the Nords—who were
-            consolidating power across cold maritime corridors.
-        </p>
-
-        <p>
-            This defeat had long-term consequences: Moroz survivors
-            were absorbed into northern Brionne-descended populations,
-            strengthening the martial traditions that would later
-            define northern Bristevian provinces.
-        </p>
-
-    </section>
-
-
-    <!-- IMAGE 2 -->
-
-    <figure class="history-image">
-
-        <img src="era2-image2.jpg"
-             alt="Historical illustration of the Horian expansion and northern frontier">
-
-        <figcaption>
-            THE HORIAN EXPANSION — THE NORTHERN FRONTIER SHIFTS
-        </figcaption>
-
-    </figure>
-
-
-    <!-- =========================
-         II. NORDS
-         ========================= -->
-
-    <section class="history-section">
-
-        <h2>
-            II. THE NORDS AND THE SOUTHERN ISLAND EXPANSION
-        </h2>
-
-        <p>
-            While northern conflicts destabilized inland territories,
-            the Nords began a parallel maritime expansion southward.
-            Skilled in navigation through icy and temperate waters,
-            they pushed into the island chains known later as the
-            Tzafonel Islands.
-        </p>
-
-        <p>
-            The occupation of Tzafonel was significant for Bristevian
-            history not because it directly unified the archipelago,
-            but because it disrupted early coastal trade patterns
-            that once connected Festona, Brionne, and southern
-            maritime clans.
-        </p>
-
-        <p>
-            Festona’s successor states—still emerging from the old
-            Strait Kingdom traditions—were forced to adapt to a new
-            reality: northern naval pressure now threatened the
-            once-secure control of the straits.
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         III. ORLENCIA
-         ========================= -->
-
-    <section class="history-section">
-
-        <h2>
-            III. THE RISE OF ORLENCIA — WESTERN COASTAL UNIFICATION
-        </h2>
-
-        <p>
-            During this same era, the western coastal tribes
-            underwent a major transformation under the leadership
-            of King Orland, founder of the Kingdom of Orlencia.
-        </p>
-
-        <p>
-            Orland unified fragmented maritime communities across
-            the western coasts—regions that would much later become
-            the western and southern portions of Bristevia.
-            These tribes, previously divided among local chieftains
-            and coastal councils, were consolidated into a structured
-            naval kingdom.
-        </p>
-
-        <p>
-            Orlencia’s rise marked a turning point:
-        </p>
-
-        <ul class="history-list">
-
-            <li>
-                It established permanent coastal administration.
-            </li>
-
-            <li>
-                It standardized maritime taxation and trade control.
-            </li>
-
-            <li>
-                It challenged Festona-descended strait authority systems.
-            </li>
-
-            <li>
-                It became the first true “regional kingdom” within
-                the future Bristevian sphere.
-            </li>
-
-        </ul>
-
-        <p>
-            Orlencia did not yet unify the archipelago, but it became
-            a dominant western power that would later be absorbed
-            into Bristevia’s regional structure.
-        </p>
-
-    </section>
-
-
-    <!-- IMAGE 3 -->
-
-    <figure class="history-image">
-
-        <img src="era2-image3.jpg"
-             alt="Historical illustration of King Orland and the Kingdom of Orlencia">
-
-        <figcaption>
-            THE RISE OF ORLENCIA — THE FIRST GREAT WESTERN KINGDOM
-        </figcaption>
-
-    </figure>
-
-
-    <!-- =========================
-         IV. GREAT DESERT WAR
-         ========================= -->
-
-    <section class="history-section">
-
-        <h2>
-            IV. THE GREAT DESERT WAR — ARAK’HAN AND ZAHRA
-        </h2>
-
-        <p>
-            Far beyond the archipelago’s immediate boundaries,
-            but still deeply connected through trade routes,
-            the Great Desert War reshaped continental power balances.
-        </p>
-
-        <p>
-            The desert kingdom of Arak’han was defeated by the forces
-            of Zahra, ending a long and devastating conflict.
-            Following its collapse, Arak’han’s population was
-            subjugated and many of its people were enslaved under
-            Zahran control systems.
-        </p>
-
-        <p>
-            Although geographically distant, this war had indirect
-            consequences for Bristevia’s sphere:
-        </p>
-
-        <ul class="history-list">
-
-            <li>
-                Trade routes shifted toward Zahran-controlled corridors.
-            </li>
-
-            <li>
-                Refugee flows reached coastal ports in Orlencia
-                and Festona-descended territories.
-            </li>
-
-            <li>
-                Military technologies and desert metallurgy spread
-                into western coastal kingdoms.
-            </li>
-
-        </ul>
-
-        <p>
-            These influences subtly altered Bristevian coastal
-            development, especially in shipbuilding and
-            fortification design.
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         IMAGE 4
-         ========================= -->
-
-    <figure class="history-image">
-
-        <img src="era2-image4.jpg"
-             alt="Historical illustration of the Great Desert War">
-
-        <figcaption>
-            THE GREAT DESERT WAR — THE COLLAPSE OF ARAK’HAN
-        </figcaption>
-
-    </figure>
-
-
-    <!-- =========================
-         V. VAL-THYRO WARS
-         ========================= -->
-
-    <section class="history-section">
-
-        <h2>
-            V. THE VAL-THYRO WARS — THE SHAPING OF EMPIRES
-        </h2>
-
-        <p>
-            The most decisive continental conflict of ERA 2 was
-            the long Val-Thyro War, a multi-century struggle
-            between the expanding Valtherium Empire and the
-            maritime-continental power of Thyro.
-        </p>
-
-        <h2>
-            First Val-Thyro War
-        </h2>
-
-        <p>
-            Thyro initially gained the upper hand at sea, seizing
-            control of major maritime routes. Southern Valtherium
-            territories were occupied, weakening Valtherium’s
-            coastal dominance.
-        </p>
-
-        <p>
-            This directly impacted the southern sea lanes connected
-            to the archipelago, disrupting trade through Orlencia
-            and Festona successor states.
-        </p>
-
-        <h2>
-            Second Val-Thyro War — Battle of Karveka
-        </h2>
-
-        <p>
-            Centuries later, under Emperor Maximo Vallegos,
-            Valtherium reversed its fortunes. In the decisive
-            Battle of Karveka, modern Kharvek, Valtherium forces
-            defeated Thyro’s main armies.
-        </p>
-
-        <p>
-            Following this victory, Valtherium expanded into
-            Varakova, modern Varkaros, securing critical maritime
-            and coastal territories.
-        </p>
-
-        <p>
-            This victory marked the beginning of Valtherium’s
-            dominance over the broader regional sea network
-            that indirectly included Bristevian waters.
-        </p>
-
-        <h2>
-            Third Val-Thyro War — Collapse of Thyro
-        </h2>
-
-        <p>
-            After a century of attrition, Thyro collapsed completely.
-            Valtherium emerged victorious and absorbed its remaining
-            territories, effectively becoming the dominant continental
-            maritime empire.
-        </p>
-
-        <p>
-            For the Central Archipelago, this meant a new geopolitical
-            reality: all maritime trade routes now flowed under
-            Valtherium influence.
-        </p>
-
-    </section>
-
-
-    <!-- IMAGE 5 -->
-
-    <figure class="history-image">
-
-        <img src="era2-image5.jpg"
-             alt="Historical illustration of the Battle of Karveka">
-
-        <figcaption>
-            THE BATTLE OF KARVEKA — VALTHERIUM'S IMPERIAL ASCENT
-        </figcaption>
-
-    </figure>
-
-
-    <!-- =========================
-         VI. VALTHERIUM
-         ========================= -->
-
-    <section class="history-section">
-
-        <h2>
-            VI. VALTHERIUM PROVINCES AND INDIRECT CONTROL OF THE ARCHIPELAGO
-        </h2>
-
-        <p>
-            Following its victory, Valtherium established
-            administrative provinces across newly conquered territories:
-        </p>
-
-        <ul class="history-list">
-
-            <li>
-                Zalta — modern Zaltriana
-            </li>
-
-            <li>
-                Sol — modern Solmara
-            </li>
-
-        </ul>
-
-        <p>
-            These provinces were not within Bristevia itself,
-            but they controlled critical access routes to the
-            archipelago.
-        </p>
-
-        <p>
-            This had three major consequences for Bristevian development:
-        </p>
-
-        <ol class="history-list">
-
-            <li>
-                Coastal kingdoms like Orlencia became economically
-                dependent on Valtherium trade authorization.
-            </li>
-
-            <li>
-                Festona-descended strait regions were forced into
-                regulated maritime passage agreements.
-            </li>
-
-            <li>
-                Inland Brionne territories became strategically
-                important buffer zones between imperial influence
-                and coastal autonomy.
-            </li>
-
-        </ol>
-
-        <p>
-            For the first time, the Central Archipelago was no longer
-            a peripheral maritime zone—it was part of an imperial system.
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         VII. EARLY KINGDOMS
-         ========================= -->
-
-    <section class="history-section">
-
-        <h2>
-            VII. BRISTEVIA’S EARLY REGIONAL KINGDOMS
-        </h2>
-
-        <p>
-            By the late phase of ERA 2, the archipelago had clearly
-            divided into emerging proto-kingdoms:
-        </p>
-
-
-        <div class="kingdom">
-
-            <h3>
-                1. ORLENCIA — WESTERN MARITIME KINGDOM
-            </h3>
-
-            <p>
-                • Founded by King Orland<br>
-                • Controlled western coasts and maritime trade routes<br>
-                • Became the strongest unified coastal state in the region
-            </p>
+    <figcaption>
+        THE CENTRAL ARCHIPELAGO — THE STRATEGIC MARITIME HEARTLAND
+    </figcaption>
+
+</figure>
+
+
+<!-- =========================================================
+     I. HORIAN EXPANSION
+========================================================= -->
+
+<section class="history-section">
+
+    <h2>
+        I. THE HORIAN EXPANSION AND THE NORTHERN SHIFT
+    </h2>
+
+    <p>
+        In the early centuries of ERA 2, the Horian polities
+        began expanding northward across contested frontier
+        zones. Their expansion reached the territories of
+        Neréaux, a region lying at the northern edge of what
+        would later be associated with Brionne’s outer influence.
+    </p>
+
+    <p>
+        The occupation of Neréaux marked the first major
+        external pressure on the northern clans of the
+        archipelago’s sphere. Although Neréaux was not fully
+        absorbed into later Bristevian identity, its fall
+        disrupted trade and migration routes between the
+        northern highland clans and the inland Brionne settlements.
+    </p>
+
+    <p>
+        At the same time, the Moroz tribal federation,
+        centered around what would later become Morozvsk,
+        attempted to resist external northern incursions.
+        However, Moroz forces were ultimately defeated by
+        the expanding Nordic coalitions—the Nords—who were
+        consolidating power across cold maritime corridors.
+    </p>
+
+    <p>
+        This defeat had long-term consequences: Moroz survivors
+        were absorbed into northern Brionne-descended populations,
+        strengthening the martial traditions that would later
+        define northern Bristevian provinces.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     IMAGE 2
+========================================================= -->
+
+<figure class="history-image">
+
+    <div class="upload-container">
+
+        <img
+            id="era2Image2"
+            alt="Historical illustration of the Horian expansion and northern frontier"
+        >
+
+        <div
+            id="era2Placeholder2"
+            class="upload-placeholder"
+        >
+
+            <div>
+                THE HORIAN EXPANSION
+            </div>
+
+            <div style="margin-top:8px; font-size:13px;">
+                NORTHERN FRONTIER
+            </div>
+
+            <label
+                for="era2Upload2"
+                class="upload-button"
+            >
+                ⚜ UPLOAD IMAGE
+            </label>
+
+            <input
+                type="file"
+                id="era2Upload2"
+                class="image-upload-input"
+                accept="image/*"
+                onchange="
+                    uploadHistoricalImage(
+                        this,
+                        'era2Image2',
+                        'era2Placeholder2',
+                        'era2Change2'
+                    )
+                "
+            >
 
         </div>
 
 
-        <div class="kingdom">
+        <label
+            for="era2Upload2"
+            id="era2Change2"
+            class="change-image-button"
+            style="display:none;"
+        >
+            CHANGE IMAGE
+        </label>
 
-            <h3>
-                2. FESTONA STRAIT REALM — RESIDUAL STRAIT AUTHORITY
-            </h3>
+    </div>
 
-            <p>
-                • Descended from earlier Valenne-Torvasi structures<br>
-                • Controlled strait navigation and toll systems<br>
-                • Gradually weakened under external imperial pressure
-            </p>
+
+    <figcaption>
+        THE HORIAN EXPANSION — THE NORTHERN FRONTIER SHIFTS
+    </figcaption>
+
+</figure>
+
+
+<!-- =========================================================
+     II. NORDS
+========================================================= -->
+
+<section class="history-section">
+
+    <h2>
+        II. THE NORDS AND THE SOUTHERN ISLAND EXPANSION
+    </h2>
+
+    <p>
+        While northern conflicts destabilized inland territories,
+        the Nords began a parallel maritime expansion southward.
+        Skilled in navigation through icy and temperate waters,
+        they pushed into the island chains known later as the
+        Tzafonel Islands.
+    </p>
+
+    <p>
+        The occupation of Tzafonel was significant for Bristevian
+        history not because it directly unified the archipelago,
+        but because it disrupted early coastal trade patterns
+        that once connected Festona, Brionne, and southern
+        maritime clans.
+    </p>
+
+    <p>
+        Festona’s successor states—still emerging from the old
+        Strait Kingdom traditions—were forced to adapt to a new
+        reality: northern naval pressure now threatened the
+        once-secure control of the straits.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     III. ORLENCIA
+========================================================= -->
+
+<section class="history-section">
+
+    <h2>
+        III. THE RISE OF ORLENCIA — WESTERN COASTAL UNIFICATION
+    </h2>
+
+    <p>
+        During this same era, the western coastal tribes
+        underwent a major transformation under the leadership
+        of King Orland, founder of the Kingdom of Orlencia.
+    </p>
+
+    <p>
+        Orland unified fragmented maritime communities across
+        the western coasts—regions that would much later become
+        the western and southern portions of Bristevia.
+        These tribes, previously divided among local chieftains
+        and coastal councils, were consolidated into a structured
+        naval kingdom.
+    </p>
+
+    <p>
+        Orlencia’s rise marked a turning point:
+    </p>
+
+    <ul class="history-list">
+
+        <li>
+            It established permanent coastal administration.
+        </li>
+
+        <li>
+            It standardized maritime taxation and trade control.
+        </li>
+
+        <li>
+            It challenged Festona-descended strait authority systems.
+        </li>
+
+        <li>
+            It became the first true “regional kingdom” within
+            the future Bristevian sphere.
+        </li>
+
+    </ul>
+
+    <p>
+        Orlencia did not yet unify the archipelago, but it became
+        a dominant western power that would later be absorbed
+        into Bristevia’s regional structure.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     IMAGE 3
+========================================================= -->
+
+<figure class="history-image">
+
+    <div class="upload-container">
+
+        <img
+            id="era2Image3"
+            alt="Historical illustration of King Orland and the Kingdom of Orlencia"
+        >
+
+        <div
+            id="era2Placeholder3"
+            class="upload-placeholder"
+        >
+
+            <div>
+                THE RISE OF ORLENCIA
+            </div>
+
+            <div style="margin-top:8px; font-size:13px;">
+                KING ORLAND
+            </div>
+
+            <label
+                for="era2Upload3"
+                class="upload-button"
+            >
+                ⚜ UPLOAD IMAGE
+            </label>
+
+            <input
+                type="file"
+                id="era2Upload3"
+                class="image-upload-input"
+                accept="image/*"
+                onchange="
+                    uploadHistoricalImage(
+                        this,
+                        'era2Image3',
+                        'era2Placeholder3',
+                        'era2Change3'
+                    )
+                "
+            >
 
         </div>
 
 
-        <div class="kingdom">
+        <label
+            for="era2Upload3"
+            id="era2Change3"
+            class="change-image-button"
+            style="display:none;"
+        >
+            CHANGE IMAGE
+        </label>
 
-            <h3>
-                3. BRIONNE INLAND DOMAIN
-            </h3>
+    </div>
 
-            <p>
-                • Agricultural and population center<br>
-                • Maintained internal stability<br>
-                • Became the future administrative core of Bristevia
-            </p>
+
+    <figcaption>
+        THE RISE OF ORLENCIA — THE FIRST GREAT WESTERN KINGDOM
+    </figcaption>
+
+</figure>
+
+
+<!-- =========================================================
+     IV. GREAT DESERT WAR
+========================================================= -->
+
+<section class="history-section">
+
+    <h2>
+        IV. THE GREAT DESERT WAR — ARAK’HAN AND ZAHRA
+    </h2>
+
+    <p>
+        Far beyond the archipelago’s immediate boundaries,
+        but still deeply connected through trade routes,
+        the Great Desert War reshaped continental power balances.
+    </p>
+
+    <p>
+        The desert kingdom of Arak’han was defeated by the forces
+        of Zahra, ending a long and devastating conflict.
+        Following its collapse, Arak’han’s population was
+        subjugated and many of its people were enslaved under
+        Zahran control systems.
+    </p>
+
+    <p>
+        Although geographically distant, this war had indirect
+        consequences for Bristevia’s sphere:
+    </p>
+
+    <ul class="history-list">
+
+        <li>
+            Trade routes shifted toward Zahran-controlled corridors.
+        </li>
+
+        <li>
+            Refugee flows reached coastal ports in Orlencia
+            and Festona-descended territories.
+        </li>
+
+        <li>
+            Military technologies and desert metallurgy spread
+            into western coastal kingdoms.
+        </li>
+
+    </ul>
+
+    <p>
+        These influences subtly altered Bristevian coastal
+        development, especially in shipbuilding and
+        fortification design.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     IMAGE 4
+========================================================= -->
+
+<figure class="history-image">
+
+    <div class="upload-container">
+
+        <img
+            id="era2Image4"
+            alt="Historical illustration of the Great Desert War"
+        >
+
+        <div
+            id="era2Placeholder4"
+            class="upload-placeholder"
+        >
+
+            <div>
+                THE GREAT DESERT WAR
+            </div>
+
+            <div style="margin-top:8px; font-size:13px;">
+                ARAK’HAN AND ZAHRA
+            </div>
+
+            <label
+                for="era2Upload4"
+                class="upload-button"
+            >
+                ⚜ UPLOAD IMAGE
+            </label>
+
+            <input
+                type="file"
+                id="era2Upload4"
+                class="image-upload-input"
+                accept="image/*"
+                onchange="
+                    uploadHistoricalImage(
+                        this,
+                        'era2Image4',
+                        'era2Placeholder4',
+                        'era2Change4'
+                    )
+                "
+            >
 
         </div>
 
 
-        <div class="kingdom">
+        <label
+            for="era2Upload4"
+            id="era2Change4"
+            class="change-image-button"
+            style="display:none;"
+        >
+            CHANGE IMAGE
+        </label>
 
-            <h3>
-                4. NORTHERN HIGHLAND CLANS — MOROZ-DESCENDED + NORD-INFLUENCED ZONES
-            </h3>
+    </div>
 
-            <p>
-                • Fragmented warrior societies<br>
-                • Militarily significant but politically divided<br>
-                • Later contributed elite northern regiments to Bristevian identity
-            </p>
+
+    <figcaption>
+        THE GREAT DESERT WAR — THE COLLAPSE OF ARAK’HAN
+    </figcaption>
+
+</figure>
+
+
+<!-- =========================================================
+     V. VAL-THYRO WARS
+========================================================= -->
+
+<section class="history-section">
+
+    <h2>
+        V. THE VAL-THYRO WARS — THE SHAPING OF EMPIRES
+    </h2>
+
+    <p>
+        The most decisive continental conflict of ERA 2 was
+        the long Val-Thyro War, a multi-century struggle
+        between the expanding Valtherium Empire and the
+        maritime-continental power of Thyro.
+    </p>
+
+    <h2>
+        First Val-Thyro War
+    </h2>
+
+    <p>
+        Thyro initially gained the upper hand at sea, seizing
+        control of major maritime routes. Southern Valtherium
+        territories were occupied, weakening Valtherium’s
+        coastal dominance.
+    </p>
+
+    <p>
+        This directly impacted the southern sea lanes connected
+        to the archipelago, disrupting trade through Orlencia
+        and Festona successor states.
+    </p>
+
+    <h2>
+        Second Val-Thyro War — Battle of Karveka
+    </h2>
+
+    <p>
+        Centuries later, under Emperor Maximo Vallegos,
+        Valtherium reversed its fortunes. In the decisive
+        Battle of Karveka, modern Kharvek, Valtherium forces
+        defeated Thyro’s main armies.
+    </p>
+
+    <p>
+        Following this victory, Valtherium expanded into
+        Varakova, modern Varkaros, securing critical maritime
+        and coastal territories.
+    </p>
+
+    <p>
+        This victory marked the beginning of Valtherium’s
+        dominance over the broader regional sea network
+        that indirectly included Bristevian waters.
+    </p>
+
+    <h2>
+        Third Val-Thyro War — Collapse of Thyro
+    </h2>
+
+    <p>
+        After a century of attrition, Thyro collapsed completely.
+        Valtherium emerged victorious and absorbed its remaining
+        territories, effectively becoming the dominant continental
+        maritime empire.
+    </p>
+
+    <p>
+        For the Central Archipelago, this meant a new geopolitical
+        reality: all maritime trade routes now flowed under
+        Valtherium influence.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     IMAGE 5
+========================================================= -->
+
+<figure class="history-image">
+
+    <div class="upload-container">
+
+        <img
+            id="era2Image5"
+            alt="Historical illustration of the Battle of Karveka"
+        >
+
+        <div
+            id="era2Placeholder5"
+            class="upload-placeholder"
+        >
+
+            <div>
+                THE BATTLE OF KARVEKA
+            </div>
+
+            <div style="margin-top:8px; font-size:13px;">
+                VALTHERIUM'S IMPERIAL ASCENT
+            </div>
+
+            <label
+                for="era2Upload5"
+                class="upload-button"
+            >
+                ⚜ UPLOAD IMAGE
+            </label>
+
+            <input
+                type="file"
+                id="era2Upload5"
+                class="image-upload-input"
+                accept="image/*"
+                onchange="
+                    uploadHistoricalImage(
+                        this,
+                        'era2Image5',
+                        'era2Placeholder5',
+                        'era2Change5'
+                    )
+                "
+            >
 
         </div>
 
 
-        <div class="kingdom">
+        <label
+            for="era2Upload5"
+            id="era2Change5"
+            class="change-image-button"
+            style="display:none;"
+        >
+            CHANGE IMAGE
+        </label>
 
-            <h3>
-                5. SOUTHERN COASTAL CIRCLES
-            </h3>
+    </div>
 
-            <p>
-                • Still decentralized<br>
-                • Influenced by Orlencia expansion but never fully unified
-            </p>
+
+    <figcaption>
+        THE BATTLE OF KARVEKA — VALTHERIUM'S IMPERIAL ASCENT
+    </figcaption>
+
+</figure>
+
+
+<!-- =========================================================
+     VI. VALTHERIUM
+========================================================= -->
+
+<section class="history-section">
+
+    <h2>
+        VI. VALTHERIUM PROVINCES AND INDIRECT CONTROL OF THE ARCHIPELAGO
+    </h2>
+
+    <p>
+        Following its victory, Valtherium established
+        administrative provinces across newly conquered territories:
+    </p>
+
+    <ul class="history-list">
+
+        <li>
+            Zalta — modern Zaltriana
+        </li>
+
+        <li>
+            Sol — modern Solmara
+        </li>
+
+    </ul>
+
+    <p>
+        These provinces were not within Bristevia itself,
+        but they controlled critical access routes to the
+        archipelago.
+    </p>
+
+    <p>
+        This had three major consequences for Bristevian development:
+    </p>
+
+    <ol class="history-list">
+
+        <li>
+            Coastal kingdoms like Orlencia became economically
+            dependent on Valtherium trade authorization.
+        </li>
+
+        <li>
+            Festona-descended strait regions were forced into
+            regulated maritime passage agreements.
+        </li>
+
+        <li>
+            Inland Brionne territories became strategically
+            important buffer zones between imperial influence
+            and coastal autonomy.
+        </li>
+
+    </ol>
+
+    <p>
+        For the first time, the Central Archipelago was no longer
+        a peripheral maritime zone—it was part of an imperial system.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     VII. EARLY KINGDOMS
+========================================================= -->
+
+<section class="history-section">
+
+    <h2>
+        VII. BRISTEVIA’S EARLY REGIONAL KINGDOMS
+    </h2>
+
+    <p>
+        By the late phase of ERA 2, the archipelago had clearly
+        divided into emerging proto-kingdoms:
+    </p>
+
+
+    <div class="kingdom">
+
+        <h3>
+            1. ORLENCIA — WESTERN MARITIME KINGDOM
+        </h3>
+
+        <p>
+            • Founded by King Orland<br>
+            • Controlled western coasts and maritime trade routes<br>
+            • Became the strongest unified coastal state in the region
+        </p>
+
+    </div>
+
+
+    <div class="kingdom">
+
+        <h3>
+            2. FESTONA STRAIT REALM — RESIDUAL STRAIT AUTHORITY
+        </h3>
+
+        <p>
+            • Descended from earlier Valenne-Torvasi structures<br>
+            • Controlled strait navigation and toll systems<br>
+            • Gradually weakened under external imperial pressure
+        </p>
+
+    </div>
+
+
+    <div class="kingdom">
+
+        <h3>
+            3. BRIONNE INLAND DOMAIN
+        </h3>
+
+        <p>
+            • Agricultural and population center<br>
+            • Maintained internal stability<br>
+            • Became the future administrative core of Bristevia
+        </p>
+
+    </div>
+
+
+    <div class="kingdom">
+
+        <h3>
+            4. NORTHERN HIGHLAND CLANS — MOROZ-DESCENDED + NORD-INFLUENCED ZONES
+        </h3>
+
+        <p>
+            • Fragmented warrior societies<br>
+            • Militarily significant but politically divided<br>
+            • Later contributed elite northern regiments to Bristevian identity
+        </p>
+
+    </div>
+
+
+    <div class="kingdom">
+
+        <h3>
+            5. SOUTHERN COASTAL CIRCLES
+        </h3>
+
+        <p>
+            • Still decentralized<br>
+            • Influenced by Orlencia expansion but never fully unified
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     VIII. CONNECTED IDENTITY
+========================================================= -->
+
+<section class="history-section">
+
+    <h2>
+        VIII. TOWARD A CONNECTED ARCHIPELAGO IDENTITY
+    </h2>
+
+    <p>
+        Despite fragmentation, ERA 2 produced one irreversible
+        transformation: interdependence.
+    </p>
+
+    <ul class="history-list">
+
+        <li>
+            Orlencia dominated maritime trade.
+        </li>
+
+        <li>
+            Brionne stabilized inland production.
+        </li>
+
+        <li>
+            Festona-controlled strait systems regulated movement.
+        </li>
+
+        <li>
+            Northern clans supplied martial manpower.
+        </li>
+
+        <li>
+            External empires dictated economic pressure.
+        </li>
+
+    </ul>
+
+    <p>
+        Under Valtherium’s expanding influence and Thyro’s collapse,
+        the archipelago was forced into a shared geopolitical reality.
+    </p>
+
+    <p>
+        For the first time in history, the idea emerged—still unspoken
+        but increasingly real—that these scattered kingdoms were not
+        separate worlds, but parts of a single interconnected
+        maritime civilization.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL IMAGE
+========================================================= -->
+
+<figure class="history-image">
+
+    <div class="upload-container">
+
+        <img
+            id="era2Image6"
+            alt="Historical illustration representing the connected Central Archipelago"
+        >
+
+        <div
+            id="era2Placeholder6"
+            class="upload-placeholder"
+        >
+
+            <div>
+                THE CONNECTED ARCHIPELAGO
+            </div>
+
+            <div style="margin-top:8px; font-size:13px;">
+                FOUNDATIONS OF A FUTURE BRISTEVIA
+            </div>
+
+            <label
+                for="era2Upload6"
+                class="upload-button"
+            >
+                ⚜ UPLOAD IMAGE
+            </label>
+
+            <input
+                type="file"
+                id="era2Upload6"
+                class="image-upload-input"
+                accept="image/*"
+                onchange="
+                    uploadHistoricalImage(
+                        this,
+                        'era2Image6',
+                        'era2Placeholder6',
+                        'era2Change6'
+                    )
+                "
+            >
 
         </div>
 
-    </section>
+
+        <label
+            for="era2Upload6"
+            id="era2Change6"
+            class="change-image-button"
+            style="display:none;"
+        >
+            CHANGE IMAGE
+        </label>
+
+    </div>
 
 
-    <!-- =========================
-         VIII. CONNECTED IDENTITY
-         ========================= -->
+    <figcaption>
+        THE CONNECTED ARCHIPELAGO — THE FOUNDATIONS OF A FUTURE BRISTEVIA
+    </figcaption>
 
-    <section class="history-section">
-
-        <h2>
-            VIII. TOWARD A CONNECTED ARCHIPELAGO IDENTITY
-        </h2>
-
-        <p>
-            Despite fragmentation, ERA 2 produced one irreversible
-            transformation: interdependence.
-        </p>
-
-        <ul class="history-list">
-
-            <li>
-                Orlencia dominated maritime trade.
-            </li>
-
-            <li>
-                Brionne stabilized inland production.
-            </li>
-
-            <li>
-                Festona-controlled strait systems regulated movement.
-            </li>
-
-            <li>
-                Northern clans supplied martial manpower.
-            </li>
-
-            <li>
-                External empires dictated economic pressure.
-            </li>
-
-        </ul>
-
-        <p>
-            Under Valtherium’s expanding influence and Thyro’s collapse,
-            the archipelago was forced into a shared geopolitical reality.
-        </p>
-
-        <p>
-            For the first time in history, the idea emerged—still unspoken
-            but increasingly real—that these scattered kingdoms were not
-            separate worlds, but parts of a single interconnected
-            maritime civilization.
-        </p>
-
-    </section>
+</figure>
 
 
-    <!-- =========================
-         FINAL IMAGE
-         ========================= -->
+<!-- =========================================================
+     CONCLUSION
+========================================================= -->
 
-    <figure class="history-image">
+<section class="era-conclusion">
 
-        <img src="era2-image6.jpg"
-             alt="Historical illustration representing the connected Central Archipelago">
+    <p>
+        This was not yet Bristevia.
+        <br>
+        But ERA 2 ensured that it could never be anything else.
+    </p>
 
-        <figcaption>
-            THE CONNECTED ARCHIPELAGO — THE FOUNDATIONS OF A FUTURE BRISTEVIA
-        </figcaption>
-
-    </figure>
-
-
-    <!-- =========================
-         CONCLUSION
-         ========================= -->
-
-    <section class="era-conclusion">
-
-        <p>
-            This was not yet Bristevia.
-            <br>
-            But ERA 2 ensured that it could never be anything else.
-        </p>
-
-    </section>
+</section>
 
 </main>
 
 
-<!-- =========================
+<!-- =========================================================
      ERA NAVIGATION
-     ========================= -->
+========================================================= -->
 
 <div class="era-navigation">
 
     <a href="era1.html">
+
         ← ERA I<br>
-        <small>THE LOST FOUNDATIONS</small>
+
+        <small>
+            THE LOST FOUNDATIONS
+        </small>
+
     </a>
+
 
     <a href="history.html">
+
         HISTORY INDEX<br>
-        <small>FOURTEEN ERAS</small>
+
+        <small>
+            FOURTEEN ERAS
+        </small>
+
     </a>
 
+
     <a href="era3.html">
+
         ERA III<br>
-        <small>AGE OF FRACTURES →</small>
+
+        <small>
+            AGE OF FRACTURES →
+        </small>
+
     </a>
 
 </div>
 
 
-<!-- =========================
+<!-- =========================================================
      FOOTER
-     ========================= -->
+========================================================= -->
 
 <footer>
 
     <p>
+
         <strong>
             ⚜ IMPERIAL SOVEREIGN OF BRISTEVIA ⚜
         </strong>
+
     </p>
 
     <p>
+
         © 2026 The Imperial Sovereign of Bristevia.
         All Rights Reserved.
+
     </p>
 
 </footer>
+
+
+<!-- =========================================================
+     UPLOAD SUCCESS MESSAGE
+========================================================= -->
+
+<div
+    id="uploadMessage"
+    class="upload-message"
+>
+    IMAGE SUCCESSFULLY UPLOADED
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   SHOW SUCCESS MESSAGE
+========================================================= */
+
+function showUploadMessage(message) {
+
+    const messageBox =
+        document.getElementById("uploadMessage");
+
+    messageBox.textContent = message;
+
+    messageBox.style.display = "block";
+
+    setTimeout(function() {
+
+        messageBox.style.display = "none";
+
+    }, 2500);
+}
+
+
+/* =========================================================
+   HERO IMAGE UPLOAD
+========================================================= */
+
+function uploadHeroImage(input) {
+
+    const file = input.files[0];
+
+    if (!file) {
+        return;
+    }
+
+
+    /* Check file type */
+
+    if (!file.type.startsWith("image/")) {
+
+        alert("Please select an image file.");
+
+        input.value = "";
+
+        return;
+    }
+
+
+    /* Create temporary browser URL */
+
+    const imageURL =
+        URL.createObjectURL(file);
+
+
+    /* Find hero image */
+
+    const heroImage =
+        document.getElementById("heroImage");
+
+
+    /* Display */
+
+    heroImage.src = imageURL;
+
+    heroImage.style.display = "block";
+
+
+    showUploadMessage(
+        "HERO IMAGE SUCCESSFULLY UPLOADED"
+    );
+}
+
+
+/* =========================================================
+   HISTORICAL IMAGE UPLOAD
+========================================================= */
+
+function uploadHistoricalImage(
+    input,
+    imageId,
+    placeholderId,
+    changeButtonId
+) {
+
+    const file = input.files[0];
+
+    if (!file) {
+        return;
+    }
+
+
+    /* Check image type */
+
+    if (!file.type.startsWith("image/")) {
+
+        alert("Please select an image file.");
+
+        input.value = "";
+
+        return;
+    }
+
+
+    /* Create temporary browser URL */
+
+    const imageURL =
+        URL.createObjectURL(file);
+
+
+    /* Find image */
+
+    const image =
+        document.getElementById(imageId);
+
+
+    /* Find placeholder */
+
+    const placeholder =
+        document.getElementById(placeholderId);
+
+
+    /* Find change button */
+
+    const changeButton =
+        document.getElementById(changeButtonId);
+
+
+    /* Display image */
+
+    image.src = imageURL;
+
+    image.style.display = "block";
+
+
+    /* Hide placeholder */
+
+    placeholder.style.display = "none";
+
+
+    /* Show change button */
+
+    changeButton.style.display = "block";
+
+
+    /* Success message */
+
+    showUploadMessage(
+        "HISTORICAL IMAGE SUCCESSFULLY UPLOADED"
+    );
+}
+
+</script>
+
 
 </body>
 </html>
