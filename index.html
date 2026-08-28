@@ -56,9 +56,7 @@ body {
 ========================================================= */
 
 #loading-screen {
-
     position: fixed;
-
     inset: 0;
 
     background:
@@ -71,7 +69,6 @@ body {
     z-index: 9999;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -83,20 +80,16 @@ body {
 }
 
 #loading-screen.hidden {
-
     opacity: 0;
     visibility: hidden;
-
 }
 
 .loading-content {
-
     animation:
         loadingPulse 2s ease-in-out infinite;
 }
 
 .loading-symbol {
-
     font-size: 75px;
 
     color: #d4af37;
@@ -104,11 +97,9 @@ body {
     text-shadow:
         0 0 15px rgba(212,175,55,.8),
         0 0 45px rgba(212,175,55,.4);
-
 }
 
 .loading-content p {
-
     font-family: "Cinzel", serif;
 
     letter-spacing: 4px;
@@ -116,7 +107,6 @@ body {
     color: #f7e7a9;
 
     margin-top: 15px;
-
 }
 
 @keyframes loadingPulse {
@@ -135,24 +125,20 @@ body {
 
 
 /* =========================================================
-   PARTICLE / FLOATING LIGHTS
+   PARTICLES / FLOATING LIGHTS
 ========================================================= */
 
 .particles {
-
     position: absolute;
-
     inset: 0;
 
     pointer-events: none;
-
     overflow: hidden;
 
-    z-index: 1;
+    z-index: 4;
 }
 
 .particle {
-
     position: absolute;
 
     width: 3px;
@@ -252,25 +238,50 @@ body {
 
     overflow: hidden;
 
-    background:
+    /*
+       IMPORTANT:
 
+       The flag is NOT used with background-size: cover.
+
+       "cover" would enlarge/crop the flag.
+
+       Instead, the flag is centered and contained,
+       preserving the complete flag.
+    */
+
+    background-color: #020b18;
+
+    background-image:
         linear-gradient(
-            rgba(1,15,36,.55),
+            rgba(1,15,36,.58),
             rgba(1,15,36,.78)
         ),
-
         url("bristevia-flag.jpg");
 
-    background-size: cover;
+    background-repeat: no-repeat;
 
-    background-position: center;
+    background-position:
+        center center;
 
-    background-attachment: fixed;
+    background-size:
+        100% 100%,
+        contain;
 
+    background-attachment:
+        scroll;
 }
 
 
-/* Royal overlay */
+/* =========================================================
+   HERO FLAG CENTER PROTECTION
+========================================================= */
+
+/*
+   This overlay keeps the center of the flag visible
+   while adding the dark imperial atmosphere.
+
+   The flag itself is never enlarged or cropped.
+*/
 
 .hero::before {
 
@@ -283,17 +294,21 @@ body {
     background:
 
         radial-gradient(
-            circle at center,
-            rgba(20,90,160,.16),
-            rgba(0,0,0,.72)
+            ellipse at center,
+            rgba(20,90,160,.08) 0%,
+            rgba(0,0,0,.18) 38%,
+            rgba(0,0,0,.62) 100%
         );
 
     z-index: 1;
 
+    pointer-events: none;
 }
 
 
-/* Gold aura */
+/* =========================================================
+   GOLD AURA
+========================================================= */
 
 .hero::after {
 
@@ -318,8 +333,9 @@ body {
     animation:
         aura 7s ease-in-out infinite alternate;
 
-    z-index: 1;
+    z-index: 2;
 
+    pointer-events: none;
 }
 
 @keyframes aura {
@@ -345,7 +361,7 @@ body {
 
     position: relative;
 
-    z-index: 3;
+    z-index: 5;
 
     max-width: 1150px;
 
@@ -356,7 +372,6 @@ body {
 
     animation:
         heroAppear 1.5s ease forwards;
-
 }
 
 @keyframes heroAppear {
@@ -368,7 +383,6 @@ body {
         transform:
             translateY(35px)
             scale(.97);
-
     }
 
     to {
@@ -378,7 +392,6 @@ body {
         transform:
             translateY(0)
             scale(1);
-
     }
 
 }
@@ -403,7 +416,6 @@ body {
 
     animation:
         royalGlow 4s ease-in-out infinite;
-
 }
 
 @keyframes royalGlow {
@@ -415,7 +427,6 @@ body {
             0 0 25px rgba(212,175,55,.25);
 
         transform: translateY(0);
-
     }
 
     50% {
@@ -425,7 +436,6 @@ body {
             0 0 55px rgba(212,175,55,.55);
 
         transform: translateY(-5px);
-
     }
 
 }
@@ -448,7 +458,6 @@ body {
     text-transform: uppercase;
 
     margin-bottom: 18px;
-
 }
 
 
@@ -479,7 +488,6 @@ body {
         0 0 20px rgba(212,175,55,.35);
 
     line-height: 1.05;
-
 }
 
 
@@ -502,7 +510,6 @@ body {
     letter-spacing: 5px;
 
     color: #fff;
-
 }
 
 
@@ -521,7 +528,6 @@ body {
     letter-spacing: 2px;
 
     color: #e9e1c7;
-
 }
 
 .motto::before,
@@ -530,7 +536,6 @@ body {
     content: " ✦ ";
 
     color: #b21f2d;
-
 }
 
 
@@ -559,7 +564,6 @@ body {
 
     box-shadow:
         0 0 15px rgba(212,175,55,.5);
-
 }
 
 
@@ -606,7 +610,6 @@ body {
 
     animation:
         sealRotate 20s linear infinite;
-
 }
 
 @keyframes sealRotate {
@@ -661,11 +664,7 @@ body {
     transition:
         background .3s ease,
         box-shadow .3s ease;
-
 }
-
-
-/* Navigation container */
 
 .nav-container {
 
@@ -677,7 +676,6 @@ body {
 
     justify-content: center;
     align-items: center;
-
 }
 
 
@@ -694,7 +692,6 @@ body {
     align-items: center;
 
     flex-wrap: wrap;
-
 }
 
 .nav-links > a,
@@ -726,7 +723,6 @@ body {
         color .3s ease,
         transform .3s ease,
         text-shadow .3s ease;
-
 }
 
 .nav-links > a::after,
@@ -754,7 +750,6 @@ body {
 
     box-shadow:
         0 0 10px rgba(212,175,55,.8);
-
 }
 
 .nav-links > a:hover,
@@ -767,14 +762,12 @@ body {
 
     text-shadow:
         0 0 10px rgba(212,175,55,.8);
-
 }
 
 .nav-links > a:hover::after,
 .dropbtn:hover::after {
 
     width: 70%;
-
 }
 
 
@@ -785,7 +778,6 @@ body {
 .dropdown {
 
     position: relative;
-
 }
 
 .dropdown-menu {
@@ -831,7 +823,6 @@ body {
         opacity .25s ease,
         transform .25s ease,
         visibility .25s ease;
-
 }
 
 .dropdown:hover .dropdown-menu,
@@ -844,7 +835,6 @@ body {
     transform:
         translateX(-50%)
         translateY(0);
-
 }
 
 .dropdown-menu a {
@@ -870,7 +860,6 @@ body {
         background .25s ease,
         color .25s ease,
         padding-left .25s ease;
-
 }
 
 .dropdown-menu a:hover {
@@ -881,7 +870,6 @@ body {
     color: #fff;
 
     padding-left: 25px;
-
 }
 
 
@@ -913,7 +901,6 @@ body {
     font-size: 24px;
 
     border-radius: 5px;
-
 }
 
 .menu-toggle span {
@@ -931,7 +918,6 @@ body {
     transition:
         transform .3s ease,
         opacity .3s ease;
-
 }
 
 .menu-toggle.active span:nth-child(1) {
@@ -939,13 +925,11 @@ body {
     transform:
         translateY(7px)
         rotate(45deg);
-
 }
 
 .menu-toggle.active span:nth-child(2) {
 
     opacity: 0;
-
 }
 
 .menu-toggle.active span:nth-child(3) {
@@ -953,7 +937,6 @@ body {
     transform:
         translateY(-7px)
         rotate(-45deg);
-
 }
 
 
@@ -978,7 +961,6 @@ body {
         1px solid rgba(212,175,55,.2);
 
     z-index: 100;
-
 }
 
 .search-box {
@@ -989,7 +971,6 @@ body {
     );
 
     position: relative;
-
 }
 
 .search-box input {
@@ -1019,13 +1000,11 @@ body {
         serif;
 
     font-size: 17px;
-
 }
 
 .search-box input::placeholder {
 
     color: #aaa;
-
 }
 
 .search-icon {
@@ -1042,11 +1021,12 @@ body {
     color: #d4af37;
 
     font-size: 20px;
-
 }
 
 
-/* Search results */
+/* =========================================================
+   SEARCH RESULTS
+========================================================= */
 
 .search-results {
 
@@ -1074,13 +1054,11 @@ body {
     display: none;
 
     border-radius: 8px;
-
 }
 
 .search-results.show {
 
     display: block;
-
 }
 
 .search-result {
@@ -1093,7 +1071,6 @@ body {
 
     border-bottom:
         1px solid rgba(212,175,55,.1);
-
 }
 
 .search-result strong {
@@ -1103,7 +1080,6 @@ body {
     color: #d4af37;
 
     font-family: "Cinzel", serif;
-
 }
 
 .search-result span {
@@ -1111,14 +1087,12 @@ body {
     color: #ddd;
 
     font-size: 15px;
-
 }
 
 .search-result:hover {
 
     background:
         rgba(212,175,55,.1);
-
 }
 
 
@@ -1146,7 +1120,6 @@ body {
 
     border-top:
         1px solid rgba(212,175,55,.25);
-
 }
 
 .imperial-intro h2 {
@@ -1160,7 +1133,6 @@ body {
     letter-spacing: 4px;
 
     margin-bottom: 20px;
-
 }
 
 .imperial-intro p {
@@ -1174,7 +1146,6 @@ body {
     font-size: 19px;
 
     line-height: 1.8;
-
 }
 
 
@@ -1197,7 +1168,6 @@ body {
         );
 
     text-align: center;
-
 }
 
 .section-title {
@@ -1211,7 +1181,6 @@ body {
     font-size: 32px;
 
     margin-bottom: 15px;
-
 }
 
 .section-subtitle {
@@ -1221,7 +1190,6 @@ body {
     font-size: 18px;
 
     margin-bottom: 50px;
-
 }
 
 .portrait-grid {
@@ -1236,7 +1204,6 @@ body {
         repeat(2, 1fr);
 
     gap: 50px;
-
 }
 
 .portrait-card {
@@ -1262,7 +1229,6 @@ body {
     transition:
         transform .4s ease,
         box-shadow .4s ease;
-
 }
 
 .portrait-card:hover {
@@ -1275,7 +1241,6 @@ body {
         0 25px 60px rgba(0,0,0,.7),
 
         0 0 30px rgba(212,175,55,.12);
-
 }
 
 .portrait-frame {
@@ -1292,7 +1257,6 @@ body {
 
     aspect-ratio:
         3 / 4;
-
 }
 
 .portrait-frame img {
@@ -1306,20 +1270,17 @@ body {
 
     transition:
         transform .6s ease;
-
 }
 
 .portrait-card:hover img {
 
     transform:
         scale(1.04);
-
 }
 
 .portrait-info {
 
     padding: 25px 10px 10px;
-
 }
 
 .portrait-info h3 {
@@ -1331,7 +1292,6 @@ body {
     color: #f7e7a9;
 
     letter-spacing: 2px;
-
 }
 
 .portrait-info p {
@@ -1341,7 +1301,6 @@ body {
     font-size: 17px;
 
     margin-top: 8px;
-
 }
 
 
@@ -1356,7 +1315,6 @@ body {
 
     background:
         #020b18;
-
 }
 
 .portal-grid {
@@ -1371,7 +1329,6 @@ body {
         repeat(4, 1fr);
 
     gap: 20px;
-
 }
 
 .portal-card {
@@ -1411,7 +1368,6 @@ body {
         transform .35s ease,
         border-color .35s ease,
         box-shadow .35s ease;
-
 }
 
 .portal-card::before {
@@ -1436,13 +1392,11 @@ body {
 
     transition:
         left .6s ease;
-
 }
 
 .portal-card:hover::before {
 
     left: 100%;
-
 }
 
 .portal-card:hover {
@@ -1455,7 +1409,6 @@ body {
 
     box-shadow:
         0 15px 35px rgba(0,0,0,.5);
-
 }
 
 .portal-icon {
@@ -1465,7 +1418,6 @@ body {
     color: #d4af37;
 
     margin-bottom: 15px;
-
 }
 
 .portal-card h3 {
@@ -1477,7 +1429,6 @@ body {
     color: #f5e6a8;
 
     letter-spacing: 1px;
-
 }
 
 .portal-card p {
@@ -1487,7 +1438,6 @@ body {
     color: #aaa;
 
     font-size: 15px;
-
 }
 
 
@@ -1505,7 +1455,6 @@ body {
     transition:
         opacity .8s ease,
         transform .8s ease;
-
 }
 
 .reveal.visible {
@@ -1514,7 +1463,6 @@ body {
 
     transform:
         translateY(0);
-
 }
 
 
@@ -1541,7 +1489,6 @@ footer {
     font-size: 14px;
 
     letter-spacing: 1px;
-
 }
 
 footer strong {
@@ -1550,7 +1497,6 @@ footer strong {
 
     font-family:
         "Cinzel", serif;
-
 }
 
 
@@ -1591,7 +1537,6 @@ footer strong {
         transform .3s ease;
 
     z-index: 600;
-
 }
 
 #backTop.show {
@@ -1599,14 +1544,12 @@ footer strong {
     opacity: 1;
 
     visibility: visible;
-
 }
 
 #backTop:hover {
 
     transform:
         translateY(-5px);
-
 }
 
 
@@ -1623,14 +1566,12 @@ footer strong {
             16px 9px;
 
         font-size: 10px;
-
     }
 
     .portal-grid {
 
         grid-template-columns:
             repeat(2, 1fr);
-
     }
 
 }
@@ -1644,25 +1585,35 @@ footer strong {
 
     .hero {
 
+        /*
+           Still no "cover".
+
+           The complete flag stays centered.
+        */
+
         background-attachment:
             scroll;
 
         min-height:
             100svh;
 
+        background-size:
+            100% 100%,
+            contain;
+
+        background-position:
+            center center;
     }
 
     .hero-content {
 
         padding:
             110px 20px 80px;
-
     }
 
     .imperial-symbol {
 
         font-size: 55px;
-
     }
 
     .small-title {
@@ -1671,14 +1622,12 @@ footer strong {
 
         letter-spacing:
             3px;
-
     }
 
     .main-title {
 
         letter-spacing:
             2px;
-
     }
 
     .subtitle {
@@ -1688,24 +1637,23 @@ footer strong {
 
         line-height:
             1.5;
-
     }
 
     .motto {
 
         font-size:
             18px;
-
     }
 
 
-    /* Mobile nav */
+    /* =====================================================
+       MOBILE NAV
+    ===================================================== */
 
     .main-nav {
 
         display:
             block;
-
     }
 
     .nav-container {
@@ -1718,14 +1666,12 @@ footer strong {
 
         min-height:
             60px;
-
     }
 
     .menu-toggle {
 
         display:
             block;
-
     }
 
     .nav-links {
@@ -1762,14 +1708,12 @@ footer strong {
 
         overflow-y:
             auto;
-
     }
 
     .nav-links.mobile-open {
 
         display:
             flex;
-
     }
 
     .nav-links > a,
@@ -1786,7 +1730,6 @@ footer strong {
 
         border-bottom:
             1px solid rgba(212,175,55,.08);
-
     }
 
     .nav-links > a::after,
@@ -1794,17 +1737,17 @@ footer strong {
 
         display:
             none;
-
     }
 
 
-    /* Mobile dropdown */
+    /* =====================================================
+       MOBILE DROPDOWN
+    ===================================================== */
 
     .dropdown {
 
         width:
             100%;
-
     }
 
     .dropdown-menu {
@@ -1838,7 +1781,6 @@ footer strong {
 
         background:
             rgba(0,0,0,.2);
-
     }
 
     .dropdown.open .dropdown-menu {
@@ -1848,7 +1790,6 @@ footer strong {
 
         transform:
             none;
-
     }
 
     .dropdown-menu a {
@@ -1858,16 +1799,18 @@ footer strong {
 
         font-size:
             10px;
-
     }
 
     .dropdown-menu a:hover {
 
         padding-left:
             42px;
-
     }
 
+
+    /* =====================================================
+       MOBILE PORTRAITS
+    ===================================================== */
 
     .portrait-grid {
 
@@ -1876,8 +1819,12 @@ footer strong {
 
         max-width:
             500px;
-
     }
+
+
+    /* =====================================================
+       MOBILE PORTALS
+    ===================================================== */
 
     .portal-grid {
 
@@ -1886,7 +1833,6 @@ footer strong {
 
         max-width:
             500px;
-
     }
 
     .imperial-intro,
@@ -1895,7 +1841,6 @@ footer strong {
 
         padding:
             75px 20px;
-
     }
 
 }
@@ -1911,28 +1856,24 @@ footer strong {
 
         font-size:
             42px;
-
     }
 
     .subtitle {
 
         font-size:
             16px;
-
     }
 
     .divider {
 
         width:
             200px;
-
     }
 
     .section-title {
 
         font-size:
             25px;
-
     }
 
 }
@@ -1959,7 +1900,6 @@ footer strong {
 
         transition-duration:
             .01ms !important;
-
     }
 
 }
@@ -2013,9 +1953,6 @@ footer strong {
         <div class="nav-links" id="navLinks">
 
             <a href="index.html">HOME</a>
-
-
-            <!-- CONSTITUTION -->
 
             <a href="constitution.html">
                 CONSTITUTION
@@ -2516,8 +2453,6 @@ footer strong {
 
             <div class="portrait-frame">
 
-                <!-- Replace with your actual portrait -->
-
                 <img
                     src="souverion.jpg"
                     alt="Portrait of Souverion"
@@ -2546,8 +2481,6 @@ footer strong {
         <article class="portrait-card">
 
             <div class="portrait-frame">
-
-                <!-- Replace with your actual portrait -->
 
                 <img
                     src="souveria.jpg"
@@ -2582,20 +2515,19 @@ footer strong {
 
 <section class="portal-section reveal">
 
-    <h2 class="section-title"
-        style="text-align:center;">
-
+    <h2
+        class="section-title"
+        style="text-align:center;"
+    >
         IMPERIAL PORTALS
-
     </h2>
 
     <p
         class="section-subtitle"
-        style="text-align:center;">
-
+        style="text-align:center;"
+    >
         Explore the principal institutions and archives
         of the Imperial Sovereign of Bristevia.
-
     </p>
 
 
@@ -2853,9 +2785,11 @@ footer strong {
 <footer>
 
     <p>
+
         <strong>
             ⚜ IMPERIAL SOVEREIGN OF BRISTEVIA ⚜
         </strong>
+
     </p>
 
     <br>
@@ -3064,16 +2998,6 @@ document.querySelectorAll(
    SITE-WIDE SEARCH
 ========================================================= */
 
-/*
-   Add your actual HTML pages here.
-
-   The search engine downloads each page,
-   removes its HTML tags,
-   then searches its text.
-
-   This works on GitHub Pages / web hosting.
-*/
-
 const searchablePages = [
 
     {
@@ -3202,6 +3126,11 @@ const searchablePages = [
     },
 
     {
+        title: "Valtherra History",
+        url: "valtherra-history.html"
+    },
+
+    {
         title: "Royal Family",
         url: "royal-family.html"
     },
@@ -3212,6 +3141,11 @@ const searchablePages = [
     },
 
     {
+        title: "Imperial Calendar",
+        url: "calendar.html"
+    },
+
+    {
         title: "Imperial Archives",
         url: "archives.html"
     }
@@ -3219,12 +3153,16 @@ const searchablePages = [
 ];
 
 
-/* Cache */
+/* =========================================================
+   SEARCH CACHE
+========================================================= */
 
 const pageCache = {};
 
 
-/* Search elements */
+/* =========================================================
+   SEARCH ELEMENTS
+========================================================= */
 
 const searchInput =
     document.getElementById(
@@ -3237,7 +3175,9 @@ const searchResults =
     );
 
 
-/* Load a page */
+/* =========================================================
+   LOAD PAGE
+========================================================= */
 
 async function loadPage(page) {
 
@@ -3276,11 +3216,6 @@ async function loadPage(page) {
                 "text/html"
             );
 
-
-        /*
-           Remove scripts, styles and navigation
-           from searchable text.
-        */
 
         documentPage
             .querySelectorAll(
@@ -3323,7 +3258,9 @@ async function loadPage(page) {
 }
 
 
-/* Perform search */
+/* =========================================================
+   SEARCH
+========================================================= */
 
 let searchTimer;
 
@@ -3366,7 +3303,9 @@ searchInput.addEventListener(
 
         searchResults.innerHTML = `
             <div class="search-result">
-                <span>Searching the Imperial Archives...</span>
+                <span>
+                    Searching the Imperial Archives...
+                </span>
             </div>
         `;
 
@@ -3382,7 +3321,9 @@ searchInput.addEventListener(
 );
 
 
-/* Search every page */
+/* =========================================================
+   PERFORM SEARCH
+========================================================= */
 
 async function performSearch(
     query
@@ -3402,8 +3343,8 @@ async function performSearch(
 
         if (
             text
-            .toLowerCase()
-            .includes(query)
+                .toLowerCase()
+                .includes(query)
         ) {
 
             const index =
@@ -3492,11 +3433,16 @@ function displayResults(
 
         searchResults.innerHTML = `
             <div class="search-result">
-                <strong>No results found</strong>
+
+                <strong>
+                    No results found
+                </strong>
+
                 <span>
                     No Imperial record matched
                     "${escapeHTML(query)}".
                 </span>
+
             </div>
         `;
 
@@ -3537,7 +3483,9 @@ function displayResults(
 }
 
 
-/* Prevent HTML injection */
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
 
 function escapeHTML(
     text
@@ -3568,7 +3516,9 @@ function escapeHTML(
 }
 
 
-/* Close search when clicking outside */
+/* =========================================================
+   CLOSE SEARCH
+========================================================= */
 
 document.addEventListener(
     "click",
@@ -3693,11 +3643,6 @@ document.addEventListener(
     "keydown",
     function(event) {
 
-        /*
-           Press "/" to jump directly
-           to the search box.
-        */
-
         if (
             event.key === "/" &&
             document.activeElement.tagName !== "INPUT"
@@ -3709,9 +3654,6 @@ document.addEventListener(
 
         }
 
-        /*
-           Escape closes search.
-        */
 
         if (
             event.key === "Escape"
