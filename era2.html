@@ -132,7 +132,6 @@ body {
     padding: 100px 25px;
 
     background:
-
         linear-gradient(
             rgba(1,15,36,0.55),
             rgba(1,15,36,0.88)
@@ -145,7 +144,9 @@ body {
 }
 
 
-/* Hero uploaded image */
+/* =========================================================
+   HERO REPOSITORY IMAGE
+========================================================= */
 
 .hero-uploaded-image {
 
@@ -160,12 +161,12 @@ body {
     object-fit: cover;
 
     z-index: 0;
-
-    display: none;
 }
 
 
-/* Hero dark overlay */
+/* =========================================================
+   HERO DARK OVERLAY
+========================================================= */
 
 .era-hero::before {
 
@@ -227,60 +228,9 @@ body {
 }
 
 
-/* Hero upload control */
-
-.hero-upload {
-
-    position: absolute;
-
-    bottom: 25px;
-
-    right: 25px;
-
-    z-index: 20;
-}
-
-.hero-upload label {
-
-    display: inline-block;
-
-    padding: 10px 15px;
-
-    cursor: pointer;
-
-    font-family: "Cinzel", serif;
-
-    font-size: 10px;
-
-    letter-spacing: 1.2px;
-
-    color: #f7e7a9;
-
-    background:
-        rgba(1,12,27,0.88);
-
-    border:
-        1px solid rgba(212,175,55,0.65);
-
-    transition: 0.3s ease;
-}
-
-.hero-upload label:hover {
-
-    color: #ffffff;
-
-    border-color: #d4af37;
-
-    transform: translateY(-2px);
-}
-
-.hero-upload input {
-
-    display: none;
-}
-
-
-/* Hero content */
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .hero-content {
 
@@ -506,7 +456,7 @@ body {
 
 
 /* =========================================================
-   EASY IMAGE UPLOAD SYSTEM
+   REPOSITORY IMAGE CONTAINER
 ========================================================= */
 
 .upload-container {
@@ -521,11 +471,11 @@ body {
 }
 
 
-/* Uploaded image */
+/* Repository image */
 
 .upload-container img {
 
-    display: none;
+    display: block;
 
     width: 100%;
 
@@ -543,145 +493,9 @@ body {
 }
 
 
-/* Placeholder */
-
-.upload-placeholder {
-
-    width: 100%;
-
-    height: 430px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    padding: 30px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(8,46,87,0.85),
-            rgba(1,13,29,0.98)
-        );
-
-    color: #d4af37;
-
-    font-family: "Cinzel", serif;
-
-    letter-spacing: 2px;
-
-    font-size: 18px;
-}
-
-
-/* Upload button */
-
-.upload-button {
-
-    display: inline-block;
-
-    margin-top: 18px;
-
-    padding: 12px 22px;
-
-    cursor: pointer;
-
-    font-family: "Cinzel", serif;
-
-    font-size: 12px;
-
-    font-weight: 600;
-
-    letter-spacing: 1.5px;
-
-    color: #020b18;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f7e7a9,
-            #d4af37
-        );
-
-    border:
-        1px solid #f7e7a9;
-
-    transition: 0.3s ease;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,0.35);
-}
-
-.upload-button:hover {
-
-    transform: translateY(-3px);
-
-    background: #ffffff;
-
-    box-shadow:
-        0 8px 25px rgba(212,175,55,0.35);
-}
-
-
-/* Hide actual file input */
-
-.image-upload-input {
-
-    display: none;
-}
-
-
-/* Change image button */
-
-.change-image-button {
-
-    position: absolute;
-
-    bottom: 15px;
-
-    right: 15px;
-
-    z-index: 10;
-
-    padding: 9px 15px;
-
-    cursor: pointer;
-
-    font-family: "Cinzel", serif;
-
-    font-size: 10px;
-
-    letter-spacing: 1px;
-
-    color: #f7e7a9;
-
-    background:
-        rgba(1,12,27,0.88);
-
-    border:
-        1px solid rgba(212,175,55,0.65);
-
-    transition: 0.3s ease;
-}
-
-.change-image-button:hover {
-
-    color: #ffffff;
-
-    border-color: #d4af37;
-
-    background:
-        rgba(2,18,42,0.95);
-}
-
-
-/* Caption */
+/* =========================================================
+   CAPTION
+========================================================= */
 
 .history-image figcaption {
 
@@ -989,33 +803,6 @@ footer strong {
         height: 280px;
     }
 
-    .upload-placeholder {
-
-        height: 280px;
-
-        padding: 20px;
-
-        font-size: 15px;
-    }
-
-    .upload-button {
-
-        padding: 10px 16px;
-
-        font-size: 10px;
-    }
-
-    .change-image-button {
-
-        bottom: 10px;
-
-        right: 10px;
-
-        padding: 7px 11px;
-
-        font-size: 9px;
-    }
-
     .history-list {
 
         font-size: 18px;
@@ -1040,56 +827,21 @@ footer strong {
         font-size: 20px;
     }
 
-    .hero-upload {
-
-        bottom: 15px;
-
-        right: 15px;
-    }
-
 }
 
 
 /* =========================================================
-   UPLOAD SUCCESS MESSAGE
+   IMAGE LOADING FALLBACK
 ========================================================= */
 
-.upload-message {
-
-    position: fixed;
-
-    bottom: 25px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    z-index: 999;
-
-    display: none;
-
-    padding: 12px 22px;
-
-    font-family: "Cinzel", serif;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-
-    color: #020b18;
+.repository-image {
 
     background:
         linear-gradient(
             135deg,
-            #f7e7a9,
-            #d4af37
+            rgba(8,46,87,0.85),
+            rgba(1,13,29,0.98)
         );
-
-    border:
-        1px solid #fff1a8;
-
-    box-shadow:
-        0 8px 30px rgba(0,0,0,0.5);
 }
 
 </style>
@@ -1146,10 +898,19 @@ footer strong {
 
 <header class="era-hero">
 
-    <!-- HERO IMAGE -->
+    <!--
+    ========================================================
+    HERO IMAGE FROM GITHUB REPOSITORY
+
+    File location:
+
+    images/era2-hero.jpg
+
+    ========================================================
+    -->
 
     <img
-        id="heroImage"
+        src="images/era2-hero.jpg"
         class="hero-uploaded-image"
         alt="Era II historical background"
     >
@@ -1182,24 +943,6 @@ footer strong {
         <div class="hero-period">
             Bristevia and the Central Archipelago in the Shadow of Empires
         </div>
-
-    </div>
-
-
-    <!-- HERO IMAGE UPLOAD -->
-
-    <div class="hero-upload">
-
-        <label for="heroUpload">
-            ⚜ UPLOAD HERO IMAGE
-        </label>
-
-        <input
-            type="file"
-            id="heroUpload"
-            accept="image/*"
-            onchange="uploadHeroImage(this)"
-        >
 
     </div>
 
@@ -1248,59 +991,12 @@ footer strong {
     <div class="upload-container">
 
         <img
-            id="era2Image1"
+            src="images/era2-image1.jpg"
+            class="repository-image"
             alt="Historical illustration of the Central Archipelago during the Age of Imperial Ascent"
         >
 
-        <div
-            id="era2Placeholder1"
-            class="upload-placeholder"
-        >
-
-            <div>
-                THE CENTRAL ARCHIPELAGO
-            </div>
-
-            <div style="margin-top:8px; font-size:13px;">
-                UPLOAD HISTORICAL IMAGE
-            </div>
-
-            <label
-                for="era2Upload1"
-                class="upload-button"
-            >
-                ⚜ UPLOAD IMAGE
-            </label>
-
-            <input
-                type="file"
-                id="era2Upload1"
-                class="image-upload-input"
-                accept="image/*"
-                onchange="
-                    uploadHistoricalImage(
-                        this,
-                        'era2Image1',
-                        'era2Placeholder1',
-                        'era2Change1'
-                    )
-                "
-            >
-
-        </div>
-
-
-        <label
-            for="era2Upload1"
-            id="era2Change1"
-            class="change-image-button"
-            style="display:none;"
-        >
-            CHANGE IMAGE
-        </label>
-
     </div>
-
 
     <figcaption>
         THE CENTRAL ARCHIPELAGO — THE STRATEGIC MARITIME HEARTLAND
@@ -1364,59 +1060,12 @@ footer strong {
     <div class="upload-container">
 
         <img
-            id="era2Image2"
+            src="images/era2-image2.jpg"
+            class="repository-image"
             alt="Historical illustration of the Horian expansion and northern frontier"
         >
 
-        <div
-            id="era2Placeholder2"
-            class="upload-placeholder"
-        >
-
-            <div>
-                THE HORIAN EXPANSION
-            </div>
-
-            <div style="margin-top:8px; font-size:13px;">
-                NORTHERN FRONTIER
-            </div>
-
-            <label
-                for="era2Upload2"
-                class="upload-button"
-            >
-                ⚜ UPLOAD IMAGE
-            </label>
-
-            <input
-                type="file"
-                id="era2Upload2"
-                class="image-upload-input"
-                accept="image/*"
-                onchange="
-                    uploadHistoricalImage(
-                        this,
-                        'era2Image2',
-                        'era2Placeholder2',
-                        'era2Change2'
-                    )
-                "
-            >
-
-        </div>
-
-
-        <label
-            for="era2Upload2"
-            id="era2Change2"
-            class="change-image-button"
-            style="display:none;"
-        >
-            CHANGE IMAGE
-        </label>
-
     </div>
-
 
     <figcaption>
         THE HORIAN EXPANSION — THE NORTHERN FRONTIER SHIFTS
@@ -1529,59 +1178,12 @@ footer strong {
     <div class="upload-container">
 
         <img
-            id="era2Image3"
+            src="images/era2-image3.jpg"
+            class="repository-image"
             alt="Historical illustration of King Orland and the Kingdom of Orlencia"
         >
 
-        <div
-            id="era2Placeholder3"
-            class="upload-placeholder"
-        >
-
-            <div>
-                THE RISE OF ORLENCIA
-            </div>
-
-            <div style="margin-top:8px; font-size:13px;">
-                KING ORLAND
-            </div>
-
-            <label
-                for="era2Upload3"
-                class="upload-button"
-            >
-                ⚜ UPLOAD IMAGE
-            </label>
-
-            <input
-                type="file"
-                id="era2Upload3"
-                class="image-upload-input"
-                accept="image/*"
-                onchange="
-                    uploadHistoricalImage(
-                        this,
-                        'era2Image3',
-                        'era2Placeholder3',
-                        'era2Change3'
-                    )
-                "
-            >
-
-        </div>
-
-
-        <label
-            for="era2Upload3"
-            id="era2Change3"
-            class="change-image-button"
-            style="display:none;"
-        >
-            CHANGE IMAGE
-        </label>
-
     </div>
-
 
     <figcaption>
         THE RISE OF ORLENCIA — THE FIRST GREAT WESTERN KINGDOM
@@ -1655,59 +1257,12 @@ footer strong {
     <div class="upload-container">
 
         <img
-            id="era2Image4"
+            src="images/era2-image4.jpg"
+            class="repository-image"
             alt="Historical illustration of the Great Desert War"
         >
 
-        <div
-            id="era2Placeholder4"
-            class="upload-placeholder"
-        >
-
-            <div>
-                THE GREAT DESERT WAR
-            </div>
-
-            <div style="margin-top:8px; font-size:13px;">
-                ARAK’HAN AND ZAHRA
-            </div>
-
-            <label
-                for="era2Upload4"
-                class="upload-button"
-            >
-                ⚜ UPLOAD IMAGE
-            </label>
-
-            <input
-                type="file"
-                id="era2Upload4"
-                class="image-upload-input"
-                accept="image/*"
-                onchange="
-                    uploadHistoricalImage(
-                        this,
-                        'era2Image4',
-                        'era2Placeholder4',
-                        'era2Change4'
-                    )
-                "
-            >
-
-        </div>
-
-
-        <label
-            for="era2Upload4"
-            id="era2Change4"
-            class="change-image-button"
-            style="display:none;"
-        >
-            CHANGE IMAGE
-        </label>
-
     </div>
-
 
     <figcaption>
         THE GREAT DESERT WAR — THE COLLAPSE OF ARAK’HAN
@@ -1802,59 +1357,12 @@ footer strong {
     <div class="upload-container">
 
         <img
-            id="era2Image5"
+            src="images/era2-image5.jpg"
+            class="repository-image"
             alt="Historical illustration of the Battle of Karveka"
         >
 
-        <div
-            id="era2Placeholder5"
-            class="upload-placeholder"
-        >
-
-            <div>
-                THE BATTLE OF KARVEKA
-            </div>
-
-            <div style="margin-top:8px; font-size:13px;">
-                VALTHERIUM'S IMPERIAL ASCENT
-            </div>
-
-            <label
-                for="era2Upload5"
-                class="upload-button"
-            >
-                ⚜ UPLOAD IMAGE
-            </label>
-
-            <input
-                type="file"
-                id="era2Upload5"
-                class="image-upload-input"
-                accept="image/*"
-                onchange="
-                    uploadHistoricalImage(
-                        this,
-                        'era2Image5',
-                        'era2Placeholder5',
-                        'era2Change5'
-                    )
-                "
-            >
-
-        </div>
-
-
-        <label
-            for="era2Upload5"
-            id="era2Change5"
-            class="change-image-button"
-            style="display:none;"
-        >
-            CHANGE IMAGE
-        </label>
-
     </div>
-
 
     <figcaption>
         THE BATTLE OF KARVEKA — VALTHERIUM'S IMPERIAL ASCENT
@@ -2083,59 +1591,12 @@ footer strong {
     <div class="upload-container">
 
         <img
-            id="era2Image6"
+            src="images/era2-image6.jpg"
+            class="repository-image"
             alt="Historical illustration representing the connected Central Archipelago"
         >
 
-        <div
-            id="era2Placeholder6"
-            class="upload-placeholder"
-        >
-
-            <div>
-                THE CONNECTED ARCHIPELAGO
-            </div>
-
-            <div style="margin-top:8px; font-size:13px;">
-                FOUNDATIONS OF A FUTURE BRISTEVIA
-            </div>
-
-            <label
-                for="era2Upload6"
-                class="upload-button"
-            >
-                ⚜ UPLOAD IMAGE
-            </label>
-
-            <input
-                type="file"
-                id="era2Upload6"
-                class="image-upload-input"
-                accept="image/*"
-                onchange="
-                    uploadHistoricalImage(
-                        this,
-                        'era2Image6',
-                        'era2Placeholder6',
-                        'era2Change6'
-                    )
-                "
-            >
-
-        </div>
-
-
-        <label
-            for="era2Upload6"
-            id="era2Change6"
-            class="change-image-button"
-            style="display:none;"
-        >
-            CHANGE IMAGE
-        </label>
-
     </div>
-
 
     <figcaption>
         THE CONNECTED ARCHIPELAGO — THE FOUNDATIONS OF A FUTURE BRISTEVIA
@@ -2224,176 +1685,6 @@ footer strong {
     </p>
 
 </footer>
-
-
-<!-- =========================================================
-     UPLOAD SUCCESS MESSAGE
-========================================================= -->
-
-<div
-    id="uploadMessage"
-    class="upload-message"
->
-    IMAGE SUCCESSFULLY UPLOADED
-</div>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script>
-
-/* =========================================================
-   SHOW SUCCESS MESSAGE
-========================================================= */
-
-function showUploadMessage(message) {
-
-    const messageBox =
-        document.getElementById("uploadMessage");
-
-    messageBox.textContent = message;
-
-    messageBox.style.display = "block";
-
-    setTimeout(function() {
-
-        messageBox.style.display = "none";
-
-    }, 2500);
-}
-
-
-/* =========================================================
-   HERO IMAGE UPLOAD
-========================================================= */
-
-function uploadHeroImage(input) {
-
-    const file = input.files[0];
-
-    if (!file) {
-        return;
-    }
-
-
-    /* Check file type */
-
-    if (!file.type.startsWith("image/")) {
-
-        alert("Please select an image file.");
-
-        input.value = "";
-
-        return;
-    }
-
-
-    /* Create temporary browser URL */
-
-    const imageURL =
-        URL.createObjectURL(file);
-
-
-    /* Find hero image */
-
-    const heroImage =
-        document.getElementById("heroImage");
-
-
-    /* Display */
-
-    heroImage.src = imageURL;
-
-    heroImage.style.display = "block";
-
-
-    showUploadMessage(
-        "HERO IMAGE SUCCESSFULLY UPLOADED"
-    );
-}
-
-
-/* =========================================================
-   HISTORICAL IMAGE UPLOAD
-========================================================= */
-
-function uploadHistoricalImage(
-    input,
-    imageId,
-    placeholderId,
-    changeButtonId
-) {
-
-    const file = input.files[0];
-
-    if (!file) {
-        return;
-    }
-
-
-    /* Check image type */
-
-    if (!file.type.startsWith("image/")) {
-
-        alert("Please select an image file.");
-
-        input.value = "";
-
-        return;
-    }
-
-
-    /* Create temporary browser URL */
-
-    const imageURL =
-        URL.createObjectURL(file);
-
-
-    /* Find image */
-
-    const image =
-        document.getElementById(imageId);
-
-
-    /* Find placeholder */
-
-    const placeholder =
-        document.getElementById(placeholderId);
-
-
-    /* Find change button */
-
-    const changeButton =
-        document.getElementById(changeButtonId);
-
-
-    /* Display image */
-
-    image.src = imageURL;
-
-    image.style.display = "block";
-
-
-    /* Hide placeholder */
-
-    placeholder.style.display = "none";
-
-
-    /* Show change button */
-
-    changeButton.style.display = "block";
-
-
-    /* Success message */
-
-    showUploadMessage(
-        "HISTORICAL IMAGE SUCCESSFULLY UPLOADED"
-    );
-}
-
-</script>
 
 
 </body>
