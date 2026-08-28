@@ -28,7 +28,6 @@ html {
 
 body {
     font-family: "Cormorant Garamond", serif;
-
     background:
         radial-gradient(
             circle at center,
@@ -36,11 +35,8 @@ body {
             rgba(2,12,30,0.98)
         ),
         #020b18;
-
     color: #f8f0d0;
-
     min-height: 100vh;
-
     overflow-x: hidden;
 }
 
@@ -50,64 +46,39 @@ body {
 ========================================================= */
 
 .main-navigation {
-
     position: sticky;
-
     top: 0;
-
     z-index: 100;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     flex-wrap: wrap;
-
     gap: 5px;
-
     padding: 15px;
-
     background:
         linear-gradient(
             rgba(2,18,42,0.97),
             rgba(2,11,27,0.99)
         );
-
-    border-bottom:
-        1px solid rgba(212,175,55,0.45);
-
-    box-shadow:
-        0 5px 25px rgba(0,0,0,0.5);
+    border-bottom: 1px solid rgba(212,175,55,0.45);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
 }
 
 .main-navigation a {
-
     font-family: "Cinzel", serif;
-
     font-size: 12px;
-
     font-weight: 600;
-
     letter-spacing: 1.3px;
-
     color: #f5e6a8;
-
     text-decoration: none;
-
     padding: 10px 14px;
-
     transition: 0.3s ease;
 }
 
 .main-navigation a:hover,
 .main-navigation a.active {
-
     color: #ffffff;
-
-    text-shadow:
-        0 0 10px rgba(212,175,55,0.9);
+    text-shadow: 0 0 10px rgba(212,175,55,0.9);
 }
 
 
@@ -116,106 +87,75 @@ body {
 ========================================================= */
 
 .era-hero {
-
     position: relative;
-
     min-height: 78vh;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     text-align: center;
-
     padding: 100px 25px;
-
     background:
         linear-gradient(
             rgba(1,15,36,0.55),
             rgba(1,15,36,0.88)
         );
-
-    border-bottom:
-        1px solid rgba(212,175,55,0.5);
-
+    border-bottom: 1px solid rgba(212,175,55,0.5);
     overflow: hidden;
 }
 
 
 /* =========================================================
-   HERO REPOSITORY IMAGE
+   HERO IMAGE
+   Repository file:
+   images/era2-hero.jpg
 ========================================================= */
 
 .hero-uploaded-image {
-
     position: absolute;
-
     inset: 0;
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
+    object-position: center center;
     z-index: 0;
 }
 
 
 /* =========================================================
-   HERO DARK OVERLAY
+   HERO OVERLAY
 ========================================================= */
 
 .era-hero::before {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
-
     background:
         linear-gradient(
             rgba(1,15,36,0.55),
             rgba(1,15,36,0.88)
         );
-
     z-index: 1;
-
     pointer-events: none;
 }
 
 .era-hero::after {
-
     content: "";
-
     position: absolute;
-
     width: 600px;
-
     height: 600px;
-
     border-radius: 50%;
-
     background:
         radial-gradient(
             circle,
             rgba(212,175,55,0.12),
             transparent 70%
         );
-
-    animation:
-        imperialAura 8s ease-in-out infinite alternate;
-
+    animation: imperialAura 8s ease-in-out infinite alternate;
     z-index: 2;
-
     pointer-events: none;
 }
 
 @keyframes imperialAura {
-
     from {
         transform: scale(0.9);
         opacity: 0.45;
@@ -233,41 +173,30 @@ body {
 ========================================================= */
 
 .hero-content {
-
     position: relative;
-
     z-index: 5;
-
     max-width: 1100px;
 }
 
 .imperial-symbol {
-
     font-size: 70px;
-
     color: #d4af37;
-
     margin-bottom: 15px;
-
     text-shadow:
         0 0 15px rgba(212,175,55,0.8),
         0 0 40px rgba(212,175,55,0.35);
-
-    animation:
-        royalGlow 4s ease-in-out infinite;
+    animation: royalGlow 4s ease-in-out infinite;
 }
 
 @keyframes royalGlow {
 
     0%,100% {
-
         text-shadow:
             0 0 10px rgba(212,175,55,0.6),
             0 0 25px rgba(212,175,55,0.25);
     }
 
     50% {
-
         text-shadow:
             0 0 25px rgba(212,175,55,1),
             0 0 55px rgba(212,175,55,0.5);
@@ -275,71 +204,45 @@ body {
 }
 
 .era-label {
-
     font-family: "Cinzel", serif;
-
     color: #d4af37;
-
     font-size: 15px;
-
     letter-spacing: 6px;
-
     text-transform: uppercase;
-
     margin-bottom: 20px;
 }
 
 .era-hero h1 {
-
     font-family: "Cinzel", serif;
-
     font-size: clamp(38px, 6vw, 75px);
-
     line-height: 1.1;
-
     letter-spacing: 4px;
-
     color: #f7e7a9;
-
     text-shadow:
         0 3px 0 #8b6914,
         0 0 25px rgba(212,175,55,0.35);
 }
 
 .hero-subtitle {
-
     margin-top: 25px;
-
     font-family: "Cinzel", serif;
-
     font-size: clamp(17px, 3vw, 28px);
-
     letter-spacing: 3px;
-
     color: #ffffff;
 }
 
 .hero-period {
-
     margin-top: 20px;
-
     font-size: 21px;
-
     color: #e5dcc2;
-
     font-style: italic;
-
     letter-spacing: 2px;
 }
 
 .divider {
-
     width: 300px;
-
     height: 2px;
-
     margin: 35px auto;
-
     background:
         linear-gradient(
             90deg,
@@ -349,9 +252,7 @@ body {
             #d4af37,
             transparent
         );
-
-    box-shadow:
-        0 0 15px rgba(212,175,55,0.5);
+    box-shadow: 0 0 15px rgba(212,175,55,0.5);
 }
 
 
@@ -360,29 +261,18 @@ body {
 ========================================================= */
 
 .history-content {
-
     max-width: 1050px;
-
     margin: auto;
-
     padding: 90px 25px;
 }
 
 .introduction {
-
     font-size: 21px;
-
     line-height: 1.9;
-
     color: #e3dfd2;
-
     text-align: justify;
-
     margin-bottom: 60px;
-
-    border-left:
-        3px solid #d4af37;
-
+    border-left: 3px solid #d4af37;
     padding-left: 25px;
 }
 
@@ -392,40 +282,25 @@ body {
 ========================================================= */
 
 .history-section {
-
     margin-bottom: 70px;
 }
 
 .history-section h2 {
-
     font-family: "Cinzel", serif;
-
     color: #d4af37;
-
     font-size: clamp(24px, 4vw, 34px);
-
     letter-spacing: 2px;
-
     line-height: 1.35;
-
     margin-bottom: 25px;
-
     padding-bottom: 12px;
-
-    border-bottom:
-        1px solid rgba(212,175,55,0.3);
+    border-bottom: 1px solid rgba(212,175,55,0.3);
 }
 
 .history-section p {
-
     color: #d8d8d8;
-
     font-size: 19px;
-
     line-height: 1.85;
-
     text-align: justify;
-
     margin-bottom: 22px;
 }
 
@@ -435,84 +310,64 @@ body {
 ========================================================= */
 
 .history-image {
-
     margin: 45px 0;
-
-    border:
-        1px solid rgba(212,175,55,0.45);
-
+    border: 1px solid rgba(212,175,55,0.45);
     background:
         linear-gradient(
             145deg,
             rgba(5,35,68,0.95),
             rgba(2,15,32,0.98)
         );
+    box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+    overflow: hidden;
+}
 
-    box-shadow:
-        0 15px 40px rgba(0,0,0,0.45);
-
+.upload-container {
+    position: relative;
+    width: 100%;
+    height: 430px;
     overflow: hidden;
 }
 
 
 /* =========================================================
-   REPOSITORY IMAGE CONTAINER
+   REPOSITORY IMAGES
 ========================================================= */
 
-.upload-container {
-
-    position: relative;
-
-    width: 100%;
-
-    height: 430px;
-
-    overflow: hidden;
-}
-
-
-/* Repository image */
-
-.upload-container img {
-
+.repository-image {
     display: block;
-
     width: 100%;
-
     height: 430px;
-
     object-fit: cover;
+    object-position: center center;
 
-    transition:
-        transform 0.6s ease;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(8,46,87,0.85),
+            rgba(1,13,29,0.98)
+        );
+
+    transition: transform 0.6s ease;
 }
 
-.upload-container:hover img {
-
+.upload-container:hover .repository-image {
     transform: scale(1.025);
 }
 
 
 /* =========================================================
-   CAPTION
+   CAPTIONS
 ========================================================= */
 
 .history-image figcaption {
-
     padding: 15px 20px;
-
     text-align: center;
-
     font-family: "Cinzel", serif;
-
     font-size: 13px;
-
     letter-spacing: 1.5px;
-
     color: #d4af37;
-
-    background:
-        rgba(1,12,27,0.95);
+    background: rgba(1,12,27,0.95);
 }
 
 
@@ -521,70 +376,49 @@ body {
 ========================================================= */
 
 .history-list {
-
     margin: 25px 0 30px 25px;
-
     color: #d8d8d8;
-
     font-size: 19px;
-
     line-height: 1.8;
 }
 
 .history-list li {
-
     margin-bottom: 8px;
-
     padding-left: 5px;
 }
 
 .history-list li::marker {
-
     color: #d4af37;
 }
 
 
 /* =========================================================
-   NUMBERED KINGDOMS
+   KINGDOMS
 ========================================================= */
 
 .kingdom {
-
     padding: 25px;
-
     margin: 20px 0;
-
     background:
         linear-gradient(
             145deg,
             rgba(5,35,68,0.75),
             rgba(2,15,32,0.85)
         );
-
-    border-left:
-        3px solid #d4af37;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.25);
+    border-left: 3px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
 
 .kingdom h3 {
-
     font-family: "Cinzel", serif;
-
     color: #f7e7a9;
-
     font-size: 22px;
-
     letter-spacing: 1.5px;
-
     margin-bottom: 12px;
 }
 
 .kingdom p {
-
     margin-bottom: 10px;
-
     text-align: left;
 }
 
@@ -594,19 +428,11 @@ body {
 ========================================================= */
 
 .era-conclusion {
-
     margin-top: 80px;
-
     padding: 50px 30px;
-
     text-align: center;
-
-    border-top:
-        1px solid rgba(212,175,55,0.4);
-
-    border-bottom:
-        1px solid rgba(212,175,55,0.4);
-
+    border-top: 1px solid rgba(212,175,55,0.4);
+    border-bottom: 1px solid rgba(212,175,55,0.4);
     background:
         radial-gradient(
             circle,
@@ -616,17 +442,11 @@ body {
 }
 
 .era-conclusion p {
-
     max-width: 850px;
-
     margin: auto;
-
     font-size: 24px;
-
     line-height: 1.7;
-
     color: #f1e7c7;
-
     font-style: italic;
 }
 
@@ -636,59 +456,37 @@ body {
 ========================================================= */
 
 .era-navigation {
-
     max-width: 1050px;
-
     margin: 0 auto 80px;
-
     padding: 0 25px;
-
     display: flex;
-
     justify-content: space-between;
-
     gap: 20px;
 }
 
 .era-navigation a {
-
     flex: 1;
-
     text-align: center;
-
     padding: 20px;
-
     text-decoration: none;
-
     font-family: "Cinzel", serif;
-
     color: #f5e6a8;
-
     letter-spacing: 1px;
-
     background:
         linear-gradient(
             145deg,
             rgba(5,35,68,0.9),
             rgba(2,15,32,0.95)
         );
-
-    border:
-        1px solid rgba(212,175,55,0.35);
-
+    border: 1px solid rgba(212,175,55,0.35);
     transition: 0.3s ease;
 }
 
 .era-navigation a:hover {
-
     border-color: #d4af37;
-
     color: #ffffff;
-
     transform: translateY(-4px);
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 
@@ -697,27 +495,17 @@ body {
 ========================================================= */
 
 footer {
-
     text-align: center;
-
     padding: 35px 15px;
-
     background: #010812;
-
-    border-top:
-        1px solid rgba(178,31,45,0.5);
-
+    border-top: 1px solid rgba(178,31,45,0.5);
     color: #9d9d9d;
-
     font-size: 14px;
-
     letter-spacing: 1px;
 }
 
 footer strong {
-
     color: #d4af37;
-
     font-family: "Cinzel", serif;
 }
 
@@ -729,119 +517,80 @@ footer strong {
 @media (max-width: 700px) {
 
     .main-navigation {
-
         position: relative;
-
         padding: 10px 5px;
     }
 
     .main-navigation a {
-
         font-size: 9px;
-
         padding: 8px 7px;
     }
 
     .era-hero {
-
         min-height: 70vh;
-
         padding: 80px 18px;
     }
 
     .imperial-symbol {
-
         font-size: 50px;
     }
 
     .era-hero h1 {
-
         letter-spacing: 2px;
     }
 
     .hero-subtitle {
-
         letter-spacing: 1.5px;
     }
 
     .hero-period {
-
         font-size: 18px;
     }
 
     .divider {
-
         width: 220px;
     }
 
     .history-content {
-
         padding: 65px 18px;
     }
 
     .introduction {
-
         font-size: 19px;
-
         padding-left: 18px;
     }
 
     .history-section p {
-
         font-size: 18px;
-
         text-align: left;
     }
 
     .upload-container {
-
         height: 280px;
     }
 
-    .upload-container img {
-
+    .repository-image {
         height: 280px;
+        object-position: center center;
     }
 
     .history-list {
-
         font-size: 18px;
-
         margin-left: 20px;
     }
 
     .era-navigation {
-
         flex-direction: column;
-
         padding: 0 18px;
     }
 
     .era-conclusion {
-
         padding: 40px 20px;
     }
 
     .era-conclusion p {
-
         font-size: 20px;
     }
-
-}
-
-
-/* =========================================================
-   IMAGE LOADING FALLBACK
-========================================================= */
-
-.repository-image {
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(8,46,87,0.85),
-            rgba(1,13,29,0.98)
-        );
 }
 
 </style>
@@ -857,64 +606,39 @@ footer strong {
 
 <nav class="main-navigation">
 
-    <a href="index.html">
-        HOME
-    </a>
+    <a href="index.html">HOME</a>
 
-    <a href="constitution.html">
-        CONSTITUTION
-    </a>
+    <a href="constitution.html">CONSTITUTION</a>
 
-    <a href="history.html" class="active">
-        HISTORY
-    </a>
+    <a href="history.html" class="active">HISTORY</a>
 
-    <a href="government.html">
-        GOVERNMENT
-    </a>
+    <a href="government.html">GOVERNMENT</a>
 
-    <a href="judiciary.html">
-        SUPREME TRIBUNAL
-    </a>
+    <a href="judiciary.html">SUPREME TRIBUNAL</a>
 
-    <a href="legislature.html">
-        IMPERIAL ASSEMBLY
-    </a>
+    <a href="legislature.html">IMPERIAL ASSEMBLY</a>
 
-    <a href="decrees.html">
-        ROYAL DECREES
-    </a>
+    <a href="decrees.html">ROYAL DECREES</a>
 
-    <a href="atlas.html">
-        BRISTEVIA ATLAS
-    </a>
+    <a href="atlas.html">BRISTEVIA ATLAS</a>
 
 </nav>
 
 
 <!-- =========================================================
      ERA HERO
+     
+     IMAGE:
+     images/era2-hero.jpg
 ========================================================= -->
 
 <header class="era-hero">
-
-    <!--
-    ========================================================
-    HERO IMAGE FROM GITHUB REPOSITORY
-
-    File location:
-
-    images/era2-hero.jpg
-
-    ========================================================
-    -->
 
     <img
         src="images/era2-hero.jpg"
         class="hero-uploaded-image"
         alt="Era II historical background"
     >
-
 
     <div class="hero-content">
 
@@ -983,7 +707,10 @@ footer strong {
 
 
 <!-- =========================================================
-     HISTORICAL IMAGE 1
+     IMAGE 1
+     
+     FILE:
+     images/era2-image1.jpg
 ========================================================= -->
 
 <figure class="history-image">
@@ -1053,6 +780,9 @@ footer strong {
 
 <!-- =========================================================
      IMAGE 2
+     
+     FILE:
+     images/era2-image2.jpg
 ========================================================= -->
 
 <figure class="history-image">
@@ -1171,6 +901,9 @@ footer strong {
 
 <!-- =========================================================
      IMAGE 3
+     
+     FILE:
+     images/era2-image3.jpg
 ========================================================= -->
 
 <figure class="history-image">
@@ -1250,6 +983,9 @@ footer strong {
 
 <!-- =========================================================
      IMAGE 4
+     
+     FILE:
+     images/era2-image4.jpg
 ========================================================= -->
 
 <figure class="history-image">
@@ -1350,6 +1086,9 @@ footer strong {
 
 <!-- =========================================================
      IMAGE 5
+     
+     FILE:
+     images/era2-image5.jpg
 ========================================================= -->
 
 <figure class="history-image">
@@ -1583,7 +1322,10 @@ footer strong {
 
 
 <!-- =========================================================
-     FINAL IMAGE
+     IMAGE 6
+     
+     FILE:
+     images/era2-image6.jpg
 ========================================================= -->
 
 <figure class="history-image">
@@ -1629,35 +1371,24 @@ footer strong {
 <div class="era-navigation">
 
     <a href="era1.html">
-
         ← ERA I<br>
-
         <small>
             THE LOST FOUNDATIONS
         </small>
-
     </a>
 
-
     <a href="history.html">
-
         HISTORY INDEX<br>
-
         <small>
             FOURTEEN ERAS
         </small>
-
     </a>
 
-
     <a href="era3.html">
-
         ERA III<br>
-
         <small>
             AGE OF FRACTURES →
         </small>
-
     </a>
 
 </div>
@@ -1670,18 +1401,14 @@ footer strong {
 <footer>
 
     <p>
-
         <strong>
             ⚜ IMPERIAL SOVEREIGN OF BRISTEVIA ⚜
         </strong>
-
     </p>
 
     <p>
-
         © 2026 The Imperial Sovereign of Bristevia.
         All Rights Reserved.
-
     </p>
 
 </footer>
