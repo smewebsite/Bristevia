@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -23,6 +24,7 @@
 
     body {
       font-family: "Cormorant Garamond", serif;
+
       background:
         radial-gradient(
           circle at center,
@@ -30,10 +32,12 @@
           rgba(2, 12, 30, 0.97)
         ),
         #020b18;
+
       color: #f8f0d0;
       min-height: 100vh;
       overflow-x: hidden;
     }
+
 
     /* =========================
        MAIN NAVIGATION
@@ -44,14 +48,20 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 5px;
+
       padding: 18px 15px;
+
       background:
         linear-gradient(
           rgba(2,18,42,0.97),
           rgba(2,11,27,0.99)
         );
+
       border-bottom: 1px solid rgba(212,175,55,0.45);
-      box-shadow: 0 5px 25px rgba(0,0,0,0.45);
+
+      box-shadow:
+        0 5px 25px rgba(0,0,0,0.45);
+
       position: relative;
       z-index: 10;
     }
@@ -60,20 +70,27 @@
       font-family: "Cinzel", serif;
       font-size: 12px;
       letter-spacing: 1.5px;
+
       color: #f5e6a8;
+
       text-decoration: none;
+
       padding: 10px 15px;
+
       transition: 0.3s ease;
     }
 
     .main-navigation a:hover {
       color: #ffffff;
-      text-shadow: 0 0 10px rgba(212,175,55,0.8);
+
+      text-shadow:
+        0 0 10px rgba(212,175,55,0.8);
     }
 
     .main-navigation a.active {
       color: #d4af37;
     }
+
 
     /* =========================
        HERO
@@ -81,11 +98,15 @@
 
     .era-hero {
       position: relative;
+
       min-height: 72vh;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
+
       padding: 90px 25px;
 
       background:
@@ -98,12 +119,15 @@
       background-size: cover;
       background-position: center;
 
-      border-bottom: 1px solid rgba(212,175,55,0.45);
+      border-bottom:
+        1px solid rgba(212,175,55,0.45);
+
       overflow: hidden;
     }
 
     .era-hero::before {
       content: "";
+
       position: absolute;
       inset: 0;
 
@@ -120,12 +144,19 @@
     .era-hero-content {
       position: relative;
       z-index: 2;
+
       max-width: 1150px;
       width: 100%;
     }
 
+
+    /* =========================
+       IMPERIAL SYMBOL
+    ========================= */
+
     .imperial-symbol {
       font-size: 65px;
+
       color: #d4af37;
 
       text-shadow:
@@ -135,20 +166,34 @@
       margin-bottom: 18px;
     }
 
+
+    /* =========================
+       ERA TITLE
+    ========================= */
+
     .era-label {
       font-family: "Cinzel", serif;
+
       font-size: 15px;
+
       letter-spacing: 6px;
+
       color: #d4af37;
+
       text-transform: uppercase;
+
       margin-bottom: 20px;
     }
 
     .era-hero h1 {
       font-family: "Cinzel", serif;
+
       font-size: clamp(35px, 6vw, 72px);
+
       line-height: 1.12;
+
       letter-spacing: 3px;
+
       color: #f7e7a9;
 
       text-shadow:
@@ -158,24 +203,34 @@
 
     .era-subtitle {
       margin-top: 22px;
+
       font-family: "Cinzel", serif;
+
       font-size: clamp(17px, 3vw, 27px);
+
       letter-spacing: 3px;
+
       color: #ffffff;
+
       line-height: 1.5;
     }
 
     .era-date {
       margin-top: 20px;
+
       color: #d4af37;
+
       font-family: "Cinzel", serif;
+
       font-size: 15px;
+
       letter-spacing: 3px;
     }
 
     .hero-divider {
       width: 300px;
       height: 2px;
+
       margin: 32px auto;
 
       background:
@@ -194,14 +249,19 @@
 
     .hero-description {
       max-width: 900px;
+
       margin: auto;
+
       font-size: 21px;
+
       line-height: 1.8;
+
       color: #e5e1d4;
     }
 
+
     /* =========================
-       UPLOAD CONTROLS
+       IMAGE REPOSITORY CONTROL
     ========================= */
 
     .image-upload-panel {
@@ -209,22 +269,31 @@
       z-index: 5;
 
       margin: 25px auto 0;
+
       max-width: 900px;
+
       padding: 15px;
 
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       flex-wrap: wrap;
+
       gap: 10px;
     }
 
     .upload-button,
     .remove-image-button {
+
       display: inline-block;
+
       padding: 11px 18px;
 
-      border: 1px solid rgba(212,175,55,0.6);
+      border:
+        1px solid rgba(212,175,55,0.6);
 
       background:
         linear-gradient(
@@ -236,93 +305,136 @@
       color: #f7e7a9;
 
       font-family: "Cinzel", serif;
+
       font-size: 11px;
+
       letter-spacing: 1px;
+
       cursor: pointer;
+
       transition: 0.3s ease;
+
+      text-decoration: none;
     }
 
     .upload-button:hover {
+
       color: #ffffff;
+
       border-color: #d4af37;
+
       transform: translateY(-2px);
 
       box-shadow:
         0 8px 20px rgba(0,0,0,0.4);
     }
 
-    .upload-input {
-      display: none;
-    }
-
     .remove-image-button {
+
       display: none;
 
-      border-color: rgba(178,31,45,0.7);
-      background: rgba(50,10,18,0.9);
+      border-color:
+        rgba(178,31,45,0.7);
+
+      background:
+        rgba(50,10,18,0.9);
+
       color: #f3c8c8;
     }
 
     .remove-image-button:hover {
-      background: rgba(100,15,25,0.9);
+
+      background:
+        rgba(100,15,25,0.9);
+
       color: #ffffff;
     }
 
     .upload-note {
+
       width: 100%;
+
       text-align: center;
+
       font-size: 13px;
+
       color: #bcb7a5;
+
       letter-spacing: 0.5px;
     }
+
 
     /* =========================
        CONTENT
     ========================= */
 
     .era-content {
+
       max-width: 1100px;
+
       margin: auto;
+
       padding: 90px 25px;
     }
 
     .era-introduction {
+
       text-align: center;
+
       max-width: 900px;
+
       margin: 0 auto 70px;
     }
 
     .era-introduction h2 {
+
       font-family: "Cinzel", serif;
+
       color: #d4af37;
+
       font-size: 30px;
+
       letter-spacing: 4px;
+
       margin-bottom: 25px;
     }
 
     .era-introduction p {
+
       color: #d8d8d8;
+
       font-size: 20px;
+
       line-height: 1.85;
     }
+
 
     /* =========================
        IMAGE GALLERY
     ========================= */
 
     .historical-gallery {
+
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 22px;
+
       margin: 0 auto 80px;
     }
 
     .history-image {
+
       min-height: 220px;
+
       position: relative;
+
       overflow: hidden;
 
-      border: 1px solid rgba(212,175,55,0.45);
+      border:
+        1px solid rgba(212,175,55,0.45);
 
       background:
         linear-gradient(
@@ -336,10 +448,15 @@
     }
 
     .history-image img {
+
       width: 100%;
+
       height: 100%;
+
       min-height: 220px;
+
       object-fit: cover;
+
       display: block;
 
       transition:
@@ -348,27 +465,36 @@
     }
 
     .history-image:hover img {
+
       transform: scale(1.05);
+
       filter:
         brightness(1.08)
         saturate(1.08);
     }
 
     .image-placeholder {
+
       min-height: 220px;
 
       display: flex;
+
       justify-content: center;
+
       align-items: center;
 
       text-align: center;
+
       padding: 25px;
 
       color: #d4af37;
 
       font-family: "Cinzel", serif;
+
       font-size: 14px;
+
       letter-spacing: 1.5px;
+
       line-height: 1.7;
 
       background:
@@ -380,9 +506,12 @@
     }
 
     .image-caption {
+
       position: absolute;
+
       left: 0;
       bottom: 0;
+
       width: 100%;
 
       padding: 15px;
@@ -396,97 +525,149 @@
       color: #f7e7a9;
 
       font-family: "Cinzel", serif;
+
       font-size: 13px;
+
       letter-spacing: 1px;
     }
 
+
+    /* =========================
+       IMAGE REPOSITORY BUTTON
+    ========================= */
+
     .gallery-upload {
+
       position: absolute;
+
       top: 12px;
       right: 12px;
+
       z-index: 3;
 
       padding: 8px 11px;
 
-      border: 1px solid rgba(212,175,55,0.65);
+      border:
+        1px solid rgba(212,175,55,0.65);
 
-      background: rgba(1,12,27,0.88);
+      background:
+        rgba(1,12,27,0.88);
 
       color: #f7e7a9;
 
       font-family: "Cinzel", serif;
+
       font-size: 10px;
+
       letter-spacing: 0.8px;
 
       cursor: pointer;
+
       transition: 0.3s ease;
+
+      text-decoration: none;
     }
 
     .gallery-upload:hover {
-      background: rgba(212,175,55,0.2);
+
+      background:
+        rgba(212,175,55,0.2);
+
       color: #ffffff;
+
       border-color: #d4af37;
     }
+
 
     /* =========================
        HISTORY SECTIONS
     ========================= */
 
     .history-section {
+
       margin-bottom: 70px;
     }
 
     .history-section h2 {
+
       font-family: "Cinzel", serif;
+
       color: #d4af37;
+
       font-size: 26px;
+
       letter-spacing: 2px;
+
       line-height: 1.4;
+
       margin-bottom: 25px;
+
       padding-bottom: 12px;
-      border-bottom: 1px solid rgba(212,175,55,0.25);
+
+      border-bottom:
+        1px solid rgba(212,175,55,0.25);
     }
 
     .history-section h3 {
+
       font-family: "Cinzel", serif;
+
       color: #f7e7a9;
+
       font-size: 22px;
+
       letter-spacing: 1px;
+
       margin: 30px 0 15px;
     }
 
     .history-section p {
+
       color: #d5d7db;
+
       font-size: 19px;
+
       line-height: 1.85;
+
       margin-bottom: 18px;
     }
 
     .history-section ul {
+
       margin: 20px 0 20px 30px;
     }
 
     .history-section li {
+
       color: #d5d7db;
+
       font-size: 18px;
+
       line-height: 1.7;
+
       margin-bottom: 8px;
+
       padding-left: 5px;
     }
 
     .history-section li::marker {
+
       color: #d4af37;
     }
+
 
     /* =========================
        CALLOUT
     ========================= */
 
     .historical-callout {
+
       margin: 35px 0;
+
       padding: 30px;
 
-      border-left: 3px solid #d4af37;
+      border-left:
+        3px solid #d4af37;
 
       background:
         linear-gradient(
@@ -500,26 +681,35 @@
     }
 
     .historical-callout p {
+
       margin: 0;
+
       color: #f3e8bd;
+
       font-style: italic;
+
       font-size: 21px;
     }
+
 
     /* =========================
        REGIONAL GRID
     ========================= */
 
     .regional-grid {
+
       display: grid;
+
       grid-template-columns:
         repeat(auto-fit, minmax(220px, 1fr));
 
       gap: 20px;
+
       margin-top: 30px;
     }
 
     .regional-card {
+
       padding: 25px 20px;
 
       background:
@@ -529,30 +719,40 @@
           rgba(2,15,32,0.98)
         );
 
-      border: 1px solid rgba(212,175,55,0.3);
+      border:
+        1px solid rgba(212,175,55,0.3);
 
       box-shadow:
         0 8px 25px rgba(0,0,0,0.3);
     }
 
     .regional-card h3 {
+
       color: #d4af37;
+
       margin: 0 0 12px;
+
       font-size: 18px;
     }
 
     .regional-card p {
+
       font-size: 17px;
+
       line-height: 1.65;
+
       margin: 0;
     }
+
 
     /* =========================
        END STATE
     ========================= */
 
     .end-state {
+
       padding: 45px 30px;
+
       text-align: center;
 
       background:
@@ -562,7 +762,8 @@
           rgba(2,15,32,0.85)
         );
 
-      border: 1px solid rgba(212,175,55,0.35);
+      border:
+        1px solid rgba(212,175,55,0.35);
 
       box-shadow:
         0 10px 35px rgba(0,0,0,0.35);
@@ -571,49 +772,72 @@
     }
 
     .end-state h2 {
+
       border: none;
+
       margin-bottom: 20px;
+
       padding: 0;
     }
 
     .end-state p {
+
       max-width: 850px;
+
       margin: auto;
+
       font-size: 21px;
+
       line-height: 1.85;
     }
 
     .final-line {
+
       margin-top: 30px !important;
+
       color: #f7e7a9 !important;
+
       font-family: "Cinzel", serif;
+
       font-size: 22px !important;
+
       letter-spacing: 1px;
     }
+
 
     /* =========================
        ERA NAVIGATION
     ========================= */
 
     .era-navigation {
+
       max-width: 1100px;
+
       margin: 0 auto 80px;
+
       padding: 0 25px;
 
       display: flex;
+
       justify-content: space-between;
+
       gap: 20px;
     }
 
     .era-navigation a {
+
       flex: 1;
+
       text-align: center;
+
       padding: 20px;
 
       text-decoration: none;
 
       font-family: "Cinzel", serif;
+
       color: #f5e6a8;
+
       letter-spacing: 1px;
 
       background:
@@ -623,14 +847,18 @@
           rgba(2,15,32,0.95)
         );
 
-      border: 1px solid rgba(212,175,55,0.35);
+      border:
+        1px solid rgba(212,175,55,0.35);
 
       transition: 0.3s ease;
     }
 
     .era-navigation a:hover {
+
       border-color: #d4af37;
+
       color: #ffffff;
+
       transform: translateY(-4px);
 
       box-shadow:
@@ -638,32 +866,44 @@
     }
 
     .era-navigation small {
+
       font-size: 11px;
+
       color: #aaa99f;
+
       letter-spacing: 1px;
     }
+
 
     /* =========================
        FOOTER
     ========================= */
 
     footer {
+
       text-align: center;
+
       padding: 35px 15px;
 
       background: #010812;
 
-      border-top: 1px solid rgba(178,31,45,0.5);
+      border-top:
+        1px solid rgba(178,31,45,0.5);
 
       color: #9d9d9d;
+
       font-size: 14px;
+
       letter-spacing: 1px;
     }
 
     footer strong {
+
       color: #d4af37;
+
       font-family: "Cinzel", serif;
     }
+
 
     /* =========================
        MOBILE
@@ -672,87 +912,112 @@
     @media (max-width: 800px) {
 
       .historical-gallery {
+
         grid-template-columns: 1fr;
       }
 
       .history-image,
       .history-image img,
       .image-placeholder {
+
         min-height: 240px;
       }
 
       .era-hero {
+
         min-height: 65vh;
       }
 
       .era-content {
+
         padding: 65px 18px;
       }
 
       .era-navigation {
+
         flex-direction: column;
+
         padding: 0 18px;
       }
     }
 
+
     @media (max-width: 700px) {
 
       .main-navigation {
+
         padding: 10px 5px;
       }
 
       .main-navigation a {
+
         font-size: 10px;
+
         padding: 8px 9px;
       }
 
       .imperial-symbol {
+
         font-size: 50px;
       }
 
       .era-label {
+
         font-size: 12px;
+
         letter-spacing: 4px;
       }
 
       .era-hero h1 {
+
         letter-spacing: 1px;
       }
 
       .era-subtitle {
+
         letter-spacing: 1px;
       }
 
       .hero-divider {
+
         width: 220px;
       }
 
       .hero-description {
+
         font-size: 18px;
       }
 
       .history-section h2 {
+
         font-size: 22px;
       }
 
       .history-section p {
+
         font-size: 18px;
       }
 
       .upload-button,
       .remove-image-button {
+
         font-size: 10px;
+
         padding: 10px 13px;
       }
 
       .upload-note {
+
         font-size: 12px;
       }
     }
+
   </style>
 </head>
 
+
 <body>
+
 
   <!-- =========================
        MAIN NAVIGATION
@@ -760,21 +1025,37 @@
 
   <nav class="main-navigation">
 
-    <a href="index.html">HOME</a>
+    <a href="index.html">
+      HOME
+    </a>
 
-    <a href="constitution.html">CONSTITUTION</a>
+    <a href="constitution.html">
+      CONSTITUTION
+    </a>
 
-    <a href="history.html" class="active">HISTORY</a>
+    <a href="history.html" class="active">
+      HISTORY
+    </a>
 
-    <a href="government.html">GOVERNMENT</a>
+    <a href="government.html">
+      GOVERNMENT
+    </a>
 
-    <a href="judiciary.html">SUPREME TRIBUNAL</a>
+    <a href="judiciary.html">
+      SUPREME TRIBUNAL
+    </a>
 
-    <a href="legislature.html">IMPERIAL ASSEMBLY</a>
+    <a href="legislature.html">
+      IMPERIAL ASSEMBLY
+    </a>
 
-    <a href="decrees.html">ROYAL DECREES</a>
+    <a href="decrees.html">
+      ROYAL DECREES
+    </a>
 
-    <a href="atlas.html">BRISTEVIA ATLAS</a>
+    <a href="atlas.html">
+      BRISTEVIA ATLAS
+    </a>
 
   </nav>
 
@@ -787,7 +1068,9 @@
 
     <div class="era-hero-content">
 
-      <div class="imperial-symbol">⚜</div>
+      <div class="imperial-symbol">
+        ⚜
+      </div>
 
       <div class="era-label">
         ERA III
@@ -809,24 +1092,27 @@
       <div class="hero-divider"></div>
 
       <p class="hero-description">
+
         The age in which the lands that would become Bristevia
         ceased to exist as isolated coastal societies and became
         a contested archipelagic corridor shaped by foreign
         kingdoms, migration, displacement, and emerging regional identity.
+
       </p>
+
+
+      <!-- =========================
+           IMAGE REPOSITORY
+      ========================= -->
 
       <div class="image-upload-panel">
 
-        <label for="heroUpload" class="upload-button">
-          ⚜ UPLOAD HERO IMAGE
-        </label>
-
-        <input
-          type="file"
-          id="heroUpload"
-          class="upload-input"
-          accept="image/*"
+        <a
+          href="image.html?select=era3hero"
+          class="upload-button"
         >
+          ⚜ SELECT HERO IMAGE
+        </a>
 
         <button
           type="button"
@@ -837,8 +1123,7 @@
         </button>
 
         <div class="upload-note">
-          Select an image from your phone, tablet, or computer.
-          The image is saved in this browser for this device.
+          Select an image from the Bristevian Image Repository.
         </div>
 
       </div>
@@ -854,6 +1139,11 @@
 
   <main class="era-content">
 
+
+    <!-- =========================
+         INTRODUCTION
+    ========================= -->
+
     <section class="era-introduction">
 
       <h2>
@@ -861,11 +1151,13 @@
       </h2>
 
       <p>
+
         ERA 3 marks the moment when the ancestral territories of
         future Bristevia were drawn into larger geopolitical systems.
         External pressure, forced integration, coastal displacement,
         and cultural migration permanently transformed the Central
         Archipelago.
+
       </p>
 
     </section>
@@ -878,6 +1170,7 @@
 
     <section class="historical-gallery">
 
+
       <!-- IMAGE 1 -->
 
       <div class="history-image">
@@ -886,8 +1179,10 @@
           class="image-placeholder"
           id="placeholder1"
         >
+
           IMAGE 1<br>
           THE CENTRAL ARCHIPELAGO
+
         </div>
 
         <img
@@ -897,19 +1192,12 @@
           style="display:none;"
         >
 
-        <label
-          for="upload1"
+        <a
+          href="image.html?select=era3image1"
           class="gallery-upload"
         >
-          UPLOAD
-        </label>
-
-        <input
-          type="file"
-          id="upload1"
-          class="upload-input"
-          accept="image/*"
-        >
+          SELECT
+        </a>
 
         <div class="image-caption">
           THE CENTRAL ARCHIPELAGO
@@ -926,8 +1214,10 @@
           class="image-placeholder"
           id="placeholder2"
         >
+
           IMAGE 2<br>
           FESTONA & THE STEPHARA STRAIT
+
         </div>
 
         <img
@@ -937,19 +1227,12 @@
           style="display:none;"
         >
 
-        <label
-          for="upload2"
+        <a
+          href="image.html?select=era3image2"
           class="gallery-upload"
         >
-          UPLOAD
-        </label>
-
-        <input
-          type="file"
-          id="upload2"
-          class="upload-input"
-          accept="image/*"
-        >
+          SELECT
+        </a>
 
         <div class="image-caption">
           FESTONA & THE STEPHARA STRAIT
@@ -966,8 +1249,10 @@
           class="image-placeholder"
           id="placeholder3"
         >
+
           IMAGE 3<br>
           THE NORTHERN ALPINE ARC
+
         </div>
 
         <img
@@ -977,19 +1262,12 @@
           style="display:none;"
         >
 
-        <label
-          for="upload3"
+        <a
+          href="image.html?select=era3image3"
           class="gallery-upload"
         >
-          UPLOAD
-        </label>
-
-        <input
-          type="file"
-          id="upload3"
-          class="upload-input"
-          accept="image/*"
-        >
+          SELECT
+        </a>
 
         <div class="image-caption">
           THE NORTHERN ALPINE ARC
@@ -1011,36 +1289,54 @@
       </h2>
 
       <p>
+
         By the early ERA 3 centuries, Festona had already evolved
         from tribal coastal settlements into a semi-organized
         maritime confederation built around strait control.
         However, this autonomy began to weaken as external kingdoms
         learned the strategic importance of the Central Archipelago.
+
       </p>
 
       <p>
+
         The Stephara Strait corridor—the narrow maritime passage
         between Festona and the western sea routes—became a target
         for competing powers.
+
       </p>
 
       <ul>
-        <li>Eastern inland kingdoms seeking naval access</li>
-        <li>Western coastal states seeking trade control</li>
-        <li>Northern powers seeking southern expansion routes</li>
+
+        <li>
+          Eastern inland kingdoms seeking naval access
+        </li>
+
+        <li>
+          Western coastal states seeking trade control
+        </li>
+
+        <li>
+          Northern powers seeking southern expansion routes
+        </li>
+
       </ul>
 
       <p>
+
         Festona's earlier coastal coalitions, descended from the
         Serathi, Valenne, and Torvasi, could no longer operate
         independently without external interference.
+
       </p>
 
       <div class="historical-callout">
 
         <p>
+
           Festona stopped being a self-contained maritime zone
           and became a gateway territory contested by foreign kingdoms.
+
         </p>
 
       </div>
@@ -1063,11 +1359,13 @@
       </h3>
 
       <p>
+
         Under King Raventon of Eldrosia, the kingdom unified
         multiple eastern inland and coastal districts into a
         centralized administration. Its expansion focused on
         agricultural basins, river-linked trade corridors, and
         the soft annexation of neighboring lowland territories.
+
       </p>
 
       <h3>
@@ -1075,20 +1373,34 @@
       </h3>
 
       <p>
+
         Brionne, still organized under the successor clans of the
         Lareth Compact, was not militarily unified enough to resist
         sustained administrative pressure.
+
       </p>
 
       <ul>
-        <li>Economic absorption into Eldrosian trade systems</li>
-        <li>Installation of Eldrosian governors in key inland towns</li>
-        <li>Gradual loss of autonomous inland councils</li>
+
+        <li>
+          Economic absorption into Eldrosian trade systems
+        </li>
+
+        <li>
+          Installation of Eldrosian governors in key inland towns
+        </li>
+
+        <li>
+          Gradual loss of autonomous inland councils
+        </li>
+
       </ul>
 
       <p>
+
         Brionne did not collapse through a single war. Instead,
         it underwent what later Bristevian historians called:
+
       </p>
 
       <div class="historical-callout">
@@ -1100,14 +1412,18 @@
       </div>
 
       <p>
+
         This period established early administrative centers that
         would later influence Jaybrienne basin governance and inland
         tax routes feeding future Bristevian capital systems.
+
       </p>
 
       <p>
+
         Yet Brionne culture survived, embedding deeply into later
         Bristevian legal and administrative traditions.
+
       </p>
 
     </section>
@@ -1124,16 +1440,20 @@
       </h2>
 
       <p>
+
         Unlike Brionne's gradual integration, Festona's transition
         into foreign influence was immediate and strategic.
+
       </p>
 
       <p>
+
         As Eldrosia expanded, it encountered resistance from
         Festona's maritime coalition. Festona was simultaneously
         under pressure from Orlencian western maritime traders,
         northern raiders, and increasingly organized Eldrosian
         naval forces.
+
       </p>
 
       <h3>
@@ -1141,9 +1461,11 @@
       </h3>
 
       <p>
+
         Rather than risk destruction, Festona's tribal leaders
         enacted a survival agreement recorded in fragmented
         coastal records as the “Pact of the Quiet Strait.”
+
       </p>
 
       <h3>
@@ -1151,29 +1473,45 @@
       </h3>
 
       <ul>
-        <li>Allowed Eldrosian administrative presence in port towns</li>
-        <li>Opened strait passage rights under regulated trade law</li>
-        <li>Accepted Eldrosian naval protection fleets</li>
+
+        <li>
+          Allowed Eldrosian administrative presence in port towns
+        </li>
+
+        <li>
+          Opened strait passage rights under regulated trade law
+        </li>
+
+        <li>
+          Accepted Eldrosian naval protection fleets
+        </li>
+
       </ul>
 
       <p>
+
         Festona nevertheless retained local clan leadership,
         limited maritime taxation autonomy, and cultural continuity
         of its strait identity.
+
       </p>
 
       <div class="historical-callout">
 
         <p>
+
           Festona became neither fully conquered nor fully independent—
           but a protected maritime dependency zone.
+
         </p>
 
       </div>
 
       <p>
+
         This arrangement later became the foundation of Stephara's
         dual identity: both sovereign and historically subordinated.
+
       </p>
 
     </section>
@@ -1190,22 +1528,42 @@
       </h2>
 
       <p>
+
         While Festona and Brionne were being absorbed politically,
         the northern highlands of future Bristevia experienced a
         more violent transformation.
+
       </p>
 
       <p>
+
         The Nord Empire expanded southward from its continental core,
         pushing into the alpine regions that would later form:
+
       </p>
 
       <ul>
-        <li>Northaven</li>
-        <li>Montelune</li>
-        <li>Basilion</li>
-        <li>Aethelburg</li>
-        <li>Andriel's northern arc</li>
+
+        <li>
+          Northaven
+        </li>
+
+        <li>
+          Montelune
+        </li>
+
+        <li>
+          Basilion
+        </li>
+
+        <li>
+          Aethelburg
+        </li>
+
+        <li>
+          Andriel's northern arc
+        </li>
+
       </ul>
 
       <h3>
@@ -1213,32 +1571,50 @@
       </h3>
 
       <p>
+
         The northern clans, descended from Aethran and Nordel
         survival groups, were fragmented and uncentralized.
         They were unable to withstand coordinated Nord military
         campaigns.
+
       </p>
 
       <ul>
-        <li>Collapse of alpine tribal autonomy</li>
-        <li>Forced migration into lower valleys</li>
-        <li>Militarization of surviving clans</li>
+
+        <li>
+          Collapse of alpine tribal autonomy
+        </li>
+
+        <li>
+          Forced migration into lower valleys
+        </li>
+
+        <li>
+          Militarization of surviving clans
+        </li>
+
       </ul>
 
       <p>
+
         This period created the Bristevian alpine warrior tradition,
         later central to imperial military doctrine.
+
       </p>
 
       <p>
+
         Many displaced northern groups migrated southward into
         Brionne valleys, Festona hinterlands, and coastal refuge
         zones of Solmara's early settlements.
+
       </p>
 
       <p>
+
         This migration permanently fused northern and central
         populations.
+
       </p>
 
     </section>
@@ -1255,34 +1631,52 @@
       </h2>
 
       <p>
+
         At the same time, the Valtherium Empire maintained dominance
         over southern maritime provinces, particularly Zalta and Sol,
         which would later influence the Zaltriana and Solmara regions.
+
       </p>
 
       <p>
+
         Although Valtherium did not directly annex the core lands of
         future Bristevia during this era, its policies created
         significant indirect pressure.
+
       </p>
 
       <ul>
-        <li>Forced relocation of Solaran coastal populations</li>
-        <li>Migration into neutral archipelagic zones</li>
-        <li>Increased maritime refugee movement into Festona waters</li>
+
+        <li>
+          Forced relocation of Solaran coastal populations
+        </li>
+
+        <li>
+          Migration into neutral archipelagic zones
+        </li>
+
+        <li>
+          Increased maritime refugee movement into Festona waters
+        </li>
+
       </ul>
 
       <p>
+
         These displaced groups contributed to coastal population
         expansion, mixed dialect formation in early Stepharan Strait
         language, and the diffusion of naval skills across the islands.
+
       </p>
 
       <div class="historical-callout">
 
         <p>
+
           Bristevia's population growth in ERA 3 was not purely natural—
           it was refugee-driven consolidation.
+
         </p>
 
       </div>
@@ -1301,12 +1695,16 @@
       </h2>
 
       <p>
+
         By the late ERA 3 period, the Central Archipelago was no
         longer a collection of tribes. It had become a multi-layered
         system of external dependencies and internal fragmentation.
+
       </p>
 
+
       <div class="regional-grid">
+
 
         <div class="regional-card">
 
@@ -1315,12 +1713,15 @@
           </h3>
 
           <p>
+
             Semi-autonomous maritime dependency under Eldrosian
             influence. Controlled strait passage but possessed
             no full sovereignty.
+
           </p>
 
         </div>
+
 
         <div class="regional-card">
 
@@ -1329,12 +1730,15 @@
           </h3>
 
           <p>
+
             Administrative inland zone absorbed into Eldrosian
             governance. Retained cultural identity while losing
             political independence.
+
           </p>
 
         </div>
+
 
         <div class="regional-card">
 
@@ -1343,11 +1747,14 @@
           </h3>
 
           <p>
+
             Militarized frontier under Nord occupation and source
             of warrior migrations and displaced clans.
+
           </p>
 
         </div>
+
 
         <div class="regional-card">
 
@@ -1356,8 +1763,10 @@
           </h3>
 
           <p>
+
             Population influx from Valtherium-controlled southern
             regions created a major cultural mixing zone.
+
           </p>
 
         </div>
@@ -1378,32 +1787,50 @@
       </h2>
 
       <p>
+
         Despite fragmentation, ERA 3 produced an unintended
         consequence: shared identity pressure.
+
       </p>
 
       <p>
+
         Across Festona, Brionne, and northern migrant communities,
         three common experiences emerged:
+
       </p>
 
       <ul>
-        <li>Loss of autonomy under foreign systems</li>
-        <li>Shared maritime dependence on the Stephara Strait</li>
-        <li>Cultural blending through migration and displacement</li>
+
+        <li>
+          Loss of autonomy under foreign systems
+        </li>
+
+        <li>
+          Shared maritime dependence on the Stephara Strait
+        </li>
+
+        <li>
+          Cultural blending through migration and displacement
+        </li>
+
       </ul>
 
       <div class="historical-callout">
 
         <p>
+
           “A single connected archipelagic people, though still without a state.”
+
         </p>
 
       </div>
 
       <p>
+
         This identity was not political yet. It was geographical,
         cultural, and experiential.
+
       </p>
 
     </section>
@@ -1416,31 +1843,42 @@
     <section class="history-section end-state">
 
       <h2>
-        VIII. END STATE OF ERA 3 — A FRAGMENTED BUT CONNECTED ARCHIPELAGO
+
+        VIII. END STATE OF ERA 3 —
+        A FRAGMENTED BUT CONNECTED ARCHIPELAGO
+
       </h2>
 
       <p>
+
         By the close of ERA 3, the Central Archipelago stood as a
         stratified Eldrosian-influenced inland system in Brionne,
         a semi-dependent maritime corridor in Festona, a displaced
         northern warrior diaspora across the Aethelburg arc, and
         a population-mixed coastal refuge network across the
         southern islands.
+
       </p>
 
       <p>
+
         No unified Bristevia existed yet.
+
       </p>
 
       <p>
+
         But for the first time in history, the entire archipelago
         was no longer isolated tribes—it was a single interconnected
         geopolitical field shaped by external empires.
+
       </p>
 
       <p class="final-line">
+
         And within that field, the conditions for Bristevia's later
         emergence were permanently set.
+
       </p>
 
     </section>
@@ -1455,18 +1893,35 @@
   <div class="era-navigation">
 
     <a href="era2.html">
+
       ← ERA II<br>
-      <small>AGE OF IMPERIAL ASCENT</small>
+
+      <small>
+        AGE OF IMPERIAL ASCENT
+      </small>
+
     </a>
+
 
     <a href="history.html">
+
       HISTORY INDEX<br>
-      <small>FOURTEEN ERAS</small>
+
+      <small>
+        FOURTEEN ERAS
+      </small>
+
     </a>
 
+
     <a href="era4.html">
+
       ERA IV<br>
-      <small>NEXT ERA →</small>
+
+      <small>
+        NEXT ERA →
+      </small>
+
     </a>
 
   </div>
@@ -1479,86 +1934,52 @@
   <footer>
 
     <p>
+
       <strong>
         ⚜ IMPERIAL SOVEREIGN OF BRISTEVIA ⚜
       </strong>
+
     </p>
 
     <p>
+
       © 2026 The Imperial Sovereign of Bristevia.
       All Rights Reserved.
+
     </p>
 
   </footer>
 
 
   <!-- =====================================================
-       IMAGE STORAGE SYSTEM
+       IMAGE REPOSITORY SYSTEM
   =====================================================
 
-       Images are converted to Base64 and stored in
-       localStorage.
+       This page NO LONGER uploads images directly.
 
-       This means:
+       Instead, images are selected from:
 
-       ✓ Images do not need to be placed in GitHub.
-       ✓ Images remain after refreshing the page.
-       ✓ Each image has its own storage slot.
-       ✓ You can replace images at any time.
-       ✓ The same browser/device can load the saved images.
+       image.html
 
-       IMPORTANT:
+       The Image Repository saves the selected images in
+       localStorage using these keys:
 
-       localStorage belongs to the browser/device.
+       bristevia_era3_hero
+       bristevia_era3_image1
+       bristevia_era3_image2
+       bristevia_era3_image3
 
-       Therefore, if another person opens the website,
-       they will NOT see images uploaded on your device.
+       This allows image.html to function as the central
+       image repository for the History pages.
 
-       For permanent images visible to EVERY visitor,
-       the images must eventually be hosted online
-       or placed in the GitHub repository.
   ===================================================== -->
 
   <script>
-
-    /* =====================================================
-       HELPER: SAVE IMAGE
-    ===================================================== */
-
-    function saveImage(storageKey, imageData) {
-
-      try {
-
-        localStorage.setItem(
-          storageKey,
-          imageData
-        );
-
-        return true;
-
-      } catch (error) {
-
-        console.warn(
-          "Browser storage limit reached or image could not be saved.",
-          error
-        );
-
-        alert(
-          "The image was displayed, but your browser could not save it. " +
-          "Try a smaller image."
-        );
-
-        return false;
-      }
-    }
 
 
     /* =====================================================
        HERO IMAGE
     ===================================================== */
-
-    const heroUpload =
-      document.getElementById("heroUpload");
 
     const heroImage =
       document.getElementById("heroImage");
@@ -1569,6 +1990,9 @@
 
     function displayHeroImage(imageData) {
 
+      if (!imageData) return;
+
+
       heroImage.style.backgroundImage =
         `
         linear-gradient(
@@ -1578,70 +2002,47 @@
         url("${imageData}")
         `;
 
+
       removeHero.style.display =
         "inline-block";
+
     }
 
 
-    heroUpload.addEventListener(
-      "change",
-      function () {
+    /* =====================================================
+       LOAD HERO IMAGE FROM REPOSITORY
+    ===================================================== */
 
-        const file =
-          this.files[0];
+    function loadHeroImage() {
 
-        if (!file) return;
-
-
-        if (!file.type.startsWith("image/")) {
-
-          alert(
-            "Please select an image file."
-          );
-
-          this.value = "";
-
-          return;
-        }
+      const savedHero =
+        localStorage.getItem(
+          "bristevia_era3_hero"
+        );
 
 
-        const reader =
-          new FileReader();
+      if (savedHero) {
 
-
-        reader.onload =
-          function (event) {
-
-            const imageData =
-              event.target.result;
-
-
-            displayHeroImage(
-              imageData
-            );
-
-
-            saveImage(
-              "bristevia_era3_hero",
-              imageData
-            );
-
-          };
-
-
-        reader.readAsDataURL(file);
+        displayHeroImage(
+          savedHero
+        );
 
       }
-    );
+
+    }
+
+
+    loadHeroImage();
 
 
     /* =====================================================
-       REMOVE HERO
+       REMOVE HERO IMAGE
     ===================================================== */
 
     removeHero.addEventListener(
       "click",
       function () {
+
 
         heroImage.style.backgroundImage =
           `
@@ -1658,9 +2059,6 @@
         );
 
 
-        heroUpload.value = "";
-
-
         removeHero.style.display =
           "none";
 
@@ -1669,126 +2067,27 @@
 
 
     /* =====================================================
-       LOAD HERO IMAGE
+       GALLERY IMAGE LOADER
     ===================================================== */
 
-    const savedHero =
-      localStorage.getItem(
-        "bristevia_era3_hero"
-      );
-
-
-    if (savedHero) {
-
-      displayHeroImage(
-        savedHero
-      );
-
-    }
-
-
-    /* =====================================================
-       GALLERY IMAGE SYSTEM
-    ===================================================== */
-
-    function setupGalleryUpload(
-      inputId,
+    function loadRepositoryImage(
       imageId,
       placeholderId,
       storageKey
     ) {
 
-      const input =
-        document.getElementById(
-          inputId
-        );
 
       const image =
         document.getElementById(
           imageId
         );
 
+
       const placeholder =
         document.getElementById(
           placeholderId
         );
 
-
-      function displayImage(
-        imageData
-      ) {
-
-        image.src =
-          imageData;
-
-        image.style.display =
-          "block";
-
-        placeholder.style.display =
-          "none";
-
-      }
-
-
-      /* =========================
-         UPLOAD IMAGE
-      ========================= */
-
-      input.addEventListener(
-        "change",
-        function () {
-
-          const file =
-            this.files[0];
-
-          if (!file) return;
-
-
-          if (!file.type.startsWith("image/")) {
-
-            alert(
-              "Please select an image file."
-            );
-
-            this.value = "";
-
-            return;
-          }
-
-
-          const reader =
-            new FileReader();
-
-
-          reader.onload =
-            function (event) {
-
-              const imageData =
-                event.target.result;
-
-
-              displayImage(
-                imageData
-              );
-
-
-              saveImage(
-                storageKey,
-                imageData
-              );
-
-            };
-
-
-          reader.readAsDataURL(file);
-
-        }
-      );
-
-
-      /* =========================
-         LOAD SAVED IMAGE
-      ========================= */
 
       const savedImage =
         localStorage.getItem(
@@ -1798,9 +2097,17 @@
 
       if (savedImage) {
 
-        displayImage(
-          savedImage
-        );
+
+        image.src =
+          savedImage;
+
+
+        image.style.display =
+          "block";
+
+
+        placeholder.style.display =
+          "none";
 
       }
 
@@ -1808,11 +2115,10 @@
 
 
     /* =====================================================
-       INITIALIZE IMAGE 1
+       IMAGE 1
     ===================================================== */
 
-    setupGalleryUpload(
-      "upload1",
+    loadRepositoryImage(
       "galleryImage1",
       "placeholder1",
       "bristevia_era3_image1"
@@ -1820,11 +2126,10 @@
 
 
     /* =====================================================
-       INITIALIZE IMAGE 2
+       IMAGE 2
     ===================================================== */
 
-    setupGalleryUpload(
-      "upload2",
+    loadRepositoryImage(
       "galleryImage2",
       "placeholder2",
       "bristevia_era3_image2"
@@ -1832,15 +2137,51 @@
 
 
     /* =====================================================
-       INITIALIZE IMAGE 3
+       IMAGE 3
     ===================================================== */
 
-    setupGalleryUpload(
-      "upload3",
+    loadRepositoryImage(
       "galleryImage3",
       "placeholder3",
       "bristevia_era3_image3"
     );
+
+
+    /* =====================================================
+       REFRESH IMAGES WHEN RETURNING FROM IMAGE.HTML
+    ===================================================== */
+
+    window.addEventListener(
+      "pageshow",
+      function () {
+
+
+        loadHeroImage();
+
+
+        loadRepositoryImage(
+          "galleryImage1",
+          "placeholder1",
+          "bristevia_era3_image1"
+        );
+
+
+        loadRepositoryImage(
+          "galleryImage2",
+          "placeholder2",
+          "bristevia_era3_image2"
+        );
+
+
+        loadRepositoryImage(
+          "galleryImage3",
+          "placeholder3",
+          "bristevia_era3_image3"
+        );
+
+      }
+    );
+
 
   </script>
 
