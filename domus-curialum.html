@@ -38,37 +38,26 @@
 ========================================================= */
 
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
-
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
-
 body {
-
     font-family:
         "Cormorant Garamond",
         serif;
 
     background:
-
         radial-gradient(
             circle at center,
             rgba(12,61,115,0.45),
             rgba(2,12,30,0.97)
         ),
-
         #020b18;
 
     color: #f8f0d0;
@@ -76,7 +65,10 @@ body {
     min-height: 100vh;
 
     overflow-x: hidden;
+}
 
+#top {
+    scroll-margin-top: 20px;
 }
 
 
@@ -114,7 +106,6 @@ body {
     background-position: center;
 
     background-attachment: fixed;
-
 }
 
 
@@ -135,7 +126,6 @@ body {
         );
 
     z-index: 1;
-
 }
 
 
@@ -164,26 +154,19 @@ body {
         aura 7s ease-in-out infinite alternate;
 
     z-index: 1;
-
 }
 
 
 @keyframes aura {
 
     from {
-
         transform: scale(0.9);
-
         opacity: 0.5;
-
     }
 
     to {
-
         transform: scale(1.15);
-
         opacity: 1;
-
     }
 
 }
@@ -198,7 +181,6 @@ body {
     max-width: 1100px;
 
     padding: 70px 20px 130px;
-
 }
 
 
@@ -222,7 +204,6 @@ body {
 
     animation:
         royalGlow 4s ease-in-out infinite;
-
 }
 
 
@@ -235,7 +216,6 @@ body {
             0 0 10px rgba(212,175,55,0.6),
 
             0 0 25px rgba(212,175,55,0.25);
-
     }
 
     50% {
@@ -245,7 +225,6 @@ body {
             0 0 20px rgba(212,175,55,1),
 
             0 0 50px rgba(212,175,55,0.5);
-
     }
 
 }
@@ -264,7 +243,6 @@ body {
     text-transform: uppercase;
 
     margin-bottom: 18px;
-
 }
 
 
@@ -288,7 +266,6 @@ body {
         0 0 20px rgba(212,175,55,0.35);
 
     line-height: 1.05;
-
 }
 
 
@@ -304,7 +281,6 @@ body {
     letter-spacing: 4px;
 
     color: white;
-
 }
 
 
@@ -319,7 +295,6 @@ body {
     letter-spacing: 2px;
 
     color: #e9e1c7;
-
 }
 
 
@@ -329,7 +304,6 @@ body {
     content: " ✦ ";
 
     color: #b21f2d;
-
 }
 
 
@@ -357,9 +331,7 @@ body {
         );
 
     box-shadow:
-
         0 0 15px rgba(212,175,55,0.5);
-
 }
 
 
@@ -401,7 +373,6 @@ nav {
 
     box-shadow:
         0 -5px 25px rgba(0,0,0,0.4);
-
 }
 
 
@@ -424,7 +395,6 @@ nav a {
     padding: 10px 14px;
 
     transition: 0.3s;
-
 }
 
 
@@ -449,7 +419,6 @@ nav a::after {
 
     transition:
         width 0.3s;
-
 }
 
 
@@ -462,14 +431,12 @@ nav a:hover {
 
     text-shadow:
         0 0 10px rgba(212,175,55,0.8);
-
 }
 
 
 nav a:hover::after {
 
     width: 70%;
-
 }
 
 
@@ -484,7 +451,6 @@ nav a:hover::after {
     margin: auto;
 
     padding: 80px 20px;
-
 }
 
 
@@ -500,7 +466,6 @@ nav a:hover::after {
 
     margin:
         0 auto 70px;
-
 }
 
 
@@ -517,7 +482,6 @@ nav a:hover::after {
     text-transform: uppercase;
 
     margin-bottom: 15px;
-
 }
 
 
@@ -533,7 +497,6 @@ nav a:hover::after {
     letter-spacing: 3px;
 
     margin-bottom: 25px;
-
 }
 
 
@@ -544,7 +507,6 @@ nav a:hover::after {
     font-size: 20px;
 
     line-height: 1.8;
-
 }
 
 
@@ -555,7 +517,6 @@ nav a:hover::after {
 .image-section {
 
     margin-bottom: 70px;
-
 }
 
 
@@ -567,13 +528,14 @@ nav a:hover::after {
         repeat(2,1fr);
 
     gap: 25px;
-
 }
 
 
 .image-box {
 
-    min-height: 300px;
+    position: relative;
+
+    min-height: 350px;
 
     border:
         1px solid rgba(212,175,55,0.55);
@@ -586,11 +548,13 @@ nav a:hover::after {
             rgba(1,13,29,0.98)
         );
 
+    overflow: hidden;
+
     display: flex;
 
     flex-direction: column;
 
-    justify-content: center;
+    justify-content: flex-end;
 
     align-items: center;
 
@@ -602,7 +566,6 @@ nav a:hover::after {
         0 0 25px rgba(0,0,0,0.35);
 
     transition: 0.3s;
-
 }
 
 
@@ -618,7 +581,62 @@ nav a:hover::after {
         0 10px 30px rgba(0,0,0,0.4),
 
         0 0 20px rgba(212,175,55,0.12);
+}
 
+
+/* ACTUAL IMAGE */
+
+.domus-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.82;
+
+    transition: 0.4s;
+
+}
+
+
+.image-box:hover .domus-image {
+
+    transform: scale(1.04);
+
+    opacity: 0.95;
+}
+
+
+/* DARK IMAGE OVERLAY */
+
+.image-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            transparent 25%,
+            rgba(1,13,29,0.92) 100%
+        );
+
+    z-index: 1;
+}
+
+
+.image-content {
+
+    position: relative;
+
+    z-index: 2;
 }
 
 
@@ -631,16 +649,14 @@ nav a:hover::after {
     letter-spacing: 2px;
 
     margin-bottom: 10px;
-
 }
 
 
 .image-box p {
 
-    color: #aaa;
+    color: #ddd;
 
-    margin-bottom: 22px;
-
+    margin-bottom: 18px;
 }
 
 
@@ -648,7 +664,7 @@ nav a:hover::after {
 
     display: inline-block;
 
-    padding: 12px 22px;
+    padding: 10px 18px;
 
     background: #d4af37;
 
@@ -658,7 +674,7 @@ nav a:hover::after {
 
     font-family: "Cinzel", serif;
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 700;
 
@@ -668,7 +684,6 @@ nav a:hover::after {
         1px solid #f5e6a8;
 
     transition: 0.3s;
-
 }
 
 
@@ -681,7 +696,6 @@ nav a:hover::after {
 
     box-shadow:
         0 0 18px rgba(212,175,55,0.45);
-
 }
 
 
@@ -699,7 +713,6 @@ nav a:hover::after {
     gap: 18px;
 
     margin-bottom: 70px;
-
 }
 
 
@@ -722,7 +735,6 @@ nav a:hover::after {
 
     box-shadow:
         0 8px 25px rgba(0,0,0,0.25);
-
 }
 
 
@@ -738,7 +750,6 @@ nav a:hover::after {
 
     text-shadow:
         0 0 15px rgba(212,175,55,0.3);
-
 }
 
 
@@ -755,7 +766,6 @@ nav a:hover::after {
     letter-spacing: 2px;
 
     margin-top: 8px;
-
 }
 
 
@@ -766,7 +776,6 @@ nav a:hover::after {
 .portal-tools {
 
     margin-bottom: 70px;
-
 }
 
 
@@ -787,7 +796,6 @@ nav a:hover::after {
 
     box-shadow:
         0 10px 35px rgba(0,0,0,0.3);
-
 }
 
 
@@ -804,7 +812,6 @@ nav a:hover::after {
     letter-spacing: 3px;
 
     margin-bottom: 25px;
-
 }
 
 
@@ -816,7 +823,6 @@ nav a:hover::after {
         1fr 1fr;
 
     gap: 18px;
-
 }
 
 
@@ -833,7 +839,6 @@ nav a:hover::after {
     color: #e9d98e;
 
     margin-bottom: 8px;
-
 }
 
 
@@ -858,7 +863,6 @@ input[type="search"] {
     font-size: 17px;
 
     outline: none;
-
 }
 
 
@@ -869,7 +873,6 @@ input[type="search"]:focus {
 
     box-shadow:
         0 0 12px rgba(212,175,55,0.2);
-
 }
 
 
@@ -882,7 +885,6 @@ input[type="search"]:focus {
     margin-bottom: 50px;
 
     text-align: center;
-
 }
 
 
@@ -895,7 +897,6 @@ input[type="search"]:focus {
     letter-spacing: 3px;
 
     margin-bottom: 20px;
-
 }
 
 
@@ -908,7 +909,6 @@ input[type="search"]:focus {
     flex-wrap: wrap;
 
     gap: 10px;
-
 }
 
 
@@ -932,7 +932,6 @@ input[type="search"]:focus {
     letter-spacing: 1px;
 
     transition: 0.3s;
-
 }
 
 
@@ -945,7 +944,6 @@ input[type="search"]:focus {
 
     box-shadow:
         0 0 15px rgba(212,175,55,0.35);
-
 }
 
 
@@ -958,7 +956,6 @@ input[type="search"]:focus {
     text-align: center;
 
     margin-bottom: 45px;
-
 }
 
 
@@ -971,7 +968,6 @@ input[type="search"]:focus {
     color: #f7e7a9;
 
     letter-spacing: 3px;
-
 }
 
 
@@ -982,7 +978,6 @@ input[type="search"]:focus {
     font-size: 17px;
 
     margin-top: 10px;
-
 }
 
 
@@ -1004,7 +999,6 @@ input[type="search"]:focus {
     font-size: 11px;
 
     letter-spacing: 1px;
-
 }
 
 
@@ -1025,6 +1019,7 @@ input[type="search"]:focus {
     box-shadow:
         0 10px 35px rgba(0,0,0,0.25);
 
+    scroll-margin-top: 20px;
 }
 
 
@@ -1052,7 +1047,6 @@ input[type="search"]:focus {
 
     border-bottom:
         1px solid rgba(212,175,55,0.35);
-
 }
 
 
@@ -1065,7 +1059,6 @@ input[type="search"]:focus {
     color: #f7e7a9;
 
     letter-spacing: 2px;
-
 }
 
 
@@ -1078,14 +1071,12 @@ input[type="search"]:focus {
     font-size: 11px;
 
     letter-spacing: 1px;
-
 }
 
 
 .province-content {
 
     padding: 22px;
-
 }
 
 
@@ -1097,7 +1088,6 @@ input[type="search"]:focus {
         repeat(3,1fr);
 
     gap: 15px;
-
 }
 
 
@@ -1131,7 +1121,6 @@ input[type="search"]:focus {
         border .25s,
 
         box-shadow .25s;
-
 }
 
 
@@ -1148,7 +1137,6 @@ input[type="search"]:focus {
         0 8px 25px rgba(0,0,0,0.35),
 
         0 0 15px rgba(212,175,55,0.08);
-
 }
 
 
@@ -1164,7 +1152,6 @@ input[type="search"]:focus {
             rgba(51,40,8,0.55),
             rgba(4,25,48,0.95)
         );
-
 }
 
 
@@ -1189,7 +1176,6 @@ input[type="search"]:focus {
     font-weight: bold;
 
     letter-spacing: 1px;
-
 }
 
 
@@ -1208,7 +1194,6 @@ input[type="search"]:focus {
     margin-bottom: 9px;
 
     padding-right: 55px;
-
 }
 
 
@@ -1221,7 +1206,6 @@ input[type="search"]:focus {
     font-weight: 600;
 
     line-height: 1.1;
-
 }
 
 
@@ -1236,21 +1220,18 @@ input[type="search"]:focus {
     font-size: 10px;
 
     letter-spacing: .4px;
-
 }
 
 
 .party strong {
 
     color: #d5c98e;
-
 }
 
 
 .hidden {
 
     display: none !important;
-
 }
 
 
@@ -1261,7 +1242,6 @@ input[type="search"]:focus {
 .information {
 
     margin-top: 80px;
-
 }
 
 
@@ -1284,7 +1264,6 @@ input[type="search"]:focus {
 
     border-top:
         1px solid rgba(212,175,55,0.2);
-
 }
 
 
@@ -1297,7 +1276,6 @@ input[type="search"]:focus {
     letter-spacing: 2px;
 
     margin-bottom: 20px;
-
 }
 
 
@@ -1310,7 +1288,6 @@ input[type="search"]:focus {
     margin-top: 20px;
 
     margin-bottom: 8px;
-
 }
 
 
@@ -1322,14 +1299,12 @@ input[type="search"]:focus {
     font-size: 18px;
 
     line-height: 1.7;
-
 }
 
 
 .info-panel ul {
 
     padding-left: 25px;
-
 }
 
 
@@ -1349,7 +1324,6 @@ footer {
         1px solid rgba(178,31,45,0.5);
 
     color: #888;
-
 }
 
 
@@ -1366,7 +1340,6 @@ footer strong {
     letter-spacing: 2px;
 
     margin-bottom: 10px;
-
 }
 
 
@@ -1406,7 +1379,6 @@ footer strong {
 
     box-shadow:
         0 0 20px rgba(212,175,55,0.35);
-
 }
 
 
@@ -1420,15 +1392,12 @@ footer strong {
 
         grid-template-columns:
             repeat(2,1fr);
-
     }
-
 
     .statistics {
 
         grid-template-columns:
             repeat(2,1fr);
-
     }
 
 }
@@ -1441,60 +1410,45 @@ footer strong {
         min-height: 100svh;
 
         background-attachment: scroll;
-
     }
-
 
     .hero-content {
 
         padding-bottom: 80px;
-
     }
-
 
     nav {
 
         position: relative;
 
         bottom: auto;
-
     }
-
 
     .image-grid,
     .tool-grid {
 
         grid-template-columns: 1fr;
-
     }
-
 
     .minister-grid {
 
         grid-template-columns: 1fr;
-
     }
-
 
     .statistics {
 
         grid-template-columns:
             1fr 1fr;
-
     }
-
 
     .main-title {
 
         letter-spacing: 2px;
-
     }
-
 
     .subtitle {
 
         letter-spacing: 2px;
-
     }
 
 }
@@ -1505,28 +1459,21 @@ footer strong {
     .statistics {
 
         grid-template-columns: 1fr;
-
     }
-
 
     .province-header {
 
         padding: 17px;
-
     }
-
 
     .province-content {
 
         padding: 12px;
-
     }
-
 
     .minister {
 
         padding: 17px;
-
     }
 
 }
@@ -1536,7 +1483,7 @@ footer strong {
 </head>
 
 
-<body>
+<body id="top">
 
 
 <!-- =========================================================
@@ -1668,18 +1615,28 @@ footer strong {
 
         The Domus Curialum, also known as the House of Ministers,
         is the lower house of the bicameral Imperial Assembly of
-        Bristevia. It represents the legislative districts of the
-        Empire and consists of exactly
-        <strong>182 elected Ministers</strong>.
+        Bristevia. It serves as the primary legislative body
+        representing the Empire's
+        <strong>182 legislative districts</strong>.
 
     </p>
 
 
     <p style="margin-top:15px;">
 
-        Each Minister represents one district and is chosen by
-        direct election by the people. The House is presided over
-        by the Speaker of the House.
+        The House consists of exactly
+        <strong>182 elected Ministers</strong>.
+        Each Minister represents one specific district and is
+        chosen through direct election by the people.
+
+    </p>
+
+
+    <p style="margin-top:15px;">
+
+        Each district contains a population of approximately
+        <strong>200,000 inhabitants</strong>, subject to
+        constitutional apportionment by the Imperial Assembly.
 
     </p>
 
@@ -1704,24 +1661,35 @@ footer strong {
 
         <div class="image-box">
 
-
-            <h3>
-                DOMUS CURIALUM
-            </h3>
-
-
-            <p>
-                Official Chamber / House Image
-            </p>
-
-
-            <a
-                href="domus-image1.html"
-                class="image-button"
+            <img
+                src="domus-image1.jpg"
+                alt="Domus Curialum Official Chamber"
+                class="domus-image"
+                onerror="this.style.display='none';"
             >
-                OPEN DOMUS IMAGE 1
-            </a>
 
+            <div class="image-overlay"></div>
+
+
+            <div class="image-content">
+
+                <h3>
+                    DOMUS CURIALUM
+                </h3>
+
+                <p>
+                    Official Chamber of the House of Ministers
+                </p>
+
+                <a
+                    href="domus-image1.jpg"
+                    target="_blank"
+                    class="image-button"
+                >
+                    VIEW IMAGE 1
+                </a>
+
+            </div>
 
         </div>
 
@@ -1733,24 +1701,35 @@ footer strong {
 
         <div class="image-box">
 
-
-            <h3>
-                IMPERIAL ASSEMBLY
-            </h3>
-
-
-            <p>
-                Official Seal, Chamber, or Assembly Image
-            </p>
-
-
-            <a
-                href="domus-image2.html"
-                class="image-button"
+            <img
+                src="domus-image2.jpg"
+                alt="Imperial Assembly Official Image"
+                class="domus-image"
+                onerror="this.style.display='none';"
             >
-                OPEN DOMUS IMAGE 2
-            </a>
 
+            <div class="image-overlay"></div>
+
+
+            <div class="image-content">
+
+                <h3>
+                    IMPERIAL ASSEMBLY
+                </h3>
+
+                <p>
+                    Official Assembly / House Image
+                </p>
+
+                <a
+                    href="domus-image2.jpg"
+                    target="_blank"
+                    class="image-button"
+                >
+                    VIEW IMAGE 2
+                </a>
+
+            </div>
 
         </div>
 
@@ -1770,7 +1749,10 @@ footer strong {
 
     <div class="stat">
 
-        <span class="stat-number">
+        <span
+            class="stat-number"
+            id="totalStat"
+        >
             182
         </span>
 
@@ -1845,6 +1827,10 @@ footer strong {
         <div class="tool-grid">
 
 
+            <!-- =============================================
+                 PROVINCE JUMP
+            ============================================== -->
+
             <div class="tool-group">
 
 
@@ -1871,6 +1857,10 @@ footer strong {
 
 
 
+            <!-- =============================================
+                 SEARCH
+            ============================================== -->
+
             <div class="tool-group">
 
 
@@ -1893,6 +1883,7 @@ footer strong {
 
 
         </div>
+
 
     </div>
 
@@ -2026,42 +2017,32 @@ footer strong {
 
 
         <h2>
-            LEGISLATIVE AND FISCAL POWERS
+            1. COMPOSITION AND REPRESENTATION
         </h2>
 
 
         <ul>
 
-
             <li>
-                Appropriation, revenue, tariff, and public-debt
-                measures must originate in the Domus Curialum.
+                The Domus Curialum consists of exactly
+                <strong>182 Ministers</strong>.
             </li>
 
-
             <li>
-                The House possesses the exclusive power to initiate
-                impeachment proceedings.
+                Each Minister represents one specific
+                legislative district.
             </li>
 
-
             <li>
-                Articles of Impeachment require the vote of
-                one-third (1/3) of all Ministers.
+                Each district contains approximately
+                200,000 inhabitants.
             </li>
 
-
             <li>
-                The House participates jointly with the
-                Magnum Consilium in the election of the Prime Minister.
+                Ministers are elective officials chosen through
+                direct elections by the people of their respective
+                districts.
             </li>
-
-
-            <li>
-                Imperial Cabinet Ministers are selected from the
-                membership of the Domus Curialum.
-            </li>
-
 
         </ul>
 
@@ -2074,7 +2055,7 @@ footer strong {
 
 
         <h2>
-            SPEAKER OF THE HOUSE
+            2. LEADERSHIP AND GOVERNANCE
         </h2>
 
 
@@ -2089,15 +2070,12 @@ footer strong {
 
         <p style="margin-top:15px;">
 
-
             <strong style="color:#d4af37;">
                 Winston Churchill
             </strong>
 
-
             currently serves as Speaker of the House while
             representing the 3rd District of Stephara.
-
 
         </p>
 
@@ -2105,8 +2083,16 @@ footer strong {
         <p style="margin-top:15px;">
 
             Upon nomination as Speaker, the Speaker abandons
-            political-party affiliation for the purpose of ensuring
-            impartial administration of the House.
+            political-party affiliation for the purpose of
+            ensuring impartial administration of the House.
+
+        </p>
+
+
+        <p style="margin-top:15px;">
+
+            The Speaker manages floor debates, tracks ministerial
+            decrees, and maintains legislative order.
 
         </p>
 
@@ -2119,7 +2105,107 @@ footer strong {
 
 
         <h2>
-            ELECTION AND ASSUMPTION OF OFFICE
+            3. LEGISLATIVE AND FISCAL POWERS
+        </h2>
+
+
+        <ul>
+
+
+            <li>
+
+                All appropriation, revenue, or tariff decrees,
+                as well as measures authorizing increases in
+                public debt, must originate exclusively in the
+                Domus Curialum.
+
+            </li>
+
+
+            <li>
+
+                The House possesses the exclusive power to initiate
+                cases of impeachment against high-ranking officials.
+
+            </li>
+
+
+            <li>
+
+                Articles of Impeachment require the vote of
+                one-third (1/3) of all Ministers.
+
+            </li>
+
+
+            <li>
+
+                The House participates jointly with the
+                Magnum Consilium in the election of the Prime
+                Minister from among the members of either house.
+
+            </li>
+
+
+            <li>
+
+                Election of the Prime Minister requires a
+                two-thirds (2/3) majority vote.
+
+            </li>
+
+
+            <li>
+
+                All Imperial Cabinet Ministers must be chosen
+                from the membership of the Domus Curialum.
+
+            </li>
+
+
+        </ul>
+
+
+    </div>
+
+
+
+    <div class="info-panel">
+
+
+        <h2>
+            4. COMMISSION ON APPOINTMENTS
+        </h2>
+
+
+        <p>
+
+            The Domus Curialum provides twelve of its members to
+            the Commission on Appointments.
+
+        </p>
+
+
+        <p style="margin-top:15px;">
+
+            These members are elected based on proportional
+            representation from registered political parties.
+
+            They serve alongside twelve members from the
+            Magnum Consilium to confirm key officials of the Realm.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="info-panel">
+
+
+        <h2>
+            5. ELECTION AND ASSUMPTION OF OFFICE
         </h2>
 
 
@@ -2143,11 +2229,13 @@ footer strong {
 
         <p>
 
-            Candidates appear together with their registered
-            political party. Recognized political organizations
-            include Conservative, Liberal, Progressive Alliance,
-            Green, Republican, Democratic, Labor, National Unity,
-            Centrist, Socialist, Communist, Radical, and other
+            Every candidate presents their name together with
+            their registered political party.
+
+            Recognized political organizations include Conservative,
+            Liberal, Progressive Alliance, Green, Republican,
+            Democratic, Labor, National Unity, Centrist,
+            Socialist, Communist, Radical, and other
             constitutionally recognized parties.
 
         </p>
@@ -2190,7 +2278,7 @@ footer strong {
 
 
         <h2>
-            RULES OF THE HOUSE
+            6. KEY RULES AND PROCEDURES
         </h2>
 
 
@@ -2215,30 +2303,70 @@ footer strong {
 
             <li>
 
-                With a two-thirds vote, the House may suspend a
-                Minister for up to sixty days.
+                With a two-thirds vote, the House may suspend
+                a Minister for up to sixty days.
 
             </li>
 
 
             <li>
 
-                The House may expel a member for disorderly conduct
-                by the constitutionally required vote.
+                The House may expel a member for disorderly
+                conduct by the constitutionally required vote.
 
             </li>
 
 
             <li>
 
-                When the Souverion proposes legislation, the proposal
-                is referred to a member of the Domus Curialum for
-                formal introduction.
+                If the Souverion wishes to propose legislation,
+                the proposal is referred to a member of the
+                Domus Curialum for formal introduction.
+
+            </li>
+
+
+            <li>
+
+                No candidate may simultaneously be elected to
+                more than one position.
 
             </li>
 
 
         </ul>
+
+
+    </div>
+
+
+
+    <div class="info-panel">
+
+
+        <h2>
+            7. CABINET ELIGIBILITY
+        </h2>
+
+
+        <p>
+
+            The 182 Ministers constitute the exclusive legislative
+            pool from which Imperial Cabinet Ministers may be
+            selected.
+
+        </p>
+
+
+        <p style="margin-top:15px;">
+
+            Once selected by the Prime Minister for a cabinet
+            portfolio, such as Justice, Finance, Foreign Affairs,
+            or another Imperial department, the Minister is
+            subject to confirmation by the Commission on
+            Appointments.
+
+        </p>
 
 
     </div>
@@ -2287,6 +2415,7 @@ footer strong {
 <a
     href="#top"
     class="back-top"
+    aria-label="Back to top"
 >
     ↑
 </a>
@@ -2297,7 +2426,9 @@ footer strong {
 
 /* =========================================================
    COMPLETE DOMUS CURIALUM ROSTER
-   182 NAMED MINISTERS
+   EXACTLY 182 MINISTERIAL SEATS
+   30 PROVINCES
+   5 IMPERIAL REGIONS
 ========================================================= */
 
 const provinces = [
@@ -2832,7 +2963,7 @@ const provinces = [
 
         ["4th District","William Tyndale","Progressive Alliance"],
 
-        ["5th District","Richard the Lionheart (Reassigned Seat)","National Unity"]
+        ["5th District","Richard the Lionheart (Reassigned Minister Seat)","National Unity"]
 
     ]
 
@@ -3034,6 +3165,51 @@ const provinceJump =
 
 
 /* =========================================================
+   PROVINCE ID FUNCTION
+========================================================= */
+
+function createProvinceID(name) {
+
+    return "province-" +
+
+        name
+            .toLowerCase()
+            .replace(
+                /[^a-z0-9]+/g,
+                "-"
+            )
+            .replace(
+                /-+$/g,
+                ""
+            );
+
+}
+
+
+/* =========================================================
+   TOTAL MINISTER COUNT
+========================================================= */
+
+function getTotalMinisters() {
+
+    return provinces.reduce(
+
+        (
+            total,
+            province
+        ) =>
+
+            total +
+            province.ministers.length,
+
+        0
+
+    );
+
+}
+
+
+/* =========================================================
    POPULATE PROVINCE MENU
 ========================================================= */
 
@@ -3104,15 +3280,9 @@ function renderRoster() {
 
 
             section.id =
-
-                "province-" +
-
-                province.name
-                    .toLowerCase()
-                    .replace(
-                        /[^a-z0-9]+/g,
-                        "-"
-                    );
+                createProvinceID(
+                    province.name
+                );
 
 
             section.innerHTML = `
@@ -3155,7 +3325,6 @@ function renderRoster() {
                 province.ministers.length === 0
             ) {
 
-
                 content.innerHTML = `
 
                     <p style="
@@ -3166,12 +3335,11 @@ function renderRoster() {
 
                         No named Minister is currently
                         recorded for this province in the
-                        supplied roster.
+                        supplied 2026 roster.
 
                     </p>
 
                 `;
-
 
             }
 
@@ -3316,7 +3484,7 @@ function renderRoster() {
 
 
 /* =========================================================
-   SEARCH
+   SEARCH MINISTERS
 ========================================================= */
 
 function searchMinisters() {
@@ -3502,7 +3670,7 @@ function filterRegion(
 
 
 /* =========================================================
-   JUMP TO PROVINCE
+   JUMP DIRECTLY TO PROVINCE
 ========================================================= */
 
 function jumpToProvince() {
@@ -3518,6 +3686,8 @@ function jumpToProvince() {
 
     }
 
+
+    /* Reset region filter */
 
     currentRegion =
         "ALL";
@@ -3547,19 +3717,15 @@ function jumpToProvince() {
         );
 
 
+    /* Render all provinces */
+
     renderRoster();
 
 
     const id =
-
-        "province-" +
-
-        provinceName
-            .toLowerCase()
-            .replace(
-                /[^a-z0-9]+/g,
-                "-"
-            );
+        createProvinceID(
+            provinceName
+        );
 
 
     const target =
@@ -3579,6 +3745,8 @@ function jumpToProvince() {
 
         });
 
+
+        /* Highlight selected province */
 
         target.style.boxShadow =
             "0 0 35px rgba(212,175,55,0.7)";
@@ -3601,34 +3769,10 @@ function jumpToProvince() {
 
 
             },
-            2000
+            2200
         );
 
     }
-
-}
-
-
-/* =========================================================
-   TOTAL MINISTER COUNT
-========================================================= */
-
-function getTotalMinisters() {
-
-
-    return provinces.reduce(
-
-        (
-            total,
-            province
-        ) =>
-
-            total +
-            province.ministers.length,
-
-        0
-
-    );
 
 }
 
@@ -3666,15 +3810,46 @@ function updateCount() {
 renderRoster();
 
 
+/* Display verified total */
+
+const verifiedTotal =
+    getTotalMinisters();
+
+
+document.getElementById(
+    "totalStat"
+).textContent =
+    verifiedTotal;
+
+
 console.log(
-
     "DOMUS CURIALUM TOTAL:",
-
-    getTotalMinisters(),
-
+    verifiedTotal,
     "MINISTERS"
-
 );
+
+
+/* =========================================================
+   ROSTER VALIDATION
+========================================================= */
+
+if (verifiedTotal === 182) {
+
+    console.log(
+        "✓ VERIFIED: Domus Curialum contains exactly 182 seats."
+    );
+
+}
+
+else {
+
+    console.warn(
+        "WARNING: Roster currently contains",
+        verifiedTotal,
+        "Minister entries instead of 182."
+    );
+
+}
 
 </script>
 
