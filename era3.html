@@ -45,7 +45,6 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 5px;
-
       padding: 18px 15px;
 
       background:
@@ -67,12 +66,9 @@
       font-family: "Cinzel", serif;
       font-size: 12px;
       letter-spacing: 1.5px;
-
       color: #f5e6a8;
       text-decoration: none;
-
       padding: 10px 15px;
-
       transition: 0.3s ease;
     }
 
@@ -92,7 +88,6 @@
 
     .era-hero {
       position: relative;
-
       min-height: 72vh;
 
       display: flex;
@@ -100,12 +95,22 @@
       justify-content: center;
 
       text-align: center;
-
       padding: 90px 25px;
 
       /*
-        HISTORICAL ERA IMAGE
-        Replace era3-history.jpg with your historical image.
+        =====================================================
+        EASY IMAGE UPLOAD
+        =====================================================
+
+        You do NOT need to upload the image to GitHub.
+
+        Click the "UPLOAD HERO IMAGE" button shown on the
+        website and select your picture from your device.
+
+        The selected image will automatically appear here.
+
+        The image is stored in your browser only.
+        =====================================================
       */
 
       background:
@@ -113,12 +118,14 @@
           rgba(1, 12, 28, 0.55),
           rgba(1, 12, 28, 0.88)
         ),
-        url("era3-history.jpg");
+        #020b18;
 
       background-size: cover;
       background-position: center;
 
       border-bottom: 1px solid rgba(212,175,55,0.45);
+
+      overflow: hidden;
     }
 
     .era-hero::before {
@@ -140,13 +147,12 @@
     .era-hero-content {
       position: relative;
       z-index: 2;
-
       max-width: 1150px;
+      width: 100%;
     }
 
     .imperial-symbol {
       font-size: 65px;
-
       color: #d4af37;
 
       text-shadow:
@@ -158,14 +164,10 @@
 
     .era-label {
       font-family: "Cinzel", serif;
-
       font-size: 15px;
       letter-spacing: 6px;
-
       color: #d4af37;
-
       text-transform: uppercase;
-
       margin-bottom: 20px;
     }
 
@@ -175,7 +177,6 @@
       font-size: clamp(35px, 6vw, 72px);
 
       line-height: 1.12;
-
       letter-spacing: 3px;
 
       color: #f7e7a9;
@@ -244,6 +245,111 @@
     }
 
     /* =========================
+       IMAGE UPLOAD CONTROLS
+       ========================= */
+
+    .image-upload-panel {
+      position: relative;
+      z-index: 5;
+
+      margin: 25px auto 0;
+
+      max-width: 900px;
+
+      padding: 15px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .upload-button {
+      display: inline-block;
+
+      padding: 11px 18px;
+
+      border: 1px solid rgba(212,175,55,0.6);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(5,35,68,0.95),
+          rgba(2,15,32,0.95)
+        );
+
+      color: #f7e7a9;
+
+      font-family: "Cinzel", serif;
+
+      font-size: 11px;
+
+      letter-spacing: 1px;
+
+      cursor: pointer;
+
+      transition: 0.3s ease;
+    }
+
+    .upload-button:hover {
+      color: #ffffff;
+
+      border-color: #d4af37;
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .upload-input {
+      display: none;
+    }
+
+    .remove-image-button {
+      display: none;
+
+      padding: 11px 18px;
+
+      border: 1px solid rgba(178,31,45,0.7);
+
+      background:
+        rgba(50,10,18,0.9);
+
+      color: #f3c8c8;
+
+      font-family: "Cinzel", serif;
+
+      font-size: 11px;
+
+      letter-spacing: 1px;
+
+      cursor: pointer;
+    }
+
+    .remove-image-button:hover {
+      background: rgba(100,15,25,0.9);
+      color: #ffffff;
+    }
+
+    .upload-note {
+      width: 100%;
+
+      text-align: center;
+
+      font-size: 13px;
+
+      color: #bcb7a5;
+
+      letter-spacing: 0.5px;
+    }
+
+    /* =========================
        CONTENT
        ========================= */
 
@@ -285,7 +391,7 @@
 
     /* =========================
        HISTORICAL IMAGE GALLERY
-       3 IMAGE LIMIT
+       EXACTLY 3 IMAGE SLOTS
        ========================= */
 
     .historical-gallery {
@@ -321,6 +427,7 @@
 
     .history-image img {
       width: 100%;
+
       height: 100%;
 
       min-height: 220px;
@@ -340,6 +447,37 @@
       filter:
         brightness(1.08)
         saturate(1.08);
+    }
+
+    .image-placeholder {
+      min-height: 220px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      text-align: center;
+
+      padding: 25px;
+
+      color: #d4af37;
+
+      font-family: "Cinzel", serif;
+
+      font-size: 14px;
+
+      letter-spacing: 1.5px;
+
+      line-height: 1.7;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(8,46,87,0.85),
+          rgba(1,13,29,0.98)
+        );
     }
 
     .image-caption {
@@ -365,6 +503,41 @@
       font-size: 13px;
 
       letter-spacing: 1px;
+    }
+
+    .gallery-upload {
+      position: absolute;
+
+      top: 12px;
+      right: 12px;
+
+      z-index: 3;
+
+      padding: 8px 11px;
+
+      border: 1px solid rgba(212,175,55,0.65);
+
+      background: rgba(1,12,27,0.88);
+
+      color: #f7e7a9;
+
+      font-family: "Cinzel", serif;
+
+      font-size: 10px;
+
+      letter-spacing: 0.8px;
+
+      cursor: pointer;
+
+      transition: 0.3s ease;
+    }
+
+    .gallery-upload:hover {
+      background: rgba(212,175,55,0.2);
+
+      color: #ffffff;
+
+      border-color: #d4af37;
     }
 
     /* =========================
@@ -569,6 +742,70 @@
     }
 
     /* =========================
+       ERA NAVIGATION
+       ========================= */
+
+    .era-navigation {
+      max-width: 1100px;
+
+      margin: 0 auto 80px;
+
+      padding: 0 25px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .era-navigation a {
+      flex: 1;
+
+      text-align: center;
+
+      padding: 20px;
+
+      text-decoration: none;
+
+      font-family: "Cinzel", serif;
+
+      color: #f5e6a8;
+
+      letter-spacing: 1px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(5,35,68,0.9),
+          rgba(2,15,32,0.95)
+        );
+
+      border: 1px solid rgba(212,175,55,0.35);
+
+      transition: 0.3s ease;
+    }
+
+    .era-navigation a:hover {
+      border-color: #d4af37;
+
+      color: #ffffff;
+
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .era-navigation small {
+      font-size: 11px;
+
+      color: #aaa99f;
+
+      letter-spacing: 1px;
+    }
+
+    /* =========================
        FOOTER
        ========================= */
 
@@ -605,7 +842,8 @@
       }
 
       .history-image,
-      .history-image img {
+      .history-image img,
+      .image-placeholder {
         min-height: 240px;
       }
 
@@ -616,13 +854,21 @@
       .era-content {
         padding: 65px 18px;
       }
+
+      .era-navigation {
+        flex-direction: column;
+        padding: 0 18px;
+      }
     }
 
     @media (max-width: 700px) {
 
+      .main-navigation {
+        padding: 10px 5px;
+      }
+
       .main-navigation a {
         font-size: 10px;
-
         padding: 8px 9px;
       }
 
@@ -632,7 +878,6 @@
 
       .era-label {
         font-size: 12px;
-
         letter-spacing: 4px;
       }
 
@@ -658,6 +903,16 @@
 
       .history-section p {
         font-size: 18px;
+      }
+
+      .upload-button,
+      .remove-image-button {
+        font-size: 10px;
+        padding: 10px 13px;
+      }
+
+      .upload-note {
+        font-size: 12px;
       }
     }
   </style>
@@ -694,7 +949,7 @@
        ERA 3 HERO
        ========================= -->
 
-  <header class="era-hero">
+  <header class="era-hero" id="heroImage">
 
     <div class="era-hero-content">
 
@@ -725,6 +980,36 @@
         a contested archipelagic corridor shaped by foreign
         kingdoms, migration, displacement, and emerging regional identity.
       </p>
+
+      <!-- HERO IMAGE UPLOAD -->
+
+      <div class="image-upload-panel">
+
+        <label for="heroUpload" class="upload-button">
+          ⚜ UPLOAD HERO IMAGE
+        </label>
+
+        <input
+          type="file"
+          id="heroUpload"
+          class="upload-input"
+          accept="image/*"
+        >
+
+        <button
+          type="button"
+          id="removeHero"
+          class="remove-image-button"
+        >
+          REMOVE IMAGE
+        </button>
+
+        <div class="upload-note">
+          Select an image from your phone, tablet, or computer.
+          No image needs to be uploaded to the GitHub repository.
+        </div>
+
+      </div>
 
     </div>
 
@@ -761,13 +1046,40 @@
 
     <section class="historical-gallery">
 
-      <!-- HISTORICAL IMAGE 1 -->
+
+      <!-- =========================
+           IMAGE 1
+           ========================= -->
 
       <div class="history-image">
 
+        <div
+          class="image-placeholder"
+          id="placeholder1"
+        >
+          IMAGE 1<br>
+          THE CENTRAL ARCHIPELAGO
+        </div>
+
         <img
-          src="era3-history-1.jpg"
+          id="galleryImage1"
+          src=""
           alt="Historical depiction of the Central Archipelago during Era 3"
+          style="display:none;"
+        >
+
+        <label
+          for="upload1"
+          class="gallery-upload"
+        >
+          UPLOAD
+        </label>
+
+        <input
+          type="file"
+          id="upload1"
+          class="upload-input"
+          accept="image/*"
         >
 
         <div class="image-caption">
@@ -777,13 +1089,39 @@
       </div>
 
 
-      <!-- HISTORICAL IMAGE 2 -->
+      <!-- =========================
+           IMAGE 2
+           ========================= -->
 
       <div class="history-image">
 
+        <div
+          class="image-placeholder"
+          id="placeholder2"
+        >
+          IMAGE 2<br>
+          FESTONA & THE STEPHARA STRAIT
+        </div>
+
         <img
-          src="era3-history-2.jpg"
+          id="galleryImage2"
+          src=""
           alt="Historical depiction of Festona and the Stephara Strait"
+          style="display:none;"
+        >
+
+        <label
+          for="upload2"
+          class="gallery-upload"
+        >
+          UPLOAD
+        </label>
+
+        <input
+          type="file"
+          id="upload2"
+          class="upload-input"
+          accept="image/*"
         >
 
         <div class="image-caption">
@@ -793,13 +1131,39 @@
       </div>
 
 
-      <!-- HISTORICAL IMAGE 3 -->
+      <!-- =========================
+           IMAGE 3
+           ========================= -->
 
       <div class="history-image">
 
+        <div
+          class="image-placeholder"
+          id="placeholder3"
+        >
+          IMAGE 3<br>
+          THE NORTHERN ALPINE ARC
+        </div>
+
         <img
-          src="era3-history-3.jpg"
+          id="galleryImage3"
+          src=""
           alt="Historical depiction of northern alpine migration and kingdoms"
+          style="display:none;"
+        >
+
+        <label
+          for="upload3"
+          class="gallery-upload"
+        >
+          UPLOAD
+        </label>
+
+        <input
+          type="file"
+          id="upload3"
+          class="upload-input"
+          accept="image/*"
         >
 
         <div class="image-caption">
@@ -1260,6 +1624,30 @@
 
 
   <!-- =========================
+       ERA NAVIGATION
+       ========================= -->
+
+  <div class="era-navigation">
+
+    <a href="era2.html">
+      ← ERA II<br>
+      <small>AGE OF IMPERIAL ASCENT</small>
+    </a>
+
+    <a href="history.html">
+      HISTORY INDEX<br>
+      <small>FOURTEEN ERAS</small>
+    </a>
+
+    <a href="era4.html">
+      ERA IV<br>
+      <small>NEXT ERA →</small>
+    </a>
+
+  </div>
+
+
+  <!-- =========================
        FOOTER
        ========================= -->
 
@@ -1277,6 +1665,257 @@
     </p>
 
   </footer>
+
+
+  <!-- =====================================================
+       IMAGE UPLOAD SYSTEM
+       =====================================================
+
+       IMPORTANT:
+
+       This system allows you to select images directly from
+       your device while viewing the website.
+
+       The images are NOT uploaded to GitHub.
+
+       The images are stored locally in the browser using
+       localStorage as Base64 data.
+
+       Therefore:
+
+       • No image files are required in your repository.
+       • You can replace the images whenever you want.
+       • The image remains after refreshing the page on the
+         same browser/device.
+       • Other visitors will NOT automatically see your
+         uploaded images because localStorage is browser-specific.
+
+       If you want EVERY visitor to see the same uploaded
+       images, you would need an online image-storage service.
+       ===================================================== -->
+
+  <script>
+
+    /* =====================================================
+       HERO IMAGE UPLOAD
+       ===================================================== */
+
+    const heroUpload = document.getElementById("heroUpload");
+    const heroImage = document.getElementById("heroImage");
+    const removeHero = document.getElementById("removeHero");
+
+    heroUpload.addEventListener("change", function () {
+
+      const file = this.files[0];
+
+      if (!file) return;
+
+      if (!file.type.startsWith("image/")) {
+        alert("Please select an image file.");
+        return;
+      }
+
+      const reader = new FileReader();
+
+      reader.onload = function (event) {
+
+        const imageData = event.target.result;
+
+        heroImage.style.backgroundImage =
+          `
+          linear-gradient(
+            rgba(1, 12, 28, 0.55),
+            rgba(1, 12, 28, 0.88)
+          ),
+          url("${imageData}")
+          `;
+
+        try {
+          localStorage.setItem(
+            "bristevia_era3_hero",
+            imageData
+          );
+        } catch (error) {
+          console.warn(
+            "Image could not be saved permanently in this browser.",
+            error
+          );
+        }
+
+        removeHero.style.display = "inline-block";
+
+      };
+
+      reader.readAsDataURL(file);
+
+    });
+
+
+    /* =====================================================
+       REMOVE HERO IMAGE
+       ===================================================== */
+
+    removeHero.addEventListener("click", function () {
+
+      heroImage.style.backgroundImage =
+        `
+        linear-gradient(
+          rgba(1, 12, 28, 0.55),
+          rgba(1, 12, 28, 0.88)
+        ),
+        #020b18
+        `;
+
+      localStorage.removeItem(
+        "bristevia_era3_hero"
+      );
+
+      heroUpload.value = "";
+
+      removeHero.style.display = "none";
+
+    });
+
+
+    /* =====================================================
+       LOAD HERO IMAGE WHEN PAGE OPENS
+       ===================================================== */
+
+    const savedHero =
+      localStorage.getItem("bristevia_era3_hero");
+
+    if (savedHero) {
+
+      heroImage.style.backgroundImage =
+        `
+        linear-gradient(
+          rgba(1, 12, 28, 0.55),
+          rgba(1, 12, 28, 0.88)
+        ),
+        url("${savedHero}")
+        `;
+
+      removeHero.style.display = "inline-block";
+
+    }
+
+
+    /* =====================================================
+       GALLERY IMAGE FUNCTION
+       ===================================================== */
+
+    function setupGalleryUpload(
+      inputId,
+      imageId,
+      placeholderId,
+      storageKey
+    ) {
+
+      const input =
+        document.getElementById(inputId);
+
+      const image =
+        document.getElementById(imageId);
+
+      const placeholder =
+        document.getElementById(placeholderId);
+
+
+      input.addEventListener("change", function () {
+
+        const file = this.files[0];
+
+        if (!file) return;
+
+        if (!file.type.startsWith("image/")) {
+          alert("Please select an image file.");
+          return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+
+          const imageData =
+            event.target.result;
+
+          image.src = imageData;
+
+          image.style.display = "block";
+
+          placeholder.style.display = "none";
+
+
+          try {
+
+            localStorage.setItem(
+              storageKey,
+              imageData
+            );
+
+          } catch (error) {
+
+            console.warn(
+              "Image could not be saved permanently in this browser.",
+              error
+            );
+
+          }
+
+        };
+
+        reader.readAsDataURL(file);
+
+      });
+
+
+      /* LOAD SAVED IMAGE */
+
+      const savedImage =
+        localStorage.getItem(storageKey);
+
+      if (savedImage) {
+
+        image.src = savedImage;
+
+        image.style.display = "block";
+
+        placeholder.style.display = "none";
+
+      }
+
+    }
+
+
+    /* =====================================================
+       INITIALIZE THE THREE IMAGE SLOTS
+       ===================================================== */
+
+    setupGalleryUpload(
+      "upload1",
+      "galleryImage1",
+      "placeholder1",
+      "bristevia_era3_image1"
+    );
+
+
+    setupGalleryUpload(
+      "upload2",
+      "galleryImage2",
+      "placeholder2",
+      "bristevia_era3_image2"
+    );
+
+
+    setupGalleryUpload(
+      "upload3",
+      "galleryImage3",
+      "placeholder3",
+      "bristevia_era3_image3"
+    );
+
+
+  </script>
 
 </body>
 </html>
