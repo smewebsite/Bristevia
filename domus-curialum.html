@@ -1,2492 +1,1199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Domus Curialum | Imperial Sovereign of Bristevia</title>
+<title>Domus Curialum | Imperial Sovereign of Bristevia</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-
+<style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
     }
 
     body {
-      font-family: "Cormorant Garamond", serif;
-
-      background:
-        radial-gradient(
-          circle at center,
-          rgba(12, 61, 115, 0.45),
-          rgba(2, 12, 30, 0.97)
-        ),
-        #020b18;
-
-      color: #f8f0d0;
-      min-height: 100vh;
-      overflow-x: hidden;
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        background: #f4f1e8;
+        color: #222;
     }
 
-    /* =====================================================
-       HEADER / HERO
-       ===================================================== */
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+        background: linear-gradient(135deg, #171717, #3b3021);
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+        border-bottom: 5px solid #b9964a;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 42px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    header p {
+        margin: 8px 0 0;
+        font-size: 17px;
+        color: #e8d7aa;
+    }
+
+    /* =========================
+       MAIN NAVIGATION
+    ========================= */
+
+    nav {
+        background: #111;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 3px 10px rgba(0,0,0,.25);
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 9px 14px;
+        border-radius: 4px;
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        background: #b9964a;
+        color: #111;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-
-      position: relative;
-
-      min-height: 75vh;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      text-align: center;
-
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          rgba(1, 15, 36, 0.72),
-          rgba(1, 15, 36, 0.90)
-        ),
-        url("bristevia-flag.jpg");
-
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-
-      border-bottom: 1px solid rgba(212,175,55,0.45);
+        max-width: 1250px;
+        margin: 30px auto;
+        padding: 0 20px;
     }
 
-    .hero::before {
-
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      background:
-        radial-gradient(
-          circle at center,
-          rgba(20,90,160,0.18),
-          rgba(0,0,0,0.72)
-        );
-
-      z-index: 1;
+    .hero-box {
+        background: white;
+        border: 1px solid #d4c6a4;
+        border-left: 7px solid #b9964a;
+        padding: 35px;
+        box-shadow: 0 5px 18px rgba(0,0,0,.08);
     }
 
-    .hero-content {
-
-      position: relative;
-
-      z-index: 2;
-
-      width: 100%;
-      max-width: 1150px;
-
-      padding: 70px 20px 100px;
+    .hero-box h2 {
+        margin-top: 0;
+        font-size: 32px;
+        color: #3b3021;
     }
 
-    /* =====================================================
-       BRISTEVIA SYMBOL
-       ===================================================== */
-
-    .bristevia-symbol {
-
-      width: 125px;
-      height: 125px;
-
-      margin: 0 auto 25px;
-
-      border: 2px solid #d4af37;
-
-      border-radius: 50%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(8,46,87,0.9),
-          rgba(1,15,35,0.95)
-        );
-
-      box-shadow:
-        0 0 0 6px rgba(212,175,55,0.07),
-        0 0 30px rgba(212,175,55,0.35);
-
-      overflow: hidden;
+    .hero-box p {
+        line-height: 1.7;
+        font-size: 16px;
     }
 
-    /*
-       ======================================================
-       BRISTEVIA SYMBOL IMAGE SPACE
+    /* =========================
+       IMAGE UPLOAD
+    ========================= */
 
-       Replace "bristevia-symbol.png" with your actual image.
-
-       Example:
-       <img src="bristevia-symbol.png">
-
-       ======================================================
-    */
-
-    .bristevia-symbol img {
-
-      width: 85%;
-      height: 85%;
-
-      object-fit: contain;
+    .image-section {
+        max-width: 1250px;
+        margin: 25px auto;
+        padding: 0 20px;
     }
-
-    .symbol-placeholder {
-
-      font-family: "Cinzel", serif;
-
-      font-size: 46px;
-
-      color: #d4af37;
-
-      text-shadow:
-        0 0 15px rgba(212,175,55,0.8);
-    }
-
-    /* =====================================================
-       TITLES
-       ===================================================== */
-
-    .small-title {
-
-      font-family: "Cinzel", serif;
-
-      font-size: 14px;
-
-      letter-spacing: 6px;
-
-      color: #d4af37;
-
-      text-transform: uppercase;
-
-      margin-bottom: 20px;
-    }
-
-    .main-title {
-
-      font-family: "Cinzel", serif;
-
-      font-size: clamp(36px, 6vw, 76px);
-
-      font-weight: 700;
-
-      letter-spacing: 4px;
-
-      color: #f7e7a9;
-
-      text-shadow:
-        0 3px 0 #8b6914,
-        0 0 20px rgba(212,175,55,0.35);
-
-      line-height: 1.05;
-    }
-
-    .subtitle {
-
-      font-family: "Cinzel", serif;
-
-      margin-top: 18px;
-
-      font-size: clamp(18px, 3vw, 30px);
-
-      letter-spacing: 4px;
-
-      color: #ffffff;
-    }
-
-    .description {
-
-      max-width: 850px;
-
-      margin: 30px auto 0;
-
-      color: #ded8c6;
-
-      font-size: 20px;
-
-      line-height: 1.8;
-    }
-
-    .divider {
-
-      width: 300px;
-
-      height: 2px;
-
-      margin: 35px auto;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          #d4af37,
-          #fff1a8,
-          #d4af37,
-          transparent
-        );
-
-      box-shadow:
-        0 0 15px rgba(212,175,55,0.5);
-    }
-
-    /* =====================================================
-       PORTAL NAVIGATION
-       ===================================================== */
-
-    .assembly-nav {
-
-      position: sticky;
-
-      top: 0;
-
-      z-index: 100;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      flex-wrap: wrap;
-
-      padding: 15px;
-
-      background:
-        linear-gradient(
-          rgba(2,18,42,0.97),
-          rgba(2,11,27,0.99)
-        );
-
-      border-top: 1px solid rgba(212,175,55,0.35);
-
-      border-bottom: 1px solid rgba(212,175,55,0.45);
-
-      box-shadow:
-        0 5px 25px rgba(0,0,0,0.5);
-    }
-
-    .assembly-nav a {
-
-      font-family: "Cinzel", serif;
-
-      font-size: 12px;
-
-      font-weight: 600;
-
-      letter-spacing: 1.2px;
-
-      color: #f5e6a8;
-
-      text-decoration: none;
-
-      padding: 10px 16px;
-
-      transition: 0.3s ease;
-    }
-
-    .assembly-nav a:hover {
-
-      color: white;
-
-      text-shadow:
-        0 0 10px rgba(212,175,55,0.8);
-
-      transform: translateY(-2px);
-    }
-
-    .assembly-nav .active {
-
-      color: #d4af37;
-
-      border-bottom: 2px solid #d4af37;
-    }
-
-    /* =====================================================
-       MAIN CONTENT
-       ===================================================== */
-
-    .container {
-
-      width: min(1200px, 92%);
-
-      margin: auto;
-    }
-
-    .section {
-
-      padding: 80px 0;
-
-      border-bottom: 1px solid rgba(212,175,55,0.15);
-    }
-
-    .section-title {
-
-      font-family: "Cinzel", serif;
-
-      color: #d4af37;
-
-      text-align: center;
-
-      font-size: 32px;
-
-      letter-spacing: 4px;
-
-      margin-bottom: 20px;
-    }
-
-    .section-subtitle {
-
-      text-align: center;
-
-      color: #aaa;
-
-      font-size: 18px;
-
-      margin-bottom: 45px;
-    }
-
-    /* =====================================================
-       IMAGE PANELS
-       ===================================================== */
 
     .image-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 25px;
-
-      margin: 40px 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
-    .image-box {
-
-      min-height: 280px;
-
-      border: 1px solid rgba(212,175,55,0.45);
-
-      background:
-        linear-gradient(
-          rgba(2,18,42,0.80),
-          rgba(2,11,27,0.90)
-        );
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      text-align: center;
-
-      overflow: hidden;
-
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.35);
-
-      position: relative;
+    .image-upload {
+        background: white;
+        border: 2px dashed #b9964a;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
     }
 
-    /*
-       =====================================================
-       IMAGE SPACE 1
-
-       Replace:
-
-       assembly-chamber.jpg
-
-       with your Imperial Assembly chamber image.
-       =====================================================
-    */
-
-    .image-box img {
-
-      width: 100%;
-      height: 100%;
-
-      min-height: 280px;
-
-      object-fit: cover;
+    .image-upload h3 {
+        color: #3b3021;
     }
 
-    .image-placeholder {
-
-      position: absolute;
-
-      inset: 0;
-
-      display: flex;
-
-      flex-direction: column;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding: 30px;
-
-      color: #d4af37;
-
-      font-family: "Cinzel", serif;
-
-      letter-spacing: 2px;
+    .image-upload input {
+        margin-top: 10px;
     }
 
-    .image-placeholder span {
-
-      font-size: 48px;
-
-      margin-bottom: 15px;
+    .image-preview {
+        max-width: 100%;
+        max-height: 180px;
+        margin-top: 15px;
+        display: none;
+        border: 1px solid #aaa;
     }
 
-    .image-placeholder p {
+    /* =========================
+       STATISTICS
+    ========================= */
 
-      font-size: 14px;
-
-      color: #aaa;
-
-      letter-spacing: 1px;
+    .stats {
+        max-width: 1250px;
+        margin: 30px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
     }
 
-    /* =====================================================
-       FACT CARDS
-       ===================================================== */
-
-    .facts {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 18px;
-
-      margin-top: 40px;
+    .stat {
+        background: #fff;
+        border-top: 5px solid #b9964a;
+        padding: 22px;
+        text-align: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,.07);
     }
 
-    .fact {
-
-      padding: 25px 15px;
-
-      text-align: center;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(8,46,87,0.8),
-          rgba(2,15,35,0.9)
-        );
-
-      border:
-
-        1px solid rgba(212,175,55,0.28);
-
-      box-shadow:
-        0 8px 25px rgba(0,0,0,0.3);
+    .stat-number {
+        display: block;
+        font-size: 34px;
+        font-weight: bold;
+        color: #3b3021;
     }
 
-    .fact strong {
-
-      display: block;
-
-      font-family: "Cinzel", serif;
-
-      font-size: 30px;
-
-      color: #d4af37;
-
-      margin-bottom: 7px;
+    .stat-label {
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+        color: #666;
+        margin-top: 5px;
     }
 
-    .fact span {
+    /* =========================
+       NAVIGATION TOOL
+    ========================= */
 
-      color: #ccc;
-
-      font-size: 16px;
+    .tools {
+        max-width: 1250px;
+        margin: 30px auto;
+        padding: 0 20px;
     }
 
-    /* =====================================================
-       TEXT CONTENT
-       ===================================================== */
-
-    .content-box {
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(4,28,54,0.92),
-          rgba(2,12,28,0.95)
-        );
-
-      border:
-
-        1px solid rgba(212,175,55,0.2);
-
-      padding: 35px;
-
-      margin-bottom: 30px;
-
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.25);
+    .tool-box {
+        background: #211c16;
+        color: white;
+        padding: 25px;
+        border-radius: 6px;
     }
 
-    .content-box h3 {
-
-      font-family: "Cinzel", serif;
-
-      color: #d4af37;
-
-      font-size: 22px;
-
-      letter-spacing: 2px;
-
-      margin-bottom: 18px;
+    .tool-box h2 {
+        margin-top: 0;
+        color: #e6c873;
     }
 
-    .content-box p {
-
-      color: #d7d7d7;
-
-      font-size: 18px;
-
-      line-height: 1.8;
-
-      margin-bottom: 12px;
+    .tool-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
     }
 
-    .content-box ul {
-
-      margin-left: 25px;
-
-      color: #d7d7d7;
-
-      font-size: 18px;
-
-      line-height: 1.8;
+    select,
+    input[type="search"] {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 4px;
+        font-size: 15px;
+        font-family: Arial, sans-serif;
     }
 
-    /* =====================================================
-       PROVINCE JUMP TOOL
-       ===================================================== */
+    /* =========================
+       REGIONS
+    ========================= */
 
-    .province-tools {
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(8,46,87,0.75),
-          rgba(2,15,35,0.95)
-        );
-
-      border:
-
-        1px solid rgba(212,175,55,0.35);
-
-      padding: 30px;
-
-      margin-bottom: 50px;
-
-      text-align: center;
-
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.35);
+    .regions {
+        max-width: 1250px;
+        margin: 30px auto;
+        padding: 0 20px;
     }
 
-    .province-tools h3 {
-
-      font-family: "Cinzel", serif;
-
-      color: #d4af37;
-
-      letter-spacing: 3px;
-
-      margin-bottom: 20px;
+    .regions h2 {
+        color: #3b3021;
     }
 
-    .province-tools select {
-
-      width: min(600px, 100%);
-
-      padding: 14px 18px;
-
-      background: #061a32;
-
-      color: #f5e6a8;
-
-      border: 1px solid #d4af37;
-
-      font-family: "Cinzel", serif;
-
-      font-size: 14px;
-
-      cursor: pointer;
+    .region-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
-    .province-tools button {
-
-      margin-left: 10px;
-
-      padding: 14px 22px;
-
-      background: #d4af37;
-
-      color: #061426;
-
-      border: none;
-
-      font-family: "Cinzel", serif;
-
-      font-weight: 700;
-
-      cursor: pointer;
-
-      transition: 0.3s ease;
+    .region-button {
+        border: 1px solid #b9964a;
+        background: white;
+        padding: 9px 14px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: bold;
     }
 
-    .province-tools button:hover {
-
-      background: #f7e7a9;
-
-      box-shadow:
-        0 0 15px rgba(212,175,55,0.5);
+    .region-button:hover,
+    .region-button.active {
+        background: #b9964a;
+        color: white;
     }
 
-    /* =====================================================
-       PROVINCE SECTIONS
-       ===================================================== */
+    /* =========================
+       ROSTER
+    ========================= */
+
+    .roster {
+        max-width: 1250px;
+        margin: 35px auto;
+        padding: 0 20px;
+    }
+
+    .roster-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .roster-title h2 {
+        color: #3b3021;
+    }
+
+    .results-count {
+        font-family: Arial, sans-serif;
+        background: #3b3021;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+
+    /* =========================
+       PROVINCE
+    ========================= */
 
     .province {
-
-      scroll-margin-top: 100px;
-
-      margin-bottom: 55px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(5,32,60,0.95),
-          rgba(2,12,27,0.98)
-        );
-
-      border:
-
-        1px solid rgba(212,175,55,0.25);
-
-      box-shadow:
-        0 12px 35px rgba(0,0,0,0.35);
-
-      overflow: hidden;
+        margin: 35px 0;
+        background: white;
+        border: 1px solid #d8ccb0;
+        box-shadow: 0 3px 12px rgba(0,0,0,.06);
     }
 
     .province-header {
-
-      padding: 22px 25px;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(8,46,87,0.95),
-          rgba(2,18,42,0.95)
-        );
-
-      border-bottom:
-
-        1px solid rgba(212,175,55,0.35);
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      gap: 20px;
+        background: linear-gradient(90deg, #3b3021, #625038);
+        color: white;
+        padding: 18px 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .province-header h3 {
-
-      font-family: "Cinzel", serif;
-
-      color: #f5e6a8;
-
-      font-size: 23px;
-
-      letter-spacing: 2px;
+        margin: 0;
+        font-size: 24px;
     }
 
-    .district-count {
-
-      color: #d4af37;
-
-      font-family: "Cinzel", serif;
-
-      font-size: 13px;
-
-      white-space: nowrap;
+    .province-header span {
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+        color: #e6d7b1;
     }
 
-    /* =====================================================
-       MEMBER TABLE
-       ===================================================== */
-
-    .member-table-wrapper {
-
-      overflow-x: auto;
+    .province-content {
+        padding: 20px;
     }
 
-    .member-table {
-
-      width: 100%;
-
-      border-collapse: collapse;
-
-      min-width: 650px;
+    .minister-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
     }
 
-    .member-table th {
-
-      font-family: "Cinzel", serif;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1px;
-
-      font-size: 12px;
-
-      color: #d4af37;
-
-      background: #061a32;
-
-      padding: 15px;
-
-      text-align: left;
-
-      border-bottom:
-        1px solid rgba(212,175,55,0.35);
+    .minister {
+        border: 1px solid #ddd3bd;
+        padding: 16px;
+        background: #faf9f5;
+        position: relative;
+        transition: .2s;
     }
 
-    .member-table td {
-
-      padding: 14px 15px;
-
-      color: #d8d8d8;
-
-      font-size: 17px;
-
-      border-bottom:
-        1px solid rgba(255,255,255,0.06);
+    .minister:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(0,0,0,.1);
+        border-color: #b9964a;
     }
 
-    .member-table tr:hover {
-
-      background:
-        rgba(212,175,55,0.06);
-    }
-
-    .district {
-
-      color: #d4af37;
-
-      font-family: "Cinzel", serif;
-
-      font-size: 13px;
-
-      white-space: nowrap;
-    }
-
-    .member-name {
-
-      color: #f4e9bd;
-
-      font-weight: 600;
-    }
-
-    .speaker {
-
-      color: #fff1a8 !important;
-
-      text-shadow:
-        0 0 8px rgba(212,175,55,0.5);
+    .minister.speaker {
+        border: 2px solid #b9964a;
+        background: #fff9e8;
     }
 
     .speaker-badge {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: #b9964a;
+        color: white;
+        padding: 4px 7px;
+        font-size: 9px;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        border-radius: 3px;
+    }
 
-      display: inline-block;
+    .district {
+        color: #8b6c2e;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+    }
 
-      margin-left: 8px;
-
-      padding: 3px 7px;
-
-      border: 1px solid #d4af37;
-
-      color: #d4af37;
-
-      font-family: "Cinzel", serif;
-
-      font-size: 9px;
-
-      letter-spacing: 1px;
+    .minister-name {
+        font-size: 18px;
+        font-weight: bold;
+        color: #2d261e;
+        padding-right: 45px;
     }
 
     .party {
-
-      font-family: "Cinzel", serif;
-
-      font-size: 12px;
-
-      color: #bfc7d1;
+        margin-top: 9px;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        color: #666;
     }
 
-    .pending {
+    /* =========================
+       INFORMATION
+    ========================= */
 
-      color: #999 !important;
-
-      font-style: italic;
+    .information {
+        max-width: 1250px;
+        margin: 50px auto;
+        padding: 0 20px;
     }
 
-    /* =====================================================
-       SEARCH
-       ===================================================== */
-
-    .search-box {
-
-      margin: 0 auto 40px;
-
-      max-width: 700px;
-
-      position: relative;
+    .info-card {
+        background: white;
+        padding: 30px;
+        border-left: 6px solid #b9964a;
+        margin-bottom: 20px;
     }
 
-    .search-box input {
-
-      width: 100%;
-
-      padding: 16px 20px;
-
-      background:
-        rgba(2,18,42,0.95);
-
-      border:
-
-        1px solid rgba(212,175,55,0.5);
-
-      color: white;
-
-      font-family:
-        "Cormorant Garamond",
-        serif;
-
-      font-size: 18px;
-
-      outline: none;
+    .info-card h2 {
+        color: #3b3021;
     }
 
-    .search-box input:focus {
-
-      border-color: #d4af37;
-
-      box-shadow:
-        0 0 15px rgba(212,175,55,0.15);
+    .info-card h3 {
+        color: #624b29;
     }
 
-    /* =====================================================
+    .info-card p,
+    .info-card li {
+        line-height: 1.7;
+    }
+
+    /* =========================
        FOOTER
-       ===================================================== */
+    ========================= */
 
     footer {
-
-      text-align: center;
-
-      padding: 40px 15px;
-
-      background: #010812;
-
-      border-top:
-        1px solid rgba(178,31,45,0.5);
-
-      color: #999;
-
-      font-size: 14px;
-
-      letter-spacing: 1px;
+        background: #171717;
+        color: #ccc;
+        text-align: center;
+        padding: 35px 20px;
+        margin-top: 60px;
     }
 
     footer strong {
-
-      color: #d4af37;
-
-      font-family: "Cinzel", serif;
+        color: #e6c873;
     }
 
-    /* =====================================================
+    /* =========================
        MOBILE
-       ===================================================== */
+    ========================= */
 
-    @media (max-width: 850px) {
+    @media(max-width: 900px) {
+        .minister-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
 
-      .facts {
-
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-      .image-grid {
-
-        grid-template-columns: 1fr;
-      }
-
-      .province-header {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-      }
+        .stats {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
-    @media (max-width: 600px) {
+    @media(max-width: 600px) {
+        header h1 {
+            font-size: 28px;
+        }
 
-      .hero {
+        .image-grid,
+        .tool-row,
+        .minister-grid,
+        .stats {
+            grid-template-columns: 1fr;
+        }
 
-        min-height: 80vh;
+        .hero-box {
+            padding: 22px;
+        }
 
-        background-attachment: scroll;
-      }
-
-      .main-title {
-
-        letter-spacing: 2px;
-      }
-
-      .subtitle {
-
-        letter-spacing: 2px;
-      }
-
-      .small-title {
-
-        letter-spacing: 3px;
-      }
-
-      .facts {
-
-        grid-template-columns: 1fr;
-      }
-
-      .assembly-nav a {
-
-        font-size: 10px;
-
-        padding: 8px 9px;
-      }
-
-      .content-box {
-
-        padding: 25px 20px;
-      }
-
-      .province-tools button {
-
-        margin: 10px 0 0;
-
-        width: 100%;
-      }
-
-      .province-tools select {
-
-        width: 100%;
-      }
+        .province-header h3 {
+            font-size: 20px;
+        }
     }
 
-  </style>
+    .hidden {
+        display: none !important;
+    }
+</style>
 </head>
 
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
 
-<!-- =====================================================
+<header id="top">
+    <h1>Domus Curialum</h1>
+    <p>House of Ministers · Imperial Assembly of Bristevia</p>
+</header>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+    <a href="#top">DOMUS CURIALUM</a>
+    <a href="#overview">OVERVIEW</a>
+    <a href="#navigation">NAVIGATION</a>
+    <a href="#roster">182 MINISTERS</a>
+    <a href="#powers">POWERS</a>
+    <a href="#elections">ELECTIONS</a>
+</nav>
+
+<!-- =========================
      HERO
-     ===================================================== -->
+========================= -->
 
-<section class="hero">
+<section class="hero" id="overview">
 
-  <div class="hero-content">
+    <div class="hero-box">
 
-    <!-- =================================================
-         IMAGE SPACE #1 — BRISTEVIA SYMBOL
-         ================================================= -->
+        <h2>Domus Curialum — House of Ministers</h2>
 
-    <div class="bristevia-symbol">
+        <p>
+            The <strong>Domus Curialum</strong>, also known as the
+            <strong>House of Ministers</strong>, is the lower house of the
+            bicameral Imperial Assembly of Bristevia.
+        </p>
 
-      <!--
-      REPLACE WITH YOUR BRISTEVIA SYMBOL:
+        <p>
+            It serves as the primary legislative body representing the
+            Empire's legislative districts. The House consists of
+            <strong>182 elected Ministers</strong>, with each Minister
+            representing one district.
+        </p>
 
-      <img src="bristevia-symbol.png"
-           alt="Official Bristevia Symbol">
-
-      -->
-
-      <div class="symbol-placeholder">
-        ⚜
-      </div>
+        <p>
+            Ministers are chosen through direct elections by the people of
+            their respective districts. The House is presided over by the
+            Speaker, currently <strong>Winston Churchill</strong>,
+            Minister for the 3rd District of Stephara.
+        </p>
 
     </div>
-
-
-    <div class="small-title">
-      Imperial Assembly of Bristevia
-    </div>
-
-    <h1 class="main-title">
-      DOMUS CURIALUM
-    </h1>
-
-    <div class="subtitle">
-      HOUSE OF MINISTERS
-    </div>
-
-    <div class="divider"></div>
-
-    <p class="description">
-
-      The lower house of the bicameral Imperial Assembly,
-      representing the 182 legislative districts of the
-      Imperial Sovereign of Bristevia.
-
-    </p>
-
-  </div>
 
 </section>
 
+<!-- =========================
+     TWO IMAGE UPLOADS
+========================= -->
 
-<!-- =====================================================
-     ASSEMBLY NAVIGATION
-     ===================================================== -->
-
-<nav class="assembly-nav">
-
-  <a href="index.html">
-    HOME
-  </a>
-
-  <a href="legislature.html">
-    IMPERIAL ASSEMBLY
-  </a>
-
-  <a href="magnum-consilium.html">
-    MAGNUM CONSILIUM
-  </a>
-
-  <a href="domus-curialum.html" class="active">
-    DOMUS CURIALUM
-  </a>
-
-</nav>
-
-
-<!-- =====================================================
-     MAIN CONTENT
-     ===================================================== -->
-
-<main class="container">
-
-
-  <!-- ===================================================
-       INTRODUCTION
-       =================================================== -->
-
-  <section class="section">
-
-    <h2 class="section-title">
-      THE HOUSE OF MINISTERS
-    </h2>
-
-    <p class="section-subtitle">
-      Domus Curialum · Lower House of the Imperial Assembly
-    </p>
-
-
-    <!-- =================================================
-         IMAGE SPACE #2
-         ================================================= -->
+<section class="image-section">
 
     <div class="image-grid">
 
-      <div class="image-box">
+        <div class="image-upload">
+            <h3>Domus Curialum Image I</h3>
+            <p>Upload an official chamber or House image.</p>
 
-        <!--
-        IMAGE SPACE #2
+            <input
+                type="file"
+                accept="image/*"
+                onchange="previewImage(event, 'imagePreview1')"
+            >
 
-        Replace "domus-curialum-chamber.jpg"
-        with your House of Ministers image.
+            <img
+                id="imagePreview1"
+                class="image-preview"
+                alt="Domus Curialum Image I"
+            >
+        </div>
 
-        <img src="domus-curialum-chamber.jpg"
-             alt="Domus Curialum Chamber">
-        -->
+        <div class="image-upload">
+            <h3>Domus Curialum Image II</h3>
+            <p>Upload a second official image, seal, or chamber photograph.</p>
 
-        <div class="image-placeholder">
+            <input
+                type="file"
+                accept="image/*"
+                onchange="previewImage(event, 'imagePreview2')"
+            >
 
-          <span>🏛</span>
+            <img
+                id="imagePreview2"
+                class="image-preview"
+                alt="Domus Curialum Image II"
+            >
+        </div>
 
-          <strong>
-            DOMUS CURIALUM CHAMBER
-          </strong>
+    </div>
 
-          <p>
-            IMAGE SPACE — HOUSE OF MINISTERS
-          </p>
+</section>
+
+<!-- =========================
+     STATISTICS
+========================= -->
+
+<section class="stats">
+
+    <div class="stat">
+        <span class="stat-number">182</span>
+        <span class="stat-label">Ministers</span>
+    </div>
+
+    <div class="stat">
+        <span class="stat-number">30</span>
+        <span class="stat-label">Provinces</span>
+    </div>
+
+    <div class="stat">
+        <span class="stat-number">5</span>
+        <span class="stat-label">Imperial Regions</span>
+    </div>
+
+    <div class="stat">
+        <span class="stat-number">1</span>
+        <span class="stat-label">Speaker</span>
+    </div>
+
+</section>
+
+<!-- =========================
+     NAVIGATION TOOL
+========================= -->
+
+<section class="tools" id="navigation">
+
+    <div class="tool-box">
+
+        <h2>Find a Province or Minister</h2>
+
+        <div class="tool-row">
+
+            <div>
+                <label for="provinceJump">
+                    Jump directly to a Province
+                </label>
+
+                <select id="provinceJump" onchange="jumpToProvince()">
+                    <option value="">— Select Province —</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="ministerSearch">
+                    Search the 182 Ministers
+                </label>
+
+                <input
+                    type="search"
+                    id="ministerSearch"
+                    placeholder="Search name, district, province, or party..."
+                    oninput="searchMinisters()"
+                >
+            </div>
 
         </div>
 
-      </div>
+    </div>
 
+</section>
 
-      <div class="image-box">
+<!-- =========================
+     REGION FILTER
+========================= -->
 
-        <!--
-        OPTIONAL SECOND IMAGE SPACE
+<section class="regions">
 
-        Replace with another image if desired.
+    <h2>Navigate by Imperial Region</h2>
 
-        <img src="imperial-assembly.jpg"
-             alt="Imperial Assembly">
-        -->
+    <div class="region-buttons">
 
-        <div class="image-placeholder">
+        <button class="region-button active"
+                onclick="filterRegion('ALL', this)">
+            ALL
+        </button>
 
-          <span>⚜</span>
+        <button class="region-button"
+                onclick="filterRegion('Central Region', this)">
+            CENTRAL REGION
+        </button>
 
-          <strong>
-            IMPERIAL ASSEMBLY
-          </strong>
+        <button class="region-button"
+                onclick="filterRegion('West Region', this)">
+            WEST REGION
+        </button>
 
-          <p>
-            IMAGE SPACE — LEGISLATIVE REALM
-          </p>
+        <button class="region-button"
+                onclick="filterRegion('North Region', this)">
+            NORTH REGION
+        </button>
 
-        </div>
+        <button class="region-button"
+                onclick="filterRegion('East Region', this)">
+            EAST REGION
+        </button>
 
-      </div>
+        <button class="region-button"
+                onclick="filterRegion('South Region', this)">
+            SOUTH REGION
+        </button>
 
     </div>
 
+</section>
 
-    <!-- =================================================
-         FACTS
-         ================================================= -->
+<!-- =========================
+     ROSTER
+========================= -->
 
-    <div class="facts">
+<section class="roster" id="roster">
 
-      <div class="fact">
-        <strong>182</strong>
-        <span>Total Ministers</span>
-      </div>
+    <div class="roster-title">
 
-      <div class="fact">
-        <strong>30</strong>
-        <span>Provinces</span>
-      </div>
+        <h2>Official Roster of the Domus Curialum</h2>
 
-      <div class="fact">
-        <strong>1</strong>
-        <span>Minister per District</span>
-      </div>
-
-      <div class="fact">
-        <strong>2026</strong>
-        <span>Current Roster</span>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ===================================================
-       CONSTITUTIONAL FUNCTIONS
-       =================================================== -->
-
-  <section class="section">
-
-    <h2 class="section-title">
-      CONSTITUTIONAL FUNCTIONS
-    </h2>
-
-    <div class="content-box">
-
-      <h3>
-        Composition and Representation
-      </h3>
-
-      <p>
-        The Domus Curialum, also known as the House of
-        Ministers, consists of exactly 182 elected members.
-        Each Minister represents one legislative district
-        of the Imperial Sovereign of Bristevia.
-      </p>
-
-      <p>
-        Ministers are elected directly by the people of their
-        respective districts. The districts are established
-        according to population and may be created or modified
-        by the Imperial Assembly.
-      </p>
-
-    </div>
-
-
-    <div class="content-box">
-
-      <h3>
-        Leadership — The Speaker
-      </h3>
-
-      <p>
-        The Domus Curialum is presided over by the Speaker
-        of the House, who is elected by a majority vote of
-        all members.
-      </p>
-
-      <p>
-        The current Speaker is
-        <strong>Winston Churchill</strong>,
-        Minister for the 3rd District of Stephara.
-      </p>
-
-      <p>
-        Upon nomination, the Speaker must abandon their
-        political party in order to maintain impartiality
-        in the administration of the House.
-      </p>
-
-    </div>
-
-
-    <div class="content-box">
-
-      <h3>
-        Legislative and Fiscal Powers
-      </h3>
-
-      <ul>
-
-        <li>
-          All appropriation, revenue, and tariff decrees
-          must originate in the Domus Curialum.
-        </li>
-
-        <li>
-          Measures authorizing increases in public debt
-          must originate in the House.
-        </li>
-
-        <li>
-          The House possesses the exclusive power to
-          initiate impeachment proceedings.
-        </li>
-
-        <li>
-          Articles of Impeachment require a one-third vote
-          of all members.
-        </li>
-
-        <li>
-          The House participates jointly with the Magnum
-          Consilium in the election of the Prime Minister.
-        </li>
-
-        <li>
-          Imperial Cabinet Ministers must be chosen from
-          the members of the Domus Curialum.
-        </li>
-
-      </ul>
-
-    </div>
-
-
-    <div class="content-box">
-
-      <h3>
-        Commission on Appointments
-      </h3>
-
-      <p>
-        Twelve members of the Domus Curialum serve on the
-        Commission on Appointments. These members are selected
-        through proportional representation among registered
-        political parties.
-      </p>
-
-      <p>
-        They serve alongside twelve Consuls from the Magnum
-        Consilium in reviewing and confirming key appointments
-        of the Realm.
-      </p>
-
-    </div>
-
-
-    <div class="content-box">
-
-      <h3>
-        Legislative Procedure and Discipline
-      </h3>
-
-      <ul>
-
-        <li>
-          Bills must pass three readings on separate days.
-        </li>
-
-        <li>
-          The House may establish its own rules of proceedings.
-        </li>
-
-        <li>
-          A two-thirds vote may suspend a member for up to
-          60 days.
-        </li>
-
-        <li>
-          A two-thirds vote may expel a member for disorderly
-          conduct.
-        </li>
-
-        <li>
-          A proposal of the Souverion may be formally introduced
-          through a member of the Domus Curialum.
-        </li>
-
-      </ul>
-
-    </div>
-
-  </section>
-
-
-  <!-- ===================================================
-       PROVINCE JUMP NAVIGATION
-       =================================================== -->
-
-  <section class="section">
-
-    <h2 class="section-title">
-      PROVINCIAL DIRECTORY
-    </h2>
-
-    <p class="section-subtitle">
-      Select a province to jump directly to its Ministers
-    </p>
-
-
-    <div class="province-tools">
-
-      <h3>
-        JUMP TO PROVINCE
-      </h3>
-
-      <select id="provinceSelect">
-
-        <option value="">
-          — Select a Province —
-        </option>
-
-        <option value="stephara">Stephara</option>
-        <option value="jaybrienne">Jaybrienne</option>
-        <option value="orlencia">Orlencia</option>
-        <option value="westrion">Westrion</option>
-        <option value="costria">Costria</option>
-        <option value="ronjiel">Ronjiel</option>
-        <option value="virelion">Virelion</option>
-        <option value="draxenor">Draxenor</option>
-        <option value="falrion">Falrion</option>
-        <option value="regalith">Regalith</option>
-        <option value="northaven">Northaven</option>
-        <option value="montelune">Montelune</option>
-        <option value="basilion">Basilion</option>
-        <option value="aethelburg">Aethelburg</option>
-        <option value="sylvaren">Sylvaren</option>
-        <option value="jaeyara">Jaeyara</option>
-        <option value="andriel">Andriel</option>
-        <option value="orinthal">Orinthal</option>
-        <option value="eastria">Eastria</option>
-        <option value="luminaris">Luminaris</option>
-        <option value="aurelthia">Aurelthia</option>
-        <option value="eldrosia">Eldrosia</option>
-        <option value="gravenor">Gravenor</option>
-        <option value="aquaris">Aquaris</option>
-        <option value="southmere">Southmere</option>
-        <option value="starella">Starella</option>
-        <option value="solara">Solara</option>
-        <option value="velandor">Velandor</option>
-        <option value="britonvale">Britonvale</option>
-        <option value="gabrielis">Gabrielis</option>
-
-      </select>
-
-      <button onclick="goToProvince()">
-        GO
-      </button>
-
-    </div>
-
-
-    <!-- =================================================
-         MEMBER SEARCH
-         ================================================= -->
-
-    <div class="search-box">
-
-      <input
-        type="text"
-        id="memberSearch"
-        placeholder="Search Minister, district, province, or political party..."
-        onkeyup="searchMembers()"
-      >
-
-    </div>
-
-
-    <!-- =================================================
-         182 MEMBERS
-         ================================================= -->
-
-    <h2 class="section-title">
-      MEMBERS OF THE DOMUS CURIALUM
-    </h2>
-
-    <p class="section-subtitle">
-      2026 Election Roster · 182 District Seats
-    </p>
-
-
-    <!-- =================================================
-         STEPHARA
-         ================================================= -->
-
-    <div class="province" id="stephara">
-
-      <div class="province-header">
-
-        <h3>STEPHARA</h3>
-
-        <span class="district-count">
-          16 DISTRICTS
+        <span class="results-count" id="resultsCount">
+            Showing 182 Ministers
         </span>
 
-      </div>
+    </div>
 
-      <div class="member-table-wrapper">
+    <div id="rosterContainer"></div>
 
-        <table class="member-table">
+</section>
 
-          <thead>
-            <tr>
-              <th>District</th>
-              <th>Minister</th>
-              <th>Party</th>
-            </tr>
-          </thead>
+<!-- =========================
+     POWERS
+========================= -->
 
-          <tbody>
+<section class="information" id="powers">
 
-            <tr>
-              <td class="district">1st</td>
-              <td class="member-name">Napoleon Bonaparte</td>
-              <td class="party">Conservative</td>
-            </tr>
+    <div class="info-card">
 
-            <tr>
-              <td class="district">2nd</td>
-              <td class="member-name">Abraham Lincoln</td>
-              <td class="party">Republican</td>
-            </tr>
+        <h2>Legislative and Fiscal Powers</h2>
 
-            <tr>
-              <td class="district">3rd</td>
-              <td class="member-name speaker">
-                Winston Churchill
-                <span class="speaker-badge">SPEAKER</span>
-              </td>
-              <td class="party">Conservative</td>
-            </tr>
+        <ul>
+            <li>
+                Appropriation, revenue, tariff, and public-debt measures
+                must originate in the Domus Curialum.
+            </li>
 
-            <tr>
-              <td class="district">4th</td>
-              <td class="member-name">Theodore Roosevelt</td>
-              <td class="party">Republican</td>
-            </tr>
+            <li>
+                The House has the exclusive power to initiate impeachment
+                proceedings against high-ranking officials.
+            </li>
 
-            <tr><td class="district">5th</td><td class="member-name">Alexander Hamilton</td><td class="party">Liberal</td></tr>
-            <tr><td class="district">6th</td><td class="member-name">Sarah Duterte</td><td class="party">Conservative</td></tr>
-            <tr><td class="district">7th</td><td class="member-name">Catherine the Great</td><td class="party">National Unity</td></tr>
-            <tr><td class="district">8th</td><td class="member-name">Charlemagne</td><td class="party">Conservative</td></tr>
-            <tr><td class="district">9th</td><td class="member-name">Ho Chi Minh</td><td class="party">Communist</td></tr>
-            <tr><td class="district">10th</td><td class="member-name">Julius Caesar</td><td class="party">Conservative</td></tr>
-            <tr><td class="district">11th</td><td class="member-name">Ronald Reagan</td><td class="party">Republican</td></tr>
-            <tr><td class="district">12th</td><td class="member-name">Oliver Cromwell</td><td class="party">Conservative</td></tr>
-            <tr><td class="district">13th</td><td class="member-name">Che Guevara</td><td class="party">Radical</td></tr>
-            <tr><td class="district">14th</td><td class="member-name">Queen Victoria</td><td class="party">Conservative</td></tr>
-            <tr><td class="district">15th</td><td class="member-name">Woodrow Wilson</td><td class="party">Democratic</td></tr>
-            <tr><td class="district">16th</td><td class="member-name">Andrew Jackson</td><td class="party">Republican</td></tr>
+            <li>
+                Articles of Impeachment require the vote of one-third
+                (1/3) of all Ministers.
+            </li>
 
-          </tbody>
+            <li>
+                The Domus Curialum participates with the Magnum Consilium
+                in the election of the Prime Minister.
+            </li>
 
-        </table>
-
-      </div>
+            <li>
+                Imperial Cabinet Ministers are selected from the
+                membership of the Domus Curialum.
+            </li>
+        </ul>
 
     </div>
 
+    <div class="info-card">
 
-    <!-- =================================================
-         JAYBRIENNE
-         ================================================= -->
+        <h2>Commission on Appointments</h2>
 
-    <div class="province" id="jaybrienne">
+        <p>
+            Twelve members of the Domus Curialum are elected to the
+            Commission on Appointments through proportional representation
+            from registered political parties.
+        </p>
 
-      <div class="province-header">
-        <h3>JAYBRIENNE</h3>
-        <span class="district-count">12 DISTRICTS</span>
-      </div>
-
-      <div class="member-table-wrapper">
-
-        <table class="member-table">
-
-          <thead>
-            <tr>
-              <th>District</th>
-              <th>Minister</th>
-              <th>Party</th>
-            </tr>
-          </thead>
-
-          <tbody>
-
-            <tr><td class="district">1st</td><td class="member-name">Isaac Newton</td><td class="party">Conservative</td></tr>
-            <tr><td class="district">2nd</td><td class="member-name">Marie Curie</td><td class="party">Labor</td></tr>
-            <tr><td class="district">3rd</td><td class="member-name">Leonardo da Vinci</td><td class="party">Centrist</td></tr>
-            <tr><td class="district">4th</td><td class="member-name">Socrates</td><td class="party">Progressive Alliance</td></tr>
-            <tr><td class="district">5th</td><td class="member-name">Plato</td><td class="party">Conservative</td></tr>
-            <tr><td class="district">6th</td><td class="member-name">Sun Tzu</td><td class="party">Conservative</td></tr>
-            <tr><td class="district">7th</td><td class="member-name">Oda Nobunaga</td><td class="party">Radical</td></tr>
-            <tr><td class="district">8th</td><td class="member-name">Ashoka the Great</td><td class="party">Progressive Alliance</td></tr>
-            <tr><td class="district">9th</td><td class="member-name">Pericles</td><td class="party">Democratic</td></tr>
-            <tr><td class="district">10th</td><td class="member-name">Justinian I</td><td class="party">National Unity</td></tr>
-            <tr><td class="district">11th</td><td class="member-name">Peter the Great</td><td class="party">Conservative</td></tr>
-            <tr><td class="district">12th</td><td class="member-name">Elizabeth I</td><td class="party">Liberal</td></tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
+        <p>
+            They serve together with twelve members from the
+            Magnum Consilium in confirming key officials of the Realm.
+        </p>
 
     </div>
 
+    <div class="info-card">
 
-    <!-- =================================================
-         ORLENCIA
-         ================================================= -->
+        <h2>Rules of the House</h2>
 
-    <div class="province" id="orlencia">
+        <ul>
+            <li>
+                No bill may become law unless it passes three readings
+                on separate days within the House.
+            </li>
 
-      <div class="province-header">
-        <h3>ORLENCIA</h3>
-        <span class="district-count">5 DISTRICTS</span>
-      </div>
+            <li>
+                The House determines its own rules.
+            </li>
 
-      <table class="member-table">
-        <thead>
-          <tr>
-            <th>District</th>
-            <th>Minister</th>
-            <th>Party</th>
-          </tr>
-        </thead>
+            <li>
+                With a two-thirds vote, the House may suspend a Minister
+                for up to 60 days or expel a member for disorderly conduct.
+            </li>
 
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Jean-Paul Sartre</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Hannibal Barca</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Scipio Africanus</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Saladin</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Richard the Lionheart</td><td class="party">Liberal</td></tr>
-        </tbody>
-      </table>
+            <li>
+                If the Souverion wishes to propose legislation, the proposal
+                is referred to a member of the Domus Curialum for formal
+                introduction.
+            </li>
+        </ul>
 
     </div>
 
+</section>
 
-    <!-- =================================================
-         WESTRION
-         ================================================= -->
+<!-- =========================
+     ELECTIONS
+========================= -->
 
-    <div class="province" id="westrion">
+<section class="information" id="elections">
 
-      <div class="province-header">
-        <h3>WESTRION</h3>
-        <span class="district-count">7 DISTRICTS</span>
-      </div>
+    <div class="info-card">
 
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Hernán Cortés</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Dwight D. Eisenhower</td><td class="party">Republican</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Themistocles</td><td class="party">Democratic</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Attila the Hun</td><td class="party">Radical</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">William Wallace</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Gustavus Adolphus</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">7th</td><td class="member-name">Niccolò Fibonacci</td><td class="party">Centrist</td></tr>
-        </tbody>
-      </table>
+        <h2>Election and Assumption of Office</h2>
 
-    </div>
+        <h3>District Representation</h3>
 
+        <p>
+            The Domus Curialum consists of exactly 182 Ministers.
+            Each Minister represents one legislative district.
+        </p>
 
-    <!-- =================================================
-         COSTRIA
-         ================================================= -->
+        <h3>Direct Election</h3>
 
-    <div class="province" id="costria">
+        <p>
+            Ministers are elected directly by registered citizens who are
+            qualified to vote under Bristevian law.
+        </p>
 
-      <div class="province-header">
-        <h3>COSTRIA</h3>
-        <span class="district-count">4 DISTRICTS</span>
-      </div>
+        <h3>Political Parties</h3>
 
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Marco Polo</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Dante Alighieri</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Charles Darwin</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Alexander Fleming</td><td class="party">Republican</td></tr>
-        </tbody>
-      </table>
+        <p>
+            Candidates appear on the ballot together with their registered
+            political party. Recognized parties include the Conservative,
+            Liberal, Progressive Alliance, Green, Republican, Democratic,
+            Labor, National Unity, Centrist, Socialist, Communist, and
+            other constitutionally recognized parties.
+        </p>
 
-    </div>
+        <h3>Supreme Tribunal Review</h3>
 
+        <p>
+            Following the election, the consolidated list of winners is
+            submitted to the Supreme Tribunal for review before newly
+            elected Ministers formally assume office.
+        </p>
 
-    <!-- =================================================
-         RONJIEL
-         ================================================= -->
+        <h3>Oath of Fealty</h3>
 
-    <div class="province" id="ronjiel">
-
-      <div class="province-header">
-        <h3>RONJIEL</h3>
-        <span class="district-count">6 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Alexis de Tocqueville</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Frederick Douglass</td><td class="party">Progressive Alliance</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Mencius</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Johannes Kepler</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Thomas Hobbes</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Arthur C. Clarke</td><td class="party">Centrist</td></tr>
-        </tbody>
-      </table>
+        <p>
+            After clearance by the Supreme Tribunal, Ministers take their
+            oath of office before the Chief Justice, pledging to uphold
+            the 2026 Constitution and remain loyal to the Souverion and
+            Souveria.
+        </p>
 
     </div>
 
+</section>
 
-    <!-- =================================================
-         VIRELION
-         ================================================= -->
-
-    <div class="province" id="virelion">
-
-      <div class="province-header">
-        <h3>VIRELION</h3>
-        <span class="district-count">10 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Niccolò Paganini</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Wolfgang Amadeus Mozart</td><td class="party">Centrist</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Giuseppe Verdi</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Pyotr Ilyich Tchaikovsky</td><td class="party">Progressive Alliance</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Frédéric Chopin</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Maurice Ravel</td><td class="party">Centrist</td></tr>
-          <tr><td class="district">7th</td><td class="member-name">Antonio Vivaldi</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">8th</td><td class="member-name">Johannes Brahms</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">9th</td><td class="member-name">Dmitri Shostakovich</td><td class="party">Communist</td></tr>
-          <tr><td class="district">10th</td><td class="member-name">Aaron Copland</td><td class="party">Republican</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         DRAXENOR
-         ================================================= -->
-
-    <div class="province" id="draxenor">
-
-      <div class="province-header">
-        <h3>DRAXENOR</h3>
-        <span class="district-count">4 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Sun Wukong</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Beowulf</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">King Arthur</td><td class="party">Centrist</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Anansi</td><td class="party">Conservative</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         FALRION
-         ================================================= -->
-
-    <div class="province" id="falrion">
-
-      <div class="province-header">
-        <h3>FALRION</h3>
-        <span class="district-count">10 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Hammurabi</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Darius I</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Xerxes I</td><td class="party">Radical</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Homer</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">William Shakespeare</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Geoffrey Chaucer</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">7th</td><td class="member-name">Al-Ghazali</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">8th</td><td class="member-name">Avicenna</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">9th</td><td class="member-name">James Clerk Maxwell</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">10th</td><td class="member-name">Niels Bohr</td><td class="party">Centrist</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         REGALITH
-         ================================================= -->
-
-    <div class="province" id="regalith">
-
-      <div class="province-header">
-        <h3>REGALITH</h3>
-        <span class="district-count">7 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Louis XIV</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Maximilien Robespierre</td><td class="party">Radical</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Voltaire</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Montesquieu</td><td class="party">Centrist</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Georges Danton</td><td class="party">Radical</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Charles de Gaulle</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">7th</td><td class="member-name">Alexandre Dumas</td><td class="party">Liberal</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         NORTHAVEN
-         ================================================= -->
-
-    <div class="province" id="northaven">
-
-      <div class="province-header">
-        <h3>NORTHAVEN</h3>
-        <span class="district-count">5 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Margaret Thatcher</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Joan of Arc</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Johann Sebastian Bach</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Ada Lovelace</td><td class="party">Progressive Alliance</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Ernest Rutherford</td><td class="party">Conservative</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         MONTELUNE
-         ================================================= -->
-
-    <div class="province" id="montelune">
-
-      <div class="province-header">
-        <h3>MONTELUNE</h3>
-        <span class="district-count">6 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Roald Amundsen</td><td class="party">Republican</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Fridtjof Nansen</td><td class="party">Progressive Alliance</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Vilhjalmur Stefansson</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Matthew Henson</td><td class="party">Labor</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Edmund Hillary</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Tenzing Norgay</td><td class="party">National Unity</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         BASILION
-         ================================================= -->
-
-    <div class="province" id="basilion">
-
-      <div class="province-header">
-        <h3>BASILION</h3>
-        <span class="district-count">2 RECORDED · 4 PENDING</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr>
-            <td class="district">1st</td>
-            <td class="member-name pending">Seat Data Pending</td>
-            <td class="party">—</td>
-          </tr>
-          <tr>
-            <td class="district">2nd</td>
-            <td class="member-name pending">Seat Data Pending</td>
-            <td class="party">—</td>
-          </tr>
-          <tr>
-            <td class="district">3rd</td>
-            <td class="member-name pending">Seat Data Pending</td>
-            <td class="party">—</td>
-          </tr>
-          <tr>
-            <td class="district">4th</td>
-            <td class="member-name pending">Seat Data Pending</td>
-            <td class="party">—</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         AETHELBURG
-         ================================================= -->
-
-    <div class="province" id="aethelburg">
-
-      <div class="province-header">
-        <h3>AETHELBURG</h3>
-        <span class="district-count">5 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Isambard Kingdom Brunel</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Elizabeth Gaskell</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Benjamin Disraeli</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Alan Turing</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">James Watt</td><td class="party">Conservative</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         SYLVAREN
-         ================================================= -->
-
-    <div class="province" id="sylvaren">
-
-      <div class="province-header">
-        <h3>SYLVAREN</h3>
-        <span class="district-count">5 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Henry David Thoreau</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Rachel Carson</td><td class="party">Green</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Charles Darwin</td><td class="party">Green</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">E.O. Wilson</td><td class="party">Green</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Aldo Leopold</td><td class="party">Green</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         JAEYARA
-         ================================================= -->
-
-    <div class="province" id="jaeyara">
-
-      <div class="province-header">
-        <h3>JAEYARA</h3>
-        <span class="district-count">4 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Elizabeth II</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Isabella I of Castile</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Emmeline Pankhurst</td><td class="party">Labor</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Florence Nightingale</td><td class="party">Labor</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         ANDRIEL
-         ================================================= -->
-
-    <div class="province" id="andriel">
-
-      <div class="province-header">
-        <h3>ANDRIEL</h3>
-        <span class="district-count">4 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Archangel Michael</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">John Locke</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Thomas Aquinas</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Augustine N. of Hippo</td><td class="party">Conservative</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         ORINTHAL
-         ================================================= -->
-
-    <div class="province" id="orinthal">
-
-      <div class="province-header">
-        <h3>ORINTHAL</h3>
-        <span class="district-count">5 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">J.R.R. Tolkien</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">T.S. Eliot</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Virginia Woolf</td><td class="party">Progressive Alliance</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Franz Kafka</td><td class="party">Centrist</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Fyodor Dostoevsky</td><td class="party">Conservative</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         EASTRIA
-         ================================================= -->
-
-    <div class="province" id="eastria">
-
-      <div class="province-header">
-        <h3>EASTRIA</h3>
-        <span class="district-count">5 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Sun Yat-sen</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Empress Dowager Cixi</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Deng Xiaoping</td><td class="party">Communist</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Liu Bei</td><td class="party">Centrist</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Sun Yat-sen (Reform Wing)</td><td class="party">National Unity</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         LUMINARIS
-         ================================================= -->
-
-    <div class="province" id="luminaris">
-
-      <div class="province-header">
-        <h3>LUMINARIS</h3>
-        <span class="district-count">5 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Nikola Tesla</td><td class="party">Progressive Alliance</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">James Clerk Maxwell</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Max Planck</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Richard Feynman</td><td class="party">Centrist</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Albert B. Einstein</td><td class="party">Progressive Alliance</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         AURELTHIA
-         ================================================= -->
-
-    <div class="province" id="aurelthia">
-
-      <div class="province-header">
-        <h3>AURELTHIA</h3>
-        <span class="district-count">1 RECORDED · 1 PENDING</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr>
-            <td class="district">1st</td>
-            <td class="member-name pending">Seat Data Pending</td>
-            <td class="party">—</td>
-          </tr>
-          <tr>
-            <td class="district">2nd</td>
-            <td class="member-name pending">Seat Data Pending</td>
-            <td class="party">—</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         ELDROSIA
-         ================================================= -->
-
-    <div class="province" id="eldrosia">
-
-      <div class="province-header">
-        <h3>ELDROSIA</h3>
-        <span class="district-count">6 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Saruman</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Elrond</td><td class="party">Centrist</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Aragorn</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Frodo Baggins</td><td class="party">Democratic</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Sauron</td><td class="party">Radical</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Théoden</td><td class="party">Conservative</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         GRAVENOR
-         ================================================= -->
-
-    <div class="province" id="gravenor">
-
-      <div class="province-header">
-        <h3>GRAVENOR</h3>
-        <span class="district-count">5 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Wat Tyler</td><td class="party">Labor</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Richard the Lionheart</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Henry V</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">William Tyndale</td><td class="party">Progressive Alliance</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Richard the Lionheart (Reassigned Seat)</td><td class="party">National Unity</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         AQUARIS
-         ================================================= -->
-
-    <div class="province" id="aquaris">
-
-      <div class="province-header">
-        <h3>AQUARIS</h3>
-        <span class="district-count">6 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Poseidon</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Jacques Cousteau</td><td class="party">Green</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">James Cook</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Christopher Columbus</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Isambard Kingdom Brunel</td><td class="party">Centrist</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Thor Heyerdahl</td><td class="party">Progressive Alliance</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         SOUTH MERE
-         ================================================= -->
-
-    <div class="province" id="southmere">
-
-      <div class="province-header">
-        <h3>SOUTHMERE</h3>
-        <span class="district-count">9 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Ernest Shackleton</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Roald Amundsen</td><td class="party">Republican</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Ferdinand Magellan</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Marco Polo</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Jacques Cousteau</td><td class="party">Green</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Francis Drake</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">7th</td><td class="member-name">Ibn Battuta</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">8th</td><td class="member-name">Leif Erikson</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">9th</td><td class="member-name">Samuel de Champlain</td><td class="party">Centrist</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         STARELLA
-         ================================================= -->
-
-    <div class="province" id="starella">
-
-      <div class="province-header">
-        <h3>STARELLA</h3>
-        <span class="district-count">7 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Carl Sagan</td><td class="party">Progressive Alliance</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Neil Armstrong</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Yuri Gagarin</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Isaac Newton</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Stephen Hawking</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Edwin Hubble</td><td class="party">Republican</td></tr>
-          <tr><td class="district">7th</td><td class="member-name">Arthur C. Clarke</td><td class="party">Liberal</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         SOLARA
-         ================================================= -->
-
-    <div class="province" id="solara">
-
-      <div class="province-header">
-        <h3>SOLARA</h3>
-        <span class="district-count">7 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Akhenaten</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Ramses II</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Cleopatra</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Socrates</td><td class="party">Centrist</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Aristotle</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Constantine the Great</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">7th</td><td class="member-name">Ptolemy</td><td class="party">Liberal</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         VELANDOR
-         ================================================= -->
-
-    <div class="province" id="velandor">
-
-      <div class="province-header">
-        <h3>VELANDOR</h3>
-        <span class="district-count">6 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Elrond</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Fëanor</td><td class="party">Radical</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Thingol</td><td class="party">National Unity</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Eärendil</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">Beren</td><td class="party">Labor</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Tuor</td><td class="party">National Unity</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         BRITONVALE
-         ================================================= -->
-
-    <div class="province" id="britonvale">
-
-      <div class="province-header">
-        <h3>BRITONVALE</h3>
-        <span class="district-count">4 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Arthur Wellesley</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">William Gladstone</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Aneurin Bevan</td><td class="party">Socialist</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Jo Cox</td><td class="party">Progressive Alliance</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-
-    <!-- =================================================
-         GABRIELIS
-         ================================================= -->
-
-    <div class="province" id="gabrielis">
-
-      <div class="province-header">
-        <h3>GABRIELIS</h3>
-        <span class="district-count">7 DISTRICTS</span>
-      </div>
-
-      <table class="member-table">
-        <thead><tr><th>District</th><th>Minister</th><th>Party</th></tr></thead>
-        <tbody>
-          <tr><td class="district">1st</td><td class="member-name">Jorge Luis Borges</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">2nd</td><td class="member-name">Pablo Neruda</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">3rd</td><td class="member-name">Octavio Paz</td><td class="party">Centrist</td></tr>
-          <tr><td class="district">4th</td><td class="member-name">Julio Cortázar</td><td class="party">Radical</td></tr>
-          <tr><td class="district">5th</td><td class="member-name">José Rizal</td><td class="party">Liberal</td></tr>
-          <tr><td class="district">6th</td><td class="member-name">Emilio Aguinaldo</td><td class="party">Conservative</td></tr>
-          <tr><td class="district">7th</td><td class="member-name">Marcelo H. del Pilar</td><td class="party">Liberal</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-<!-- =====================================================
+<!-- =========================
      FOOTER
-     ===================================================== -->
+========================= -->
 
 <footer>
 
-  <p>
-    <strong>
-      ⚜ IMPERIAL SOVEREIGN OF BRISTEVIA ⚜
-    </strong>
-  </p>
+    <p>
+        <strong>IMPERIAL SOVEREIGN OF BRISTEVIA</strong>
+    </p>
 
-  <p style="margin-top:10px;">
-    DOMUS CURIALUM · HOUSE OF MINISTERS
-  </p>
+    <p>
+        Domus Curialum · House of Ministers
+    </p>
 
-  <p style="margin-top:10px;">
-    © 2026 The Imperial Sovereign of Bristevia.
-    All Rights Reserved.
-  </p>
+    <p>
+        2026 Imperial Assembly
+    </p>
 
 </footer>
 
-
-<!-- =====================================================
-     JAVASCRIPT
-     ===================================================== -->
-
 <script>
 
-  /* ================================================
-     PROVINCE JUMP
-     ================================================ */
+/* ============================================================
+   DOMUS CURIALUM DATA
+   182 NAMED MINISTERS
+============================================================ */
 
-  function goToProvince() {
+const provinces = [
 
-    const select =
-      document.getElementById("provinceSelect");
+/* ================= CENTRAL REGION ================= */
 
-    const province =
-      select.value;
+{
+    region: "Central Region",
+    name: "Stephara",
+    ministers: [
+        ["1st District", "Napoleon Bonaparte", "Conservative"],
+        ["2nd District", "Abraham Lincoln", "Republican"],
+        ["3rd District", "Winston Churchill", "Conservative", true],
+        ["4th District", "Theodore Roosevelt", "Republican"],
+        ["5th District", "Alexander Hamilton", "Liberal"],
+        ["6th District", "Sarah Duterte", "Conservative"],
+        ["7th District", "Catherine the Great", "National Unity"],
+        ["8th District", "Charlemagne", "Conservative"],
+        ["9th District", "Ho Chi Minh", "Communist"],
+        ["10th District", "Julius Caesar", "Conservative"],
+        ["11th District", "Ronald Reagan", "Republican"],
+        ["12th District", "Oliver Cromwell", "Conservative"],
+        ["13th District", "Che Guevara", "Radical"],
+        ["14th District", "Queen Victoria", "Conservative"],
+        ["15th District", "Woodrow Wilson", "Democratic"],
+        ["16th District", "Andrew Jackson", "Republican"]
+    ]
+},
 
-    if (province) {
+{
+    region: "Central Region",
+    name: "Jaybrienne",
+    ministers: [
+        ["1st District", "Isaac Newton", "Conservative"],
+        ["2nd District", "Marie Curie", "Labor"],
+        ["3rd District", "Leonardo da Vinci", "Centrist"],
+        ["4th District", "Socrates", "Progressive Alliance"],
+        ["5th District", "Plato", "Conservative"],
+        ["6th District", "Sun Tzu", "Conservative"],
+        ["7th District", "Oda Nobunaga", "Radical"],
+        ["8th District", "Ashoka the Great", "Progressive Alliance"],
+        ["9th District", "Pericles", "Democratic"],
+        ["10th District", "Justinian I", "National Unity"],
+        ["11th District", "Peter the Great", "Conservative"],
+        ["12th District", "Elizabeth I", "Liberal"]
+    ]
+},
 
-      const target =
-        document.getElementById(province);
+/* ================= WEST REGION ================= */
 
-      if (target) {
+{
+    region: "West Region",
+    name: "Orlencia",
+    ministers: [
+        ["1st District", "Jean-Paul Sartre", "Liberal"],
+        ["2nd District", "Hannibal Barca", "National Unity"],
+        ["3rd District", "Scipio Africanus", "Conservative"],
+        ["4th District", "Saladin", "National Unity"],
+        ["5th District", "Richard the Lionheart", "Liberal"]
+    ]
+},
 
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
+{
+    region: "West Region",
+    name: "Westrion",
+    ministers: [
+        ["1st District", "Hernán Cortés", "Conservative"],
+        ["2nd District", "Dwight D. Eisenhower", "Republican"],
+        ["3rd District", "Themistocles", "Democratic"],
+        ["4th District", "Attila the Hun", "Radical"],
+        ["5th District", "William Wallace", "National Unity"],
+        ["6th District", "Gustavus Adolphus", "Conservative"],
+        ["7th District", "Niccolò Fibonacci", "Centrist"]
+    ]
+},
 
-      }
+{
+    region: "West Region",
+    name: "Costria",
+    ministers: [
+        ["1st District", "Marco Polo", "National Unity"],
+        ["2nd District", "Dante Alighieri", "Conservative"],
+        ["3rd District", "Charles Darwin", "Liberal"],
+        ["4th District", "Alexander Fleming", "Republican"]
+    ]
+},
 
-    }
+{
+    region: "West Region",
+    name: "Ronjiel",
+    ministers: [
+        ["1st District", "Alexis de Tocqueville", "Liberal"],
+        ["2nd District", "Frederick Douglass", "Progressive Alliance"],
+        ["3rd District", "Mencius", "National Unity"],
+        ["4th District", "Johannes Kepler", "Liberal"],
+        ["5th District", "Thomas Hobbes", "Conservative"],
+        ["6th District", "Arthur C. Clarke", "Centrist"]
+    ]
+},
 
-  }
+{
+    region: "West Region",
+    name: "Virelion",
+    ministers: [
+        ["1st District", "Niccolò Paganini", "Liberal"],
+        ["2nd District", "Wolfgang Amadeus Mozart", "Centrist"],
+        ["3rd District", "Giuseppe Verdi", "National Unity"],
+        ["4th District", "Pyotr Ilyich Tchaikovsky", "Progressive Alliance"],
+        ["5th District", "Frederic Chopin", "Liberal"],
+        ["6th District", "Maurice Ravel", "Centrist"],
+        ["7th District", "Antonio Vivaldi", "National Unity"],
+        ["8th District", "Johannes Brahms", "Liberal"],
+        ["9th District", "Dmitri Shostakovich", "Communist"],
+        ["10th District", "Aaron Copland", "Republican"]
+    ]
+},
 
+{
+    region: "West Region",
+    name: "Draxenor",
+    ministers: [
+        ["1st District", "Sun Wukong", "Conservative"],
+        ["2nd District", "Beowulf", "Conservative"],
+        ["3rd District", "King Arthur", "Centrist"],
+        ["4th District", "Anansi", "Conservative"]
+    ]
+},
 
-  /* ================================================
-     MEMBER SEARCH
-     ================================================ */
+{
+    region: "West Region",
+    name: "Falrion",
+    ministers: [
+        ["1st District", "Hammurabi", "Conservative"],
+        ["2nd District", "Darius I", "Conservative"],
+        ["3rd District", "Xerxes I", "Radical"],
+        ["4th District", "Homer", "Liberal"],
+        ["5th District", "William Shakespeare", "Conservative"],
+        ["6th District", "Geoffrey Chaucer", "Liberal"],
+        ["7th District", "Al-Ghazali", "Conservative"],
+        ["8th District", "Avicenna", "Liberal"],
+        ["9th District", "James Clerk Maxwell", "Liberal"],
+        ["10th District", "Niels Bohr", "Centrist"]
+    ]
+},
 
-  function searchMembers() {
+{
+    region: "West Region",
+    name: "Regalith",
+    ministers: [
+        ["1st District", "Louis XIV", "Conservative"],
+        ["2nd District", "Maximilien Robespierre", "Radical"],
+        ["3rd District", "Voltaire", "Liberal"],
+        ["4th District", "Montesquieu", "Centrist"],
+        ["5th District", "Georges Danton", "Radical"],
+        ["6th District", "Charles de Gaulle", "National Unity"],
+        ["7th District", "Alexandre Dumas", "Liberal"]
+    ]
+},
 
-    const input =
-      document
-        .getElementById("memberSearch")
-        .value
-        .toLowerCase();
+/* ================= NORTH REGION ================= */
 
-    const provinces =
-      document.querySelectorAll(".province");
+{
+    region: "North Region",
+    name: "Northaven",
+    ministers: [
+        ["1st District", "Margaret Thatcher", "Conservative"],
+        ["2nd District", "Joan of Arc", "National Unity"],
+        ["3rd District", "Johann Sebastian Bach", "Conservative"],
+        ["4th District", "Ada Lovelace", "Progressive Alliance"],
+        ["5th District", "Ernest Rutherford", "Conservative"]
+    ]
+},
 
-    provinces.forEach(function(province) {
+{
+    region: "North Region",
+    name: "Montelune",
+    ministers: [
+        ["1st District", "Roald Amundsen", "Republican"],
+        ["2nd District", "Fridtjof Nansen", "Progressive Alliance"],
+        ["3rd District", "Vilhjalmur Stefansson", "Liberal"],
+        ["4th District", "Matthew Henson", "Labor"],
+        ["5th District", "Edmund Hillary", "Liberal"],
+        ["6th District", "Tenzing Norgay", "National Unity"]
+    ]
+},
 
-      const rows =
-        province.querySelectorAll(
-          ".member-table tbody tr"
-        );
+{
+    region: "North Region",
+    name: "Basilion",
+    ministers: []
+},
 
-      let provinceHasMatch = false;
+{
+    region: "North Region",
+    name: "Aethelburg",
+    ministers: [
+        ["1st District", "Isambard Kingdom Brunel", "Conservative"],
+        ["2nd District", "Elizabeth Gaskell", "Liberal"],
+        ["3rd District", "Benjamin Disraeli", "Conservative"],
+        ["4th District", "Alan Turing", "Liberal"],
+        ["5th District", "James Watt", "Conservative"]
+    ]
+},
 
-      rows.forEach(function(row) {
+{
+    region: "North Region",
+    name: "Sylvaren",
+    ministers: [
+        ["1st District", "Henry David Thoreau", "Liberal"],
+        ["2nd District", "Rachel Carson", "Green"],
+        ["3rd District", "Charles Darwin", "Green"],
+        ["4th District", "E.O. Wilson", "Green"],
+        ["5th District", "Aldo Leopold", "Green"]
+    ]
+},
 
-        const text =
-          row.textContent.toLowerCase();
+{
+    region: "North Region",
+    name: "Jaeyara",
+    ministers: [
+        ["1st District", "Elizabeth II", "Conservative"],
+        ["2nd District", "Isabella I of Castile", "National Unity"],
+        ["3rd District", "Emmeline Pankhurst", "Labor"],
+        ["4th District", "Florence Nightingale", "Labor"]
+    ]
+},
 
-        if (text.includes(input)) {
+{
+    region: "North Region",
+    name: "Andriel",
+    ministers: [
+        ["1st District", "Archangel Michael", "National Unity"],
+        ["2nd District", "John Locke", "Liberal"],
+        ["3rd District", "Thomas Aquinas", "Conservative"],
+        ["4th District", "Augustine N. of Hippo", "Conservative"]
+    ]
+},
 
-          row.style.display = "";
+/* ================= EAST REGION ================= */
 
-          provinceHasMatch = true;
+{
+    region: "East Region",
+    name: "Orinthal",
+    ministers: [
+        ["1st District", "J.R.R. Tolkien", "Conservative"],
+        ["2nd District", "T.S. Eliot", "Conservative"],
+        ["3rd District", "Virginia Woolf", "Progressive Alliance"],
+        ["4th District", "Franz Kafka", "Centrist"],
+        ["5th District", "Fyodor Dostoevsky", "Conservative"]
+    ]
+},
 
-        } else {
+{
+    region: "East Region",
+    name: "Eastria",
+    ministers: [
+        ["1st District", "Sun Yat-sen", "National Unity"],
+        ["2nd District", "Empress Dowager Cixi", "Conservative"],
+        ["3rd District", "Deng Xiaoping", "Communist"],
+        ["4th District", "Liu Bei", "Centrist"],
+        ["5th District", "Sun Yat-sen (Reform Wing)", "National Unity"]
+    ]
+},
 
-          row.style.display = "none";
+{
+    region: "East Region",
+    name: "Luminaris",
+    ministers: [
+        ["1st District", "Nikola Tesla", "Progressive Alliance"],
+        ["2nd District", "James Clerk Maxwell", "Liberal"],
+        ["3rd District", "Max Planck", "Conservative"],
+        ["4th District", "Richard Feynman", "Centrist"],
+        ["5th District", "Albert B. Einstein", "Progressive Alliance"]
+    ]
+},
 
-        }
+{
+    region: "East Region",
+    name: "Aurelthia",
+    ministers: []
+},
 
-      });
+{
+    region: "East Region",
+    name: "Eldrosia",
+    ministers: [
+        ["1st District", "Saruman", "Conservative"],
+        ["2nd District", "Elrond", "Centrist"],
+        ["3rd District", "Aragorn", "National Unity"],
+        ["4th District", "Frodo Baggins", "Democratic"],
+        ["5th District", "Sauron", "Radical"],
+        ["6th District", "Théoden", "Conservative"]
+    ]
+},
 
-      if (input === "") {
+{
+    region: "East Region",
+    name: "Gravenor",
+    ministers: [
+        ["1st District", "Wat Tyler", "Labor"],
+        ["2nd District", "Richard the Lionheart", "National Unity"],
+        ["3rd District", "Henry V", "Conservative"],
+        ["4th District", "William Tyndale", "Progressive Alliance"],
+        ["5th District", "Richard the Lionheart (Reassigned Seat)", "National Unity"]
+    ]
+},
 
-        province.style.display = "";
+{
+    region: "East Region",
+    name: "Aquaris",
+    ministers: [
+        ["1st District", "Poseidon", "National Unity"],
+        ["2nd District", "Jacques Cousteau", "Green"],
+        ["3rd District", "James Cook", "Liberal"],
+        ["4th District", "Christopher Columbus", "Conservative"],
+        ["5th District", "Isambard Kingdom Brunel", "Centrist"],
+        ["6th District", "Thor Heyerdahl", "Progressive Alliance"]
+    ]
+},
 
-      } else {
-
-        province.style.display =
-          provinceHasMatch
-            ? ""
-            : "none";
-
-      }
-
-    });
-
-  }
-
-</script>
-
-</body>
-</html>
+/* =================
