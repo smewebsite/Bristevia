@@ -6,8 +6,12 @@
 
 <title>2026 Constitution | Imperial Sovereign of Bristevia</title>
 
+<meta name="description" content="The 2026 Constitution of the Imperial Sovereign of Bristevia.">
+<meta name="theme-color" content="#031a38">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -20,7 +24,6 @@
     --royal-blue:#031a38;
     --deep-blue:#010914;
     --imperial-blue:#073b73;
-    --blue-light:#0c4d91;
 
     --royal-gold:#d4af37;
     --bright-gold:#f7e7a9;
@@ -29,7 +32,12 @@
     --text:#eee5c8;
     --muted:#aaa;
 
-    --shadow:0 15px 50px rgba(0,0,0,.55);
+    --border-gold:rgba(212,175,55,.45);
+    --soft-gold:rgba(212,175,55,.18);
+
+    --shadow:rgba(0,0,0,.55);
+
+    --nav-height:65px;
 }
 
 /* =========================================================
@@ -44,81 +52,119 @@
 
 html{
     scroll-behavior:smooth;
-    scroll-padding-top:100px;
+    scroll-padding-top:95px;
 }
 
 body{
     font-family:"Cormorant Garamond",serif;
+
     background:
-        radial-gradient(circle at 50% -10%,
-        #0c4d91 0%,
-        #062c59 30%,
-        #031a38 57%,
-        #010914 100%);
+        radial-gradient(
+            circle at 50% -10%,
+            #0c4d91 0%,
+            #062c59 32%,
+            #031a38 58%,
+            #010914 100%
+        );
+
+    background-attachment:fixed;
+
     color:var(--text);
+
     line-height:1.75;
+
     overflow-x:hidden;
 }
 
 /* =========================================================
-   PAGE INTRO ANIMATION
+   SCROLL PROGRESS
+========================================================= */
+
+.scroll-progress{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0%;
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--royal-gold),
+            var(--pale-gold),
+            var(--royal-gold)
+        );
+
+    z-index:3000;
+
+    box-shadow:
+        0 0 10px rgba(212,175,55,.65);
+
+    transition:width .08s linear;
+}
+
+/* =========================================================
+   PAGE FADE
 ========================================================= */
 
 body{
-    animation:pageReveal 1.2s ease both;
+    animation:pageFadeIn 1s ease both;
 }
 
-@keyframes pageReveal{
+@keyframes pageFadeIn{
     from{
         opacity:0;
     }
+
     to{
         opacity:1;
     }
 }
 
-@keyframes royalFloat{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
+/* =========================================================
+   FLOATING ROYAL LIGHT
+========================================================= */
+
+body::before{
+    content:"";
+
+    position:fixed;
+
+    width:420px;
+    height:420px;
+
+    top:-180px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212,175,55,.08),
+            transparent 68%
+        );
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    animation:
+        imperialLight 7s ease-in-out infinite alternate;
 }
 
-@keyframes goldPulse{
-    0%,100%{
-        filter:
-        drop-shadow(0 0 8px rgba(212,175,55,.35))
-        drop-shadow(0 0 20px rgba(212,175,55,.12));
-    }
-    50%{
-        filter:
-        drop-shadow(0 0 18px rgba(212,175,55,.75))
-        drop-shadow(0 0 40px rgba(212,175,55,.3));
-    }
-}
+@keyframes imperialLight{
 
-@keyframes lineGlow{
-    0%,100%{
-        opacity:.55;
+    from{
+        opacity:.45;
+        transform:translateX(-50%) scale(.95);
     }
-    50%{
-        opacity:1;
-    }
-}
 
-@keyframes headerLight{
-    0%{
-        transform:translateX(-100%);
-        opacity:0;
-    }
-    30%{
-        opacity:.7;
-    }
-    100%{
-        transform:translateX(100%);
-        opacity:0;
+    to{
+        opacity:.9;
+        transform:translateX(-50%) scale(1.08);
     }
 }
 
@@ -128,8 +174,10 @@ body{
 
 .top-header{
     position:relative;
+
     text-align:center;
-    padding:42px 20px 38px;
+
+    padding:42px 20px 36px;
 
     background:
         linear-gradient(
@@ -138,7 +186,8 @@ body{
             rgba(1,17,38,.99)
         );
 
-    border-bottom:2px solid var(--royal-gold);
+    border-bottom:
+        2px solid var(--royal-gold);
 
     box-shadow:
         0 5px 30px rgba(0,0,0,.55),
@@ -149,208 +198,252 @@ body{
 
 .top-header::before{
     content:"";
+
     position:absolute;
-    inset:0;
+
+    inset:-50%;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(212,175,55,.1),
-            transparent 55%
+            rgba(212,175,55,.10),
+            transparent 42%
         );
+
+    animation:
+        headerGlow 8s ease-in-out infinite alternate;
 
     pointer-events:none;
 }
 
-.top-header::after{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:40%;
-    height:100%;
+@keyframes headerGlow{
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(247,231,169,.12),
-            transparent
-        );
+    from{
+        transform:scale(.85);
+        opacity:.35;
+    }
 
-    animation:headerLight 7s ease-in-out infinite;
-}
-
-.header-emblem{
-    position:relative;
-    z-index:2;
-
-    width:135px;
-    height:135px;
-    object-fit:contain;
-
-    margin:0 auto 16px;
-
-    animation:
-        royalFloat 5s ease-in-out infinite,
-        goldPulse 4s ease-in-out infinite;
-}
-
-.top-header h1,
-.top-header h2{
-    position:relative;
-    z-index:2;
-}
-
-.top-header h1{
-    font-family:"Cinzel",serif;
-    color:var(--bright-gold);
-    font-size:clamp(25px,5vw,48px);
-    letter-spacing:3px;
-    line-height:1.2;
-    text-shadow:0 3px 20px rgba(0,0,0,.5);
-}
-
-.top-header h2{
-    font-family:"Cinzel",serif;
-    color:var(--royal-gold);
-    font-size:clamp(13px,2vw,18px);
-    letter-spacing:4px;
-    margin-top:9px;
+    to{
+        transform:scale(1.15);
+        opacity:.9;
+    }
 }
 
 /* =========================================================
-   NAVIGATION
+   HEADER EMBLEM
+========================================================= */
+
+.header-emblem{
+    position:relative;
+
+    z-index:1;
+
+    width:135px;
+    height:135px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:0 auto 17px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(212,175,55,.45))
+        drop-shadow(0 0 30px rgba(212,175,55,.18));
+
+    animation:
+        emblemEntrance 1.2s cubic-bezier(.2,.8,.2,1) both,
+        emblemFloat 5s ease-in-out 1.2s infinite;
+}
+
+@keyframes emblemEntrance{
+
+    from{
+        opacity:0;
+        transform:scale(.65) translateY(-25px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+@keyframes emblemFloat{
+
+    0%,
+    100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-7px);
+    }
+}
+
+.header-emblem:hover{
+    filter:
+        drop-shadow(0 0 15px rgba(212,175,55,.75))
+        drop-shadow(0 0 35px rgba(212,175,55,.4));
+
+    transform:scale(1.04);
+}
+
+.top-header h1{
+    position:relative;
+
+    z-index:1;
+
+    font-family:"Cinzel",serif;
+
+    color:var(--bright-gold);
+
+    font-size:clamp(25px,5vw,48px);
+
+    letter-spacing:3px;
+
+    line-height:1.2;
+
+    animation:
+        titleReveal 1s ease .35s both;
+}
+
+.top-header h2{
+    position:relative;
+
+    z-index:1;
+
+    font-family:"Cinzel",serif;
+
+    color:var(--royal-gold);
+
+    font-size:clamp(13px,2vw,18px);
+
+    letter-spacing:4px;
+
+    margin-top:10px;
+
+    animation:
+        titleReveal 1s ease .55s both;
+}
+
+@keyframes titleReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================================================
+   MAIN NAVIGATION
 ========================================================= */
 
 .main-nav{
     position:sticky;
+
     top:0;
-    z-index:1000;
 
-    background:rgba(1,15,35,.97);
+    z-index:2000;
 
-    border-bottom:1px solid rgba(212,175,55,.55);
+    min-height:var(--nav-height);
+
+    background:
+        rgba(1,15,35,.97);
+
+    border-bottom:
+        1px solid rgba(212,175,55,.55);
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     flex-wrap:wrap;
 
-    padding:10px;
+    padding:9px 10px;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.5);
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.5);
 
     backdrop-filter:blur(10px);
 }
 
 .main-nav a{
+    position:relative;
+
     font-family:"Cinzel",serif;
+
     color:#f5e6a8;
+
     text-decoration:none;
 
-    font-size:11px;
+    font-size:12px;
+
     font-weight:600;
+
     letter-spacing:1px;
 
     padding:8px 13px;
 
-    transition:.3s ease;
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+.main-nav a::after{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:2px;
+
+    width:0;
+    height:1px;
+
+    background:var(--royal-gold);
+
+    transform:translateX(-50%);
+
+    transition:width .3s ease;
 }
 
 .main-nav a:hover{
-    color:#fff;
-    text-shadow:0 0 12px var(--royal-gold);
-    transform:translateY(-2px);
+    color:white;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,.8);
+
+    transform:translateY(-1px);
+}
+
+.main-nav a:hover::after{
+    width:70%;
 }
 
 /* =========================================================
-   CONTROL BAR
-========================================================= */
-
-.control-panel{
-    width:min(1450px,94%);
-    margin:25px auto 0;
-
-    display:grid;
-    grid-template-columns:1fr auto auto;
-    gap:12px;
-
-    position:relative;
-    z-index:20;
-}
-
-.search-box,
-.article-select,
-.control-button{
-    min-height:46px;
-
-    border:1px solid rgba(212,175,55,.55);
-    border-radius:5px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(7,59,115,.95),
-            rgba(2,20,42,.98)
-        );
-
-    color:var(--text);
-
-    font-family:"Cinzel",serif;
-}
-
-.search-box{
-    width:100%;
-    padding:0 16px;
-    outline:none;
-    font-size:13px;
-}
-
-.search-box::placeholder{
-    color:#aaa;
-}
-
-.search-box:focus{
-    border-color:var(--bright-gold);
-    box-shadow:0 0 18px rgba(212,175,55,.2);
-}
-
-.article-select{
-    padding:0 13px;
-    cursor:pointer;
-    outline:none;
-}
-
-.article-select option{
-    background:#031a38;
-    color:#eee5c8;
-}
-
-.control-button{
-    padding:0 17px;
-    cursor:pointer;
-    color:var(--bright-gold);
-    transition:.3s ease;
-}
-
-.control-button:hover{
-    background:var(--royal-gold);
-    color:#03152d;
-    box-shadow:0 0 20px rgba(212,175,55,.35);
-}
-
-/* =========================================================
-   LAYOUT
+   PAGE LAYOUT
 ========================================================= */
 
 .container{
     width:min(1450px,94%);
-    margin:25px auto 80px;
+
+    margin:40px auto 80px;
 
     display:grid;
-    grid-template-columns:280px 1fr;
+
+    grid-template-columns:280px minmax(0,1fr);
+
     gap:30px;
+
+    align-items:start;
 }
 
 /* =========================================================
@@ -359,10 +452,13 @@ body{
 
 .article-index{
     position:sticky;
+
     top:82px;
+
     align-self:start;
 
     max-height:calc(100vh - 105px);
+
     overflow-y:auto;
 
     background:
@@ -372,14 +468,32 @@ body{
             rgba(2,21,45,.98)
         );
 
-    border:1px solid rgba(212,175,55,.5);
+    border:
+        1px solid var(--border-gold);
+
     border-radius:8px;
 
     box-shadow:
-        0 10px 35px rgba(0,0,0,.45),
+        0 10px 35px var(--shadow),
         inset 0 0 30px rgba(0,0,0,.2);
 
     padding:22px 16px;
+
+    animation:
+        sidebarReveal .8s ease .7s both;
+}
+
+@keyframes sidebarReveal{
+
+    from{
+        opacity:0;
+        transform:translateX(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
 }
 
 .article-index::-webkit-scrollbar{
@@ -388,59 +502,117 @@ body{
 
 .article-index::-webkit-scrollbar-thumb{
     background:rgba(212,175,55,.5);
+
     border-radius:10px;
 }
 
 .article-index h3{
     font-family:"Cinzel",serif;
+
     color:var(--royal-gold);
+
     text-align:center;
+
     font-size:16px;
+
     letter-spacing:2px;
+
     padding-bottom:15px;
-    border-bottom:1px solid rgba(212,175,55,.3);
+
+    border-bottom:
+        1px solid rgba(212,175,55,.3);
+
     margin-bottom:12px;
 }
 
 .index-symbol{
     width:35px;
     height:35px;
+
     object-fit:contain;
+
     display:block;
+
     margin:0 auto 10px;
 
-    animation:goldPulse 4s ease-in-out infinite;
+    filter:
+        drop-shadow(0 0 7px rgba(212,175,55,.4));
+
+    animation:
+        symbolPulse 4s ease-in-out infinite;
+}
+
+@keyframes symbolPulse{
+
+    0%,
+    100%{
+        filter:
+            drop-shadow(0 0 7px rgba(212,175,55,.35));
+    }
+
+    50%{
+        filter:
+            drop-shadow(0 0 14px rgba(212,175,55,.7));
+    }
 }
 
 .article-index a{
     display:block;
 
     color:#e8dfc3;
+
     text-decoration:none;
 
     font-family:"Cinzel",serif;
-    font-size:11px;
-    letter-spacing:.5px;
+
+    font-size:12px;
+
+    letter-spacing:.6px;
 
     padding:9px 10px;
+
     margin:2px 0;
 
     border-left:2px solid transparent;
 
-    transition:.25s ease;
+    border-radius:2px;
+
+    transition:
+        color .25s ease,
+        background .25s ease,
+        border .25s ease,
+        padding .25s ease;
 }
 
-.article-index a:hover,
+.article-index a:hover{
+    color:#fff;
+
+    background:
+        rgba(212,175,55,.09);
+
+    border-left:
+        2px solid var(--royal-gold);
+
+    padding-left:15px;
+}
+
 .article-index a.active{
     color:#fff;
 
-    background:rgba(212,175,55,.09);
+    background:
+        linear-gradient(
+            90deg,
+            rgba(212,175,55,.18),
+            transparent
+        );
 
-    border-left:2px solid var(--royal-gold);
+    border-left:
+        3px solid var(--royal-gold);
 
-    padding-left:15px;
+    padding-left:14px;
 
-    text-shadow:0 0 8px rgba(247,231,169,.3);
+    text-shadow:
+        0 0 8px rgba(212,175,55,.35);
 }
 
 /* =========================================================
@@ -448,6 +620,8 @@ body{
 ========================================================= */
 
 .document{
+    min-width:0;
+
     background:
         linear-gradient(
             180deg,
@@ -455,22 +629,27 @@ body{
             rgba(2,17,36,.98)
         );
 
-    border:1px solid rgba(212,175,55,.45);
+    border:
+        1px solid var(--border-gold);
 
-    box-shadow:var(--shadow);
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.5);
 
     padding:clamp(25px,5vw,65px);
 
     border-radius:8px;
 
-    animation:documentReveal 1s ease .2s both;
+    animation:
+        documentReveal .9s ease .35s both;
 }
 
 @keyframes documentReveal{
+
     from{
         opacity:0;
         transform:translateY(25px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
@@ -483,38 +662,68 @@ body{
 
 .document-title{
     text-align:center;
+
     margin-bottom:45px;
 }
 
 .document-title .title-symbol{
     width:90px;
     height:90px;
+
     object-fit:contain;
+
     display:block;
+
     margin:0 auto 15px;
 
-    animation:royalFloat 5s ease-in-out infinite;
+    filter:
+        drop-shadow(0 0 10px rgba(212,175,55,.5));
+
+    animation:
+        titleSymbol 5s ease-in-out infinite;
+}
+
+@keyframes titleSymbol{
+
+    0%,
+    100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-5px) rotate(1deg);
+    }
 }
 
 .document-title h1{
     font-family:"Cinzel",serif;
+
     color:var(--bright-gold);
+
     font-size:clamp(25px,4vw,45px);
+
     letter-spacing:2px;
+
     line-height:1.25;
 }
 
 .document-title h2{
     font-family:"Cinzel",serif;
+
     color:var(--royal-gold);
+
     font-size:16px;
+
     letter-spacing:4px;
+
     margin-top:10px;
 }
 
 .gold-line{
     width:240px;
+
     height:2px;
+
     margin:25px auto;
 
     background:
@@ -527,7 +736,44 @@ body{
             transparent
         );
 
-    animation:lineGlow 3s ease-in-out infinite;
+    position:relative;
+
+    overflow:hidden;
+}
+
+.gold-line::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.8),
+            transparent
+        );
+
+    animation:
+        goldSweep 4s ease-in-out infinite;
+}
+
+@keyframes goldSweep{
+
+    0%{
+        left:-100%;
+    }
+
+    45%,
+    100%{
+        left:100%;
+    }
 }
 
 /* =========================================================
@@ -535,10 +781,14 @@ body{
 ========================================================= */
 
 .preamble{
-    border:1px solid rgba(212,175,55,.35);
-    border-left:4px solid var(--royal-gold);
+    border:
+        1px solid rgba(212,175,55,.35);
+
+    border-left:
+        4px solid var(--royal-gold);
 
     padding:28px;
+
     margin-bottom:55px;
 
     background:
@@ -548,56 +798,69 @@ body{
             rgba(2,19,40,.65)
         );
 
-    box-shadow:inset 0 0 30px rgba(0,0,0,.15);
+    box-shadow:
+        inset 0 0 25px rgba(0,0,0,.15);
 }
 
 .preamble-symbol{
     width:50px;
     height:50px;
+
     object-fit:contain;
+
     display:block;
+
     margin:0 auto 12px;
 
-    animation:goldPulse 4s ease-in-out infinite;
+    filter:
+        drop-shadow(0 0 8px rgba(212,175,55,.45));
 }
 
 .preamble h2{
     font-family:"Cinzel",serif;
+
     text-align:center;
+
     color:var(--royal-gold);
+
     letter-spacing:3px;
+
     margin-bottom:18px;
 }
 
 .preamble p{
     text-align:justify;
+
     font-size:18px;
 }
 
 /* =========================================================
-   ARTICLE
+   ARTICLES
 ========================================================= */
 
 .article{
     margin-bottom:65px;
+
     padding-top:20px;
 
-    border-top:1px solid rgba(212,175,55,.18);
+    border-top:
+        1px solid rgba(212,175,55,.18);
 
-    scroll-margin-top:100px;
+    scroll-margin-top:95px;
 
-    animation:articleReveal .8s ease both;
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:
+        opacity .75s ease,
+        transform .75s ease;
 }
 
-@keyframes articleReveal{
-    from{
-        opacity:0;
-        transform:translateY(18px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.article.visible{
+    opacity:1;
+
+    transform:translateY(0);
 }
 
 .article:first-of-type{
@@ -605,79 +868,46 @@ body{
 }
 
 .article-heading{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-
     font-family:"Cinzel",serif;
+
     color:var(--royal-gold);
 
     font-size:clamp(20px,3vw,30px);
+
     letter-spacing:2px;
 
     margin-bottom:25px;
+
     padding-bottom:12px;
 
-    border-bottom:1px solid rgba(212,175,55,.35);
+    border-bottom:
+        1px solid rgba(212,175,55,.35);
 
-    cursor:pointer;
+    line-height:1.35;
 }
 
 .article-heading span{
     color:var(--bright-gold);
 }
 
-.article-toggle{
-    flex-shrink:0;
-
-    width:34px;
-    height:34px;
-
-    border:1px solid rgba(212,175,55,.45);
-    border-radius:50%;
-
-    background:rgba(212,175,55,.08);
-
-    color:var(--bright-gold);
-
-    font-family:Arial,sans-serif;
-    font-size:18px;
-
-    cursor:pointer;
-
-    transition:.3s ease;
-}
-
-.article-toggle:hover{
-    background:var(--royal-gold);
-    color:#03152d;
-    transform:rotate(90deg);
-}
-
-.article.collapsed .article-body{
-    display:none;
-}
-
-.article.collapsed .article-toggle{
-    transform:rotate(0deg);
-}
-
-/* =========================================================
-   SECTION TEXT
-========================================================= */
-
 .section{
     margin:18px 0;
-    font-size:18px;
 
-    transition:.3s ease;
+    font-size:18px;
 }
 
 .section-title{
     color:#f0d77d;
+
     font-weight:700;
-    margin-top:25px;
+
+    margin-top:30px;
+
+    margin-bottom:10px;
+
+    font-family:"Cinzel",serif;
+
+    letter-spacing:1px;
 }
 
 .subsection{
@@ -686,43 +916,12 @@ body{
 
 .subsection-title{
     color:var(--royal-gold);
+
     font-weight:700;
 }
 
 /* =========================================================
-   SEARCH HIGHLIGHT
-========================================================= */
-
-.search-highlight{
-    background:rgba(212,175,55,.45);
-    color:#fff;
-    border-radius:2px;
-    padding:0 2px;
-}
-
-.search-hidden{
-    display:none !important;
-}
-
-.search-message{
-    display:none;
-
-    margin:20px 0;
-    padding:18px;
-
-    text-align:center;
-
-    border:1px solid rgba(212,175,55,.4);
-
-    background:rgba(212,175,55,.06);
-
-    color:#d8cda9;
-
-    font-family:"Cinzel",serif;
-}
-
-/* =========================================================
-   BACK TOP
+   BACK TO TOP
 ========================================================= */
 
 .back-top{
@@ -731,73 +930,38 @@ body{
     margin-top:20px;
 
     font-family:"Cinzel",serif;
+
     font-size:11px;
+
     letter-spacing:1px;
 
     color:var(--royal-gold);
+
     text-decoration:none;
 
-    border:1px solid rgba(212,175,55,.4);
+    border:
+        1px solid rgba(212,175,55,.4);
 
     padding:6px 12px;
 
     border-radius:3px;
 
-    transition:.3s;
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .back-top:hover{
     background:var(--royal-gold);
+
     color:#03152d;
-}
 
-/* =========================================================
-   FLOATING TOP BUTTON
-========================================================= */
-
-#floatingTop{
-    position:fixed;
-
-    right:22px;
-    bottom:22px;
-
-    width:48px;
-    height:48px;
-
-    border-radius:50%;
-
-    border:1px solid var(--royal-gold);
-
-    background:rgba(2,20,42,.94);
-
-    color:var(--bright-gold);
-
-    font-size:21px;
-
-    cursor:pointer;
-
-    opacity:0;
-    visibility:hidden;
-
-    transform:translateY(15px);
-
-    transition:.3s ease;
-
-    z-index:2000;
+    transform:translateY(-2px);
 
     box-shadow:
-        0 5px 20px rgba(0,0,0,.5);
-}
-
-#floatingTop.show{
-    opacity:1;
-    visibility:visible;
-    transform:translateY(0);
-}
-
-#floatingTop:hover{
-    background:var(--royal-gold);
-    color:#03152d;
+        0 5px 15px rgba(212,175,55,.25);
 }
 
 /* =========================================================
@@ -818,53 +982,95 @@ body{
             rgba(1,13,29,.9)
         );
 
-    border:1px solid rgba(212,175,55,.5);
+    border:
+        1px solid rgba(212,175,55,.5);
+
     border-radius:8px;
 
     box-shadow:
         inset 0 0 40px rgba(0,0,0,.25);
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.royal-seat.visible{
+    opacity:1;
+
+    transform:translateY(0);
 }
 
 .royal-seat-emblem{
     width:150px;
     height:150px;
+
     object-fit:contain;
 
     margin:0 auto 20px;
+
     display:block;
 
+    filter:
+        drop-shadow(0 0 12px rgba(212,175,55,.5))
+        drop-shadow(0 0 35px rgba(212,175,55,.15));
+
     animation:
-        royalFloat 5s ease-in-out infinite,
-        goldPulse 4s ease-in-out infinite;
+        royalSeatFloat 5s ease-in-out infinite;
+}
+
+@keyframes royalSeatFloat{
+
+    0%,
+    100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
 }
 
 .royal-seat h2{
     font-family:"Cinzel",serif;
+
     color:var(--royal-gold);
+
     letter-spacing:3px;
 }
 
 .royal-seat p{
     font-size:18px;
+
     margin-top:10px;
 }
 
 .royal-seat .sovereign-name{
     font-family:"Cinzel",serif;
+
     color:var(--bright-gold);
+
     font-size:21px;
+
     margin-top:15px;
 }
 
 .royal-divider-symbol{
     width:45px;
     height:45px;
+
     object-fit:contain;
 
     display:block;
+
     margin:25px auto;
 
-    animation:goldPulse 4s ease-in-out infinite;
+    filter:
+        drop-shadow(0 0 7px rgba(212,175,55,.4));
 }
 
 /* =========================================================
@@ -878,7 +1084,8 @@ footer{
 
     background:#010812;
 
-    border-top:1px solid rgba(212,175,55,.35);
+    border-top:
+        1px solid rgba(212,175,55,.35);
 
     color:#888;
 }
@@ -890,113 +1097,114 @@ footer{
     object-fit:contain;
 
     display:block;
+
     margin:0 auto 12px;
 
-    animation:goldPulse 4s ease-in-out infinite;
+    filter:
+        drop-shadow(0 0 8px rgba(212,175,55,.35));
 }
 
 footer strong{
     color:var(--royal-gold);
+
     font-family:"Cinzel",serif;
 }
 
 /* =========================================================
-   PRINT
+   MOBILE TABLE OF CONTENTS
 ========================================================= */
 
-@media print{
+.mobile-index-toggle{
+    display:none;
 
-    body{
-        background:white;
-        color:#111;
-        animation:none;
-    }
+    width:100%;
 
-    .top-header,
-    .main-nav,
-    .control-panel,
-    .article-index,
-    #floatingTop,
-    .back-top,
-    footer{
-        display:none !important;
-    }
+    border:1px solid rgba(212,175,55,.5);
 
-    .container{
-        width:100%;
-        margin:0;
-        display:block;
-    }
+    background:
+        linear-gradient(
+            135deg,
+            #073b73,
+            #02152e
+        );
 
-    .document{
-        border:none;
-        box-shadow:none;
-        background:white;
-        padding:20px;
-        color:#111;
-    }
+    color:var(--bright-gold);
 
-    .document-title h1,
-    .document-title h2,
-    .article-heading,
-    .section-title,
-    .royal-seat h2,
-    .royal-seat .sovereign-name{
-        color:#111;
-    }
+    font-family:"Cinzel",serif;
 
-    .article{
-        page-break-inside:auto;
-    }
+    font-size:13px;
 
-    .article-body{
-        display:block !important;
-    }
+    letter-spacing:1px;
 
-    .article-toggle{
-        display:none;
-    }
+    padding:12px;
 
-    .preamble,
-    .royal-seat{
-        background:white;
-        color:#111;
-    }
+    border-radius:5px;
 
-    .preamble p,
-    .section,
-    .royal-seat p{
-        color:#111;
-    }
+    cursor:pointer;
+
+    margin-bottom:15px;
 }
 
 /* =========================================================
-   MOBILE
+   RESPONSIVE
 ========================================================= */
+
+@media(max-width:1100px){
+
+    .container{
+        grid-template-columns:240px minmax(0,1fr);
+
+        gap:22px;
+    }
+
+    .article-index a{
+        font-size:11px;
+
+        padding:8px;
+    }
+
+    .main-nav a{
+        padding-left:9px;
+        padding-right:9px;
+    }
+}
 
 @media(max-width:900px){
 
-    .control-panel{
-        grid-template-columns:1fr;
-    }
-
     .container{
         grid-template-columns:1fr;
+
+        width:min(950px,94%);
+    }
+
+    .mobile-index-toggle{
+        display:block;
     }
 
     .article-index{
         position:relative;
+
         top:auto;
+
         max-height:none;
+
+        display:none;
+
+        animation:none;
+    }
+
+    .article-index.open{
+        display:block;
     }
 
     .article-index a{
         display:inline-block;
+
         width:49%;
     }
 
     .document{
-        padding:25px 20px;
+        padding:30px 25px;
     }
 
     .section{
@@ -1007,9 +1215,24 @@ footer strong{
         width:110px;
         height:110px;
     }
+
+    .document-title .title-symbol{
+        width:75px;
+        height:75px;
+    }
+
+    .main-nav{
+        position:relative;
+
+        top:auto;
+    }
 }
 
 @media(max-width:600px){
+
+    html{
+        scroll-padding-top:25px;
+    }
 
     .top-header{
         padding:28px 15px;
@@ -1020,17 +1243,62 @@ footer strong{
         height:95px;
     }
 
+    .top-header h1{
+        font-size:25px;
+
+        letter-spacing:1.5px;
+    }
+
+    .top-header h2{
+        font-size:11px;
+
+        letter-spacing:2px;
+    }
+
     .main-nav{
-        padding:7px 4px;
+        padding:7px 5px;
     }
 
     .main-nav a{
         font-size:9px;
-        padding:6px 7px;
+
+        padding:6px 6px;
+
+        letter-spacing:.5px;
+    }
+
+    .container{
+        width:94%;
+
+        margin-top:20px;
     }
 
     .article-index a{
         width:100%;
+    }
+
+    .document{
+        padding:25px 18px;
+    }
+
+    .document-title{
+        margin-bottom:35px;
+    }
+
+    .document-title h1{
+        font-size:24px;
+
+        letter-spacing:1px;
+    }
+
+    .document-title h2{
+        font-size:12px;
+
+        letter-spacing:2px;
+    }
+
+    .gold-line{
+        width:180px;
     }
 
     .preamble{
@@ -1039,15 +1307,32 @@ footer strong{
 
     .preamble p{
         text-align:left;
+
         font-size:17px;
     }
 
-    .section{
-        text-align:left;
+    .article{
+        margin-bottom:50px;
     }
 
     .article-heading{
-        font-size:19px;
+        font-size:20px;
+
+        letter-spacing:1px;
+    }
+
+    .section{
+        font-size:17px;
+
+        text-align:left;
+    }
+
+    .subsection{
+        margin-left:12px;
+    }
+
+    .royal-seat{
+        padding:35px 15px;
     }
 
     .royal-seat-emblem{
@@ -1055,9 +1340,10 @@ footer strong{
         height:115px;
     }
 
-    #floatingTop{
-        right:14px;
-        bottom:14px;
+    .royal-seat h2{
+        font-size:18px;
+
+        letter-spacing:2px;
     }
 }
 
@@ -1074,8 +1360,16 @@ footer strong{
     *,
     *::before,
     *::after{
-        animation:none !important;
-        transition:none !important;
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+
+    .article,
+    .royal-seat{
+        opacity:1;
+
+        transform:none;
     }
 }
 
@@ -1083,6 +1377,12 @@ footer strong{
 </head>
 
 <body id="top">
+
+<!-- =======================================================
+     SCROLL PROGRESS
+======================================================= -->
+
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- =======================================================
      IMPERIAL HEADER
@@ -1106,7 +1406,7 @@ footer strong{
      MAIN NAVIGATION
 ======================================================= -->
 
-<nav class="main-nav">
+<nav class="main-nav" aria-label="Main navigation">
 
     <a href="index.html">HOME</a>
     <a href="constitution.html">CONSTITUTION</a>
@@ -1124,982 +1424,867 @@ footer strong{
 </nav>
 
 <!-- =======================================================
-     SEARCH / TOOLS
-======================================================= -->
-
-<div class="control-panel">
-
-    <input
-        type="search"
-        id="constitutionSearch"
-        class="search-box"
-        placeholder="🔎 Search the Constitution..."
-        aria-label="Search Constitution"
-    >
-
-    <select
-        id="articleJump"
-        class="article-select"
-        aria-label="Jump to Article"
-    >
-        <option value="">📜 JUMP TO ARTICLE</option>
-        <option value="article1">ARTICLE I — Sovereign</option>
-        <option value="article2">ARTICLE II — Principles</option>
-        <option value="article3">ARTICLE III — Bill of Rights</option>
-        <option value="article4">ARTICLE IV — Citizenship</option>
-        <option value="article5">ARTICLE V — Suffrage</option>
-        <option value="article6">ARTICLE VI — Legislative</option>
-        <option value="article7">ARTICLE VII — Executive</option>
-        <option value="article8">ARTICLE VIII — Judiciary</option>
-        <option value="article9">ARTICLE IX — Local Government</option>
-        <option value="article10">ARTICLE X — Defense</option>
-        <option value="article11">ARTICLE XI — Finance</option>
-        <option value="article12">ARTICLE XII — Accountability</option>
-        <option value="article13">ARTICLE XIII — Commissions</option>
-        <option value="article14">ARTICLE XIV — Family</option>
-        <option value="article15">ARTICLE XV — Education</option>
-        <option value="article16">ARTICLE XVI — Amendments</option>
-        <option value="article17">ARTICLE XVII — Impeachment</option>
-        <option value="article18">ARTICLE XVIII — Appointments</option>
-        <option value="article19">ARTICLE XIX — Territory</option>
-        <option value="article20">ARTICLE XX — General Provisions</option>
-        <option value="witness">IN WITNESS THEREOF</option>
-        <option value="royal-seat">ROYAL SEAT</option>
-    </select>
-
-    <button class="control-button" id="printButton">
-        🖨 PRINT
-    </button>
-
-</div>
-
-<div class="search-message" id="searchMessage">
-    No constitutional provision found matching your search.
-</div>
-
-<!-- =======================================================
      MAIN PAGE
 ======================================================= -->
 
 <div class="container">
 
-<!-- =======================================================
-     ARTICLE INDEX
-======================================================= -->
+    <!-- ===================================================
+         MOBILE INDEX BUTTON
+    =================================================== -->
 
-<aside class="article-index">
-
-    <img
-        src="royal-symbol.png"
-        alt="Royal Symbol"
-        class="index-symbol"
+    <button
+        class="mobile-index-toggle"
+        id="indexToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="articleIndex"
     >
+        ☰ CONSTITUTIONAL ARTICLES
+    </button>
+
+    <!-- ===================================================
+         ARTICLE INDEX
+    =================================================== -->
+
+    <aside class="article-index" id="articleIndex">
+
+        <img
+            src="royal-symbol.png"
+            alt="Royal Symbol of Bristevia"
+            class="index-symbol"
+        >
+
+        <h3>CONSTITUTIONAL ARTICLES</h3>
+
+        <a href="#article1">ARTICLE I — Sovereign</a>
+        <a href="#article2">ARTICLE II — Principles</a>
+        <a href="#article3">ARTICLE III — Bill of Rights</a>
+        <a href="#article4">ARTICLE IV — Citizenship</a>
+        <a href="#article5">ARTICLE V — Suffrage</a>
+        <a href="#article6">ARTICLE VI — Legislative</a>
+        <a href="#article7">ARTICLE VII — Executive</a>
+        <a href="#article8">ARTICLE VIII — Judiciary</a>
+        <a href="#article9">ARTICLE IX — Local Government</a>
+        <a href="#article10">ARTICLE X — Defense</a>
+        <a href="#article11">ARTICLE XI — Finance</a>
+        <a href="#article12">ARTICLE XII — Accountability</a>
+        <a href="#article13">ARTICLE XIII — Commissions</a>
+        <a href="#article14">ARTICLE XIV — Family</a>
+        <a href="#article15">ARTICLE XV — Education</a>
+        <a href="#article16">ARTICLE XVI — Amendments</a>
+        <a href="#article17">ARTICLE XVII — Impeachment</a>
+        <a href="#article18">ARTICLE XVIII — Appointments</a>
+        <a href="#article19">ARTICLE XIX — Territory</a>
+        <a href="#article20">ARTICLE XX — General Provisions</a>
+
+        <a href="#witness">IN WITNESS THEREOF</a>
+        <a href="#royal-seat">ROYAL SEAT</a>
+
+    </aside>
+
+    <!-- ===================================================
+         CONSTITUTION DOCUMENT
+    =================================================== -->
 
-    <h3>CONSTITUTIONAL ARTICLES</h3>
-
-    <a href="#article1">ARTICLE I — Sovereign</a>
-    <a href="#article2">ARTICLE II — Principles</a>
-    <a href="#article3">ARTICLE III — Bill of Rights</a>
-    <a href="#article4">ARTICLE IV — Citizenship</a>
-    <a href="#article5">ARTICLE V — Suffrage</a>
-    <a href="#article6">ARTICLE VI — Legislative</a>
-    <a href="#article7">ARTICLE VII — Executive</a>
-    <a href="#article8">ARTICLE VIII — Judiciary</a>
-    <a href="#article9">ARTICLE IX — Local Government</a>
-    <a href="#article10">ARTICLE X — Defense</a>
-    <a href="#article11">ARTICLE XI — Finance</a>
-    <a href="#article12">ARTICLE XII — Accountability</a>
-    <a href="#article13">ARTICLE XIII — Commissions</a>
-    <a href="#article14">ARTICLE XIV — Family</a>
-    <a href="#article15">ARTICLE XV — Education</a>
-    <a href="#article16">ARTICLE XVI — Amendments</a>
-    <a href="#article17">ARTICLE XVII — Impeachment</a>
-    <a href="#article18">ARTICLE XVIII — Appointments</a>
-    <a href="#article19">ARTICLE XIX — Territory</a>
-    <a href="#article20">ARTICLE XX — General Provisions</a>
-
-    <a href="#witness">IN WITNESS THEREOF</a>
-    <a href="#royal-seat">ROYAL SEAT</a>
-
-</aside>
-
-<!-- =======================================================
-     DOCUMENT
-======================================================= -->
+    <main class="document">
 
-<main class="document">
+        <!-- ===============================================
+             DOCUMENT TITLE
+        ================================================ -->
 
-<!-- =======================================================
-     TITLE
-======================================================= -->
+        <div class="document-title">
 
-<div class="document-title">
+            <img
+                src="royal-symbol.png"
+                alt="Royal Symbol of Bristevia"
+                class="title-symbol"
+            >
 
-    <img
-        src="royal-symbol.png"
-        alt="Royal Symbol of Bristevia"
-        class="title-symbol"
-    >
+            <h1>
+                THE 2026 CONSTITUTION OF THE<br>
+                IMPERIAL SOVEREIGN OF BRISTEVIA
+            </h1>
 
-    <h1>
-        THE 2026 CONSTITUTION OF THE<br>
-        IMPERIAL SOVEREIGN OF BRISTEVIA
-    </h1>
+            <h2>UNDER THE ETERNAL CROWN</h2>
 
-    <h2>UNDER THE ETERNAL CROWN</h2>
+            <div class="gold-line"></div>
 
-    <div class="gold-line"></div>
+        </div>
 
-</div>
+        <!-- ===============================================
+             PREAMBLE
+        ================================================ -->
 
-<!-- =======================================================
-     PREAMBLE
-======================================================= -->
+        <section class="preamble">
 
-<section class="preamble">
+            <img
+                src="royal-symbol.png"
+                alt="Royal Symbol"
+                class="preamble-symbol"
+            >
 
-    <img
-        src="royal-symbol.png"
-        alt="Royal Symbol"
-        class="preamble-symbol"
-    >
+            <h2>PREAMBLE</h2>
 
-    <h2>PREAMBLE</h2>
+            <p>
+                By the grace of the Eternal Crown, under the dominion of His Majesty
+                the Souverion and Her Majesty the Souveria, We, the sovereign people
+                of Bristevia, in unity and loyalty, establish this Constitution as
+                the foundation of our eternal Empire guided by order, wisdom, and
+                sovereign will to secure justice, uphold honor, maintain peace, and
+                safeguard the everlasting authority of the Imperial Sovereign.
+                Thus, in the name of Bristevia and under Heaven’s light, we ordain
+                and promulgate this Constitution.
+            </p>
 
-    <p>
-        By the grace of the Eternal Crown, under the dominion of His Majesty
-        the Souverion and Her Majesty the Souveria, We, the sovereign people
-        of Bristevia, in unity and loyalty, establish this Constitution as
-        the foundation of our eternal Empire guided by order, wisdom, and
-        sovereign will to secure justice, uphold honor, maintain peace, and
-        safeguard the everlasting authority of the Imperial Sovereign.
-        Thus, in the name of Bristevia and under Heaven’s light, we ordain
-        and promulgate this Constitution.
-    </p>
+        </section>
 
-</section>
+        <!-- ===============================================
+             ARTICLE I
+        ================================================ -->
 
-<!-- =======================================================
-     ARTICLE I
-======================================================= -->
+        <section class="article" id="article1">
 
-<section class="article" id="article1">
+            <h2 class="article-heading">
+                ARTICLE I — <span>THE IMPERIAL SOVEREIGN OF BRISTEVIA</span>
+            </h2>
 
-<h2 class="article-heading">
-ARTICLE I — <span>THE IMPERIAL SOVEREIGN OF BRISTEVIA</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section">
+                Bristevia is a sovereign and eternal monarchy, composed of provinces and
+                the capital city of Stephara.
+            </div>
 
-<div class="article-body">
+            <div class="section">
+                Its government shall be known as the Imperial Sovereign of Bristevia (ISB),
+                exercising authority under the divine right and constitutional rule of the
+                Souverion.
+            </div>
 
-<div class="section">
-Bristevia is a sovereign and eternal monarchy, composed of provinces and
-the capital city of Stephara.
-</div>
+            <div class="section">
+                Sovereignty resides in the Souverion and the Bristevian People, whose
+                allegiance is pledged to the Eternal Crown.
+            </div>
 
-<div class="section">
-Its government shall be known as the Imperial Sovereign of Bristevia (ISB),
-exercising authority under the divine right and constitutional rule of the
-Souverion.
-</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="section">
-Sovereignty resides in the Souverion and the Bristevian People, whose
-allegiance is pledged to the Eternal Crown.
-</div>
+        </section>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+        <!-- ===============================================
+             ARTICLE II
+        ================================================ -->
 
-</div>
-</section>
+        <section class="article" id="article2">
 
-<!-- =======================================================
-     ARTICLE II
-======================================================= -->
+            <h2 class="article-heading">
+                ARTICLE II — <span>DECLARATION OF PRINCIPLES AND IMPERIAL POLICIES</span>
+            </h2>
 
-<section class="article" id="article2">
+            <div class="section"><b>Section 1.</b> The State shall embody the ideals of loyalty, justice, and unity under the benevolent reign of the Souverion.</div>
 
-<h2 class="article-heading">
-ARTICLE II — <span>DECLARATION OF PRINCIPLES AND IMPERIAL POLICIES</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section"><b>Section 2.</b> The authority of the Souverion is absolute and indivisible, yet bound by the Constitution. His decrees must conform to the law of the realm.</div>
 
-<div class="article-body">
+            <div class="section"><b>Section 3.</b> The Souverion and the Constitution stand as equal pillars of sovereignty. No amendment may diminish the supremacy of the Souverion.</div>
 
-<div class="section"><b>Section 1.</b> The State shall embody the ideals of loyalty, justice, and unity under the benevolent reign of the Souverion.</div>
+            <div class="section"><b>Section 4.</b> The government shall promote the welfare of all Bristevians and preserve harmony among its provinces.</div>
 
-<div class="section"><b>Section 2.</b> The authority of the Souverion is absolute and indivisible, yet bound by the Constitution. His decrees must conform to the law of the realm.</div>
+            <div class="section"><b>Section 5.</b> The Imperial Sovereign shall pursue peace and friendship with other realms, guided by honor and mutual respect.</div>
 
-<div class="section"><b>Section 3.</b> The Souverion and the Constitution stand as equal pillars of sovereignty. No amendment may diminish the supremacy of the Souverion.</div>
+            <div class="section"><b>Section 6.</b> Separation of powers and checks and balances must be observed.</div>
 
-<div class="section"><b>Section 4.</b> The government shall promote the welfare of all Bristevians and preserve harmony among its provinces.</div>
+            <div class="section"><b>Section 7.</b> The Constitution is the highest law, and all laws must be bound by this Constitution.</div>
 
-<div class="section"><b>Section 5.</b> The Imperial Sovereign shall pursue peace and friendship with other realms, guided by honor and mutual respect.</div>
+            <div class="section"><b>Section 8.</b> The separation of the Church and the State shall be inviolable.</div>
 
-<div class="section"><b>Section 6.</b> Separation of powers and checks and balances must be observed.</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="section"><b>Section 7.</b> The Constitution is the highest law, and all laws must be bound by this Constitution.</div>
+        </section>
 
-<div class="section"><b>Section 8.</b> The separation of the Church and the State shall be inviolable.</div>
+        <!-- ===============================================
+             ARTICLE III
+        ================================================ -->
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+        <section class="article" id="article3">
 
-</div>
-</section>
+            <h2 class="article-heading">
+                ARTICLE III — <span>THE IMPERIAL BILL OF RIGHTS</span>
+            </h2>
 
-<!-- =======================================================
-     ARTICLE III
-======================================================= -->
+            <div class="section"><b>Section 1.</b> All Bristevians are entitled to liberty, dignity, and justice.</div>
 
-<section class="article" id="article3">
+            <div class="section"><b>Section 2.</b> No person shall be deprived of life, liberty, or property without due process of law, nor denied equal protection under the laws of the realm.</div>
 
-<h2 class="article-heading">
-ARTICLE III — <span>THE IMPERIAL BILL OF RIGHTS</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section"><b>Section 3.</b> Freedom of thought, belief, expression, and peaceful assembly shall be respected, provided they do not threaten the unity of the Crown or the security of Bristevia.</div>
 
-<div class="article-body">
+            <div class="section"><b>Section 4.</b> The death penalty may be imposed, unless for compelling reasons involving heinous crimes, the Imperial Assembly hereafter provides for its prohibition or limitation.</div>
 
-<div class="section"><b>Section 1.</b> All Bristevians are entitled to liberty, dignity, and justice.</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="section"><b>Section 2.</b> No person shall be deprived of life, liberty, or property without due process of law, nor denied equal protection under the laws of the realm.</div>
+        </section>
 
-<div class="section"><b>Section 3.</b> Freedom of thought, belief, expression, and peaceful assembly shall be respected, provided they do not threaten the unity of the Crown or the security of Bristevia.</div>
+        <!-- ===============================================
+             ARTICLE IV
+        ================================================ -->
 
-<div class="section"><b>Section 4.</b> The death penalty may be imposed, unless for compelling reasons involving heinous crimes, the Imperial Assembly hereafter provides for its prohibition or limitation.</div>
+        <section class="article" id="article4">
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <h2 class="article-heading">
+                ARTICLE IV — <span>CITIZENSHIP</span>
+            </h2>
 
-</div>
-</section>
+            <div class="section"><b>Section 1.</b> Citizenship shall be defined by Imperial Law.</div>
 
-<!-- =======================================================
-     ARTICLE IV
-======================================================= -->
+            <div class="section"><b>Section 2.</b> Natural-born Bristevians are those whose father or mother is a subject of Bristevia.</div>
 
-<section class="article" id="article4">
+            <div class="section"><b>Section 3.</b> Citizenship may be acquired or lost in accordance with laws enacted by the Imperial Assembly.</div>
 
-<h2 class="article-heading">
-ARTICLE IV — <span>CITIZENSHIP</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section"><b>Section 4.</b> Each Province shall determine its list of citizens and must provide the exact population count during the census.</div>
 
-<div class="article-body">
+            <div class="section"><b>Section 5.</b> Registration of citizenship and related affairs shall be conducted by the Ministry assigned by law.</div>
 
-<div class="section"><b>Section 1.</b> Citizenship shall be defined by Imperial Law.</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="section"><b>Section 2.</b> Natural-born Bristevians are those whose father or mother is a subject of Bristevia.</div>
+        </section>
 
-<div class="section"><b>Section 3.</b> Citizenship may be acquired or lost in accordance with laws enacted by the Imperial Assembly.</div>
+        <!-- ===============================================
+             ARTICLE V
+        ================================================ -->
 
-<div class="section"><b>Section 4.</b> Each Province shall determine its list of citizens and must provide the exact population count during the census.</div>
+        <section class="article" id="article5">
 
-<div class="section"><b>Section 5.</b> Registration of citizenship and related affairs shall be conducted by the Ministry assigned by law.</div>
+            <h2 class="article-heading">
+                ARTICLE V — <span>SUFFRAGE</span>
+            </h2>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <div class="section"><b>Section 1.</b> Suffrage shall be exercised by all citizens of Bristevia not otherwise disqualified by law.</div>
 
-</div>
-</section>
+            <div class="section"><b>Section 2.</b> Voting may be conducted manually or by secure means prescribed by the Electoral Code.</div>
 
-<!-- =======================================================
-     ARTICLE V
-======================================================= -->
+            <div class="section"><b>Section 3.</b> The Prime Minister shall be chosen jointly by both the Magnum Consilium and the Domus Curialum, voting as one Imperial Assembly. The Prime Minister shall be nominated from among the Members of either House and must secure the votes of two-thirds (2/3) of all Members of both Houses.</div>
 
-<section class="article" id="article5">
+            <div class="section"><b>Section 4.</b> The Speaker of the Domus Curialum shall preside over its sessions and must secure a majority vote of all its Members.</div>
 
-<h2 class="article-heading">
-ARTICLE V — <span>SUFFRAGE</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section"><b>Section 5.</b> The Chairman, who shall preside over the Magnum Consilium, must likewise secure a majority vote of all its Members.</div>
 
-<div class="article-body">
+            <div class="section"><b>Section 6.</b> The presiders of both Houses must abandon their political parties before being nominated to ensure impartiality.</div>
 
-<div class="section"><b>Section 1.</b> Suffrage shall be exercised by all citizens of Bristevia not otherwise disqualified by law.</div>
+            <div class="section"><b>Section 7.</b> Registered citizens shall have the right to vote for Members of the Imperial Assembly and local government officials.</div>
 
-<div class="section"><b>Section 2.</b> Voting may be conducted manually or by secure means prescribed by the Electoral Code.</div>
+            <div class="section"><b>Section 8.</b> No candidate shall be elected to more than one position at the same time.</div>
 
-<div class="section"><b>Section 3.</b> The Prime Minister shall be chosen jointly by both the Magnum Consilium and the Domus Curialum, voting as one Imperial Assembly. The Prime Minister shall be nominated from among the Members of either House and must secure the votes of two-thirds (2/3) of all Members of both Houses.</div>
+            <div class="section"><b>Section 9.</b> After the election and before assuming office, the consolidated list of winners must be submitted to the Supreme Tribunal (ST) for evaluation and shall immediately assume office upon declaration and approval if no violation is found. Exemptions to this provision are the Prime Minister, the Speaker, and the Chairman.</div>
 
-<div class="section"><b>Section 4.</b> The Speaker of the Domus Curialum shall preside over its sessions and must secure a majority vote of all its Members.</div>
+            <div class="section"><b>Section 10.</b> During the election, each candidate must present their name along with their political party. Example: Name (Party).</div>
 
-<div class="section"><b>Section 5.</b> The Chairman, who shall preside over the Magnum Consilium, must likewise secure a majority vote of all its Members.</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="section"><b>Section 6.</b> The presiders of both Houses must abandon their political parties before being nominated to ensure impartiality.</div>
+        </section>
 
-<div class="section"><b>Section 7.</b> Registered citizens shall have the right to vote for Members of the Imperial Assembly and local government officials.</div>
+        <!-- ===============================================
+             ARTICLE VI
+        ================================================ -->
 
-<div class="section"><b>Section 8.</b> No candidate shall be elected to more than one position at the same time.</div>
+        <section class="article" id="article6">
 
-<div class="section"><b>Section 9.</b> After the election and before assuming office, the consolidated list of winners must be submitted to the Supreme Tribunal (ST) for evaluation and shall immediately assume office upon declaration and approval if no violation is found. Exemptions to this provision are the Prime Minister, the Speaker, and the Chairman.</div>
+            <h2 class="article-heading">
+                ARTICLE VI — <span>THE LEGISLATIVE DEPARTMENT</span>
+            </h2>
 
-<div class="section"><b>Section 10.</b> During the election, each candidate must present their name along with their political party. Example: Name (Party).</div>
+            <div class="section"><b>Section 1.</b> The legislative power shall be vested in a bicameral Imperial Assembly of Bristevia, consisting of the Magnum Consilium (Upper House of Consuls) and the Domus Curialum (Lower House of Ministers).</div>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <div class="section"><b>Section 2.</b> The Magnum Consilium shall be composed of one Member from each province, representing provincial interests. The number of seats may increase if new provinces are created by law.</div>
 
-</div>
-</section>
+            <div class="section"><b>Section 3.</b> The Domus Curialum shall consist of one Member representing each district.</div>
 
-<!-- =======================================================
-     ARTICLE VI
-======================================================= -->
+            <div class="section"><b>Section 4.</b> The Prime Minister, elected jointly by both Houses as provided in Article V, shall head the government and preside over its administration.</div>
 
-<section class="article" id="article6">
+            <div class="section"><b>Section 5.</b> The Speaker of the Domus Curialum shall preside over its sessions. The Chairman shall preside over the Magnum Consilium.</div>
 
-<h2 class="article-heading">
-ARTICLE VI — <span>THE LEGISLATIVE DEPARTMENT</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section"><b>Section 6.</b> Laws shall be initiated exclusively by the Imperial Assembly. If the Souverion desires to propose a law, He shall refer it to a Member of the Domus Curialum for introduction in proper form.</div>
 
-<div class="article-body">
+            <h3 class="section-title">LAW-MAKING PROCEDURES</h3>
 
-<div class="section"><b>Section 1.</b> The legislative power shall be vested in a bicameral Imperial Assembly of Bristevia, consisting of the Magnum Consilium (Upper House of Consuls) and the Domus Curialum (Lower House of Ministers).</div>
+            <div class="section"><b>Section 7.</b> Every bill passed by the Imperial Assembly shall embrace only one subject, which shall be expressed in the title.</div>
 
-<div class="section"><b>Section 2.</b> The Magnum Consilium shall be composed of one Member from each province, representing provincial interests. The number of seats may increase if new provinces are created by law.</div>
+            <div class="section"><b>Section 8.</b> No bill shall become law unless it has passed three readings on separate days. Printed copies in final form must be distributed to Members at least three days before passage, except when the Souverion certifies the bill as urgent.</div>
 
-<div class="section"><b>Section 3.</b> The Domus Curialum shall consist of one Member representing each district.</div>
+            <div class="section"><b>Section 9.</b> Upon the last reading, no amendment shall be allowed, and the vote shall be taken immediately and recorded.</div>
 
-<div class="section"><b>Section 4.</b> The Prime Minister, elected jointly by both Houses as provided in Article V, shall head the government and preside over its administration.</div>
+            <div class="section"><b>Section 10.</b> Every bill passed by both Houses shall, before becoming law, be presented to the Souverion. If He approves, He shall sign it; otherwise, He shall veto it and return it with objections. If, after reconsideration, two-thirds (2/3) of both Houses approve it, the bill shall become law. The Souverion may veto specific items in appropriation, revenue, or tariff bills without affecting the remainder.</div>
 
-<div class="section"><b>Section 5.</b> The Speaker of the Domus Curialum shall preside over its sessions. The Chairman shall preside over the Magnum Consilium.</div>
+            <h3 class="section-title">READINGS OF BILLS</h3>
 
-<div class="section"><b>Section 6.</b> Laws shall be initiated exclusively by the Imperial Assembly. If the Souverion desires to propose a law, He shall refer it to a Member of the Domus Curialum for introduction in proper form.</div>
+            <div class="section"><b>Section 11(a).</b> First Reading – The bill shall be introduced by the Speaker or Chairman, stating its number, title, and author, and referred to the proper committee.</div>
 
-<h3 class="section-title">LAW-MAKING PROCEDURES</h3>
+            <div class="section"><b>Section 11(b).</b> Committee Action – The committee shall conduct hearings, propose amendments, and prepare a report, decided upon by at least ten percent (10%) of the Members of the House. Committee seats shall reflect proportional representation from political parties and organizations registered within the Imperial Realm.</div>
 
-<div class="section"><b>Section 7.</b> Every bill passed by the Imperial Assembly shall embrace only one subject, which shall be expressed in the title.</div>
+            <div class="section"><b>Section 11(c).</b> Second Reading – Debate and amendment by the House.</div>
 
-<div class="section"><b>Section 8.</b> No bill shall become law unless it has passed three readings on separate days. Printed copies in final form must be distributed to Members at least three days before passage, except when the Souverion certifies the bill as urgent.</div>
+            <div class="section"><b>Section 11(d).</b> Third Reading – Final vote and tally of all Members.</div>
 
-<div class="section"><b>Section 9.</b> Upon the last reading, no amendment shall be allowed, and the vote shall be taken immediately and recorded.</div>
+            <div class="section"><b>Section 11(e).</b> Transmission – The approved bill shall be sent to the other House for concurrence, where it shall undergo the same process.</div>
 
-<div class="section"><b>Section 10.</b> Every bill passed by both Houses shall, before becoming law, be presented to the Souverion. If He approves, He shall sign it; otherwise, He shall veto it and return it with objections. If, after reconsideration, two-thirds (2/3) of both Houses approve it, the bill shall become law. The Souverion may veto specific items in appropriation, revenue, or tariff bills without affecting the remainder.</div>
+            <div class="section"><b>Section 11(f).</b> Conference Committee – A joint committee shall reconcile differing versions of the bill.</div>
 
-<h3 class="section-title">READINGS OF BILLS</h3>
+            <div class="section"><b>Section 11(g).</b> Enrollment and Authentication – The final bill shall be prepared and transmitted to the Souverion for approval.</div>
 
-<div class="section"><b>Section 11(a).</b> First Reading – The bill shall be introduced by the Speaker or Chairman, stating its number, title, and author, and referred to the proper committee.</div>
+            <h3 class="section-title">FORMAT OF BILLS AND LAWS</h3>
 
-<div class="section"><b>Section 11(b).</b> Committee Action – The committee shall conduct hearings, propose amendments, and prepare a report, decided upon by at least ten percent (10%) of the Members of the House. Committee seats shall reflect proportional representation from political parties and organizations registered within the Imperial Realm.</div>
+            <div class="section">
+                <b>Section 12.</b> Bill Format:<br>
+                HB Number – Title<br>
+                Constitutional Basis (Article and Section only)<br>
+                Proposed Provision<br>
+                Author’s Name<br>
+                Souverion’s Action: The Souverion may approve, veto, or return the bill.
+            </div>
 
-<div class="section"><b>Section 11(c).</b> Second Reading – Debate and amendment by the House.</div>
+            <div class="section">
+                <b>Section 13.</b> Law Format:<br>
+                SA Number<br>
+                Constitutional Basis (Article and Section only)<br>
+                Proposed Provision<br>
+                Author’s Name<br>
+                After approval, the law shall be numbered as a Sovereign Act (SA) and recorded sequentially (e.g., SA1, SA2, etc.).
+            </div>
 
-<div class="section"><b>Section 11(d).</b> Third Reading – Final vote and tally of all Members.</div>
+            <div class="section"><b>Section 14.</b> The Magnum Consilium, the Domus Curialum, or any of their respective committees may conduct inquiries in aid of legislation.</div>
 
-<div class="section"><b>Section 11(e).</b> Transmission – The approved bill shall be sent to the other House for concurrence, where it shall undergo the same process.</div>
+            <div class="section"><b>Section 15.</b> No amendment may diminish the sovereignty of the Souverion or the authority of His Crown.</div>
 
-<div class="section"><b>Section 11(f).</b> Conference Committee – A joint committee shall reconcile differing versions of the bill.</div>
+            <div class="section"><b>Section 16.</b> Only political parties registered under this Article shall be free to organize, provided they uphold the sovereignty of the Realm and the Constitution.</div>
 
-<div class="section"><b>Section 11(g).</b> Enrollment and Authentication – The final bill shall be prepared and transmitted to the Souverion for approval.</div>
+            <div class="subsection">
+                <b>(a)</b> Political parties shall register with the Commission on Imperial Elections, which shall regulate their organization, finances, and participation in elections.
+            </div>
 
-<h3 class="section-title">FORMAT OF BILLS AND LAWS</h3>
+            <div class="subsection">
+                <b>(b)</b> Recognized political parties shall include: Green Party, Liberal Party, Democratic Party, Republican Party, National Unity, Progressive Alliance, Socialist Party, Communist Party, Centrist, Labor, Conservative, Radical, and Independent.
+            </div>
 
-<div class="section"><b>Section 12.</b> Bill Format:<br>
-HB Number – Title<br>
-Constitutional Basis (Article and Section only)<br>
-Proposed Provision<br>
-Author’s Name<br>
-Souverion’s Action: The Souverion may approve, veto, or return the bill.</div>
+            <div class="section"><b>Section 17.</b> Each House of the Imperial Assembly may determine the rules of its proceedings, discipline its Members for disorderly conduct, and, with the concurrence of two-thirds (2/3) of all Members, suspend or expel a Member. The penalty of suspension shall not exceed sixty (60) days.</div>
 
-<div class="section"><b>Section 13.</b> Law Format:<br>
-SA Number<br>
-Constitutional Basis (Article and Section only)<br>
-Proposed Provision<br>
-Author’s Name<br>
-After approval, the law shall be numbered as a Sovereign Act (SA) and recorded sequentially (e.g., SA1, SA2, etc.).</div>
+            <div class="section"><b>Section 18. Commission on Appointments.</b> There shall be a Commission on Appointments, composed of the Chairman of the Magnum Consilium as ex officio Chairman, twelve Members of the Magnum Consilium, and twelve Members of the Domus Curialum, elected by their respective Houses based on proportional representation from registered political parties. The Chairman shall not vote except in the event of a tie. The Commission shall act upon all nominations and appointments within thirty (30) session days and decide by majority vote of all its Members.</div>
 
-<div class="section"><b>Section 14.</b> The Magnum Consilium, the Domus Curialum, or any of their respective committees may conduct inquiries in aid of legislation.</div>
+            <div class="section"><b>Section 19.</b> All appropriation, revenue, or tariff decrees, as well as decrees authorizing increases in public debt, decrees of local application, and private decrees, shall originate exclusively in the Domus Curialum. The Magnum Consilium may propose or concur with amendments in accordance with legislative procedure.</div>
 
-<div class="section"><b>Section 15.</b> No amendment may diminish the sovereignty of the Souverion or the authority of His Crown.</div>
+            <h3 class="section-title">APPROPRIATIONS AND FISCAL AUTHORITY</h3>
 
-<div class="section"><b>Section 16.</b> Only political parties registered under Section 16(b) shall be free to organize, provided they uphold the sovereignty of the Realm and the Constitution.</div>
+            <div class="section">
+                <b>Section 20.</b> No law shall authorize the transfer of appropriations; however, the Souverion, Prime Minister, Chairman of the Magnum Consilium, Speaker of the Domus Curialum, Chief Justice of the Supreme Tribunal, and Heads of Constitutional Commissions may, by Imperial Law, augment any item in the General Appropriations Decree for their respective offices from savings in other items. Discretionary funds appropriated for particular officials shall be disbursed solely for public purposes, supported by vouchers, and subject to guidelines prescribed by Imperial Law to ensure transparency and accountability.
+            </div>
 
-<div class="subsection">
-<b>(a)</b> Political parties shall register with the Commission on Imperial Elections, which shall regulate their organization, finances, and participation in elections.
-</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="subsection">
-<b>(b)</b> Recognized political parties shall include: Green Party, Liberal Party, Democratic Party, Republican Party, National Unity, Progressive Alliance, Socialist Party, Communist Party, Centrist, Labor, Conservative, Radical, and Independent.
-</div>
+        </section>
 
-<div class="section"><b>Section 17.</b> Each House of the Imperial Assembly may determine the rules of its proceedings, discipline its Members for disorderly conduct, and, with the concurrence of two-thirds (2/3) of all Members, suspend or expel a Member. The penalty of suspension shall not exceed sixty (60) days.</div>
+        <!-- ===============================================
+             ARTICLE VII
+        ================================================ -->
 
-<div class="section"><b>Section 18. Commission on Appointments.</b> There shall be a Commission on Appointments, composed of the Chairman of the Magnum Consilium as ex officio Chairman, twelve Members of the Magnum Consilium, and twelve Members of the Domus Curialum, elected by their respective Houses based on proportional representation from registered political parties. The Chairman shall not vote except in the event of a tie. The Commission shall act upon all nominations and appointments within thirty (30) session days and decide by majority vote of all its Members.</div>
+        <section class="article" id="article7">
 
-<div class="section"><b>Section 19.</b> All appropriation, revenue, or tariff decrees, as well as decrees authorizing increases in public debt, decrees of local application, and private decrees, shall originate exclusively in the Domus Curialum. The Magnum Consilium may propose or concur with amendments in accordance with legislative procedure.</div>
+            <h2 class="article-heading">
+                ARTICLE VII — <span>THE IMPERIAL EXECUTIVE</span>
+            </h2>
 
-<h3 class="section-title">APPROPRIATIONS AND FISCAL AUTHORITY</h3>
+            <div class="section"><b>Section 1.</b> The executive power shall be vested in the Souverion of Bristevia, the Supreme Monarch and Head of State, and the Prime Minister as Head of Government.</div>
 
-<div class="section"><b>Section 20.</b> No law shall authorize the transfer of appropriations; however, the Souverion, Prime Minister, Chairman of the Magnum Consilium, Speaker of the Domus Curialum, Chief Justice of the Supreme Tribunal, and Heads of Constitutional Commissions may, by Imperial Law, augment any item in the General Appropriations Decree for their respective offices from savings in other items. Discretionary funds appropriated for particular officials shall be disbursed solely for public purposes, supported by vouchers, and subject to guidelines prescribed by Imperial Law to ensure transparency and accountability.</div>
+            <div class="section"><b>Section 2.</b> The Souverion shall reign by right of succession and divine ordination, and shall be assisted by the Prime Minister and the Imperial Cabinet in matters of governance.</div>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <div class="section"><b>Section 3.</b> The Souverion’s acts and decisions shall conform to this Constitution. His actions may be questioned before the Supreme Tribunal, but his sovereignty shall remain absolute and undiminished.</div>
 
-</div>
-</section>
+            <div class="section"><b>Section 4.</b> The Prime Minister shall direct the government’s policies and implement its laws. He may be removed by a two-thirds (2/3) vote of both Houses voting jointly.</div>
 
-<!-- =======================================================
-     ARTICLE VII
-======================================================= -->
+            <div class="section"><b>Section 5.</b> The Souveria shall serve as Co-Sovereign and symbol of unity and grace of the Empire.</div>
 
-<section class="article" id="article7">
+            <div class="section"><b>Section 6. The Imperial Cabinet of Ministries.</b> The Imperial Cabinet shall consist of the Ministries for Justice, Finance, Defense, Foreign Affairs, Education, Health, Agriculture, Labor, Infrastructure, Social Welfare, and Provincial Administration, under the direction of the Prime Minister.</div>
 
-<h2 class="article-heading">
-ARTICLE VII — <span>THE IMPERIAL EXECUTIVE</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section"><b>Section 7.</b> The Prime Minister shall make executive and administrative appointments in accordance with Imperial Law.</div>
 
-<div class="article-body">
+            <div class="section"><b>Section 8.</b> The Prime Minister shall have control of executive Imperial ministries, bureaus, and offices.</div>
 
-<div class="section"><b>Section 1.</b> The executive power shall be vested in the Souverion of Bristevia, the Supreme Monarch and Head of State, and the Prime Minister as Head of Government.</div>
+            <div class="section"><b>Section 9. Council Chamber of Advisers.</b> The Souverion shall appoint a Council Chamber of Advisers to provide counsel on matters of state.</div>
 
-<div class="section"><b>Section 2.</b> The Souverion shall reign by right of succession and divine ordination, and shall be assisted by the Prime Minister and the Imperial Cabinet in matters of governance.</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="section"><b>Section 3.</b> The Souverion’s acts and decisions shall conform to this Constitution. Her actions may be questioned before the Supreme Tribunal, but her sovereignty shall remain absolute and undiminished.</div>
+        </section>
 
-<div class="section"><b>Section 4.</b> The Prime Minister shall direct the government’s policies and implement its laws. He may be removed by a two-thirds (2/3) vote of both Houses voting jointly.</div>
+        <!-- ===============================================
+             ARTICLE VIII
+        ================================================ -->
 
-<div class="section"><b>Section 5.</b> The Souveria shall serve as Co-Sovereign and symbol of unity and grace of the Empire.</div>
+        <section class="article" id="article8">
 
-<div class="section"><b>Section 6. The Imperial Cabinet of Ministries.</b> The Imperial Cabinet shall consist of the Ministries for Justice, Finance, Defense, Foreign Affairs, Education, Health, Agriculture, Labor, Infrastructure, Social Welfare, and Provincial Administration, under the direction of the Prime Minister.</div>
+            <h2 class="article-heading">
+                ARTICLE VIII — <span>THE JUDICIARY</span>
+            </h2>
 
-<div class="section"><b>Section 7.</b> The Prime Minister shall make executive and administrative appointments in accordance with Imperial Law.</div>
+            <div class="section"><b>Section 1.</b> The judicial power shall be vested in one Supreme Tribunal and such Special Courts and lower Regional Courts as may be established by law.</div>
 
-<div class="section"><b>Section 8.</b> The Prime Minister shall have control of executive Imperial ministries, bureaus, and offices.</div>
+            <div class="section"><b>Section 2.</b> The Supreme Tribunal shall be composed of eight (8) Justices and one (1) Chief Justice, all appointed by the Souverion without a fixed term.</div>
 
-<div class="section"><b>Section 9. Council Chamber of Advisers.</b> The Souverion shall appoint a Council Chamber of Advisers to provide counsel on matters of state.</div>
+            <div class="section"><b>Section 3.</b> Justices shall hold a permanent seat and are prohibited from being nominated or appointed to any other position.</div>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <div class="section"><b>Section 4.</b> The judicial power includes the authority to settle controversies involving rights and to determine whether any act of government conforms to this Constitution.</div>
 
-</div>
-</section>
+            <div class="section"><b>Section 5. Powers and Jurisdiction of the Supreme Tribunal.</b> The Supreme Tribunal shall exercise original and appellate jurisdiction as provided by this Constitution and Imperial Law.</div>
 
-<!-- =======================================================
-     ARTICLE VIII
-======================================================= -->
+            <div class="section"><b>Section 6. Stare Decisis.</b> Decisions of the Supreme Tribunal applying or interpreting the laws or the Constitution of the Imperial Sovereign of Bristevia shall form part of the legal system of Bristevia.</div>
 
-<section class="article" id="article8">
+            <div class="section"><b>Section 7.</b> There shall be Special Courts of Appeal for Administrative, Family, Criminal, Civil, Commercial, and Military matters.</div>
 
-<h2 class="article-heading">
-ARTICLE VIII — <span>THE JUDICIARY</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section"><b>Section 8.</b> The Rules of Court shall be enacted by the Supreme Tribunal.</div>
 
-<div class="article-body">
+            <div class="section"><b>Section 9.</b> The Supreme Tribunal may repeal or nullify any law found to be unconstitutional.</div>
 
-<div class="section"><b>Section 1.</b> The judicial power shall be vested in one Supreme Tribunal and such Special Courts and lower Regional Courts as may be established by law.</div>
+            <div class="section"><b>Section 10.</b> The Executive and Legislative branches are bound by the decisions of the Judiciary.</div>
 
-<div class="section"><b>Section 2.</b> The Supreme Tribunal shall be composed of eight (8) Justices and one (1) Chief Justice, all appointed by the Souverion without a fixed term.</div>
+            <div class="section"><b>Section 11.</b> Regional Courts shall serve as courts of first instance.</div>
 
-<div class="section"><b>Section 3.</b> Justices shall hold a permanent seat and are prohibited from being nominated or appointed to any other position.</div>
+            <div class="section"><b>Section 12.</b> The Supreme Tribunal shall have administrative supervision over all courts and personnel thereof.</div>
 
-<div class="section"><b>Section 4.</b> The judicial power includes the authority to settle controversies involving rights and to determine whether any act of government conforms to this Constitution.</div>
+            <div class="section"><b>Section 13.</b> Every Region must consist of at least one Regional Court.</div>
 
-<div class="section"><b>Section 5. Powers and Jurisdiction of the Supreme Tribunal.</b> The Supreme Tribunal shall exercise original and appellate jurisdiction as provided by this Constitution and Imperial Law.</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="section"><b>Section 6. Stare Decisis.</b> Decisions of the Supreme Tribunal applying or interpreting the laws or the Constitution of the Imperial Sovereign of Bristevia shall form part of the legal system of Bristevia.</div>
+        </section>
 
-<div class="section"><b>Section 7.</b> There shall be Special Courts of Appeal for Administrative, Family, Criminal, Civil, Commercial, and Military matters.</div>
+        <!-- ===============================================
+             ARTICLE IX
+        ================================================ -->
 
-<div class="section"><b>Section 8.</b> The Rules of Court shall be enacted by the Supreme Tribunal.</div>
+        <section class="article" id="article9">
 
-<div class="section"><b>Section 9.</b> The Supreme Tribunal may repeal or nullify any law found to be unconstitutional.</div>
+            <h2 class="article-heading">
+                ARTICLE IX — <span>LOCAL GOVERNMENT ADMINISTRATION</span>
+            </h2>
 
-<div class="section"><b>Section 10.</b> The Executive and Legislative branches are bound by the decisions of the Judiciary.</div>
+            <div class="section"><b>Section 1.</b> The territorial and political subdivisions of Bristevia are Provinces, Cities, Towns, and Villages.</div>
 
-<div class="section"><b>Section 11.</b> Regional Courts shall serve as courts of first instance.</div>
+            <div class="section"><b>Section 2.</b> A Governor shall lead each Province, and a Mayor shall govern each City or Town.</div>
 
-<div class="section"><b>Section 12.</b> The Supreme Tribunal shall have administrative supervision over all courts and personnel thereof.</div>
+            <div class="section"><b>Section 3.</b> Local government shall be organized into National, Provincial, City or Town, and Village Governments.</div>
 
-<div class="section"><b>Section 13.</b> Every Region must consist of at least one Regional Court.</div>
+            <div class="section"><b>Section 4.</b> The National Government shall consist of the Souverion, Prime Minister, Imperial Cabinet, Imperial Assembly, Supreme Tribunal, and national ministries and agencies.</div>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <div class="section"><b>Section 5.</b> Districts exist for representation in the House of Ministers.</div>
 
-</div>
-</section>
+            <div class="section"><b>Section 6.</b> The Village shall be the lowest local subdivision.</div>
 
-<!-- =======================================================
-     ARTICLE IX
-======================================================= -->
+            <div class="section"><b>Section 7.</b> The creation of Provinces, Districts, Cities, Towns, or Villages shall be determined exclusively by the Imperial Assembly.</div>
 
-<section class="article" id="article9">
+            <div class="section"><b>Section 8.</b> A Region shall consist of no fewer than two Provinces.</div>
 
-<h2 class="article-heading">
-ARTICLE IX — <span>LOCAL GOVERNMENT ADMINISTRATION</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section"><b>Section 9.</b> The Imperial Assembly shall enact a Local Government Code.</div>
 
-<div class="article-body">
+            <div class="section"><b>Section 10.</b> The Prime Minister shall exercise general supervision over local governments.</div>
 
-<div class="section"><b>Section 1.</b> The territorial and political subdivisions of Bristevia are Provinces, Cities, Towns, and Villages.</div>
+            <div class="section"><b>Section 11.</b> Local Government Units may associate, consolidate, or coordinate their efforts in accordance with Imperial Law.</div>
 
-<div class="section"><b>Section 2.</b> A Governor shall lead each Province, and a Mayor shall govern each City or Town.</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="section"><b>Section 3.</b> Local government shall be organized into National, Provincial, City or Town, and Village Governments.</div>
+        </section>
 
-<div class="section"><b>Section 4.</b> The National Government shall consist of the Souverion, Prime Minister, Imperial Cabinet, Imperial Assembly, Supreme Tribunal, and national ministries and agencies.</div>
+        <!-- ===============================================
+             ARTICLE X
+        ================================================ -->
 
-<div class="section"><b>Section 5.</b> Districts exist for representation in the House of Ministers.</div>
+        <section class="article" id="article10">
 
-<div class="section"><b>Section 6.</b> The Village shall be the lowest local subdivision.</div>
+            <h2 class="article-heading">
+                ARTICLE X — <span>NATIONAL DEFENSE AND SECURITY</span>
+            </h2>
 
-<div class="section"><b>Section 7.</b> The creation of Provinces, Districts, Cities, Towns, or Villages shall be determined exclusively by the Imperial Assembly.</div>
+            <div class="section"><b>Section 1.</b> The defense of the Realm shall rest upon the Imperial Armed Forces of Bristevia.</div>
 
-<div class="section"><b>Section 8.</b> A Region shall consist of no fewer than two Provinces.</div>
+            <div class="section"><b>Section 2.</b> The Souverion is the Commander-in-Chief of all armed forces.</div>
 
-<div class="section"><b>Section 9.</b> The Imperial Assembly shall enact a Local Government Code.</div>
+            <div class="section"><b>Section 3.</b> The Minister of Defense shall administer national defense and internal security.</div>
 
-<div class="section"><b>Section 10.</b> The Prime Minister shall exercise general supervision over local governments.</div>
+            <div class="section"><b>Section 4.</b> The Imperial Assembly shall have the power to declare war, appropriate defense funds, and ratify defense treaties.</div>
 
-<div class="section"><b>Section 11.</b> Local Government Units may associate, consolidate, or coordinate their efforts in accordance with Imperial Law.</div>
+            <div class="section"><b>Section 5.</b> Military service may be voluntary or compulsory as provided by law.</div>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <div class="section"><b>Section 6.</b> The armed forces shall remain non-partisan.</div>
 
-</div>
-</section>
+            <div class="section"><b>Section 7. Martial Authority and the Privilege of the Writ.</b> The constitutional limitations governing Martial Rule and suspension of the privilege of the Writ shall be observed.</div>
 
-<!-- =======================================================
-     ARTICLE X
-======================================================= -->
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<section class="article" id="article10">
+        </section>
 
-<h2 class="article-heading">
-ARTICLE X — <span>NATIONAL DEFENSE AND SECURITY</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+        <!-- ===============================================
+             ARTICLE XI
+        ================================================ -->
 
-<div class="article-body">
+        <section class="article" id="article11">
 
-<div class="section"><b>Section 1.</b> The defense of the Realm shall rest upon the Imperial Armed Forces of Bristevia.</div>
+            <h2 class="article-heading">
+                ARTICLE XI — <span>FINANCE AND TAXATION</span>
+            </h2>
 
-<div class="section"><b>Section 2.</b> The Souverion is the Commander-in-Chief of all armed forces.</div>
+            <div class="section"><b>Section 1.</b> The power to tax and appropriate funds shall reside in the Domus Curialum, with the concurrence of the Magnum Consilium and subject to the assent of the Souverion.</div>
 
-<div class="section"><b>Section 3.</b> The Minister of Defense shall administer national defense and internal security.</div>
+            <div class="section"><b>Section 2.</b> No tax or expenditure shall be imposed or made except by law.</div>
 
-<div class="section"><b>Section 4.</b> The Imperial Assembly shall have the power to declare war, appropriate defense funds, and ratify defense treaties.</div>
+            <div class="section"><b>Section 3.</b> All revenues shall be held in the Imperial Treasury.</div>
 
-<div class="section"><b>Section 5.</b> Military service may be voluntary or compulsory as provided by law.</div>
+            <div class="section"><b>Section 4.</b> The Minister of Finance shall manage the Imperial Treasury.</div>
 
-<div class="section"><b>Section 6.</b> The armed forces shall remain non-partisan.</div>
+            <div class="section"><b>Section 5.</b> The Imperial Auditor-General shall examine all accounts of the Realm.</div>
 
-<div class="section"><b>Section 7. Martial Authority and the Privilege of the Writ.</b> The constitutional limitations governing Martial Rule and suspension of the privilege of the Writ shall be observed.</div>
+            <div class="section"><b>Section 6.</b> Taxation shall be uniform and equitable and shall maintain a progressive system.</div>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <div class="section"><b>Section 7.</b> Public funds shall be used solely for authorized public purposes.</div>
 
-</div>
-</section>
+            <div class="section"><b>Section 8.</b> Emergency fiscal powers may be exercised as provided by Constitution and law.</div>
 
-<!-- =======================================================
-     ARTICLE XI
-======================================================= -->
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<section class="article" id="article11">
+        </section>
 
-<h2 class="article-heading">
-ARTICLE XI — <span>FINANCE AND TAXATION</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+        <!-- ===============================================
+             ARTICLE XII
+        ================================================ -->
 
-<div class="article-body">
+        <section class="article" id="article12">
 
-<div class="section"><b>Section 1.</b> The power to tax and appropriate funds shall reside in the Domus Curialum, with the concurrence of the Magnum Consilium and subject to the assent of the Souverion.</div>
+            <h2 class="article-heading">
+                ARTICLE XII — <span>ACCOUNTABILITY OF PUBLIC OFFICERS</span>
+            </h2>
 
-<div class="section"><b>Section 2.</b> No tax or expenditure shall be imposed or made except by law.</div>
+            <div class="section"><b>Section 1.</b> Public office is a trust.</div>
 
-<div class="section"><b>Section 3.</b> All revenues shall be held in the Imperial Treasury.</div>
+            <div class="section"><b>Section 2.</b> Public officers shall be accountable for their actions.</div>
 
-<div class="section"><b>Section 4.</b> The Minister of Finance shall manage the Imperial Treasury.</div>
+            <div class="section"><b>Section 3.</b> The Domus Curialum shall investigate acts and conduct of public officials in aid of legislation.</div>
 
-<div class="section"><b>Section 5.</b> The Imperial Auditor-General shall examine all accounts of the Realm.</div>
+            <div class="section"><b>Section 4.</b> The Supreme Tribunal shall have jurisdiction over cases involving misconduct, impeachment, or suspension of high officials.</div>
 
-<div class="section"><b>Section 6.</b> Taxation shall be uniform and equitable and shall maintain a progressive system.</div>
+            <div class="section"><b>Section 5.</b> The law shall provide for declaration of assets, liabilities, and interests.</div>
 
-<div class="section"><b>Section 7.</b> Public funds shall be used solely for authorized public purposes.</div>
+            <div class="section"><b>Section 6.</b> No person shall hold more than one public office at a time, except for the Co-Sovereign.</div>
 
-<div class="section"><b>Section 8.</b> Emergency fiscal powers may be exercised as provided by Constitution and law.</div>
+            <div class="section"><b>Section 7. Royal Clemency and Amnesty.</b> The Souverion may grant reprieves, commutations, pardons, remissions, and amnesty as provided by this Constitution and Imperial Law.</div>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-</div>
-</section>
+        </section>
 
-<!-- =======================================================
-     ARTICLE XII
-======================================================= -->
+        <!-- ===============================================
+             ARTICLE XIII
+        ================================================ -->
 
-<section class="article" id="article12">
+        <section class="article" id="article13">
 
-<h2 class="article-heading">
-ARTICLE XII — <span>ACCOUNTABILITY OF PUBLIC OFFICERS</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <h2 class="article-heading">
+                ARTICLE XIII — <span>THE CONSTITUTIONAL COMMISSIONS</span>
+            </h2>
 
-<div class="article-body">
+            <div class="section">
+                The Constitutional Commissions shall be independent and co-equal bodies consisting of the Imperial Civil Service Commission, Imperial Commission on Elections, and Imperial Commission on Audit.
+            </div>
 
-<div class="section"><b>Section 1.</b> Public office is a trust.</div>
+            <div class="section">
+                Their powers, appointments, tenure, fiscal autonomy, and duties shall be governed by this Constitution and Imperial Law.
+            </div>
 
-<div class="section"><b>Section 2.</b> Public officers shall be accountable for their actions.</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="section"><b>Section 3.</b> The Domus Curialum shall investigate acts and conduct of public officials in aid of legislation.</div>
+        </section>
 
-<div class="section"><b>Section 4.</b> The Supreme Tribunal shall have jurisdiction over cases involving misconduct, impeachment, or suspension of high officials.</div>
+        <!-- ===============================================
+             ARTICLE XIV
+        ================================================ -->
 
-<div class="section"><b>Section 5.</b> The law shall provide for declaration of assets, liabilities, and interests.</div>
+        <section class="article" id="article14">
 
-<div class="section"><b>Section 6.</b> No person shall hold more than one public office at a time, except for the Co-Sovereign.</div>
+            <h2 class="article-heading">
+                ARTICLE XIV — <span>THE FAMILY</span>
+            </h2>
 
-<div class="section"><b>Section 7. Royal Clemency and Amnesty.</b> The Souverion may grant reprieves, commutations, pardons, remissions, and amnesty as provided by this Constitution and Imperial Law.</div>
+            <div class="section"><b>Section 1.</b> The family is the foundation of the Bristevian Realm and shall be protected by the State.</div>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <div class="section"><b>Section 2.</b> Marriage, as a sacred union, is recognized as the moral basis of society.</div>
 
-</div>
-</section>
+            <div class="section"><b>Section 3.</b> The State recognizes the sanctity of family life.</div>
 
-<!-- =======================================================
-     ARTICLE XIII
-======================================================= -->
+            <div class="section"><b>Section 4.</b> Parents shall have the primary right and duty to care for and educate their children.</div>
 
-<section class="article" id="article13">
+            <div class="section"><b>Section 5.</b> The State shall equally protect the life of the mother and the life of the unborn from conception.</div>
 
-<h2 class="article-heading">
-ARTICLE XIII — <span>THE CONSTITUTIONAL COMMISSIONS</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="article-body">
+        </section>
 
-<div class="section">
-The Constitutional Commissions shall be independent and co-equal bodies consisting of the Imperial Civil Service Commission, Imperial Commission on Elections, and Imperial Commission on Audit.
-</div>
+        <!-- ===============================================
+             ARTICLE XV
+        ================================================ -->
 
-<div class="section">
-Their powers, appointments, tenure, fiscal autonomy, and duties shall be governed by this Constitution and Imperial Law.
-</div>
+        <section class="article" id="article15">
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <h2 class="article-heading">
+                ARTICLE XV — <span>EDUCATION, SCIENCE, CULTURE, AND NATIONAL DEVELOPMENT</span>
+            </h2>
 
-</div>
-</section>
+            <div class="section"><b>Section 1.</b> The State shall promote education, science, culture, and national defense.</div>
 
-<!-- =======================================================
-     ARTICLE XIV
-======================================================= -->
+            <div class="section"><b>Section 2.</b> The Souverion shall provide guidance and strategic oversight over national development programs.</div>
 
-<section class="article" id="article14">
+            <div class="section"><b>Section 3.</b> All citizens shall have the right to access quality education and opportunities for cultural, scientific, and technological advancement.</div>
 
-<h2 class="article-heading">
-ARTICLE XIV — <span>THE FAMILY</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="article-body">
+        </section>
 
-<div class="section"><b>Section 1.</b> The family is the foundation of the Bristevian Realm and shall be protected by the State.</div>
+        <!-- ===============================================
+             ARTICLE XVI
+        ================================================ -->
 
-<div class="section"><b>Section 2.</b> Marriage, as a sacred union, is recognized as the moral basis of society.</div>
+        <section class="article" id="article16">
 
-<div class="section"><b>Section 3.</b> The State recognizes the sanctity of family life.</div>
+            <h2 class="article-heading">
+                ARTICLE XVI — <span>AMENDMENTS OR REVISIONS</span>
+            </h2>
 
-<div class="section"><b>Section 4.</b> Parents shall have the primary right and duty to care for and educate their children.</div>
+            <div class="section">
+                <b>Section 1.</b> Amendments may be proposed by a three-fourths (3/4) vote of all Members of the Imperial Assembly or by a Constitutional Assembly convened by Imperial Decree.
+            </div>
 
-<div class="section"><b>Section 5.</b> The State shall equally protect the life of the mother and the life of the unborn from conception.</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+        </section>
 
-</div>
-</section>
+        <!-- ===============================================
+             ARTICLE XVII
+        ================================================ -->
 
-<!-- =======================================================
-     ARTICLE XV
-======================================================= -->
+        <section class="article" id="article17">
 
-<section class="article" id="article15">
+            <h2 class="article-heading">
+                ARTICLE XVII — <span>ACCOUNTABILITY AND IMPEACHMENT</span>
+            </h2>
 
-<h2 class="article-heading">
-ARTICLE XV — <span>EDUCATION, SCIENCE, CULTURE, AND NATIONAL DEVELOPMENT</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section"><b>Section 1.</b> The House of Ministers shall have the exclusive power to initiate impeachment cases.</div>
 
-<div class="article-body">
+            <div class="section"><b>Section 2.</b> The Magnum Consilium shall have the sole authority to try and decide impeachment cases.</div>
 
-<div class="section"><b>Section 1.</b> The State shall promote education, science, culture, and national defense.</div>
+            <div class="section"><b>Section 3.</b> Impeachable officers include the Prime Minister, Members of the Supreme Tribunal, Members of the Imperial Assembly, Ministers, presiding officers, Governors, Mayors, appointed officials, and Members of the Constitutional Commissions.</div>
 
-<div class="section"><b>Section 2.</b> The Souverion shall provide guidance and strategic oversight over national development programs.</div>
+            <div class="section"><b>Section 4.</b> Grounds include treason, corruption, abuse of power, constitutional violation, dereliction of duty, and betrayal of public trust.</div>
 
-<div class="section"><b>Section 3.</b> All citizens shall have the right to access quality education and opportunities for cultural, scientific, and technological advancement.</div>
+            <div class="section"><b>Section 5.</b> A verified complaint may be filed and referred to the proper Committee.</div>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <div class="section"><b>Section 6.</b> One-third (1/3) of all Members of the House of Ministers shall be required to approve Articles of Impeachment.</div>
 
-</div>
-</section>
+            <div class="section"><b>Section 7.</b> The Magnum Consilium shall try impeachment cases.</div>
 
-<!-- =======================================================
-     ARTICLE XVI
-======================================================= -->
+            <div class="section"><b>Section 8.</b> Judgment shall extend to removal and disqualification from office.</div>
 
-<section class="article" id="article16">
+            <div class="section"><b>Section 9.</b> No impeachment proceeding shall be initiated against the same official more than once within a year.</div>
 
-<h2 class="article-heading">
-ARTICLE XVI — <span>AMENDMENTS OR REVISIONS</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section"><b>Section 10.</b> The Imperial Assembly shall promulgate rules on impeachment.</div>
 
-<div class="article-body">
+            <div class="section"><b>Section 11.</b> There shall be an independent Office of the Imperial Sentinel.</div>
 
-<div class="section"><b>Section 1.</b> Amendments may be proposed by a three-fourths (3/4) vote of all Members of the Imperial Assembly or by a Constitutional Assembly convened by Imperial Decree.</div>
+            <div class="section"><b>Section 12.</b> The Office of the Special Prosecutor shall continue to function as provided by law.</div>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <div class="section"><b>Section 13.</b> The Imperial Sentinel shall investigate unlawful, unjust, or improper acts of public officials.</div>
 
-</div>
-</section>
+            <div class="section"><b>Section 14.</b> The Office of the Imperial Sentinel shall enjoy fiscal autonomy.</div>
 
-<!-- =======================================================
-     ARTICLE XVII
-======================================================= -->
+            <div class="section"><b>Section 15.</b> The Empire may recover properties unlawfully acquired by public officials.</div>
 
-<section class="article" id="article17">
+            <div class="section"><b>Section 16.</b> Certain public officials shall be prohibited from receiving loans or financial accommodation from state-owned financial institutions during tenure.</div>
 
-<h2 class="article-heading">
-ARTICLE XVII — <span>ACCOUNTABILITY AND IMPEACHMENT</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section"><b>Section 17.</b> Public officers shall submit declarations of assets, liabilities, and net worth.</div>
 
-<div class="article-body">
+            <div class="section"><b>Section 18.</b> Public officers shall owe allegiance to the Imperial Sovereign of Bristevia.</div>
 
-<div class="section"><b>Section 1.</b> The House of Ministers shall have the exclusive power to initiate impeachment cases.</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="section"><b>Section 2.</b> The Magnum Consilium shall have the sole authority to try and decide impeachment cases.</div>
+        </section>
 
-<div class="section"><b>Section 3.</b> Impeachable officers include the Prime Minister, Members of the Supreme Tribunal, Members of the Imperial Assembly, Ministers, presiding officers, Governors, Mayors, appointed officials, and Members of the Constitutional Commissions.</div>
+        <!-- ===============================================
+             ARTICLE XVIII
+        ================================================ -->
 
-<div class="section"><b>Section 4.</b> Grounds include treason, corruption, abuse of power, constitutional violation, dereliction of duty, and betrayal of public trust.</div>
+        <section class="article" id="article18">
 
-<div class="section"><b>Section 5.</b> A verified complaint may be filed and referred to the proper Committee.</div>
+            <h2 class="article-heading">
+                ARTICLE XVIII — <span>APPOINTMENTS AND ELECTIVE OFFICES</span>
+            </h2>
 
-<div class="section"><b>Section 6.</b> One-third (1/3) of all Members of the House of Ministers shall be required to approve Articles of Impeachment.</div>
+            <div class="section"><b>Division A — Appointive Officials</b></div>
 
-<div class="section"><b>Section 7.</b> The Magnum Consilium shall try impeachment cases.</div>
+            <div class="section"><b>Section 1.</b> The power to appoint officials shall be vested in the Prime Minister and such authorities as may be designated by law.</div>
 
-<div class="section"><b>Section 8.</b> Judgment shall extend to removal and disqualification from office.</div>
+            <div class="section"><b>Section 2.</b> Appointments shall be based upon merit, integrity, fitness, competence, and moral character.</div>
 
-<div class="section"><b>Section 9.</b> No impeachment proceeding shall be initiated against the same official more than once within a year.</div>
+            <div class="section"><b>Section 3.</b> Ministers, agency heads, ambassadors, judges, board members, and other non-elective officers shall be filled by appointment.</div>
 
-<div class="section"><b>Section 10.</b> The Imperial Assembly shall promulgate rules on impeachment.</div>
+            <div class="section"><b>Section 4.</b> Appointments shall be subject to confirmation as provided by law.</div>
 
-<div class="section"><b>Section 11.</b> There shall be an independent Office of the Imperial Sentinel.</div>
+            <div class="section"><b>Section 5.</b> The Imperial Assembly shall exercise legislative oversight over appointments.</div>
 
-<div class="section"><b>Section 12.</b> The Office of the Special Prosecutor shall continue to function as provided by law.</div>
+            <div class="section"><b>Division B — Elective Officials</b></div>
 
-<div class="section"><b>Section 13.</b> The Imperial Sentinel shall investigate unlawful, unjust, or improper acts of public officials.</div>
+            <div class="section"><b>Section 6.</b> Elective offices shall not be filled through appointment.</div>
 
-<div class="section"><b>Section 14.</b> The Office of the Imperial Sentinel shall enjoy fiscal autonomy.</div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="section"><b>Section 15.</b> The Empire may recover properties unlawfully acquired by public officials.</div>
+        </section>
 
-<div class="section"><b>Section 16.</b> Certain public officials shall be prohibited from receiving loans or financial accommodation from state-owned financial institutions during tenure.</div>
+        <!-- ===============================================
+             ARTICLE XIX
+        ================================================ -->
 
-<div class="section"><b>Section 17.</b> Public officers shall submit declarations of assets, liabilities, and net worth.</div>
+        <section class="article" id="article19">
 
-<div class="section"><b>Section 18.</b> Public officers shall owe allegiance to the Imperial Sovereign of Bristevia.</div>
+            <h2 class="article-heading">
+                ARTICLE XIX — <span>TERRITORY</span>
+            </h2>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <div class="section"><b>Section 1.</b> The national territory of the Imperial Sovereign of Bristevia shall consist of all lands, islands, waters, and airspace belonging to the Realm.</div>
 
-</div>
-</section>
+            <div class="section"><b>Section 2.</b> The Realm shall be divided into Provinces, Districts, Cities, Towns, Villages, and Regions.</div>
 
-<!-- =======================================================
-     ARTICLE XVIII
-======================================================= -->
+            <div class="section"><b>Section 3.</b> Autonomous Regions may be established by law.</div>
 
-<section class="article" id="article18">
+            <div class="section"><b>Section 4.</b> Territorial boundaries shall be fixed and published in the official Bristevia Atlas and Map.</div>
 
-<h2 class="article-heading">
-ARTICLE XVIII — <span>APPOINTMENTS AND ELECTIVE OFFICES</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <div class="section"><b>Section 5.</b> All territorial units remain subject to the national authority for purposes of defense and security.</div>
 
-<div class="article-body">
+            <div class="section"><b>Section 6.</b> Provincial Governors, Mayors, and Village Chiefs shall exercise authority within their respective territories.</div>
 
-<div class="section"><b>Division A — Appointive Officials</b></div>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<div class="section"><b>Section 1.</b> The power to appoint officials shall be vested in the Prime Minister and such authorities as may be designated by law.</div>
+        </section>
 
-<div class="section"><b>Section 2.</b> Appointments shall be based upon merit, integrity, fitness, competence, and moral character.</div>
+        <!-- ===============================================
+             ARTICLE XX
+        ================================================ -->
 
-<div class="section"><b>Section 3.</b> Ministers, agency heads, ambassadors, judges, board members, and other non-elective officers shall be filled by appointment.</div>
+        <section class="article" id="article20">
 
-<div class="section"><b>Section 4.</b> Appointments shall be subject to confirmation as provided by law.</div>
+            <h2 class="article-heading">
+                ARTICLE XX — <span>GENERAL PROVISIONS</span>
+            </h2>
 
-<div class="section"><b>Section 5.</b> The Imperial Assembly shall exercise legislative oversight over appointments.</div>
+            <div class="section"><b>Section 1. Supremacy of the Constitution.</b> This Constitution is the supreme law of the Imperial Sovereign of Bristevia.</div>
 
-<div class="section"><b>Division B — Elective Officials</b></div>
+            <div class="section"><b>Section 2. Oaths of Office.</b> All public officials shall take an oath to uphold and defend the Constitution.</div>
 
-<div class="section"><b>Section 6.</b> Elective offices shall not be filled through appointment.</div>
+            <div class="section"><b>Section 3. Official Language.</b> The official language shall be established by law.</div>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <div class="section"><b>Section 4. National Symbols.</b> The flag, anthem, seal, Royal Emblem, Royal Symbol, and other symbols of the Imperial Sovereign of Bristevia shall be established by law.</div>
 
-</div>
-</section>
+            <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
-<!-- =======================================================
-     ARTICLE XIX
-======================================================= -->
+        </section>
 
-<section class="article" id="article19">
+        <!-- ===============================================
+             IN WITNESS THEREOF
+        ================================================ -->
 
-<h2 class="article-heading">
-ARTICLE XIX — <span>TERRITORY</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+        <section class="article" id="witness">
 
-<div class="article-body">
+            <h2 class="article-heading">
+                <span>IN WITNESS THEREOF</span>
+            </h2>
 
-<div class="section"><b>Section 1.</b> The national territory of the Imperial Sovereign of Bristevia shall consist of all lands, islands, waters, and airspace belonging to the Realm.</div>
+            <div class="section" style="text-align:center;font-size:20px;">
 
-<div class="section"><b>Section 2.</b> The Realm shall be divided into Provinces, Districts, Cities, Towns, Villages, and Regions.</div>
+                <img
+                    src="royal-symbol.png"
+                    alt="Royal Symbol"
+                    class="royal-divider-symbol"
+                >
 
-<div class="section"><b>Section 3.</b> Autonomous Regions may be established by law.</div>
+                We, the sovereign people of Bristevia, under the divine guardianship
+                of His Majesty the Souverion and Her Majesty the Souveria, do hereby
+                ordain, decree, and promulgate this Constitution of the Imperial
+                Sovereign of Bristevia, to stand for the glory, order, and eternity
+                of the Bristevian Empire.
 
-<div class="section"><b>Section 4.</b> Territorial boundaries shall be fixed and published in the official Bristevia Atlas and Map.</div>
+            </div>
 
-<div class="section"><b>Section 5.</b> All territorial units remain subject to the national authority for purposes of defense and security.</div>
+            <div class="section" style="text-align:center;">
 
-<div class="section"><b>Section 6.</b> Provincial Governors, Mayors, and Village Chiefs shall exercise authority within their respective territories.</div>
+                <strong>
+                    Proclaimed in the City of Stephara, this Day of the Eternal Crown.
+                </strong>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            </div>
 
-</div>
-</section>
+        </section>
 
-<!-- =======================================================
-     ARTICLE XX
-======================================================= -->
+        <!-- ===============================================
+             ROYAL SEAT
+        ================================================ -->
 
-<section class="article" id="article20">
+        <section class="royal-seat" id="royal-seat">
 
-<h2 class="article-heading">
-ARTICLE XX — <span>GENERAL PROVISIONS</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <img
+                src="royal-emblem.png"
+                alt="Royal Emblem of the Imperial Sovereign of Bristevia"
+                class="royal-seat-emblem"
+            >
 
-<div class="article-body">
+            <h2>ROYAL SEAT</h2>
 
-<div class="section"><b>Section 1. Supremacy of the Constitution.</b> This Constitution is the supreme law of the Imperial Sovereign of Bristevia.</div>
+            <div class="gold-line"></div>
 
-<div class="section"><b>Section 2. Oaths of Office.</b> All public officials shall take an oath to uphold and defend the Constitution.</div>
+            <p><strong>Souverion:</strong></p>
 
-<div class="section"><b>Section 3. Official Language.</b> The official language shall be established by law.</div>
+            <p class="sovereign-name">
+                His Majesty, Stephen XXVI
+            </p>
 
-<div class="section"><b>Section 4. National Symbols.</b> The flag, anthem, seal, Royal Emblem, Royal Symbol, and other symbols of the Imperial Sovereign of Bristevia shall be established by law.</div>
+            <p>
+                Stephen Estomago
+            </p>
 
-<a class="back-top" href="#top">↑ RETURN TO TOP</a>
+            <p><strong>Souveria:</strong></p>
 
-</div>
-</section>
+            <p class="sovereign-name">
+                Her Majesty, Jay Britney I
+            </p>
 
-<!-- =======================================================
-     WITNESS
-======================================================= -->
+            <p>
+                Jay Britney Balbin
+            </p>
 
-<section class="article" id="witness">
+            <img
+                src="royal-symbol.png"
+                alt="Royal Symbol"
+                class="royal-divider-symbol"
+            >
 
-<h2 class="article-heading">
-<span>IN WITNESS THEREOF</span>
-<button class="article-toggle" type="button">−</button>
-</h2>
+            <h2>SUPREME TRIBUNAL</h2>
 
-<div class="article-body">
+            <p>Chief Justice: Jay Britney Balbin</p>
+            <p>Justice: Andrea Estomago</p>
+            <p>Justice: Ronjie Estomago</p>
+            <p>Justice: Gabriel Estomago</p>
+            <p>Justice: Jaeya Brielle Balbin</p>
+            <p>Justice: Niccolo Machiavelli</p>
+            <p>Justice: Robert Greene</p>
+            <p>Justice: Zhuge Liang</p>
+            <p>Justice: Marcus Aurelius</p>
 
-<div class="section" style="text-align:center;font-size:20px;">
+            <div class="gold-line"></div>
 
-    <img
-        src="royal-symbol.png"
-        alt="Royal Symbol"
-        class="royal-divider-symbol"
-    >
+            <h2>SOLICITOR GENERAL</h2>
 
-    We, the sovereign people of Bristevia, under the divine guardianship
-    of His Majesty the Souverion and Her Majesty the Souveria, do hereby
-    ordain, decree, and promulgate this Constitution of the Imperial
-    Sovereign of Bristevia, to stand for the glory, order, and eternity
-    of the Bristevian Empire.
+            <p class="sovereign-name">
+                Harvey Specter
+            </p>
 
-</div>
+        </section>
 
-<div class="section" style="text-align:center;">
+    </main>
 
-<strong>
-Proclaimed in the City of Stephara, this Day of the Eternal Crown.
-</strong>
-
-</div>
-
-</div>
-</section>
-
-<!-- =======================================================
-     ROYAL SEAT
-======================================================= -->
-
-<section class="royal-seat" id="royal-seat">
-
-    <img
-        src="royal-emblem.png"
-        alt="Royal Emblem of the Imperial Sovereign of Bristevia"
-        class="royal-seat-emblem"
-    >
-
-    <h2>ROYAL SEAT</h2>
-
-    <div class="gold-line"></div>
-
-    <p><strong>Souverion:</strong></p>
-
-    <p class="sovereign-name">
-        His Majesty, Stephen XXVI
-    </p>
-
-    <p>
-        Stephen Estomago
-    </p>
-
-    <p><strong>Souveria:</strong></p>
-
-    <p class="sovereign-name">
-        Her Majesty, Jay Britney I
-    </p>
-
-    <p>
-        Jay Britney Balbin
-    </p>
-
-    <img
-        src="royal-symbol.png"
-        alt="Royal Symbol"
-        class="royal-divider-symbol"
-    >
-
-    <h2>SUPREME TRIBUNAL</h2>
-
-    <p>Chief Justice: Jay Britney Balbin</p>
-    <p>Justice: Andrea Estomago</p>
-    <p>Justice: Ronjie Estomago</p>
-    <p>Justice: Gabriel Estomago</p>
-    <p>Justice: Jaeya Brielle Balbin</p>
-    <p>Justice: Niccolo Machiavelli</p>
-    <p>Justice: Robert Greene</p>
-    <p>Justice: Zhuge Liang</p>
-    <p>Justice: Marcus Aurelius</p>
-
-    <div class="gold-line"></div>
-
-    <h2>SOLICITOR GENERAL</h2>
-
-    <p class="sovereign-name">
-        Harvey Specter
-    </p>
-
-</section>
-
-</main>
 </div>
 
 <!-- =======================================================
@@ -2128,318 +2313,298 @@ Proclaimed in the City of Stephara, this Day of the Eternal Crown.
 </footer>
 
 <!-- =======================================================
-     FLOATING BACK TO TOP
-======================================================= -->
-
-<button id="floatingTop" aria-label="Return to top">
-    ↑
-</button>
-
-<!-- =======================================================
      JAVASCRIPT
 ======================================================= -->
 
 <script>
 
 /* =========================================================
-   ARTICLE COLLAPSE / EXPAND
+   SCROLL PROGRESS
 ========================================================= */
 
-document.querySelectorAll(".article-heading").forEach(function(heading){
+const scrollProgress = document.getElementById("scrollProgress");
 
-    const button = heading.querySelector(".article-toggle");
-    const article = heading.closest(".article");
+function updateScrollProgress(){
 
-    if(!button) return;
+    const scrollTop =
+        window.scrollY;
 
-    heading.addEventListener("click",function(e){
+    const documentHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
 
-        if(e.target === button || e.target === heading || e.target.tagName === "SPAN"){
-            article.classList.toggle("collapsed");
+    const percentage =
+        documentHeight > 0
+        ? (scrollTop / documentHeight) * 100
+        : 0;
 
-            button.textContent =
-                article.classList.contains("collapsed")
-                ? "+"
-                : "−";
-        }
+    scrollProgress.style.width =
+        percentage + "%";
+}
 
-    });
+window.addEventListener(
+    "scroll",
+    updateScrollProgress,
+    {passive:true}
+);
 
-});
+updateScrollProgress();
+
 
 /* =========================================================
-   ARTICLE JUMP
+   ARTICLE REVEAL ANIMATION
 ========================================================= */
 
-const articleJump =
-    document.getElementById("articleJump");
+const animatedElements =
+    document.querySelectorAll(
+        ".article, .royal-seat"
+    );
 
-articleJump.addEventListener("change",function(){
+const revealObserver =
+    new IntersectionObserver(
+        function(entries){
 
-    const targetId = this.value;
+            entries.forEach(
+                function(entry){
 
-    if(!targetId) return;
+                    if(entry.isIntersecting){
 
-    const target =
-        document.getElementById(targetId);
+                        entry.target.classList.add(
+                            "visible"
+                        );
 
-    if(target){
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+                    }
 
-        target.classList.remove("collapsed");
+                }
+            );
 
-        const toggle =
-            target.querySelector(".article-toggle");
-
-        if(toggle){
-            toggle.textContent="−";
+        },
+        {
+            threshold:.08
         }
+    );
 
-        target.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        });
+animatedElements.forEach(
+    function(element){
+
+        revealObserver.observe(element);
 
     }
+);
 
-    this.value="";
-
-});
 
 /* =========================================================
-   PRINT
+   ARTICLE ACTIVE NAVIGATION
 ========================================================= */
 
-document.getElementById("printButton")
-.addEventListener("click",function(){
-
-    document.querySelectorAll(".article")
-    .forEach(function(article){
-
-        article.classList.remove("collapsed");
-
-        const button =
-            article.querySelector(".article-toggle");
-
-        if(button){
-            button.textContent="−";
-        }
-
-    });
-
-    window.print();
-
-});
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-const searchInput =
-    document.getElementById("constitutionSearch");
-
-const searchMessage =
-    document.getElementById("searchMessage");
-
-const articles =
-    document.querySelectorAll(".article");
-
-searchInput.addEventListener("input",function(){
-
-    const query =
-        this.value.trim().toLowerCase();
-
-    if(!query){
-
-        articles.forEach(function(article){
-
-            article.classList.remove("search-hidden");
-
-            article.querySelectorAll(".section")
-            .forEach(function(section){
-                section.classList.remove("search-hidden");
-            });
-
-        });
-
-        searchMessage.style.display="none";
-        return;
-    }
-
-    let totalMatches=0;
-
-    articles.forEach(function(article){
-
-        const text =
-            article.textContent.toLowerCase();
-
-        const articleMatch =
-            text.includes(query);
-
-        let sectionMatches=0;
-
-        article.querySelectorAll(".section")
-        .forEach(function(section){
-
-            const sectionText =
-                section.textContent.toLowerCase();
-
-            if(sectionText.includes(query)){
-
-                section.classList.remove("search-hidden");
-
-                sectionMatches++;
-
-            }else{
-
-                section.classList.add("search-hidden");
-
-            }
-
-        });
-
-        if(articleMatch){
-
-            article.classList.remove("search-hidden");
-
-            article.classList.remove("collapsed");
-
-            const toggle =
-                article.querySelector(".article-toggle");
-
-            if(toggle){
-                toggle.textContent="−";
-            }
-
-            totalMatches++;
-
-        }else{
-
-            article.classList.add("search-hidden");
-
-        }
-
-    });
-
-    searchMessage.style.display =
-        totalMatches === 0
-        ? "block"
-        : "none";
-
-});
-
-/* =========================================================
-   FLOATING TOP BUTTON
-========================================================= */
-
-const floatingTop =
-    document.getElementById("floatingTop");
-
-window.addEventListener("scroll",function(){
-
-    if(window.scrollY > 500){
-
-        floatingTop.classList.add("show");
-
-    }else{
-
-        floatingTop.classList.remove("show");
-
-    }
-
-});
-
-floatingTop.addEventListener("click",function(){
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-});
-
-/* =========================================================
-   ACTIVE ARTICLE NAVIGATION
-========================================================= */
+const articleSections =
+    document.querySelectorAll(
+        ".article[id]"
+    );
 
 const indexLinks =
-    document.querySelectorAll(".article-index a");
+    document.querySelectorAll(
+        ".article-index a[href^='#']"
+    );
 
-const observedArticles =
-    document.querySelectorAll(".article");
+const linkMap = {};
 
-const observer =
-    new IntersectionObserver(function(entries){
+indexLinks.forEach(
+    function(link){
 
-        entries.forEach(function(entry){
+        const id =
+            link.getAttribute("href");
 
-            if(entry.isIntersecting){
+        linkMap[id] =
+            link;
 
-                indexLinks.forEach(function(link){
+    }
+);
 
-                    link.classList.remove("active");
+const activeObserver =
+    new IntersectionObserver(
+        function(entries){
 
-                });
+            entries.forEach(
+                function(entry){
 
-                const activeLink =
-                    document.querySelector(
-                        '.article-index a[href="#' +
-                        entry.target.id +
-                        '"]'
+                    if(entry.isIntersecting){
+
+                        indexLinks.forEach(
+                            function(link){
+
+                                link.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+                        const activeLink =
+                            linkMap[
+                                "#" + entry.target.id
+                            ];
+
+                        if(activeLink){
+
+                            activeLink.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            rootMargin:"-20% 0px -65% 0px",
+            threshold:0
+        }
+    );
+
+articleSections.forEach(
+    function(section){
+
+        activeObserver.observe(section);
+
+    }
+);
+
+
+/* =========================================================
+   MOBILE ARTICLE INDEX
+========================================================= */
+
+const indexToggle =
+    document.getElementById(
+        "indexToggle"
+    );
+
+const articleIndex =
+    document.getElementById(
+        "articleIndex"
+    );
+
+indexToggle.addEventListener(
+    "click",
+    function(){
+
+        const isOpen =
+            articleIndex.classList.toggle(
+                "open"
+            );
+
+        indexToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+        indexToggle.textContent =
+            isOpen
+            ? "✕ CLOSE ARTICLES"
+            : "☰ CONSTITUTIONAL ARTICLES";
+
+    }
+);
+
+
+/* =========================================================
+   CLOSE MOBILE INDEX AFTER SELECTION
+========================================================= */
+
+indexLinks.forEach(
+    function(link){
+
+        link.addEventListener(
+            "click",
+            function(){
+
+                if(
+                    window.innerWidth <= 900
+                ){
+
+                    articleIndex.classList.remove(
+                        "open"
                     );
 
-                if(activeLink){
-                    activeLink.classList.add("active");
+                    indexToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    indexToggle.textContent =
+                        "☰ CONSTITUTIONAL ARTICLES";
+
                 }
 
             }
-
-        });
-
-    },{
-        rootMargin:"-20% 0px -70% 0px"
-    });
-
-observedArticles.forEach(function(article){
-
-    observer.observe(article);
-
-});
-
-/* =========================================================
-   SEARCH ENTER KEY
-========================================================= */
-
-searchInput.addEventListener("keydown",function(e){
-
-    if(e.key === "Escape"){
-
-        this.value="";
-
-        this.dispatchEvent(
-            new Event("input")
         );
 
-        this.blur();
+    }
+);
+
+
+/* =========================================================
+   KEYBOARD ACCESSIBILITY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            articleIndex.classList.remove(
+                "open"
+            );
+
+            indexToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            indexToggle.textContent =
+                "☰ CONSTITUTIONAL ARTICLES";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   PREVENT OBSERVER ANIMATION ISSUES ON VERY SMALL SCREENS
+========================================================= */
+
+function checkReducedMotion(){
+
+    if(
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches
+    ){
+
+        animatedElements.forEach(
+            function(element){
+
+                element.classList.add(
+                    "visible"
+                );
+
+            }
+        );
 
     }
 
-});
+}
 
-/* =========================================================
-   PAGE LOAD
-========================================================= */
-
-window.addEventListener("load",function(){
-
-    document.querySelectorAll(".article")
-    .forEach(function(article,index){
-
-        article.style.animationDelay =
-            (index * 0.04) + "s";
-
-    });
-
-});
+checkReducedMotion();
 
 </script>
 
