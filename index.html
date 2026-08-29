@@ -608,12 +608,13 @@ body {
 
 
 /* =========================================================
-   STICKY NAVIGATION
+   NAVIGATION
+   MOVED BELOW THE HERO
 ========================================================= */
 
 .main-nav {
 
-    position: fixed;
+    position: sticky;
 
     top: 0;
     left: 0;
@@ -630,15 +631,18 @@ body {
     background:
 
         linear-gradient(
-            rgba(2,18,42,.96),
-            rgba(2,11,27,.98)
+            rgba(2,18,42,.97),
+            rgba(2,11,27,.99)
         );
+
+    border-top:
+        1px solid rgba(212,175,55,.35);
 
     border-bottom:
         1px solid rgba(212,175,55,.45);
 
     box-shadow:
-        0 5px 25px rgba(0,0,0,.45);
+        0 5px 25px rgba(0,0,0,.55);
 
     backdrop-filter:
         blur(10px);
@@ -1551,10 +1555,16 @@ footer strong {
 
 
     /* =====================================================
-       MOBILE NAV
+       MOBILE NAVIGATION
     ===================================================== */
 
     .main-nav {
+
+        position:
+            sticky;
+
+        top:
+            0;
 
         display:
             block;
@@ -1763,92 +1773,8 @@ footer strong {
 
 
 <!-- =========================================================
-     STICKY NAVIGATION
-========================================================= -->
-
-<header class="main-nav">
-
-    <div class="nav-container">
-
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            aria-label="Open navigation"
-            aria-expanded="false"
-        >
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
-
-
-        <nav class="nav-links" id="navLinks">
-
-            <a href="index.html">
-                HOME
-            </a>
-
-            <a href="constitution.html">
-                CONSTITUTION
-            </a>
-
-            <a href="history.html">
-                HISTORY
-            </a>
-
-            <a href="government.html">
-                GOVERNMENT
-            </a>
-
-            <a href="judiciary.html">
-               SUPREME TRIBUNAL
-            </a>
-
-
-            <a href="legislature.html">
-                IMPERIAL ASSEMBLY
-            </a>
-
-
-            <a href="provinces.html">
-                PROVINCES
-            </a>
-
-            <a href="data.html">
-                DATA
-            </a>
-
-            <a href="atlas.html">
-                ATLAS
-            </a>
-
-            <a href="valtherra.html">
-                VALTHERRA
-            </a>
-
-            <a href="symbols.html">
-                SYMBOLS
-            </a>
-
-            <a href="calendar.html">
-                CALENDAR
-            </a>
-
-            <a href="archives.html">
-                ARCHIVES
-            </a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-<!-- =========================================================
      HERO
+     NAVIGATION IS NOW BELOW THIS SECTION
 ========================================================= -->
 
 <section class="hero">
@@ -1896,6 +1822,90 @@ footer strong {
     </div>
 
 </section>
+
+
+<!-- =========================================================
+     STICKY NAVIGATION
+     NOW POSITIONED BELOW HERO IMAGE
+========================================================= -->
+
+<header class="main-nav">
+
+    <div class="nav-container">
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="constitution.html">
+                CONSTITUTION
+            </a>
+
+            <a href="history.html">
+                HISTORY
+            </a>
+
+            <a href="government.html">
+                GOVERNMENT
+            </a>
+
+            <a href="judiciary.html">
+                SUPREME TRIBUNAL
+            </a>
+
+            <a href="legislature.html">
+                IMPERIAL ASSEMBLY
+            </a>
+
+            <a href="provinces.html">
+                PROVINCES
+            </a>
+
+            <a href="data.html">
+                DATA
+            </a>
+
+            <a href="atlas.html">
+                ATLAS
+            </a>
+
+            <a href="valtherra.html">
+                VALTHERRA
+            </a>
+
+            <a href="symbols.html">
+                SYMBOLS
+            </a>
+
+            <a href="calendar.html">
+                CALENDAR
+            </a>
+
+            <a href="archives.html">
+                ARCHIVES
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
 
 
 <!-- =========================================================
@@ -2480,26 +2490,6 @@ if (menuToggle && navLinks) {
    SITE-WIDE SEARCH DATABASE
 ========================================================= */
 
-/*
-   These are the HTML pages that the search system checks.
-
-   The search does NOT depend only on these titles.
-
-   It fetches the actual HTML of each page and searches
-   the readable text inside that page.
-
-   Therefore terms appearing inside your pages can also
-   be found.
-
-   Example:
-
-   Search: "Stephara"
-
-   If Stephara appears inside stephara.html,
-   the search can return stephara.html.
-
-*/
-
 const searchablePages = [
 
     /* MAIN */
@@ -2837,13 +2827,6 @@ const searchablePages = [
    SEARCH CACHE
 ========================================================= */
 
-/*
-   Once a page has been downloaded, its text is stored here.
-
-   This prevents the same page from being downloaded repeatedly
-   every time the user changes the search query.
-*/
-
 const pageCache = {};
 
 
@@ -2910,10 +2893,6 @@ async function loadPage(page) {
             );
 
 
-        /*
-           Remove elements that should not be searched.
-        */
-
         documentPage
             .querySelectorAll(
                 "script, style, noscript, svg"
@@ -2923,10 +2902,6 @@ async function loadPage(page) {
                     element.remove()
             );
 
-
-        /*
-           Extract readable page text.
-        */
 
         const text =
             documentPage.body
@@ -3058,11 +3033,6 @@ if (
                     .toLowerCase();
 
 
-            /*
-               Empty or one-character searches
-               do not trigger a site search.
-            */
-
             if (
                 query.length < 2
             ) {
@@ -3094,11 +3064,6 @@ if (
 
             `;
 
-
-            /*
-               Small delay prevents excessive searches
-               while the user is typing.
-            */
 
             searchTimer =
                 setTimeout(
@@ -3138,10 +3103,6 @@ async function performSearch(
     const results = [];
 
 
-    /*
-       Search every registered HTML page.
-    */
-
     for (
         const page
         of searchablePages
@@ -3163,10 +3124,6 @@ async function performSearch(
         const lowerText =
             text.toLowerCase();
 
-
-        /*
-           Search actual page content.
-        */
 
         if (
             lowerText.includes(
@@ -3247,10 +3204,6 @@ function displayResults(
     }
 
 
-    /*
-       Maximum of 15 results displayed.
-    */
-
     searchResults.innerHTML =
         results
             .slice(0, 15)
@@ -3279,7 +3232,6 @@ function displayResults(
                 `
             )
             .join("");
-
 
 }
 
@@ -3463,11 +3415,6 @@ if (
     );
 
 } else {
-
-    /*
-       Fallback for browsers without
-       IntersectionObserver.
-    */
 
     revealElements.forEach(
         element =>
