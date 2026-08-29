@@ -125,7 +125,7 @@ body {
 
 
 /* =========================================================
-   PARTICLES / FLOATING LIGHTS
+   PARTICLES
 ========================================================= */
 
 .particles {
@@ -238,17 +238,6 @@ body {
 
     overflow: hidden;
 
-    /*
-       IMPORTANT:
-
-       The flag is NOT used with background-size: cover.
-
-       "cover" would enlarge/crop the flag.
-
-       Instead, the flag is centered and contained,
-       preserving the complete flag.
-    */
-
     background-color: #020b18;
 
     background-image:
@@ -275,13 +264,6 @@ body {
 /* =========================================================
    HERO FLAG CENTER PROTECTION
 ========================================================= */
-
-/*
-   This overlay keeps the center of the flag visible
-   while adding the dark imperial atmosphere.
-
-   The flag itself is never enlarged or cropped.
-*/
 
 .hero::before {
 
@@ -694,8 +676,7 @@ body {
     flex-wrap: wrap;
 }
 
-.nav-links > a,
-.dropbtn {
+.nav-links a {
 
     position: relative;
 
@@ -713,20 +694,13 @@ body {
 
     padding: 18px 13px;
 
-    border: none;
-
-    background: transparent;
-
-    cursor: pointer;
-
     transition:
         color .3s ease,
         transform .3s ease,
         text-shadow .3s ease;
 }
 
-.nav-links > a::after,
-.dropbtn::after {
+.nav-links a::after {
 
     content: "";
 
@@ -752,8 +726,7 @@ body {
         0 0 10px rgba(212,175,55,.8);
 }
 
-.nav-links > a:hover,
-.dropbtn:hover {
+.nav-links a:hover {
 
     color: #fff;
 
@@ -764,112 +737,9 @@ body {
         0 0 10px rgba(212,175,55,.8);
 }
 
-.nav-links > a:hover::after,
-.dropbtn:hover::after {
+.nav-links a:hover::after {
 
     width: 70%;
-}
-
-
-/* =========================================================
-   DROPDOWNS
-========================================================= */
-
-.dropdown {
-
-    position: relative;
-}
-
-.dropdown-menu {
-
-    position: absolute;
-
-    top: 100%;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%)
-        translateY(10px);
-
-    min-width: 245px;
-
-    max-height: 75vh;
-
-    overflow-y: auto;
-
-    background:
-
-        linear-gradient(
-            180deg,
-            #071f3b,
-            #020c1b
-        );
-
-    border:
-        1px solid rgba(212,175,55,.45);
-
-    box-shadow:
-
-        0 15px 40px rgba(0,0,0,.7),
-
-        0 0 20px rgba(212,175,55,.1);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition:
-        opacity .25s ease,
-        transform .25s ease,
-        visibility .25s ease;
-}
-
-.dropdown:hover .dropdown-menu,
-.dropdown.open .dropdown-menu {
-
-    opacity: 1;
-
-    visibility: visible;
-
-    transform:
-        translateX(-50%)
-        translateY(0);
-}
-
-.dropdown-menu a {
-
-    display: block;
-
-    padding: 12px 18px;
-
-    color: #e9dfba;
-
-    font-family: "Cinzel", serif;
-
-    font-size: 11px;
-
-    letter-spacing: .8px;
-
-    text-decoration: none;
-
-    border-bottom:
-        1px solid rgba(212,175,55,.08);
-
-    transition:
-        background .25s ease,
-        color .25s ease,
-        padding-left .25s ease;
-}
-
-.dropdown-menu a:hover {
-
-    background:
-        rgba(212,175,55,.12);
-
-    color: #fff;
-
-    padding-left: 25px;
 }
 
 
@@ -1002,6 +872,15 @@ body {
     font-size: 17px;
 }
 
+.search-box input:focus {
+
+    border-color:
+        #d4af37;
+
+    box-shadow:
+        0 0 15px rgba(212,175,55,.18);
+}
+
 .search-box input::placeholder {
 
     color: #aaa;
@@ -1021,6 +900,8 @@ body {
     color: #d4af37;
 
     font-size: 20px;
+
+    pointer-events: none;
 }
 
 
@@ -1038,7 +919,7 @@ body {
 
     width: 100%;
 
-    max-height: 400px;
+    max-height: 450px;
 
     overflow-y: auto;
 
@@ -1054,6 +935,8 @@ body {
     display: none;
 
     border-radius: 8px;
+
+    z-index: 1000;
 }
 
 .search-results.show {
@@ -1071,6 +954,15 @@ body {
 
     border-bottom:
         1px solid rgba(212,175,55,.1);
+
+    transition:
+        background .2s ease;
+}
+
+.search-result:last-child {
+
+    border-bottom:
+        none;
 }
 
 .search-result strong {
@@ -1080,19 +972,38 @@ body {
     color: #d4af37;
 
     font-family: "Cinzel", serif;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
 }
 
 .search-result span {
 
+    display: block;
+
     color: #ddd;
 
     font-size: 15px;
+
+    line-height: 1.4;
 }
 
 .search-result:hover {
 
     background:
         rgba(212,175,55,.1);
+}
+
+.search-status {
+
+    padding: 15px 20px;
+
+    color: #aaa;
+
+    text-align: center;
+
+    font-size: 15px;
 }
 
 
@@ -1559,8 +1470,7 @@ footer strong {
 
 @media (max-width: 1100px) {
 
-    .nav-links > a,
-    .dropbtn {
+    .nav-links a {
 
         padding:
             16px 9px;
@@ -1584,12 +1494,6 @@ footer strong {
 @media (max-width: 800px) {
 
     .hero {
-
-        /*
-           Still no "cover".
-
-           The complete flag stays centered.
-        */
 
         background-attachment:
             scroll;
@@ -1716,8 +1620,7 @@ footer strong {
             flex;
     }
 
-    .nav-links > a,
-    .dropbtn {
+    .nav-links a {
 
         width:
             100%;
@@ -1732,79 +1635,10 @@ footer strong {
             1px solid rgba(212,175,55,.08);
     }
 
-    .nav-links > a::after,
-    .dropbtn::after {
+    .nav-links a::after {
 
         display:
             none;
-    }
-
-
-    /* =====================================================
-       MOBILE DROPDOWN
-    ===================================================== */
-
-    .dropdown {
-
-        width:
-            100%;
-    }
-
-    .dropdown-menu {
-
-        position:
-            static;
-
-        width:
-            100%;
-
-        max-height:
-            none;
-
-        transform:
-            none;
-
-        display:
-            none;
-
-        opacity:
-            1;
-
-        visibility:
-            visible;
-
-        border:
-            none;
-
-        box-shadow:
-            none;
-
-        background:
-            rgba(0,0,0,.2);
-    }
-
-    .dropdown.open .dropdown-menu {
-
-        display:
-            block;
-
-        transform:
-            none;
-    }
-
-    .dropdown-menu a {
-
-        padding:
-            13px 35px;
-
-        font-size:
-            10px;
-    }
-
-    .dropdown-menu a:hover {
-
-        padding-left:
-            42px;
     }
 
 
@@ -1950,373 +1784,89 @@ footer strong {
         </button>
 
 
-        <div class="nav-links" id="navLinks">
+        <nav class="nav-links" id="navLinks">
 
-            <a href="index.html">HOME</a>
+            <a href="index.html">
+                HOME
+            </a>
 
             <a href="constitution.html">
                 CONSTITUTION
             </a>
 
-
-            <!-- HISTORY -->
-
-            <div class="dropdown">
-
-                <button class="dropbtn">
-                    HISTORY ▾
-                </button>
-
-                <div class="dropdown-menu">
-
-                    <a href="history.html">
-                        HISTORY OVERVIEW
-                    </a>
-
-                    <a href="era1.html">
-                        ERA I
-                    </a>
-
-                    <a href="era2.html">
-                        ERA II
-                    </a>
-
-                    <a href="era3.html">
-                        ERA III
-                    </a>
-
-                    <a href="era4.html">
-                        ERA IV
-                    </a>
-
-                    <a href="era5.html">
-                        ERA V
-                    </a>
-
-                    <a href="era6.html">
-                        ERA VI
-                    </a>
-
-                    <a href="era7.html">
-                        ERA VII
-                    </a>
-
-                    <a href="era8.html">
-                        ERA VIII
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- GOVERNMENT -->
-
-            <div class="dropdown">
-
-                <button class="dropbtn">
-                    GOVERNMENT ▾
-                </button>
-
-                <div class="dropdown-menu">
-
-                    <a href="government.html">
-                        GOVERNMENT OVERVIEW
-                    </a>
-
-                    <a href="executive.html">
-                        IMPERIAL EXECUTIVE
-                    </a>
-
-                    <a href="ministers.html">
-                        HOUSE OF MINISTERS
-                    </a>
-
-                    <a href="domus-curialum.html">
-                        DOMUS CURIALUM
-                    </a>
-
-                    <a href="government-officials.html">
-                        GOVERNMENT OFFICIALS
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- JUDICIARY -->
-
-            <div class="dropdown">
-
-                <button class="dropbtn">
-                    JUDICIARY ▾
-                </button>
-
-                <div class="dropdown-menu">
-
-                    <a href="judiciary.html">
-                        SUPREME TRIBUNAL
-                    </a>
-
-                    <a href="rules-of-court.html">
-                        RULES OF COURT
-                    </a>
-
-                    <a href="penal-code.html">
-                        PENAL CODE
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- LEGISLATURE -->
-
-            <div class="dropdown">
-
-                <button class="dropbtn">
-                    IMPERIAL ASSEMBLY ▾
-                </button>
-
-                <div class="dropdown-menu">
-
-                    <a href="legislature.html">
-                        IMPERIAL ASSEMBLY
-                    </a>
-
-                    <a href="domus-curialum.html">
-                        DOMUS CURIALUM
-                    </a>
-
-                    <a href="rules-assembly.html">
-                        RULES OF THE ASSEMBLY
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- ROYAL DECREES -->
-
-            <a href="decrees.html">
-                ROYAL DECREES
+            <a href="history.html">
+                HISTORY
             </a>
 
+            <a href="government.html">
+                GOVERNMENT
+            </a>
 
-            <!-- PROVINCES -->
+            <a href="executive.html">
+                EXECUTIVE
+            </a>
 
-            <div class="dropdown">
+            <a href="ministers.html">
+                MINISTERS
+            </a>
 
-                <button class="dropbtn">
-                    PROVINCES ▾
-                </button>
+            <a href="judiciary.html">
+                JUDICIARY
+            </a>
 
-                <div class="dropdown-menu">
+            <a href="rules-of-court.html">
+                RULES OF COURT
+            </a>
 
-                    <a href="provinces.html">
-                        ALL PROVINCES
-                    </a>
+            <a href="penal-code.html">
+                PENAL CODE
+            </a>
 
-                    <a href="stephara.html">
-                        STEPHARA
-                    </a>
+            <a href="legislature.html">
+                IMPERIAL ASSEMBLY
+            </a>
 
-                    <a href="jaybrienne.html">
-                        JAYBRIENNE
-                    </a>
+            <a href="rules-assembly.html">
+                ASSEMBLY RULES
+            </a>
 
-                    <a href="orlencia.html">
-                        ORLENCIA
-                    </a>
+            <a href="decrees.html">
+                DECREES
+            </a>
 
-                    <a href="westrion.html">
-                        WESTRION
-                    </a>
-
-                    <a href="coastria.html">
-                        COASTRIA
-                    </a>
-
-                    <a href="ronjiel.html">
-                        RONJIEL
-                    </a>
-
-                    <a href="virelion.html">
-                        VIRELION
-                    </a>
-
-                    <a href="draxenor.html">
-                        DRAXENOR
-                    </a>
-
-                    <a href="falrion.html">
-                        FALRION
-                    </a>
-
-                    <a href="regalith.html">
-                        REGALITH
-                    </a>
-
-                    <a href="northaven.html">
-                        NORTHAVEN
-                    </a>
-
-                    <a href="province12.html">
-                        PROVINCE XII
-                    </a>
-
-                    <a href="province13.html">
-                        PROVINCE XIII
-                    </a>
-
-                    <a href="province14.html">
-                        PROVINCE XIV
-                    </a>
-
-                    <a href="province15.html">
-                        PROVINCE XV
-                    </a>
-
-                    <a href="province16.html">
-                        PROVINCE XVI
-                    </a>
-
-                    <a href="province17.html">
-                        PROVINCE XVII
-                    </a>
-
-                    <a href="province18.html">
-                        PROVINCE XVIII
-                    </a>
-
-                    <a href="province19.html">
-                        PROVINCE XIX
-                    </a>
-
-                    <a href="province20.html">
-                        PROVINCE XX
-                    </a>
-
-                    <a href="province21.html">
-                        PROVINCE XXI
-                    </a>
-
-                    <a href="province22.html">
-                        PROVINCE XXII
-                    </a>
-
-                    <a href="province23.html">
-                        PROVINCE XXIII
-                    </a>
-
-                    <a href="province24.html">
-                        PROVINCE XXIV
-                    </a>
-
-                    <a href="province25.html">
-                        PROVINCE XXV
-                    </a>
-
-                    <a href="province26.html">
-                        PROVINCE XXVI
-                    </a>
-
-                    <a href="province27.html">
-                        PROVINCE XXVII
-                    </a>
-
-                    <a href="province28.html">
-                        PROVINCE XXVIII
-                    </a>
-
-                    <a href="province29.html">
-                        PROVINCE XXIX
-                    </a>
-
-                    <a href="province30.html">
-                        PROVINCE XXX
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- DATA -->
+            <a href="provinces.html">
+                PROVINCES
+            </a>
 
             <a href="data.html">
                 DATA
             </a>
 
-
-            <!-- ATLAS -->
-
             <a href="atlas.html">
                 ATLAS
             </a>
 
+            <a href="valtherra.html">
+                VALTHERRA
+            </a>
 
-            <!-- VALTHERRA -->
+            <a href="royal-family.html">
+                ROYAL FAMILY
+            </a>
 
-            <div class="dropdown">
+            <a href="symbols.html">
+                SYMBOLS
+            </a>
 
-                <button class="dropbtn">
-                    VALTHERRA ▾
-                </button>
+            <a href="calendar.html">
+                CALENDAR
+            </a>
 
-                <div class="dropdown-menu">
+            <a href="archives.html">
+                ARCHIVES
+            </a>
 
-                    <a href="valtherra.html">
-                        VALTHERRA
-                    </a>
-
-                    <a href="valtherra-map.html">
-                        MAP OF VALTHERRA
-                    </a>
-
-                    <a href="valtherra-history.html">
-                        VALTHERRAN HISTORY
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- OTHERS -->
-
-            <div class="dropdown">
-
-                <button class="dropbtn">
-                    OTHERS ▾
-                </button>
-
-                <div class="dropdown-menu">
-
-                    <a href="royal-family.html">
-                        ROYAL FAMILY
-                    </a>
-
-                    <a href="symbols.html">
-                        IMPERIAL SYMBOLS
-                    </a>
-
-                    <a href="calendar.html">
-                        IMPERIAL CALENDAR
-                    </a>
-
-                    <a href="archives.html">
-                        IMPERIAL ARCHIVES
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
+        </nav>
 
     </div>
 
@@ -2387,6 +1937,7 @@ footer strong {
             id="siteSearch"
             placeholder="Search the Imperial Archives, Constitution, History, Provinces..."
             autocomplete="off"
+            aria-label="Search the Imperial website"
         >
 
         <span class="search-icon">
@@ -2396,6 +1947,7 @@ footer strong {
         <div
             class="search-results"
             id="searchResults"
+            role="listbox"
         ></div>
 
     </div>
@@ -2534,6 +2086,8 @@ footer strong {
     <div class="portal-grid">
 
 
+        <!-- CONSTITUTION -->
+
         <a
             href="constitution.html"
             class="portal-card"
@@ -2553,6 +2107,8 @@ footer strong {
 
         </a>
 
+
+        <!-- HISTORY -->
 
         <a
             href="history.html"
@@ -2574,6 +2130,8 @@ footer strong {
         </a>
 
 
+        <!-- GOVERNMENT -->
+
         <a
             href="government.html"
             class="portal-card"
@@ -2593,6 +2151,8 @@ footer strong {
 
         </a>
 
+
+        <!-- IMPERIAL ASSEMBLY -->
 
         <a
             href="legislature.html"
@@ -2614,6 +2174,8 @@ footer strong {
         </a>
 
 
+        <!-- JUDICIARY -->
+
         <a
             href="judiciary.html"
             class="portal-card"
@@ -2633,6 +2195,8 @@ footer strong {
 
         </a>
 
+
+        <!-- PROVINCES -->
 
         <a
             href="provinces.html"
@@ -2654,6 +2218,8 @@ footer strong {
         </a>
 
 
+        <!-- DATA -->
+
         <a
             href="data.html"
             class="portal-card"
@@ -2673,6 +2239,8 @@ footer strong {
 
         </a>
 
+
+        <!-- ATLAS -->
 
         <a
             href="atlas.html"
@@ -2694,6 +2262,8 @@ footer strong {
         </a>
 
 
+        <!-- VALTHERRA -->
+
         <a
             href="valtherra.html"
             class="portal-card"
@@ -2713,6 +2283,8 @@ footer strong {
 
         </a>
 
+
+        <!-- ROYAL DECREES -->
 
         <a
             href="decrees.html"
@@ -2734,25 +2306,29 @@ footer strong {
         </a>
 
 
+        <!-- ROYAL FAMILY -->
+
         <a
-            href="domus-curialum.html"
+            href="royal-family.html"
             class="portal-card"
         >
 
             <div class="portal-icon">
-                🏛
+                👑
             </div>
 
             <h3>
-                DOMUS CURIALUM
+                ROYAL FAMILY
             </h3>
 
             <p>
-                The House of Ministers.
+                The Imperial Household and Crown.
             </p>
 
         </a>
 
+
+        <!-- ARCHIVES -->
 
         <a
             href="archives.html"
@@ -2812,7 +2388,10 @@ footer strong {
      BACK TO TOP
 ========================================================= -->
 
-<button id="backTop">
+<button
+    id="backTop"
+    aria-label="Back to top"
+>
     ↑
 </button>
 
@@ -2822,7 +2401,6 @@ footer strong {
 ========================================================= -->
 
 <script>
-
 
 /* =========================================================
    LOADING SCREEN
@@ -2835,10 +2413,18 @@ window.addEventListener(
         setTimeout(
             function() {
 
-                document
-                    .getElementById("loading-screen")
-                    .classList
-                    .add("hidden");
+                const loadingScreen =
+                    document.getElementById(
+                        "loading-screen"
+                    );
+
+                if (loadingScreen) {
+
+                    loadingScreen.classList.add(
+                        "hidden"
+                    );
+
+                }
 
             },
             700
@@ -2859,151 +2445,103 @@ const navLinks =
     document.getElementById("navLinks");
 
 
-menuToggle.addEventListener(
-    "click",
-    function() {
+if (menuToggle && navLinks) {
 
-        const open =
-            navLinks.classList.toggle(
-                "mobile-open"
+    menuToggle.addEventListener(
+        "click",
+        function() {
+
+            const open =
+                navLinks.classList.toggle(
+                    "mobile-open"
+                );
+
+            menuToggle.classList.toggle(
+                "active"
             );
 
-        menuToggle.classList.toggle(
-            "active"
-        );
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(open)
+            );
 
-        menuToggle.setAttribute(
-            "aria-expanded",
-            open
-        );
-
-    }
-);
-
-
-/* =========================================================
-   DROPDOWN MENUS
-========================================================= */
-
-const dropdowns =
-    document.querySelectorAll(
-        ".dropdown"
+        }
     );
 
 
-dropdowns.forEach(
-    dropdown => {
+    /* Close mobile navigation after selecting a page */
 
-        const button =
-            dropdown.querySelector(
-                ".dropbtn"
-            );
+    navLinks
+        .querySelectorAll("a")
+        .forEach(
+            link => {
 
+                link.addEventListener(
+                    "click",
+                    function() {
 
-        button.addEventListener(
-            "click",
-            function(event) {
+                        navLinks.classList.remove(
+                            "mobile-open"
+                        );
 
-                event.preventDefault();
+                        menuToggle.classList.remove(
+                            "active"
+                        );
 
-                dropdowns.forEach(
-                    other => {
-
-                        if (
-                            other !== dropdown
-                        ) {
-
-                            other.classList.remove(
-                                "open"
-                            );
-
-                        }
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
 
                     }
                 );
 
-                dropdown.classList.toggle(
-                    "open"
-                );
-
             }
         );
 
-    }
-);
-
-
-/* Close menus when clicking outside */
-
-document.addEventListener(
-    "click",
-    function(event) {
-
-        if (
-            !event.target.closest(
-                ".dropdown"
-            )
-        ) {
-
-            dropdowns.forEach(
-                dropdown => {
-
-                    dropdown.classList.remove(
-                        "open"
-                    );
-
-                }
-            );
-
-        }
-
-    }
-);
+}
 
 
 /* =========================================================
-   CLOSE MOBILE NAV AFTER LINK CLICK
+   SITE-WIDE SEARCH DATABASE
 ========================================================= */
 
-document.querySelectorAll(
-    ".nav-links a"
-).forEach(
-    link => {
+/*
+   These are the HTML pages that the search system checks.
 
-        link.addEventListener(
-            "click",
-            function() {
+   The search does NOT depend only on these titles.
 
-                navLinks.classList.remove(
-                    "mobile-open"
-                );
+   It fetches the actual HTML of each page and searches
+   the readable text inside that page.
 
-                menuToggle.classList.remove(
-                    "active"
-                );
+   Therefore terms appearing inside your pages can also
+   be found.
 
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+   Example:
 
-            }
-        );
+   Search: "Stephara"
 
-    }
-);
+   If Stephara appears inside stephara.html,
+   the search can return stephara.html.
 
-
-/* =========================================================
-   SITE-WIDE SEARCH
-========================================================= */
+*/
 
 const searchablePages = [
+
+    /* MAIN */
+
+    {
+        title: "Home",
+        url: "index.html"
+    },
 
     {
         title: "Constitution",
         url: "constitution.html"
     },
+
+
+    /* HISTORY */
 
     {
         title: "History",
@@ -3050,13 +2588,16 @@ const searchablePages = [
         url: "era8.html"
     },
 
+
+    /* GOVERNMENT */
+
     {
         title: "Government",
         url: "government.html"
     },
 
     {
-        title: "Executive",
+        title: "Imperial Executive",
         url: "executive.html"
     },
 
@@ -3066,9 +2607,12 @@ const searchablePages = [
     },
 
     {
-        title: "Domus Curialum",
-        url: "domus-curialum.html"
+        title: "Government Officials",
+        url: "government-officials.html"
     },
+
+
+    /* JUDICIARY */
 
     {
         title: "Judiciary",
@@ -3085,6 +2629,9 @@ const searchablePages = [
         url: "penal-code.html"
     },
 
+
+    /* LEGISLATURE */
+
     {
         title: "Imperial Assembly",
         url: "legislature.html"
@@ -3095,10 +2642,21 @@ const searchablePages = [
         url: "rules-assembly.html"
     },
 
+
+    /* CROWN */
+
     {
         title: "Royal Decrees",
         url: "decrees.html"
     },
+
+    {
+        title: "Royal Family",
+        url: "royal-family.html"
+    },
+
+
+    /* PROVINCES */
 
     {
         title: "Provinces",
@@ -3106,7 +2664,160 @@ const searchablePages = [
     },
 
     {
-        title: "Data",
+        title: "Stephara",
+        url: "stephara.html"
+    },
+
+    {
+        title: "Jaybrienne",
+        url: "jaybrienne.html"
+    },
+
+    {
+        title: "Orlencia",
+        url: "orlencia.html"
+    },
+
+    {
+        title: "Westrion",
+        url: "westrion.html"
+    },
+
+    {
+        title: "Coastria",
+        url: "coastria.html"
+    },
+
+    {
+        title: "Ronjiel",
+        url: "ronjiel.html"
+    },
+
+    {
+        title: "Virelion",
+        url: "virelion.html"
+    },
+
+    {
+        title: "Draxenor",
+        url: "draxenor.html"
+    },
+
+    {
+        title: "Falrion",
+        url: "falrion.html"
+    },
+
+    {
+        title: "Regalith",
+        url: "regalith.html"
+    },
+
+    {
+        title: "Northaven",
+        url: "northaven.html"
+    },
+
+    {
+        title: "Province XII",
+        url: "province12.html"
+    },
+
+    {
+        title: "Province XIII",
+        url: "province13.html"
+    },
+
+    {
+        title: "Province XIV",
+        url: "province14.html"
+    },
+
+    {
+        title: "Province XV",
+        url: "province15.html"
+    },
+
+    {
+        title: "Province XVI",
+        url: "province16.html"
+    },
+
+    {
+        title: "Province XVII",
+        url: "province17.html"
+    },
+
+    {
+        title: "Province XVIII",
+        url: "province18.html"
+    },
+
+    {
+        title: "Province XIX",
+        url: "province19.html"
+    },
+
+    {
+        title: "Province XX",
+        url: "province20.html"
+    },
+
+    {
+        title: "Province XXI",
+        url: "province21.html"
+    },
+
+    {
+        title: "Province XXII",
+        url: "province22.html"
+    },
+
+    {
+        title: "Province XXIII",
+        url: "province23.html"
+    },
+
+    {
+        title: "Province XXIV",
+        url: "province24.html"
+    },
+
+    {
+        title: "Province XXV",
+        url: "province25.html"
+    },
+
+    {
+        title: "Province XXVI",
+        url: "province26.html"
+    },
+
+    {
+        title: "Province XXVII",
+        url: "province27.html"
+    },
+
+    {
+        title: "Province XXVIII",
+        url: "province28.html"
+    },
+
+    {
+        title: "Province XXIX",
+        url: "province29.html"
+    },
+
+    {
+        title: "Province XXX",
+        url: "province30.html"
+    },
+
+
+    /* OTHER INFORMATION */
+
+    {
+        title: "Imperial Data",
         url: "data.html"
     },
 
@@ -3131,11 +2842,6 @@ const searchablePages = [
     },
 
     {
-        title: "Royal Family",
-        url: "royal-family.html"
-    },
-
-    {
         title: "Imperial Symbols",
         url: "symbols.html"
     },
@@ -3157,6 +2863,13 @@ const searchablePages = [
    SEARCH CACHE
 ========================================================= */
 
+/*
+   Once a page has been downloaded, its text is stored here.
+
+   This prevents the same page from being downloaded repeatedly
+   every time the user changes the search query.
+*/
+
 const pageCache = {};
 
 
@@ -3176,7 +2889,7 @@ const searchResults =
 
 
 /* =========================================================
-   LOAD PAGE
+   LOAD AND EXTRACT PAGE TEXT
 ========================================================= */
 
 async function loadPage(page) {
@@ -3193,7 +2906,13 @@ async function loadPage(page) {
     try {
 
         const response =
-            await fetch(page.url);
+            await fetch(
+                page.url,
+                {
+                    cache: "no-cache"
+                }
+            );
+
 
         if (!response.ok) {
 
@@ -3217,15 +2936,23 @@ async function loadPage(page) {
             );
 
 
+        /*
+           Remove elements that should not be searched.
+        */
+
         documentPage
             .querySelectorAll(
-                "script, style, nav"
+                "script, style, noscript, svg"
             )
             .forEach(
                 element =>
                     element.remove()
             );
 
+
+        /*
+           Extract readable page text.
+        */
 
         const text =
             documentPage.body
@@ -3247,8 +2974,9 @@ async function loadPage(page) {
     } catch(error) {
 
         console.warn(
-            "Unable to search:",
-            page.url
+            "Unable to search page:",
+            page.url,
+            error
         );
 
         return "";
@@ -3259,78 +2987,186 @@ async function loadPage(page) {
 
 
 /* =========================================================
-   SEARCH
+   CREATE SEARCH SNIPPET
 ========================================================= */
 
-let searchTimer;
+function createSnippet(
+    text,
+    query
+) {
 
+    const lowerText =
+        text.toLowerCase();
 
-searchInput.addEventListener(
-    "input",
-    function() {
-
-        clearTimeout(
-            searchTimer
+    const index =
+        lowerText.indexOf(
+            query
         );
 
 
-        const query =
-            this.value
-                .trim()
-                .toLowerCase();
+    if (index === -1) {
 
-
-        if (
-            query.length < 2
-        ) {
-
-            searchResults.classList.remove(
-                "show"
-            );
-
-            searchResults.innerHTML =
-                "";
-
-            return;
-
-        }
-
-
-        searchResults.classList.add(
-            "show"
-        );
-
-
-        searchResults.innerHTML = `
-            <div class="search-result">
-                <span>
-                    Searching the Imperial Archives...
-                </span>
-            </div>
-        `;
-
-
-        searchTimer =
-            setTimeout(
-                () =>
-                    performSearch(query),
-                250
-            );
+        return text.substring(
+            0,
+            180
+        ) + "...";
 
     }
-);
+
+
+    const start =
+        Math.max(
+            0,
+            index - 80
+        );
+
+
+    const end =
+        Math.min(
+            text.length,
+            index + query.length + 140
+        );
+
+
+    let snippet =
+        text.substring(
+            start,
+            end
+        );
+
+
+    if (start > 0) {
+
+        snippet =
+            "..." + snippet;
+
+    }
+
+
+    if (
+        end < text.length
+    ) {
+
+        snippet += "...";
+
+    }
+
+
+    return snippet;
+
+}
 
 
 /* =========================================================
-   PERFORM SEARCH
+   SEARCH INPUT
+========================================================= */
+
+let searchTimer = null;
+
+
+if (
+    searchInput &&
+    searchResults
+) {
+
+    searchInput.addEventListener(
+        "input",
+        function() {
+
+            clearTimeout(
+                searchTimer
+            );
+
+
+            const query =
+                this.value
+                    .trim()
+                    .toLowerCase();
+
+
+            /*
+               Empty or one-character searches
+               do not trigger a site search.
+            */
+
+            if (
+                query.length < 2
+            ) {
+
+                searchResults.classList.remove(
+                    "show"
+                );
+
+                searchResults.innerHTML =
+                    "";
+
+                return;
+
+            }
+
+
+            searchResults.classList.add(
+                "show"
+            );
+
+
+            searchResults.innerHTML = `
+
+                <div class="search-status">
+
+                    Searching the Imperial Archives...
+
+                </div>
+
+            `;
+
+
+            /*
+               Small delay prevents excessive searches
+               while the user is typing.
+            */
+
+            searchTimer =
+                setTimeout(
+                    function() {
+
+                        performSearch(
+                            query
+                        );
+
+                    },
+                    300
+                );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   PERFORM SITE-WIDE SEARCH
 ========================================================= */
 
 async function performSearch(
     query
 ) {
 
+    if (
+        !searchResults
+    ) {
+
+        return;
+
+    }
+
+
     const results = [];
 
+
+    /*
+       Search every registered HTML page.
+    */
 
     for (
         const page
@@ -3338,59 +3174,31 @@ async function performSearch(
     ) {
 
         const text =
-            await loadPage(page);
+            await loadPage(
+                page
+            );
 
+
+        if (!text) {
+
+            continue;
+
+        }
+
+
+        const lowerText =
+            text.toLowerCase();
+
+
+        /*
+           Search actual page content.
+        */
 
         if (
-            text
-                .toLowerCase()
-                .includes(query)
+            lowerText.includes(
+                query
+            )
         ) {
-
-            const index =
-                text
-                    .toLowerCase()
-                    .indexOf(query);
-
-
-            let start =
-                Math.max(
-                    0,
-                    index - 70
-                );
-
-
-            let end =
-                Math.min(
-                    text.length,
-                    index + 150
-                );
-
-
-            let snippet =
-                text.substring(
-                    start,
-                    end
-                );
-
-
-            if (start > 0) {
-
-                snippet =
-                    "..." + snippet;
-
-            }
-
-
-            if (
-                end < text.length
-            ) {
-
-                snippet +=
-                    "...";
-
-            }
-
 
             results.push({
 
@@ -3401,7 +3209,10 @@ async function performSearch(
                     page.url,
 
                 snippet:
-                    snippet
+                    createSnippet(
+                        text,
+                        query
+                    )
 
             });
 
@@ -3428,10 +3239,20 @@ function displayResults(
 ) {
 
     if (
+        !searchResults
+    ) {
+
+        return;
+
+    }
+
+
+    if (
         results.length === 0
     ) {
 
         searchResults.innerHTML = `
+
             <div class="search-result">
 
                 <strong>
@@ -3439,17 +3260,22 @@ function displayResults(
                 </strong>
 
                 <span>
-                    No Imperial record matched
+                    No Imperial page matched
                     "${escapeHTML(query)}".
                 </span>
 
             </div>
+
         `;
 
         return;
 
     }
 
+
+    /*
+       Maximum of 15 results displayed.
+    */
 
     searchResults.innerHTML =
         results
@@ -3459,7 +3285,7 @@ function displayResults(
 
                     <a
                         class="search-result"
-                        href="${result.url}"
+                        href="${escapeAttribute(result.url)}"
                     >
 
                         <strong>
@@ -3480,6 +3306,7 @@ function displayResults(
             )
             .join("");
 
+
 }
 
 
@@ -3491,7 +3318,7 @@ function escapeHTML(
     text
 ) {
 
-    return text
+    return String(text)
         .replace(
             /&/g,
             "&amp;"
@@ -3517,7 +3344,36 @@ function escapeHTML(
 
 
 /* =========================================================
-   CLOSE SEARCH
+   ESCAPE URL ATTRIBUTE
+========================================================= */
+
+function escapeAttribute(
+    text
+) {
+
+    return String(text)
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        );
+
+}
+
+
+/* =========================================================
+   CLOSE SEARCH WHEN CLICKING OUTSIDE
 ========================================================= */
 
 document.addEventListener(
@@ -3530,14 +3386,53 @@ document.addEventListener(
             )
         ) {
 
-            searchResults.classList.remove(
-                "show"
-            );
+            if (searchResults) {
+
+                searchResults.classList.remove(
+                    "show"
+                );
+
+            }
 
         }
 
     }
 );
+
+
+/* =========================================================
+   SEARCH RESULT CLICK
+========================================================= */
+
+if (
+    searchResults
+) {
+
+    searchResults.addEventListener(
+        "click",
+        function(event) {
+
+            const result =
+                event.target.closest(
+                    ".search-result"
+                );
+
+
+            if (
+                result &&
+                result.tagName === "A"
+            ) {
+
+                searchResults.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+}
 
 
 /* =========================================================
@@ -3550,39 +3445,64 @@ const revealElements =
     );
 
 
-const revealObserver =
-    new IntersectionObserver(
-        entries => {
+if (
+    "IntersectionObserver"
+    in window
+) {
 
-            entries.forEach(
-                entry => {
+    const revealObserver =
+        new IntersectionObserver(
+            entries => {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+                entries.forEach(
+                    entry => {
 
-                        entry.target.classList.add(
-                            "visible"
-                        );
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
 
                     }
+                );
 
-                }
-            );
+            },
+            {
+                threshold: .12
+            }
+        );
 
-        },
-        {
-            threshold: .12
-        }
+
+    revealElements.forEach(
+        element =>
+            revealObserver.observe(
+                element
+            )
     );
 
+} else {
 
-revealElements.forEach(
-    element =>
-        revealObserver.observe(
-            element
-        )
-);
+    /*
+       Fallback for browsers without
+       IntersectionObserver.
+    */
+
+    revealElements.forEach(
+        element =>
+            element.classList.add(
+                "visible"
+            )
+    );
+
+}
 
 
 /* =========================================================
@@ -3595,44 +3515,48 @@ const backTop =
     );
 
 
-window.addEventListener(
-    "scroll",
-    function() {
+if (backTop) {
 
-        if (
-            window.scrollY > 500
-        ) {
+    window.addEventListener(
+        "scroll",
+        function() {
 
-            backTop.classList.add(
-                "show"
-            );
+            if (
+                window.scrollY > 500
+            ) {
 
-        } else {
+                backTop.classList.add(
+                    "show"
+                );
 
-            backTop.classList.remove(
-                "show"
-            );
+            } else {
+
+                backTop.classList.remove(
+                    "show"
+                );
+
+            }
 
         }
-
-    }
-);
+    );
 
 
-backTop.addEventListener(
-    "click",
-    function() {
+    backTop.addEventListener(
+        "click",
+        function() {
 
-        window.scrollTo({
+            window.scrollTo({
 
-            top: 0,
+                top: 0,
 
-            behavior: "smooth"
+                behavior: "smooth"
 
-        });
+            });
 
-    }
-);
+        }
+    );
+
+}
 
 
 /* =========================================================
@@ -3643,33 +3567,58 @@ document.addEventListener(
     "keydown",
     function(event) {
 
+        const activeElement =
+            document.activeElement;
+
+
+        /*
+           Press "/" to focus search.
+        */
+
         if (
             event.key === "/" &&
-            document.activeElement.tagName !== "INPUT"
+            activeElement &&
+            activeElement.tagName !== "INPUT" &&
+            activeElement.tagName !== "TEXTAREA"
         ) {
 
             event.preventDefault();
 
-            searchInput.focus();
+            if (searchInput) {
+
+                searchInput.focus();
+
+            }
 
         }
 
+
+        /*
+           Escape closes search results.
+        */
 
         if (
             event.key === "Escape"
         ) {
 
-            searchResults.classList.remove(
-                "show"
-            );
+            if (searchResults) {
 
-            searchInput.blur();
+                searchResults.classList.remove(
+                    "show"
+                );
+
+            }
+
+            if (searchInput) {
+
+                searchInput.blur();
+
+            }
 
         }
 
     }
 );
-
 
 </script>
 
