@@ -18,7 +18,7 @@
 
 <link
     rel="preconnect"
-    href="https://fonts.gstatic.com"
+    href="https://fonts.googleapis.com"
     crossorigin
 >
 
@@ -26,7 +26,6 @@
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
     rel="stylesheet"
 >
-
 
 <style>
 
@@ -46,7 +45,6 @@ html {
 }
 
 body {
-
     font-family:
         "Cormorant Garamond",
         serif;
@@ -69,13 +67,9 @@ body {
 ========================================================= */
 
 .top-nav {
-
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
-
     width: 100%;
 
     background:
@@ -93,126 +87,70 @@ body {
 
     backdrop-filter:
         blur(12px);
-
 }
 
-
 .nav-inner {
-
     max-width: 1500px;
-
     margin: auto;
-
     min-height: 62px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    padding:
-        0 18px;
-
+    padding: 0 18px;
 }
-
 
 .brand {
-
-    font-family:
-        "Cinzel",
-        serif;
-
-    color:
-        #d4af37;
-
-    font-size:
-        14px;
-
-    letter-spacing:
-        1.5px;
-
-    white-space:
-        nowrap;
-
+    font-family: "Cinzel", serif;
+    color: #d4af37;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
 }
 
-
 .menu-button {
-
     display: none;
 
     width: 44px;
-
     height: 44px;
 
     border:
         1px solid rgba(212,175,55,.5);
 
-    background:
-        #061a31;
+    background: #061a31;
+    color: #d4af37;
 
-    color:
-        #d4af37;
-
-    font-size:
-        24px;
-
-    border-radius:
-        5px;
-
-    cursor:
-        pointer;
-
+    font-size: 24px;
+    border-radius: 5px;
+    cursor: pointer;
 }
-
 
 .main-links {
-
     display: flex;
-
     align-items: center;
-
     gap: 3px;
-
 }
-
 
 .main-links a {
+    color: #f5e6a8;
+    text-decoration: none;
 
-    color:
-        #f5e6a8;
+    font-family: "Cinzel", serif;
 
-    text-decoration:
-        none;
+    font-size: 11px;
+    letter-spacing: 1px;
 
-    font-family:
-        "Cinzel",
-        serif;
+    padding: 10px 12px;
 
-    font-size:
-        11px;
-
-    letter-spacing:
-        1px;
-
-    padding:
-        10px 12px;
-
-    transition:
-        .3s ease;
-
+    transition: .3s ease;
 }
 
-
 .main-links a:hover {
-
-    color:
-        white;
+    color: white;
 
     text-shadow:
         0 0 10px rgba(212,175,55,.8);
-
 }
 
 
@@ -221,61 +159,37 @@ body {
 ========================================================= */
 
 .page-hero {
+    min-height: 55vh;
 
-    min-height:
-        55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    display:
-        flex;
+    text-align: center;
 
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
+    position: relative;
+    overflow: hidden;
 
     background:
-
         linear-gradient(
             rgba(1,15,36,.60),
             rgba(1,9,22,.88)
         ),
-
         url("province-palace.png");
 
-    background-size:
-        cover;
-
-    background-position:
-        center;
-
+    background-size: cover;
+    background-position: center;
 }
 
-
 .page-hero::after {
-
     content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    width:
-        600px;
+    width: 600px;
+    height: 600px;
 
-    height:
-        600px;
-
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
         radial-gradient(
@@ -286,80 +200,54 @@ body {
 
     animation:
         heroGlow 6s ease-in-out infinite alternate;
-
 }
-
 
 @keyframes heroGlow {
 
     from {
-        transform:
-            scale(.85);
-        opacity:
-            .4;
+        transform: scale(.85);
+        opacity: .4;
     }
 
     to {
-        transform:
-            scale(1.2);
-        opacity:
-            1;
+        transform: scale(1.2);
+        opacity: 1;
     }
 
 }
 
-
 .hero-content {
+    position: relative;
+    z-index: 2;
 
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    padding:
-        100px 20px;
-
+    padding: 100px 20px;
 }
 
-
 .hero-symbol {
-
-    font-size:
-        65px;
-
-    color:
-        #d4af37;
+    font-size: 65px;
+    color: #d4af37;
 
     text-shadow:
         0 0 30px rgba(212,175,55,.7);
 
     animation:
         floatSymbol 4s ease-in-out infinite;
-
 }
-
 
 @keyframes floatSymbol {
 
     0%,100% {
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 
     50% {
-        transform:
-            translateY(-8px);
+        transform: translateY(-8px);
     }
 
 }
 
-
 .hero-content h1 {
-
-    font-family:
-        "Cinzel",
-        serif;
+    font-family: "Cinzel", serif;
 
     font-size:
         clamp(
@@ -368,39 +256,26 @@ body {
             75px
         );
 
-    color:
-        #f7e7a9;
+    color: #f7e7a9;
 
-    letter-spacing:
-        4px;
+    letter-spacing: 4px;
 
-    margin-top:
-        10px;
+    margin-top: 10px;
 
     text-shadow:
         0 3px 0 #76570d,
         0 0 25px rgba(212,175,55,.35);
-
 }
 
-
 .hero-content p {
+    max-width: 850px;
 
-    max-width:
-        850px;
+    margin: 20px auto 0;
 
-    margin:
-        20px auto 0;
+    font-size: 21px;
+    line-height: 1.7;
 
-    font-size:
-        21px;
-
-    line-height:
-        1.7;
-
-    color:
-        #ded8c4;
-
+    color: #ded8c4;
 }
 
 
@@ -409,15 +284,9 @@ body {
 ========================================================= */
 
 .province-navigation {
-
-    position:
-        sticky;
-
-    top:
-        62px;
-
-    z-index:
-        900;
+    position: sticky;
+    top: 62px;
+    z-index: 900;
 
     background:
         rgba(2,12,27,.97);
@@ -427,121 +296,77 @@ body {
 
     box-shadow:
         0 8px 25px rgba(0,0,0,.4);
-
 }
-
 
 .province-nav-inner {
+    max-width: 1450px;
+    margin: auto;
 
-    max-width:
-        1450px;
-
-    margin:
-        auto;
-
-    padding:
-        12px 15px;
-
+    padding: 12px 15px;
 }
-
 
 .nav-label {
+    font-family: "Cinzel", serif;
 
-    font-family:
-        "Cinzel",
-        serif;
+    text-align: center;
 
-    text-align:
-        center;
+    color: #d4af37;
 
-    color:
-        #d4af37;
+    font-size: 12px;
 
-    font-size:
-        12px;
+    letter-spacing: 2px;
 
-    letter-spacing:
-        2px;
-
-    margin-bottom:
-        9px;
-
+    margin-bottom: 9px;
 }
-
 
 .province-nav {
+    display: flex;
 
-    display:
-        flex;
+    gap: 7px;
 
-    gap:
-        7px;
+    overflow-x: auto;
 
-    overflow-x:
-        auto;
+    padding-bottom: 5px;
 
-    padding-bottom:
-        5px;
-
-    scrollbar-width:
-        thin;
-
+    scrollbar-width: thin;
 }
 
-
 .province-nav a {
+    flex: 0 0 auto;
 
-    flex:
-        0 0 auto;
+    color: #e9dfb7;
 
-    color:
-        #e9dfb7;
+    text-decoration: none;
 
-    text-decoration:
-        none;
+    font-family: "Cinzel", serif;
 
-    font-family:
-        "Cinzel",
-        serif;
+    font-size: 10px;
 
-    font-size:
-        10px;
+    letter-spacing: .8px;
 
-    letter-spacing:
-        .8px;
-
-    padding:
-        9px 13px;
+    padding: 9px 13px;
 
     border:
         1px solid rgba(212,175,55,.25);
 
-    border-radius:
-        20px;
+    border-radius: 20px;
 
     background:
         rgba(6,30,56,.8);
 
-    transition:
-        .3s ease;
-
+    transition: .3s ease;
 }
 
-
 .province-nav a:hover {
+    color: #fff;
 
-    color:
-        #fff;
-
-    border-color:
-        #d4af37;
+    border-color: #d4af37;
 
     background:
         rgba(212,175,55,.13);
 
     transform:
         translateY(-2px);
-
 }
 
 
@@ -550,38 +375,24 @@ body {
 ========================================================= */
 
 .container {
-
     width:
         min(
             1250px,
             94%
         );
 
-    margin:
-        auto;
-
+    margin: auto;
 }
-
 
 .introduction {
-
-    padding:
-        90px 20px;
-
-    text-align:
-        center;
-
+    padding: 90px 20px;
+    text-align: center;
 }
 
-
 .section-title {
+    font-family: "Cinzel", serif;
 
-    font-family:
-        "Cinzel",
-        serif;
-
-    color:
-        #d4af37;
+    color: #d4af37;
 
     font-size:
         clamp(
@@ -590,32 +401,21 @@ body {
             40px
         );
 
-    letter-spacing:
-        3px;
+    letter-spacing: 3px;
 
-    margin-bottom:
-        20px;
-
+    margin-bottom: 20px;
 }
 
-
 .introduction p {
+    max-width: 950px;
 
-    max-width:
-        950px;
+    margin: auto;
 
-    margin:
-        auto;
+    font-size: 20px;
 
-    font-size:
-        20px;
+    line-height: 1.8;
 
-    line-height:
-        1.8;
-
-    color:
-        #d2d2d2;
-
+    color: #d2d2d2;
 }
 
 
@@ -624,45 +424,26 @@ body {
 ========================================================= */
 
 .region-header {
-
-    padding:
-        75px 20px 35px;
-
-    text-align:
-        center;
-
+    padding: 75px 20px 35px;
+    text-align: center;
 }
-
 
 .region-header h2 {
+    font-family: "Cinzel", serif;
 
-    font-family:
-        "Cinzel",
-        serif;
+    color: #f7e7a9;
 
-    color:
-        #f7e7a9;
+    font-size: 34px;
 
-    font-size:
-        34px;
-
-    letter-spacing:
-        3px;
-
+    letter-spacing: 3px;
 }
 
-
 .region-header p {
+    margin-top: 10px;
 
-    margin-top:
-        10px;
+    color: #aaa;
 
-    color:
-        #aaa;
-
-    font-size:
-        18px;
-
+    font-size: 18px;
 }
 
 
@@ -671,9 +452,7 @@ body {
 ========================================================= */
 
 .capital-section {
-
-    padding:
-        75px 20px;
+    padding: 75px 20px;
 
     background:
         linear-gradient(
@@ -681,104 +460,65 @@ body {
             #061c36,
             #020b18
         );
-
 }
 
-
 .capital-card {
+    max-width: 1150px;
 
-    max-width:
-        1150px;
+    margin: auto;
 
-    margin:
-        auto;
-
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         1.1fr 1fr;
 
-    gap:
-        40px;
+    gap: 40px;
 
-    align-items:
-        center;
-
+    align-items: center;
 }
 
-
 .capital-image {
-
     border:
         2px solid #d4af37;
 
     box-shadow:
         0 20px 50px rgba(0,0,0,.6);
 
-    overflow:
-        hidden;
-
+    overflow: hidden;
 }
-
 
 .capital-image img {
+    width: 100%;
 
-    width:
-        100%;
+    aspect-ratio: 16 / 10;
 
-    aspect-ratio:
-        16 / 10;
+    object-fit: cover;
 
-    object-fit:
-        cover;
-
-    display:
-        block;
-
+    display: block;
 }
-
 
 .capital-text h2 {
+    font-family: "Cinzel", serif;
 
-    font-family:
-        "Cinzel",
-        serif;
+    color: #d4af37;
 
-    color:
-        #d4af37;
-
-    font-size:
-        32px;
-
+    font-size: 32px;
 }
-
 
 .capital-text h3 {
+    color: #f7e7a9;
 
-    color:
-        #f7e7a9;
+    margin: 10px 0 20px;
 
-    margin:
-        10px 0 20px;
-
-    font-size:
-        23px;
-
+    font-size: 23px;
 }
 
-
 .capital-text p {
+    color: #ccc;
 
-    color:
-        #ccc;
+    font-size: 18px;
 
-    font-size:
-        18px;
-
-    line-height:
-        1.75;
-
+    line-height: 1.75;
 }
 
 
@@ -787,64 +527,39 @@ body {
 ========================================================= */
 
 .province {
-
-    padding:
-        90px 20px;
+    padding: 90px 20px;
 
     border-top:
         1px solid rgba(212,175,55,.12);
 
-    scroll-margin-top:
-        130px;
-
+    scroll-margin-top: 130px;
 }
-
 
 .province:nth-of-type(even) {
-
     background:
         rgba(3,20,39,.45);
-
 }
-
 
 .province-heading {
+    text-align: center;
 
-    text-align:
-        center;
-
-    margin-bottom:
-        35px;
-
+    margin-bottom: 35px;
 }
-
 
 .province-number {
+    font-family: "Cinzel", serif;
 
-    font-family:
-        "Cinzel",
-        serif;
+    color: #b21f2d;
 
-    color:
-        #b21f2d;
+    font-size: 14px;
 
-    font-size:
-        14px;
-
-    letter-spacing:
-        3px;
-
+    letter-spacing: 3px;
 }
 
-
 .province-heading h2 {
+    font-family: "Cinzel", serif;
 
-    font-family:
-        "Cinzel",
-        serif;
-
-    color:
-        #f7e7a9;
+    color: #f7e7a9;
 
     font-size:
         clamp(
@@ -853,26 +568,17 @@ body {
             48px
         );
 
-    letter-spacing:
-        3px;
+    letter-spacing: 3px;
 
-    margin:
-        7px 0;
-
+    margin: 7px 0;
 }
 
-
 .province-heading .subtitle {
+    color: #d4af37;
 
-    color:
-        #d4af37;
+    font-size: 20px;
 
-    font-size:
-        20px;
-
-    font-style:
-        italic;
-
+    font-style: italic;
 }
 
 
@@ -881,44 +587,31 @@ body {
 ========================================================= */
 
 .image-grid {
-
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:
-        20px;
+    gap: 20px;
 
-    margin-bottom:
-        40px;
-
+    margin-bottom: 40px;
 }
 
-
 .image-card {
-
-    background:
-        #04172d;
+    background: #04172d;
 
     border:
         1px solid rgba(212,175,55,.3);
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
     box-shadow:
         0 15px 35px rgba(0,0,0,.35);
 
-    transition:
-        .4s ease;
-
+    transition: .4s ease;
 }
 
-
 .image-card:hover {
-
     transform:
         translateY(-7px);
 
@@ -927,51 +620,32 @@ body {
 
     box-shadow:
         0 20px 45px rgba(0,0,0,.55);
-
 }
-
 
 .image-card img {
+    width: 100%;
 
-    width:
-        100%;
+    aspect-ratio: 16 / 10;
 
-    aspect-ratio:
-        16 / 10;
+    object-fit: cover;
 
-    object-fit:
-        cover;
+    display: block;
 
-    display:
-        block;
-
-    background:
-        #071d36;
-
+    background: #071d36;
 }
 
-
 .image-card figcaption {
+    padding: 12px;
 
-    padding:
-        12px;
+    text-align: center;
 
-    text-align:
-        center;
+    font-family: "Cinzel", serif;
 
-    font-family:
-        "Cinzel",
-        serif;
+    font-size: 11px;
 
-    font-size:
-        11px;
+    letter-spacing: 1px;
 
-    letter-spacing:
-        1px;
-
-    color:
-        #d4af37;
-
+    color: #d4af37;
 }
 
 
@@ -980,29 +654,20 @@ body {
 ========================================================= */
 
 .province-info {
-
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         repeat(5,1fr);
 
-    gap:
-        12px;
+    gap: 12px;
 
-    margin-bottom:
-        40px;
-
+    margin-bottom: 40px;
 }
 
-
 .info-box {
+    padding: 18px 12px;
 
-    padding:
-        18px 12px;
-
-    text-align:
-        center;
+    text-align: center;
 
     background:
         linear-gradient(
@@ -1013,45 +678,28 @@ body {
 
     border:
         1px solid rgba(212,175,55,.2);
-
 }
-
 
 .info-box span {
+    display: block;
 
-    display:
-        block;
+    font-family: "Cinzel", serif;
 
-    font-family:
-        "Cinzel",
-        serif;
+    font-size: 10px;
 
-    font-size:
-        10px;
+    letter-spacing: 1px;
 
-    letter-spacing:
-        1px;
+    color: #9f9f9f;
 
-    color:
-        #9f9f9f;
-
-    margin-bottom:
-        6px;
-
+    margin-bottom: 6px;
 }
 
-
 .info-box strong {
+    display: block;
 
-    display:
-        block;
+    color: #f5e6a8;
 
-    color:
-        #f5e6a8;
-
-    font-size:
-        17px;
-
+    font-size: 17px;
 }
 
 
@@ -1060,12 +708,9 @@ body {
 ========================================================= */
 
 .history-box {
+    max-width: 1050px;
 
-    max-width:
-        1050px;
-
-    margin:
-        auto;
+    margin: auto;
 
     background:
         linear-gradient(
@@ -1077,72 +722,61 @@ body {
     border-left:
         3px solid #d4af37;
 
-    padding:
-        30px 35px;
+    padding: 30px 35px;
 
     box-shadow:
         0 15px 40px rgba(0,0,0,.35);
-
 }
-
 
 .history-box h3 {
+    font-family: "Cinzel", serif;
 
-    font-family:
-        "Cinzel",
-        serif;
+    color: #d4af37;
 
-    color:
-        #d4af37;
+    font-size: 23px;
 
-    font-size:
-        23px;
-
-    margin-bottom:
-        15px;
-
+    margin-bottom: 15px;
 }
-
 
 .history-box p {
+    color: #d1d1d1;
 
-    color:
-        #d1d1d1;
+    font-size: 18px;
 
-    font-size:
-        18px;
+    line-height: 1.85;
 
-    line-height:
-        1.85;
-
-    margin-bottom:
-        15px;
-
+    margin-bottom: 15px;
 }
 
-
 .importance {
+    margin-top: 25px;
 
-    margin-top:
-        25px;
-
-    padding:
-        18px 20px;
+    padding: 18px 20px;
 
     border:
         1px solid rgba(212,175,55,.25);
 
     background:
         rgba(212,175,55,.05);
+}
 
+.importance strong {
+    color: #d4af37;
 }
 
 
-.importance strong {
+/* =========================================================
+   IMAGE ERROR / LOADING SUPPORT
+========================================================= */
 
-    color:
-        #d4af37;
+.image-loading {
+    opacity: .65;
+}
 
+.image-error {
+    opacity: .55;
+
+    filter: grayscale(1);
 }
 
 
@@ -1151,71 +785,45 @@ body {
 ========================================================= */
 
 .back-top {
+    position: fixed;
 
-    position:
-        fixed;
+    right: 20px;
+    bottom: 20px;
 
-    right:
-        20px;
-
-    bottom:
-        20px;
-
-    width:
-        48px;
-
-    height:
-        48px;
+    width: 48px;
+    height: 48px;
 
     border:
         1px solid #d4af37;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
-    background:
-        #03152b;
+    background: #03152b;
 
-    color:
-        #d4af37;
+    color: #d4af37;
 
-    font-size:
-        20px;
+    font-size: 20px;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
-    opacity:
-        0;
+    opacity: 0;
 
-    visibility:
-        hidden;
+    visibility: hidden;
 
-    transition:
-        .3s ease;
+    transition: .3s ease;
 
-    z-index:
-        1200;
-
+    z-index: 1200;
 }
-
 
 .back-top.show {
+    opacity: 1;
 
-    opacity:
-        1;
-
-    visibility:
-        visible;
-
+    visibility: visible;
 }
 
-
 .back-top:hover {
-
     transform:
         translateY(-5px);
-
 }
 
 
@@ -1224,34 +832,22 @@ body {
 ========================================================= */
 
 footer {
+    text-align: center;
 
-    text-align:
-        center;
+    padding: 40px 20px;
 
-    padding:
-        40px 20px;
-
-    background:
-        #010812;
+    background: #010812;
 
     border-top:
         1px solid rgba(178,31,45,.5);
 
-    color:
-        #888;
-
+    color: #888;
 }
 
-
 footer strong {
+    font-family: "Cinzel", serif;
 
-    font-family:
-        "Cinzel",
-        serif;
-
-    color:
-        #d4af37;
-
+    color: #d4af37;
 }
 
 
@@ -1262,173 +858,105 @@ footer strong {
 @media(max-width:900px) {
 
     .brand {
-        font-size:
-            11px;
+        font-size: 11px;
     }
 
     .main-links {
+        position: absolute;
 
-        position:
-            absolute;
+        top: 62px;
+        left: 0;
 
-        top:
-            62px;
+        width: 100%;
 
-        left:
-            0;
+        display: none;
 
-        width:
-            100%;
+        flex-direction: column;
 
-        display:
-            none;
+        align-items: stretch;
 
-        flex-direction:
-            column;
-
-        align-items:
-            stretch;
-
-        background:
-            #020d1e;
+        background: #020d1e;
 
         border-top:
             1px solid rgba(212,175,55,.3);
-
     }
 
     .main-links.open {
-
-        display:
-            flex;
-
+        display: flex;
     }
 
     .main-links a {
-
-        padding:
-            15px 20px;
+        padding: 15px 20px;
 
         border-bottom:
             1px solid rgba(212,175,55,.1);
-
     }
 
     .menu-button {
-
-        display:
-            block;
-
+        display: block;
     }
-
 
     .province-navigation {
-
-        top:
-            62px;
-
+        top: 62px;
     }
-
 
     .capital-card {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
-
 
     .province-info {
-
         grid-template-columns:
             repeat(2,1fr);
-
     }
-
 }
 
 
 @media(max-width:650px) {
 
     .page-hero {
-
-        min-height:
-            50vh;
-
+        min-height: 50vh;
     }
 
     .hero-content {
-
-        padding:
-            75px 15px;
-
+        padding: 75px 15px;
     }
 
     .hero-symbol {
-
-        font-size:
-            50px;
-
+        font-size: 50px;
     }
 
     .hero-content p {
-
-        font-size:
-            18px;
-
+        font-size: 18px;
     }
-
 
     .image-grid {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
-
 
     .province-info {
-
         grid-template-columns:
             1fr 1fr;
-
     }
-
 
     .history-box {
-
-        padding:
-            25px 20px;
-
+        padding: 25px 20px;
     }
-
 
     .history-box p {
-
-        font-size:
-            17px;
-
+        font-size: 17px;
     }
-
 }
 
 
 @media(max-width:420px) {
 
     .province-info {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
 
     .province {
-
-        padding:
-            65px 15px;
-
+        padding: 65px 15px;
     }
-
 }
 
 
@@ -1439,13 +967,9 @@ footer strong {
 @media(prefers-reduced-motion:reduce) {
 
     * {
+        animation: none !important;
 
-        animation:
-            none !important;
-
-        transition:
-            none !important;
-
+        transition: none !important;
     }
 
 }
@@ -1453,7 +977,6 @@ footer strong {
 </style>
 
 </head>
-
 
 <body>
 
@@ -1470,7 +993,6 @@ footer strong {
             ⚜ BRISTEVIA
         </div>
 
-
         <button
             class="menu-button"
             id="menuButton"
@@ -1479,15 +1001,12 @@ footer strong {
             ☰
         </button>
 
-
         <nav
             class="main-links"
             id="mainLinks"
         >
 
-            <a href="index.html">
-                HOME
-            </a>
+            <a href="index.html">HOME</a>
 
             <a href="constitution.html">
                 CONSTITUTION
@@ -1536,7 +1055,10 @@ footer strong {
      HERO
 ========================================================= -->
 
-<section class="page-hero">
+<section
+    class="page-hero"
+    data-image-base="province-palace"
+>
 
     <div class="hero-content">
 
@@ -1571,17 +1093,11 @@ footer strong {
             PROVINCIAL DIRECTORY — 31 DESTINATIONS
         </div>
 
-
         <div class="province-nav">
-
-            <!-- 1 CAPITAL CITY -->
 
             <a href="#stephara-city">
                 STEPHARA CITY
             </a>
-
-
-            <!-- 30 PROVINCES -->
 
             <a href="#stephara">
                 STEPHARA
@@ -1723,7 +1239,6 @@ footer strong {
         </h2>
 
         <p>
-
             The Imperial Sovereign of Bristevia is composed
             of exactly thirty recognized provinces, organized
             into five Strategic Regions. Each province is
@@ -1731,20 +1246,17 @@ footer strong {
             Council and maintains its own historical identity
             within the unified administrative structure of
             the Empire.
-
         </p>
 
         <br>
 
         <p>
-
             Every province is represented by one Consul in the
             Magnum Consilium and by multiple representatives
             in the Domus Curialum. Provincial administration
             operates under the supervision of the Ministry of
             Provincial Administration and the Bristevia Local
             Government Code.
-
         </p>
 
     </div>
@@ -1772,7 +1284,6 @@ footer strong {
 
         </div>
 
-
         <div class="capital-text">
 
             <h2>
@@ -1784,25 +1295,21 @@ footer strong {
             </h3>
 
             <p>
-
                 Stephara City is the capital of the Imperial
                 Sovereign of Bristevia and the principal seat
                 of the Crown. It stands within the historic
                 province of Stephara and serves as the political,
                 ceremonial and diplomatic center of the Realm.
-
             </p>
 
             <br>
 
             <p>
-
                 The city became the center of Stephen II's
                 political consolidation and later served as the
                 seat of the independent Bristevian monarchy.
                 During ERA 11, Stephara City hosted negotiations
                 that contributed to the United Valterra framework.
-
             </p>
 
         </div>
@@ -1940,40 +1447,32 @@ Historical Record
 </h3>
 
 <p>
-
 Stephara is considered the historical birthplace of
 centralized Bristevian authority. Before becoming the
 imperial capital, the region consisted of settlements
 surrounding the Stephara Strait.
-
 </p>
 
 <p>
-
 During the Valtherium era, it became the center of
 Stephen II's political consolidation, when Festona,
 Brionne and Valloré were gradually brought under the
 Stephara Principality.
-
 </p>
 
 <p>
-
 The province later became the seat of the independent
 Bristevian monarchy under Stephen X following the
 collapse of Valtherium influence. The Battle of
 Stephara Fields is traditionally remembered as the
 first major victory of the independent Bristevian army.
-
 </p>
 
 <p>
-
 During ERA 11, Stephara City hosted negotiations that
 contributed to the United Valterra framework. Under
 Stephen XXVI, the province retained its position as
 the political and ceremonial heart of the Empire.
-
 </p>
 
 <div class="importance">
@@ -2080,35 +1579,27 @@ Historical Record
 </h3>
 
 <p>
-
 Jaybrienne developed from ancient Brionne agricultural
 settlements organized around fertile river valleys and
 inland plains under Valtherium influence.
-
 </p>
 
 <p>
-
 Stephen II's unification brought Jaybrienne into the
 Stephara political sphere. Its agricultural production
 became essential to maintaining Bristevia's armies.
-
 </p>
 
 <p>
-
 During the wars of ERA 7 and ERA 8, Jaybrienne supplied
 grain, livestock and recruits. The Granary Roads,
 constructed during Stephen XIV's administrative reforms,
 connected the province with Stephara.
-
 </p>
 
 <p>
-
 During ERA 11, Jaybrienne supplied food and refugee
 relief materials during the continental crisis.
-
 </p>
 
 <div class="importance">
@@ -2225,35 +1716,27 @@ Historical Record
 </h3>
 
 <p>
-
 Orlencia is unique because the province bears the name
 of the kingdom that Bristevia ultimately destroyed.
-
 </p>
 
 <p>
-
 For centuries, Orlencia dominated western maritime trade
 and exercised influence over Festona and Brionne. Its
 coastal aristocracy controlled important ports and
 merchant houses.
-
 </p>
 
 <p>
-
 Its decline began when Bristevia expanded westward.
 The decisive events were the Battle of Cindora and
 Battle of Lunebrook. Following Lunebrook, the Orlencian
 command structure collapsed and the kingdom dissolved.
-
 </p>
 
 <p>
-
 The old Orlencian royal complex was transformed into
 Obsidian Hall, later becoming the provincial palace.
-
 </p>
 
 <div class="importance">
@@ -2283,17 +1766,9 @@ territories of western Bristevia.
 <div class="container">
 
 <div class="province-heading">
-
-<div class="province-number">
-PROVINCE IV
-</div>
-
+<div class="province-number">PROVINCE IV</div>
 <h2>WESTRION</h2>
-
-<div class="subtitle">
-The Amber Coast
-</div>
-
+<div class="subtitle">The Amber Coast</div>
 </div>
 
 
@@ -2319,50 +1794,63 @@ The Amber Coast
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>West</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Goldhaven City</strong></div>
-<div class="info-box"><span>AREA</span><strong>17,882 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>1,400,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Industrial Hub</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>West</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Goldhaven City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>17,882 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>1,400,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Industrial Hub</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Westrion developed around western cliffs and natural
 harbors connecting Orlencia's maritime economy with
 Bristevia.
-
 </p>
 
 <p>
-
 During the Orlencian period, merchant families established
 settlements along the Ambercoast Cliffs. After the fall
 of Orlencia, these communities became important
 intermediaries between former Orlencian territories and
 Bristevian authorities.
-
 </p>
 
 <p>
-
 During Stephen XV's consolidation, Westrion became one
 of the first western territories to adopt standardized
 Bristevian taxation.
-
 </p>
 
 <p>
-
 The province later industrialized in metalworking,
 ship components and coastal manufacturing.
-
 </p>
 
 </div>
@@ -2381,13 +1869,9 @@ ship components and coastal manufacturing.
 <div class="container">
 
 <div class="province-heading">
-
 <div class="province-number">PROVINCE V</div>
-
 <h2>COASTRIA</h2>
-
 <div class="subtitle">The Maritime Scholar</div>
-
 </div>
 
 
@@ -2413,51 +1897,69 @@ ship components and coastal manufacturing.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>West</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Seamaris City</strong></div>
-<div class="info-box"><span>AREA</span><strong>19,560 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>900,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Naval Science</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>West</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Seamaris City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>19,560 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>900,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Naval Science</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Coastria began as fishing and shipbuilding settlements
 along the western sea.
-
 </p>
 
 <p>
-
 After the absorption of Orlencia, Bristevian commanders
 recognized the need for a permanent center of naval
 research.
-
 </p>
 
 <p>
-
 The Coastrian Maritime School became famous for navigation,
 naval engineering, cartography and maritime law.
-
 </p>
 
 <p>
-
 During ERA 10, Coastrian officers participated in naval
 reforms following the Battle of Bristevia Gulf.
-
 </p>
 
 <div class="importance">
-<strong>Historical Importance:</strong>
+
+<strong>
+Historical Importance:
+</strong>
+
 Scientific and intellectual center of Bristevian naval power.
+
 </div>
 
 </div>
@@ -2504,45 +2006,58 @@ Scientific and intellectual center of Bristevian naval power.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>West</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Ronjiel City</strong></div>
-<div class="info-box"><span>AREA</span><strong>19,276 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>1,300,000</strong></div>
-<div class="info-box"><span>PALACE</span><strong>Jaymount Hall</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>West</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Ronjiel City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>19,276 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>1,300,000</strong>
+</div>
+
+<div class="info-box">
+<span>PALACE</span>
+<strong>Jaymount Hall</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Ronjiel originated as a highland farming society that
 maintained considerable independence from coastal kingdoms.
-
 </p>
 
 <p>
-
 Its famous Jaymount Highlands developed through centuries
 of terraced agriculture.
-
 </p>
 
 <p>
-
 Stephen XIV's administrative reforms brought permanent
 royal officials into the region.
-
 </p>
 
 <p>
-
 The province later became an important recruitment center
 for mountain infantry.
-
 </p>
 
 </div>
@@ -2589,46 +2104,59 @@ for mountain infantry.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>West</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Thalindor City</strong></div>
-<div class="info-box"><span>AREA</span><strong>20,212 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>2,100,000</strong></div>
-<div class="info-box"><span>WATERS</span><strong>Seven Rivers</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>West</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Thalindor City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>20,212 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>2,100,000</strong>
+</div>
+
+<div class="info-box">
+<span>WATERS</span>
+<strong>Seven Rivers</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Virelion grew around seven major river systems connecting
 western inland settlements with the coast.
-
 </p>
 
 <p>
-
 Before centralization, the region was divided among
 competing river communities. Local tradition attributes
 the first permanent river compact to Lord Virel.
-
 </p>
 
 <p>
-
 Following the absorption of Orlencia, Bristevia used
 Virelion as an inland transportation corridor.
-
 </p>
 
 <p>
-
 Its rivers became particularly important for transporting
 grain, weapons and troops during military mobilizations.
-
 </p>
 
 </div>
@@ -2675,48 +2203,61 @@ grain, weapons and troops during military mobilizations.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>West</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Shadowfen City</strong></div>
-<div class="info-box"><span>AREA</span><strong>20,210 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>900,000</strong></div>
-<div class="info-box"><span>LANDSCAPE</span><strong>Wetlands</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>West</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Shadowfen City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>20,210 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>900,000</strong>
+</div>
+
+<div class="info-box">
+<span>LANDSCAPE</span>
+<strong>Wetlands</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Draxenor developed in extensive wetlands and marshes.
 Ancient settlements were built on raised ground and
 wooden foundations.
-
 </p>
 
 <p>
-
 After incorporation into Bristevia, engineers drained
 portions of the wetlands and developed them for mining,
 manufacturing and military supply.
-
 </p>
 
 <p>
-
 During the industrial era, Draxenor became a major center
 for heavy industry.
-
 </p>
 
 <p>
-
 Its people developed a strong cultural identity around
 the saying: “What cannot be conquered by water must be
 built upon it.”
-
 </p>
 
 </div>
@@ -2763,45 +2304,58 @@ built upon it.”
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>West</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Silverhold City</strong></div>
-<div class="info-box"><span>AREA</span><strong>17,910 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>2,000,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Industry</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>West</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Silverhold City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>17,910 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>2,000,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Industry</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Falrion began as a frontier fortress protecting western
 trade roads.
-
 </p>
 
 <p>
-
 The fortress became Silverhold City, which expanded
 dramatically following Bristevian industrialization.
-
 </p>
 
 <p>
-
 During the later imperial period, Falrion produced weapons,
 machinery and military equipment.
-
 </p>
 
 <p>
-
 During the Second Pan-Continental War, Silverhold's
 factories supplied the Imperial Maritime Directorate.
-
 </p>
 
 </div>
@@ -2848,45 +2402,62 @@ factories supplied the Imperial Maritime Directorate.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>West</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Cresvane City</strong></div>
-<div class="info-box"><span>AREA</span><strong>20,306 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>1,518,000</strong></div>
-<div class="info-box"><span>PALACE</span><strong>Stonebay Hall</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>West</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Cresvane City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>20,306 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>1,518,000</strong>
+</div>
+
+<div class="info-box">
+<span>PALACE</span>
+<strong>Stonebay Hall</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Regalith developed around ancient stone settlements
 predating the Bristevian monarchy.
-
 </p>
 
 <p>
-
 The Crownstone Citadel was originally constructed by a
 pre-Bristevian mountain dynasty and later converted into
 a royal fortress.
-
 </p>
 
 <p>
-
 During Stephen XXV's Decree of Singular Sovereignty,
 several hereditary noble houses were formally stripped
 of regional governing authority.
-
 </p>
 
 <div class="importance">
 
-<strong>Historical Importance:</strong>
+<strong>
+Historical Importance:
+</strong>
 
 A major site in the transition from the old aristocratic
 order to centralized imperial administration.
@@ -2954,46 +2525,63 @@ The Defensive Belt
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>North</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Frostwall City</strong></div>
-<div class="info-box"><span>AREA</span><strong>29,985 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>800,000</strong></div>
-<div class="info-box"><span>REGIONAL CENTER</span><strong>Jaeyara City</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>North</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Frostwall City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>29,985 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>800,000</strong>
+</div>
+
+<div class="info-box">
+<span>REGIONAL CENTER</span>
+<strong>Jaeyara City</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Northaven has always been a frontier province. Its
 communities developed around mountain passes leading
 toward the northern territories.
-
 </p>
 
 <p>
-
 During the Frostwall War, Northaven became the main
 Bristevian military staging area. Frostwall Fort was
 expanded into a massive defensive complex.
-
 </p>
 
 <p>
-
 The fall of Frostwall City during ERA 9 opened the
 Northavian interior to Bristevian occupation and
 permanently changed the strategic geography of the Empire.
-
 </p>
 
 <div class="importance">
 
-<strong>Historical Importance:</strong>
+<strong>
+Historical Importance:
+</strong>
 
 Symbolic guardian of the northern frontier and home of
 the historic Frostwall defense complex.
@@ -3044,39 +2632,54 @@ the historic Frostwall defense complex.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>North</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Mooncrest City</strong></div>
-<div class="info-box"><span>AREA</span><strong>28,872 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>600,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Mountain Defense</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>North</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Mooncrest City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>28,872 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>600,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Mountain Defense</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Montelune was historically populated by isolated alpine
 communities whose valleys were difficult to reach.
-
 </p>
 
 <p>
-
 During the Frostwall War, its mountain passes became
 crucial military routes. The Pass of Saint Lun was used
 by Bristevian troops to move reinforcements north.
-
 </p>
 
 <p>
-
 After the war, roads and fortifications transformed
 Montelune into an important defensive province.
-
 </p>
 
 </div>
@@ -3123,50 +2726,65 @@ Montelune into an important defensive province.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>North</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Cresvane City</strong></div>
-<div class="info-box"><span>AREA</span><strong>25,746 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>700,000</strong></div>
-<div class="info-box"><span>MOTTO</span><strong>Frigid Heart</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>North</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Cresvane City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>25,746 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>700,000</strong>
+</div>
+
+<div class="info-box">
+<span>MOTTO</span>
+<strong>Frigid Heart</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Basilion lies in one of the coldest parts of the northern
 region.
-
 </p>
 
 <p>
-
 Its capital developed around a military settlement
 established during the early northern consolidation.
-
 </p>
 
 <p>
-
 The Basilion Winter Muster became an annual military
 exercise designed to prepare soldiers for extreme weather.
-
 </p>
 
 <p>
-
 During the Frostwall War, Basilion troops gained a
 reputation for operating in severe conditions.
-
 </p>
 
 <div class="importance">
 
-<strong>Provincial Motto:</strong>
+<strong>
+Provincial Motto:
+</strong>
 
 “Frigid Heart • Enduring Strength”
 
@@ -3216,45 +2834,58 @@ reputation for operating in severe conditions.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>North</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Falcrest City</strong></div>
-<div class="info-box"><span>AREA</span><strong>22,412 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>700,000</strong></div>
-<div class="info-box"><span>PALACE</span><strong>Skyhold Palace</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>North</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Falcrest City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>22,412 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>700,000</strong>
+</div>
+
+<div class="info-box">
+<span>PALACE</span>
+<strong>Skyhold Palace</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Aethelburg began as a mountain settlement surrounding
 a fortress.
-
 </p>
 
 <p>
-
 During the Frostwall campaigns, the province supplied
 engineers specializing in fortifications.
-
 </p>
 
 <p>
-
 Its mountain capital became one of the most dramatic
 cities in northern Bristevia.
-
 </p>
 
 <p>
-
 Its historical culture emphasizes endurance, military
 discipline and mountain engineering.
-
 </p>
 
 </div>
@@ -3301,45 +2932,58 @@ discipline and mountain engineering.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>North</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Leafmere City</strong></div>
-<div class="info-box"><span>AREA</span><strong>22,191 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>600,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Forestry</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>North</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Leafmere City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>22,191 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>600,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Forestry</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Sylvaren remained heavily forested even as neighboring
 provinces developed.
-
 </p>
 
 <p>
-
 Its ancient forests provided timber for Bristevia's early
 fleets and fortifications.
-
 </p>
 
 <p>
-
 During the expansion of the kingdom, royal authorities
 established protected timber zones.
-
 </p>
 
 <p>
-
 The province therefore became closely connected to
 forestry and naval construction.
-
 </p>
 
 </div>
@@ -3386,44 +3030,61 @@ forestry and naval construction.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>North</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Jaeyara City</strong></div>
-<div class="info-box"><span>AREA</span><strong>20,217 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>600,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Regional Center</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>North</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Jaeyara City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>20,217 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>600,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Regional Center</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Jaeyara developed around a strategic mountain corridor
 connecting the northern provinces.
-
 </p>
 
 <p>
-
 The Northern Spire Palace was constructed during the
 centralized imperial period as the administrative
 headquarters of the northern region.
-
 </p>
 
 <p>
-
 During ERA 11, Jaeyara became the principal coordination
 point for northern military administrations.
-
 </p>
 
 <div class="importance">
 
-<strong>Historical Importance:</strong>
+<strong>
+Historical Importance:
+</strong>
 
 Symbol of the transformation of the northern frontier
 into a carefully managed imperial defense system.
@@ -3474,45 +3135,58 @@ into a carefully managed imperial defense system.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>North</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Andriel City</strong></div>
-<div class="info-box"><span>AREA</span><strong>21,083 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>688,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Horse Breeding</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>North</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Andriel City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>21,083 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>688,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Horse Breeding</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Andriel developed in a sheltered valley between Northaven
 and the eastern highlands.
-
 </p>
 
 <p>
-
 Unlike heavily militarized frontier provinces, Andriel
 became known for farming and horse breeding.
-
 </p>
 
 <p>
-
 Its horses were used by Bristevian cavalry during the
 Frostwall War.
-
 </p>
 
 <p>
-
 The Andriel Horse Roads later became civilian transportation
 routes connecting northern provinces with the Empire.
-
 </p>
 
 </div>
@@ -3576,44 +3250,57 @@ The Trade Gateway
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>East</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Goldspire City</strong></div>
-<div class="info-box"><span>AREA</span><strong>14,702 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>1,000,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Artisan Center</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>East</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Goldspire City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>14,702 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>1,000,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Artisan Center</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Orinthal originated as mountain artisan communities.
-
 </p>
 
 <p>
-
 Its craftsmen became famous for stonework, metal engraving,
 textiles and ceremonial objects.
-
 </p>
 
 <p>
-
 After the Eldrosian-Bristevian union, Orinthal became a
 cultural meeting point between eastern and central traditions.
-
 </p>
 
 <p>
-
 Imperial craftsmen later incorporated Orinthalian designs
 into government buildings throughout Bristevia.
-
 </p>
 
 </div>
@@ -3660,38 +3347,53 @@ into government buildings throughout Bristevia.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>East</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Eastria City</strong></div>
-<div class="info-box"><span>AREA</span><strong>18,890 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>900,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Trade Gateway</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>East</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Eastria City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>18,890 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>900,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Trade Gateway</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Eastria developed as a coastal frontier between established
 Bristevian territory and the eastern maritime world.
-
 </p>
 
 <p>
-
 During the war with Caeloria, Eastria became an important
 staging area for Bristevian amphibious forces.
-
 </p>
 
 <p>
-
 Following the establishment of the eastern imperial system,
 Eastria transformed from a frontier into a gateway.
-
 </p>
 
 </div>
@@ -3738,51 +3440,66 @@ Eastria transformed from a frontier into a gateway.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>East</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Crystalhold City</strong></div>
-<div class="info-box"><span>AREA</span><strong>18,372 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>900,000</strong></div>
-<div class="info-box"><span>REGIONAL CENTER</span><strong>Luminaris City</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>East</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Crystalhold City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>18,372 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>900,000</strong>
+</div>
+
+<div class="info-box">
+<span>REGIONAL CENTER</span>
+<strong>Luminaris City</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Luminaris originated from coastal territories influenced
 by Caeloria and other eastern maritime powers.
-
 </p>
 
 <p>
-
 During ERA 10, Bristevia defeated Caelorian influence
 and absorbed the Luminaris territories.
-
 </p>
 
 <p>
-
 Former coastal forts were converted into imperial naval
 stations.
-
 </p>
 
 <p>
-
 During ERA 11, Luminaris became the center of Bristevia's
 maritime conflict and later the home of major naval
 facilities.
-
 </p>
 
 <div class="importance">
 
-<strong>Historical Importance:</strong>
+<strong>
+Historical Importance:
+</strong>
 
 Major eastern naval, navigation and maritime trade center.
 
@@ -3832,46 +3549,59 @@ Major eastern naval, navigation and maritime trade center.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>East</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Moonspire City</strong></div>
-<div class="info-box"><span>AREA</span><strong>20,785 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>600,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Architecture</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>East</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Moonspire City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>20,785 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>600,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Architecture</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Aurelthia developed around bright coastal plains and
 limestone settlements.
-
 </p>
 
 <p>
-
 Its capital, Moonspire City, became famous for its
 white-stone architecture.
-
 </p>
 
 <p>
-
 The province was historically influenced by eastern
 maritime cultures before gradual incorporation into
 Bristevian administration.
-
 </p>
 
 <p>
-
 During the imperial era, Aurelthia became a center of
 architecture, astronomy and navigation.
-
 </p>
 
 </div>
@@ -3918,50 +3648,65 @@ architecture, astronomy and navigation.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>East</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Raventon City</strong></div>
-<div class="info-box"><span>AREA</span><strong>20,184 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>1,200,000</strong></div>
-<div class="info-box"><span>LEGACY</span><strong>Ram–Rosé Union</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>East</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Raventon City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>20,184 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>1,200,000</strong>
+</div>
+
+<div class="info-box">
+<span>LEGACY</span>
+<strong>Ram–Rosé Union</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Eldrosia was once an independent major power.
-
 </p>
 
 <p>
-
 The decisive turning point came with the Ram–Rosé Union,
 when King Ram of Bristevia married Princess Rosé of Eldrosia.
-
 </p>
 
 <p>
-
 The marriage transformed the relationship between the
 two states from strategic alliance into dynastic integration.
-
 </p>
 
 <p>
-
 Eldrosian institutions were gradually incorporated into
 the Bristevian system while retaining a distinct regional
 identity.
-
 </p>
 
 <div class="importance">
 
-<strong>Historical Importance:</strong>
+<strong>
+Historical Importance:
+</strong>
 
 The province symbolizes the dynastic and political union
 between Eldrosia and Bristevia.
@@ -4012,45 +3757,58 @@ between Eldrosia and Bristevia.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>East</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Stonewall City</strong></div>
-<div class="info-box"><span>AREA</span><strong>19,306 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>900,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Fortifications</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>East</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Stonewall City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>19,306 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>900,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Fortifications</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Gravenor originated as a chain of defensive settlements
 guarding inland approaches to the eastern coast.
-
 </p>
 
 <p>
-
 Its fortresses were repeatedly rebuilt during periods of
 conflict between eastern powers.
-
 </p>
 
 <p>
-
 After imperial control was established, many old forts
 were transformed into administrative centers.
-
 </p>
 
 <p>
-
 Gravenor later became famous for military architecture
 and stone fortification.
-
 </p>
 
 </div>
@@ -4097,45 +3855,58 @@ and stone fortification.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>East</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Brightwater City</strong></div>
-<div class="info-box"><span>AREA</span><strong>15,208 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>1,208,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Naval Science</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>East</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Brightwater City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>15,208 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>1,208,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Naval Science</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Aquaris consists of a strategically positioned chain
 of islands.
-
 </p>
 
 <p>
-
 Its inhabitants historically depended on fishing,
 navigation and maritime trade.
-
 </p>
 
 <p>
-
 The islands became increasingly important after Bristevia
 expanded into the eastern maritime system.
-
 </p>
 
 <p>
-
 Aquaris eventually developed into a major naval and
 navigation center.
-
 </p>
 
 </div>
@@ -4199,45 +3970,58 @@ The Agricultural Breadbasket
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>South</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Briswick City</strong></div>
-<div class="info-box"><span>AREA</span><strong>16,302 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>1,800,000</strong></div>
-<div class="info-box"><span>REGIONAL CENTER</span><strong>Solara City</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>South</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Briswick City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>16,302 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>1,800,000</strong>
+</div>
+
+<div class="info-box">
+<span>REGIONAL CENTER</span>
+<strong>Solara City</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Southmere developed around coastal plains connecting
 the interior with the southern sea.
-
 </p>
 
 <p>
-
 During the southern campaigns of James I, Southmere
 became a principal supply corridor toward Solara.
-
 </p>
 
 <p>
-
 Its strategic importance increased following the fall
 of Solara City.
-
 </p>
 
 <p>
-
 Today it functions as an agricultural and commercial
 link between the southern provinces and the imperial core.
-
 </p>
 
 </div>
@@ -4284,45 +4068,58 @@ link between the southern provinces and the imperial core.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>South</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Rosengarde City</strong></div>
-<div class="info-box"><span>AREA</span><strong>16,000 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>1,400,000</strong></div>
-<div class="info-box"><span>LANDMARK</span><strong>Verdantia Meadows</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>South</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Rosengarde City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>16,000 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>1,400,000</strong>
+</div>
+
+<div class="info-box">
+<span>LANDMARK</span>
+<strong>Verdantia Meadows</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Starella developed around the fertile Verdantia Meadows.
-
 </p>
 
 <p>
-
 For centuries, its rivers and grasslands supported
 pastoral communities.
-
 </p>
 
 <p>
-
 Bristevian administrators recognized its agricultural
 potential during the expansion of the southern region.
-
 </p>
 
 <p>
-
 Unlike Solara, Starella never developed a major
 separatist tradition and became one of the most stable
 southern provinces.
-
 </p>
 
 </div>
@@ -4369,68 +4166,79 @@ southern provinces.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>South</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Solara City</strong></div>
-<div class="info-box"><span>AREA</span><strong>16,991 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>1,500,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Agricultural Heart</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>South</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Solara City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>16,991 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>1,500,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Agricultural Heart</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Solara possesses one of the most complicated political
 histories in Bristevia.
-
 </p>
 
 <p>
-
 It began as a powerful southern coastal polity and was
 eventually absorbed into Bristevia during southern expansion.
-
 </p>
 
 <p>
-
 Its maritime aristocracy retained strong traditions of
 independence, eventually producing the Solara Rebellion
 of ERA 10.
-
 </p>
 
 <p>
-
 Solara allied with Caeloria and participated in the attack
 that culminated in the Battle of Bristevia Gulf.
-
 </p>
 
 <p>
-
 After the rebellion collapsed, Prince Emond was captured
 and executed. Solara ceased to exist as an autonomous
 political entity.
-
 </p>
 
 <p>
-
 Stephen XX's government subsequently integrated the
 territory more directly. Under Stephen XXVI, Solara was
 reorganized into the South Region and part of its former
 territory was used to create Gabrielis.
-
 </p>
 
 <div class="importance">
 
-<strong>Historical Importance:</strong>
+<strong>
+Historical Importance:
+</strong>
 
 Solara represents the transition from conquered territory
 to rebellious polity and finally to fully integrated
@@ -4482,47 +4290,60 @@ imperial province.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>South</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Velandor City</strong></div>
-<div class="info-box"><span>AREA</span><strong>17,434 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>1,200,000</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Naval Fortress</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>South</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Velandor City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>17,434 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>1,200,000</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Naval Fortress</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Velandor is a southwestern island province whose
 geography made it naturally defensible.
-
 </p>
 
 <p>
-
 Its inhabitants developed a strong fortress culture.
 During the kingdom period, Velandor frequently resisted
 attempts by mainland nobles to interfere with local
 administration.
-
 </p>
 
 <p>
-
 The central government eventually incorporated its
 defensive institutions into the Imperial Navy.
-
 </p>
 
 <p>
-
 Velandor became one of the Empire's principal naval
 fortress zones.
-
 </p>
 
 </div>
@@ -4569,45 +4390,58 @@ fortress zones.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>South</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Brightfield City</strong></div>
-<div class="info-box"><span>AREA</span><strong>15,993 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>895,748</strong></div>
-<div class="info-box"><span>ROLE</span><strong>Commercial Crossroads</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>South</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Brightfield City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>15,993 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>895,748</strong>
+</div>
+
+<div class="info-box">
+<span>ROLE</span>
+<strong>Commercial Crossroads</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Britonvale developed around roads linking southern
 coastal settlements with the central interior.
-
 </p>
 
 <p>
-
 During the campaigns of James I, it became a major
 military transit zone.
-
 </p>
 
 <p>
-
 Later, merchants established permanent markets along
 the old military roads.
-
 </p>
 
 <p>
-
 The province therefore evolved from military corridor
 into commercial crossroads.
-
 </p>
 
 </div>
@@ -4654,52 +4488,63 @@ into commercial crossroads.
 
 <div class="province-info">
 
-<div class="info-box"><span>REGION</span><strong>South</strong></div>
-<div class="info-box"><span>CAPITAL</span><strong>Gabrielis City</strong></div>
-<div class="info-box"><span>AREA</span><strong>18,441 km²</strong></div>
-<div class="info-box"><span>POPULATION</span><strong>1,400,000</strong></div>
-<div class="info-box"><span>STATUS</span><strong>Newest Province</strong></div>
+<div class="info-box">
+<span>REGION</span>
+<strong>South</strong>
+</div>
+
+<div class="info-box">
+<span>CAPITAL</span>
+<strong>Gabrielis City</strong>
+</div>
+
+<div class="info-box">
+<span>AREA</span>
+<strong>18,441 km²</strong>
+</div>
+
+<div class="info-box">
+<span>POPULATION</span>
+<strong>1,400,000</strong>
+</div>
+
+<div class="info-box">
+<span>STATUS</span>
+<strong>Newest Province</strong>
+</div>
 
 </div>
 
 
 <div class="history-box">
 
-<h3>Historical Record</h3>
+<h3>
+Historical Record
+</h3>
 
 <p>
-
 Gabrielis is the newest of the thirty provinces.
-
 </p>
 
 <p>
-
 It was created during Stephen XXVI's final administrative
 restructuring from former Solaran coastal districts.
-
 </p>
 
 <p>
-
 The province was named after Gabriel I, remembered as an
 important early administrative reformer of Bristevia.
-
 </p>
 
 <p>
-
 Its creation was deliberately designed as a political and
 administrative buffer between historically rebellious
 Solaran territories and the rest of the South Region.
-
 </p>
 
 <p>
-
 Gabrielis therefore represents reconciliation rather than
 the destruction of Solara's historical identity.
-
 </p>
 
 <div class="importance">
@@ -4734,33 +4579,27 @@ PROVINCIAL GOVERNANCE
 </h2>
 
 <p>
-
 Each province of Bristevia is governed by an elected
 Governor and a Provincial Council, which serves as the
 local legislative body.
-
 </p>
 
 <br>
 
 <p>
-
 Governors are elected directly by the people and must
 be validated by the Supreme Tribunal before assuming
 office. The Ministry of Provincial Administration
 exercises national oversight to ensure compliance with
 the Bristevia Local Government Code.
-
 </p>
 
 <br>
 
 <p>
-
 Every province has one Consul in the Magnum Consilium,
 while the Empire's 182 legislative districts provide
 representation in the Domus Curialum.
-
 </p>
 
 </div>
@@ -4781,45 +4620,37 @@ THE THIRTY-PROVINCE HISTORICAL ARC
 </h2>
 
 <p>
-
 The provinces of Bristevia are more than administrative
 divisions. Together they form a geographical record of
 the Empire's political development.
-
 </p>
 
 <br>
 
 <p>
-
 Stephara and Jaybrienne represent the original Bristevian
 core. Orlencia and the western provinces represent the
 absorption of the old maritime kingdoms. Northaven and
 the northern provinces represent the Frostwall generation
 and northern consolidation.
-
 </p>
 
 <br>
 
 <p>
-
 Luminaris and the eastern provinces represent the defeat
 of Caelorian influence and the integration of Eldrosia
 and the eastern maritime world.
-
 </p>
 
 <br>
 
 <p>
-
 The southern provinces preserve the history of the long
 southern struggle, while Gabrielis provides the final
 chapter: a province created from former Solaran territory
 as an instrument of reconciliation and administrative
 stability.
-
 </p>
 
 </div>
@@ -4871,6 +4702,245 @@ All Rights Reserved.
 
 
 <script>
+
+/* =========================================================
+   AUTOMATIC IMAGE EXTENSION SYSTEM
+========================================================= */
+
+/*
+   The website will automatically look for:
+
+   image-name.jpg
+   image-name.jpeg
+   image-name.png
+   image-name.webp
+
+   Example:
+
+   stephara-province.jpg
+   stephara-province.png
+   stephara-province.webp
+
+   The first working image is automatically used.
+*/
+
+
+const IMAGE_EXTENSIONS = [
+    "jpg",
+    "jpeg",
+    "png",
+    "webp"
+];
+
+
+/* ---------------------------------------------------------
+   CHECK WHETHER AN IMAGE EXISTS
+--------------------------------------------------------- */
+
+function findWorkingImage(basePath, callback) {
+
+    let index = 0;
+
+    function tryNextImage() {
+
+        if (index >= IMAGE_EXTENSIONS.length) {
+
+            callback(null);
+
+            return;
+        }
+
+        const extension =
+            IMAGE_EXTENSIONS[index];
+
+        const image =
+            new Image();
+
+        image.onload = function() {
+
+            callback(
+                `${basePath}.${extension}`
+            );
+
+        };
+
+        image.onerror = function() {
+
+            index++;
+
+            tryNextImage();
+
+        };
+
+        image.src =
+            `${basePath}.${extension}`;
+
+    }
+
+    tryNextImage();
+
+}
+
+
+/* ---------------------------------------------------------
+   AUTOMATICALLY FIX ALL NORMAL IMAGES
+--------------------------------------------------------- */
+
+function initializeFlexibleImages() {
+
+    document
+        .querySelectorAll(
+            "img[src]"
+        )
+        .forEach(function(img) {
+
+            const originalSource =
+                img.getAttribute("src");
+
+            if (!originalSource) {
+                return;
+            }
+
+            /*
+               Separate the path from the filename.
+            */
+
+            const lastSlash =
+                originalSource.lastIndexOf("/");
+
+            const directory =
+                lastSlash >= 0
+                    ? originalSource.substring(
+                        0,
+                        lastSlash + 1
+                    )
+                    : "";
+
+            const filename =
+                lastSlash >= 0
+                    ? originalSource.substring(
+                        lastSlash + 1
+                    )
+                    : originalSource;
+
+
+            /*
+               Remove the existing extension.
+
+               Example:
+
+               province.jpg
+               becomes:
+
+               province
+            */
+
+            const baseName =
+                filename.replace(
+                    /\.(jpg|jpeg|png|webp)$/i,
+                    ""
+                );
+
+
+            const basePath =
+                directory + baseName;
+
+
+            img.classList.add(
+                "image-loading"
+            );
+
+
+            findWorkingImage(
+                basePath,
+                function(foundImage) {
+
+                    img.classList.remove(
+                        "image-loading"
+                    );
+
+
+                    if (foundImage) {
+
+                        img.src =
+                            foundImage;
+
+                    } else {
+
+                        img.classList.add(
+                            "image-error"
+                        );
+
+                        console.warn(
+                            "Image not found:",
+                            basePath
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+}
+
+
+/* =========================================================
+   AUTOMATIC HERO BACKGROUND
+========================================================= */
+
+function initializeHeroImage() {
+
+    const hero =
+        document.querySelector(
+            ".page-hero"
+        );
+
+    if (!hero) {
+        return;
+    }
+
+
+    const basePath =
+        hero.getAttribute(
+            "data-image-base"
+        );
+
+    if (!basePath) {
+        return;
+    }
+
+
+    findWorkingImage(
+        basePath,
+        function(foundImage) {
+
+            if (!foundImage) {
+
+                console.warn(
+                    "Hero image not found:",
+                    basePath
+                );
+
+                return;
+            }
+
+
+            hero.style.backgroundImage =
+                `
+                linear-gradient(
+                    rgba(1,15,36,.60),
+                    rgba(1,9,22,.88)
+                ),
+                url("${foundImage}")
+                `;
+
+        }
+    );
+
+}
+
 
 /* =========================================================
    MOBILE MAIN NAVIGATION
@@ -4986,7 +5056,7 @@ document
 
             link.addEventListener(
                 "click",
-                function() {
+                function(event) {
 
                     const target =
                         document.querySelector(
@@ -4994,6 +5064,8 @@ document
                         );
 
                     if (target) {
+
+                        event.preventDefault();
 
                         target.scrollIntoView({
 
@@ -5013,6 +5085,21 @@ document
         }
     );
 
+
+/* =========================================================
+   START IMAGE SYSTEM
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        initializeFlexibleImages();
+
+        initializeHeroImage();
+
+    }
+);
 
 </script>
 
