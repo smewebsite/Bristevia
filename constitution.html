@@ -8,13 +8,32 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   GLOBAL
+   ROOT
+========================================================= */
+
+:root{
+    --royal-blue:#031a38;
+    --deep-blue:#010914;
+    --imperial-blue:#073b73;
+    --blue-light:#0c4d91;
+
+    --royal-gold:#d4af37;
+    --bright-gold:#f7e7a9;
+    --pale-gold:#fff0a5;
+
+    --text:#eee5c8;
+    --muted:#aaa;
+
+    --shadow:0 15px 50px rgba(0,0,0,.55);
+}
+
+/* =========================================================
+   RESET
 ========================================================= */
 
 *{
@@ -25,95 +44,92 @@
 
 html{
     scroll-behavior:smooth;
-    scroll-padding-top:90px;
+    scroll-padding-top:100px;
 }
 
 body{
     font-family:"Cormorant Garamond",serif;
     background:
-        radial-gradient(
-            circle at 50% -10%,
-            #0c4d91 0%,
-            #062c59 32%,
-            #031a38 58%,
-            #010914 100%
-        );
-    color:#eee5c8;
+        radial-gradient(circle at 50% -10%,
+        #0c4d91 0%,
+        #062c59 30%,
+        #031a38 57%,
+        #010914 100%);
+    color:var(--text);
     line-height:1.75;
     overflow-x:hidden;
 }
 
 /* =========================================================
-   IMPERIAL ROYAL COLORS
+   PAGE INTRO ANIMATION
 ========================================================= */
 
-:root{
-    --royal-blue:#031a38;
-    --deep-blue:#010914;
-    --imperial-blue:#073b73;
+body{
+    animation:pageReveal 1.2s ease both;
+}
 
-    --royal-gold:#d4af37;
-    --bright-gold:#f7e7a9;
-    --pale-gold:#fff0a5;
+@keyframes pageReveal{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
 
-    --text:#eee5c8;
-    --muted:#aaa;
+@keyframes royalFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+@keyframes goldPulse{
+    0%,100%{
+        filter:
+        drop-shadow(0 0 8px rgba(212,175,55,.35))
+        drop-shadow(0 0 20px rgba(212,175,55,.12));
+    }
+    50%{
+        filter:
+        drop-shadow(0 0 18px rgba(212,175,55,.75))
+        drop-shadow(0 0 40px rgba(212,175,55,.3));
+    }
+}
+
+@keyframes lineGlow{
+    0%,100%{
+        opacity:.55;
+    }
+    50%{
+        opacity:1;
+    }
+}
+
+@keyframes headerLight{
+    0%{
+        transform:translateX(-100%);
+        opacity:0;
+    }
+    30%{
+        opacity:.7;
+    }
+    100%{
+        transform:translateX(100%);
+        opacity:0;
+    }
 }
 
 /* =========================================================
-   ROYAL IMAGE SYSTEM
-========================================================= */
-
-.royal-emblem{
-    width:120px;
-    height:120px;
-    object-fit:contain;
-    display:block;
-    margin:0 auto;
-
-    filter:
-        drop-shadow(0 0 10px rgba(212,175,55,.35))
-        drop-shadow(0 0 25px rgba(212,175,55,.2));
-
-    transition:
-        transform .4s ease,
-        filter .4s ease;
-}
-
-.royal-emblem:hover{
-    transform:scale(1.05);
-
-    filter:
-        drop-shadow(0 0 15px rgba(212,175,55,.7))
-        drop-shadow(0 0 35px rgba(212,175,55,.35));
-}
-
-.royal-symbol{
-    width:72px;
-    height:72px;
-    object-fit:contain;
-    display:block;
-    margin:0 auto;
-
-    filter:
-        drop-shadow(0 0 8px rgba(212,175,55,.5));
-
-    transition:.3s ease;
-}
-
-.royal-symbol:hover{
-    transform:scale(1.08);
-}
-
-/* =========================================================
-   TOP IMPERIAL HEADER
+   HEADER
 ========================================================= */
 
 .top-header{
     position:relative;
     text-align:center;
-
-    padding:38px 20px 34px;
+    padding:42px 20px 38px;
 
     background:
         linear-gradient(
@@ -139,56 +155,67 @@ body{
     background:
         radial-gradient(
             circle at center,
-            rgba(212,175,55,.08),
+            rgba(212,175,55,.1),
             transparent 55%
         );
 
     pointer-events:none;
 }
 
+.top-header::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:40%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(247,231,169,.12),
+            transparent
+        );
+
+    animation:headerLight 7s ease-in-out infinite;
+}
+
 .header-emblem{
     position:relative;
-    z-index:1;
+    z-index:2;
 
     width:135px;
     height:135px;
-
     object-fit:contain;
 
     margin:0 auto 16px;
 
-    filter:
-        drop-shadow(0 0 10px rgba(212,175,55,.4))
-        drop-shadow(0 0 30px rgba(212,175,55,.18));
+    animation:
+        royalFloat 5s ease-in-out infinite,
+        goldPulse 4s ease-in-out infinite;
+}
+
+.top-header h1,
+.top-header h2{
+    position:relative;
+    z-index:2;
 }
 
 .top-header h1{
-    position:relative;
-    z-index:1;
-
     font-family:"Cinzel",serif;
-
     color:var(--bright-gold);
-
     font-size:clamp(25px,5vw,48px);
-
     letter-spacing:3px;
-
     line-height:1.2;
+    text-shadow:0 3px 20px rgba(0,0,0,.5);
 }
 
 .top-header h2{
-    position:relative;
-    z-index:1;
-
     font-family:"Cinzel",serif;
-
     color:var(--royal-gold);
-
     font-size:clamp(13px,2vw,18px);
-
     letter-spacing:4px;
-
     margin-top:9px;
 }
 
@@ -203,63 +230,126 @@ body{
 
     background:rgba(1,15,35,.97);
 
-    border-bottom:
-        1px solid rgba(212,175,55,.55);
+    border-bottom:1px solid rgba(212,175,55,.55);
 
     display:flex;
-
     justify-content:center;
     align-items:center;
-
     flex-wrap:wrap;
 
-    padding:11px 10px;
+    padding:10px;
 
-    box-shadow:
-        0 5px 20px rgba(0,0,0,.5);
+    box-shadow:0 5px 20px rgba(0,0,0,.5);
 
-    backdrop-filter:blur(8px);
+    backdrop-filter:blur(10px);
 }
 
 .main-nav a{
     font-family:"Cinzel",serif;
-
     color:#f5e6a8;
-
     text-decoration:none;
 
-    font-size:12px;
+    font-size:11px;
     font-weight:600;
-
     letter-spacing:1px;
 
-    padding:8px 14px;
+    padding:8px 13px;
 
     transition:.3s ease;
 }
 
 .main-nav a:hover{
-    color:white;
-
-    text-shadow:
-        0 0 12px var(--royal-gold);
-
-    transform:translateY(-1px);
+    color:#fff;
+    text-shadow:0 0 12px var(--royal-gold);
+    transform:translateY(-2px);
 }
 
 /* =========================================================
-   PAGE LAYOUT
+   CONTROL BAR
+========================================================= */
+
+.control-panel{
+    width:min(1450px,94%);
+    margin:25px auto 0;
+
+    display:grid;
+    grid-template-columns:1fr auto auto;
+    gap:12px;
+
+    position:relative;
+    z-index:20;
+}
+
+.search-box,
+.article-select,
+.control-button{
+    min-height:46px;
+
+    border:1px solid rgba(212,175,55,.55);
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(7,59,115,.95),
+            rgba(2,20,42,.98)
+        );
+
+    color:var(--text);
+
+    font-family:"Cinzel",serif;
+}
+
+.search-box{
+    width:100%;
+    padding:0 16px;
+    outline:none;
+    font-size:13px;
+}
+
+.search-box::placeholder{
+    color:#aaa;
+}
+
+.search-box:focus{
+    border-color:var(--bright-gold);
+    box-shadow:0 0 18px rgba(212,175,55,.2);
+}
+
+.article-select{
+    padding:0 13px;
+    cursor:pointer;
+    outline:none;
+}
+
+.article-select option{
+    background:#031a38;
+    color:#eee5c8;
+}
+
+.control-button{
+    padding:0 17px;
+    cursor:pointer;
+    color:var(--bright-gold);
+    transition:.3s ease;
+}
+
+.control-button:hover{
+    background:var(--royal-gold);
+    color:#03152d;
+    box-shadow:0 0 20px rgba(212,175,55,.35);
+}
+
+/* =========================================================
+   LAYOUT
 ========================================================= */
 
 .container{
     width:min(1450px,94%);
-
-    margin:40px auto 80px;
+    margin:25px auto 80px;
 
     display:grid;
-
     grid-template-columns:280px 1fr;
-
     gap:30px;
 }
 
@@ -270,11 +360,9 @@ body{
 .article-index{
     position:sticky;
     top:82px;
-
     align-self:start;
 
     max-height:calc(100vh - 105px);
-
     overflow-y:auto;
 
     background:
@@ -284,9 +372,7 @@ body{
             rgba(2,21,45,.98)
         );
 
-    border:
-        1px solid rgba(212,175,55,.5);
-
+    border:1px solid rgba(212,175,55,.5);
     border-radius:8px;
 
     box-shadow:
@@ -307,52 +393,36 @@ body{
 
 .article-index h3{
     font-family:"Cinzel",serif;
-
     color:var(--royal-gold);
-
     text-align:center;
-
     font-size:16px;
-
     letter-spacing:2px;
-
     padding-bottom:15px;
-
-    border-bottom:
-        1px solid rgba(212,175,55,.3);
-
+    border-bottom:1px solid rgba(212,175,55,.3);
     margin-bottom:12px;
 }
 
 .index-symbol{
     width:35px;
     height:35px;
-
     object-fit:contain;
-
     display:block;
-
     margin:0 auto 10px;
 
-    filter:
-        drop-shadow(0 0 7px rgba(212,175,55,.4));
+    animation:goldPulse 4s ease-in-out infinite;
 }
 
 .article-index a{
     display:block;
 
     color:#e8dfc3;
-
     text-decoration:none;
 
     font-family:"Cinzel",serif;
-
-    font-size:12px;
-
-    letter-spacing:.6px;
+    font-size:11px;
+    letter-spacing:.5px;
 
     padding:9px 10px;
-
     margin:2px 0;
 
     border-left:2px solid transparent;
@@ -360,20 +430,21 @@ body{
     transition:.25s ease;
 }
 
-.article-index a:hover{
+.article-index a:hover,
+.article-index a.active{
     color:#fff;
 
-    background:
-        rgba(212,175,55,.09);
+    background:rgba(212,175,55,.09);
 
-    border-left:
-        2px solid var(--royal-gold);
+    border-left:2px solid var(--royal-gold);
 
     padding-left:15px;
+
+    text-shadow:0 0 8px rgba(247,231,169,.3);
 }
 
 /* =========================================================
-   CONSTITUTION DOCUMENT
+   DOCUMENT
 ========================================================= */
 
 .document{
@@ -384,15 +455,26 @@ body{
             rgba(2,17,36,.98)
         );
 
-    border:
-        1px solid rgba(212,175,55,.45);
+    border:1px solid rgba(212,175,55,.45);
 
-    box-shadow:
-        0 15px 50px rgba(0,0,0,.5);
+    box-shadow:var(--shadow);
 
     padding:clamp(25px,5vw,65px);
 
     border-radius:8px;
+
+    animation:documentReveal 1s ease .2s both;
+}
+
+@keyframes documentReveal{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 /* =========================================================
@@ -401,53 +483,38 @@ body{
 
 .document-title{
     text-align:center;
-
     margin-bottom:45px;
 }
 
 .document-title .title-symbol{
     width:90px;
     height:90px;
-
     object-fit:contain;
-
     display:block;
-
     margin:0 auto 15px;
 
-    filter:
-        drop-shadow(0 0 10px rgba(212,175,55,.5));
+    animation:royalFloat 5s ease-in-out infinite;
 }
 
 .document-title h1{
     font-family:"Cinzel",serif;
-
     color:var(--bright-gold);
-
     font-size:clamp(25px,4vw,45px);
-
     letter-spacing:2px;
-
     line-height:1.25;
 }
 
 .document-title h2{
     font-family:"Cinzel",serif;
-
     color:var(--royal-gold);
-
     font-size:16px;
-
     letter-spacing:4px;
-
     margin-top:10px;
 }
 
 .gold-line{
     width:240px;
-
     height:2px;
-
     margin:25px auto;
 
     background:
@@ -459,6 +526,8 @@ body{
             var(--royal-gold),
             transparent
         );
+
+    animation:lineGlow 3s ease-in-out infinite;
 }
 
 /* =========================================================
@@ -466,14 +535,10 @@ body{
 ========================================================= */
 
 .preamble{
-    border:
-        1px solid rgba(212,175,55,.35);
-
-    border-left:
-        4px solid var(--royal-gold);
+    border:1px solid rgba(212,175,55,.35);
+    border-left:4px solid var(--royal-gold);
 
     padding:28px;
-
     margin-bottom:55px;
 
     background:
@@ -482,51 +547,57 @@ body{
             rgba(10,65,125,.55),
             rgba(2,19,40,.65)
         );
+
+    box-shadow:inset 0 0 30px rgba(0,0,0,.15);
 }
 
 .preamble-symbol{
     width:50px;
     height:50px;
-
     object-fit:contain;
-
     display:block;
-
     margin:0 auto 12px;
 
-    filter:
-        drop-shadow(0 0 8px rgba(212,175,55,.45));
+    animation:goldPulse 4s ease-in-out infinite;
 }
 
 .preamble h2{
     font-family:"Cinzel",serif;
-
     text-align:center;
-
     color:var(--royal-gold);
-
     letter-spacing:3px;
-
     margin-bottom:18px;
 }
 
 .preamble p{
     text-align:justify;
-
     font-size:18px;
 }
 
 /* =========================================================
-   ARTICLES
+   ARTICLE
 ========================================================= */
 
 .article{
     margin-bottom:65px;
-
     padding-top:20px;
 
-    border-top:
-        1px solid rgba(212,175,55,.18);
+    border-top:1px solid rgba(212,175,55,.18);
+
+    scroll-margin-top:100px;
+
+    animation:articleReveal .8s ease both;
+}
+
+@keyframes articleReveal{
+    from{
+        opacity:0;
+        transform:translateY(18px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .article:first-of-type{
@@ -534,37 +605,78 @@ body{
 }
 
 .article-heading{
-    font-family:"Cinzel",serif;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
 
+    font-family:"Cinzel",serif;
     color:var(--royal-gold);
 
     font-size:clamp(20px,3vw,30px);
-
     letter-spacing:2px;
 
     margin-bottom:25px;
-
     padding-bottom:12px;
 
-    border-bottom:
-        1px solid rgba(212,175,55,.35);
+    border-bottom:1px solid rgba(212,175,55,.35);
+
+    cursor:pointer;
 }
 
 .article-heading span{
     color:var(--bright-gold);
 }
 
+.article-toggle{
+    flex-shrink:0;
+
+    width:34px;
+    height:34px;
+
+    border:1px solid rgba(212,175,55,.45);
+    border-radius:50%;
+
+    background:rgba(212,175,55,.08);
+
+    color:var(--bright-gold);
+
+    font-family:Arial,sans-serif;
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.article-toggle:hover{
+    background:var(--royal-gold);
+    color:#03152d;
+    transform:rotate(90deg);
+}
+
+.article.collapsed .article-body{
+    display:none;
+}
+
+.article.collapsed .article-toggle{
+    transform:rotate(0deg);
+}
+
+/* =========================================================
+   SECTION TEXT
+========================================================= */
+
 .section{
     margin:18px 0;
-
     font-size:18px;
+
+    transition:.3s ease;
 }
 
 .section-title{
     color:#f0d77d;
-
     font-weight:700;
-
     margin-top:25px;
 }
 
@@ -574,12 +686,43 @@ body{
 
 .subsection-title{
     color:var(--royal-gold);
-
     font-weight:700;
 }
 
 /* =========================================================
-   BACK TO TOP
+   SEARCH HIGHLIGHT
+========================================================= */
+
+.search-highlight{
+    background:rgba(212,175,55,.45);
+    color:#fff;
+    border-radius:2px;
+    padding:0 2px;
+}
+
+.search-hidden{
+    display:none !important;
+}
+
+.search-message{
+    display:none;
+
+    margin:20px 0;
+    padding:18px;
+
+    text-align:center;
+
+    border:1px solid rgba(212,175,55,.4);
+
+    background:rgba(212,175,55,.06);
+
+    color:#d8cda9;
+
+    font-family:"Cinzel",serif;
+}
+
+/* =========================================================
+   BACK TOP
 ========================================================= */
 
 .back-top{
@@ -588,17 +731,13 @@ body{
     margin-top:20px;
 
     font-family:"Cinzel",serif;
-
     font-size:11px;
-
     letter-spacing:1px;
 
     color:var(--royal-gold);
-
     text-decoration:none;
 
-    border:
-        1px solid rgba(212,175,55,.4);
+    border:1px solid rgba(212,175,55,.4);
 
     padding:6px 12px;
 
@@ -609,7 +748,55 @@ body{
 
 .back-top:hover{
     background:var(--royal-gold);
+    color:#03152d;
+}
 
+/* =========================================================
+   FLOATING TOP BUTTON
+========================================================= */
+
+#floatingTop{
+    position:fixed;
+
+    right:22px;
+    bottom:22px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    border:1px solid var(--royal-gold);
+
+    background:rgba(2,20,42,.94);
+
+    color:var(--bright-gold);
+
+    font-size:21px;
+
+    cursor:pointer;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(15px);
+
+    transition:.3s ease;
+
+    z-index:2000;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.5);
+}
+
+#floatingTop.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+#floatingTop:hover{
+    background:var(--royal-gold);
     color:#03152d;
 }
 
@@ -631,9 +818,7 @@ body{
             rgba(1,13,29,.9)
         );
 
-    border:
-        1px solid rgba(212,175,55,.5);
-
+    border:1px solid rgba(212,175,55,.5);
     border-radius:8px;
 
     box-shadow:
@@ -643,54 +828,43 @@ body{
 .royal-seat-emblem{
     width:150px;
     height:150px;
-
     object-fit:contain;
 
     margin:0 auto 20px;
-
     display:block;
 
-    filter:
-        drop-shadow(0 0 12px rgba(212,175,55,.5))
-        drop-shadow(0 0 35px rgba(212,175,55,.15));
+    animation:
+        royalFloat 5s ease-in-out infinite,
+        goldPulse 4s ease-in-out infinite;
 }
 
 .royal-seat h2{
     font-family:"Cinzel",serif;
-
     color:var(--royal-gold);
-
     letter-spacing:3px;
 }
 
 .royal-seat p{
     font-size:18px;
-
     margin-top:10px;
 }
 
 .royal-seat .sovereign-name{
     font-family:"Cinzel",serif;
-
     color:var(--bright-gold);
-
     font-size:21px;
-
     margin-top:15px;
 }
 
 .royal-divider-symbol{
     width:45px;
     height:45px;
-
     object-fit:contain;
 
     display:block;
-
     margin:25px auto;
 
-    filter:
-        drop-shadow(0 0 7px rgba(212,175,55,.4));
+    animation:goldPulse 4s ease-in-out infinite;
 }
 
 /* =========================================================
@@ -704,8 +878,7 @@ footer{
 
     background:#010812;
 
-    border-top:
-        1px solid rgba(212,175,55,.35);
+    border-top:1px solid rgba(212,175,55,.35);
 
     color:#888;
 }
@@ -717,17 +890,84 @@ footer{
     object-fit:contain;
 
     display:block;
-
     margin:0 auto 12px;
 
-    filter:
-        drop-shadow(0 0 8px rgba(212,175,55,.35));
+    animation:goldPulse 4s ease-in-out infinite;
 }
 
 footer strong{
     color:var(--royal-gold);
-
     font-family:"Cinzel",serif;
+}
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print{
+
+    body{
+        background:white;
+        color:#111;
+        animation:none;
+    }
+
+    .top-header,
+    .main-nav,
+    .control-panel,
+    .article-index,
+    #floatingTop,
+    .back-top,
+    footer{
+        display:none !important;
+    }
+
+    .container{
+        width:100%;
+        margin:0;
+        display:block;
+    }
+
+    .document{
+        border:none;
+        box-shadow:none;
+        background:white;
+        padding:20px;
+        color:#111;
+    }
+
+    .document-title h1,
+    .document-title h2,
+    .article-heading,
+    .section-title,
+    .royal-seat h2,
+    .royal-seat .sovereign-name{
+        color:#111;
+    }
+
+    .article{
+        page-break-inside:auto;
+    }
+
+    .article-body{
+        display:block !important;
+    }
+
+    .article-toggle{
+        display:none;
+    }
+
+    .preamble,
+    .royal-seat{
+        background:white;
+        color:#111;
+    }
+
+    .preamble p,
+    .section,
+    .royal-seat p{
+        color:#111;
+    }
 }
 
 /* =========================================================
@@ -736,21 +976,22 @@ footer strong{
 
 @media(max-width:900px){
 
+    .control-panel{
+        grid-template-columns:1fr;
+    }
+
     .container{
         grid-template-columns:1fr;
     }
 
     .article-index{
         position:relative;
-
         top:auto;
-
         max-height:none;
     }
 
     .article-index a{
         display:inline-block;
-
         width:49%;
     }
 
@@ -766,11 +1007,6 @@ footer strong{
         width:110px;
         height:110px;
     }
-
-    .document-title .title-symbol{
-        width:75px;
-        height:75px;
-    }
 }
 
 @media(max-width:600px){
@@ -784,10 +1020,13 @@ footer strong{
         height:95px;
     }
 
-    .main-nav a{
-        font-size:10px;
+    .main-nav{
+        padding:7px 4px;
+    }
 
-        padding:7px 8px;
+    .main-nav a{
+        font-size:9px;
+        padding:6px 7px;
     }
 
     .article-index a{
@@ -800,7 +1039,6 @@ footer strong{
 
     .preamble p{
         text-align:left;
-
         font-size:17px;
     }
 
@@ -808,9 +1046,18 @@ footer strong{
         text-align:left;
     }
 
+    .article-heading{
+        font-size:19px;
+    }
+
     .royal-seat-emblem{
         width:115px;
         height:115px;
+    }
+
+    #floatingTop{
+        right:14px;
+        bottom:14px;
     }
 }
 
@@ -824,7 +1071,10 @@ footer strong{
         scroll-behavior:auto;
     }
 
-    *{
+    *,
+    *::before,
+    *::after{
+        animation:none !important;
         transition:none !important;
     }
 }
@@ -832,15 +1082,14 @@ footer strong{
 </style>
 </head>
 
-<body>
+<body id="top">
 
 <!-- =======================================================
      IMPERIAL HEADER
 ======================================================= -->
 
-<header class="top-header" id="top">
+<header class="top-header">
 
-    <!-- ROYAL EMBLEM -->
     <img
         src="royal-emblem.png"
         alt="Royal Emblem of the Imperial Sovereign of Bristevia"
@@ -853,7 +1102,6 @@ footer strong{
 
 </header>
 
-
 <!-- =======================================================
      MAIN NAVIGATION
 ======================================================= -->
@@ -861,19 +1109,73 @@ footer strong{
 <nav class="main-nav">
 
     <a href="index.html">HOME</a>
-<a href="constitution.html">CONSTITUTION</a>
-<a href="history.html">HISTORY</a>
-<a href="government.html">GOVERNMENT</a>
-<a href="judiciary.html">SUPREME TRIBUNAL</a>
-<a href="legislature.html">IMPERIAL ASSEMBLY</a>
-<a href="decrees.html">ROYAL DECREES</a>
-<a href="provinces.html">PROVINCES</a>
-<a href="data.html">DATA</a>
-<a href="atlas.html">BRISTEVIA ATLAS</a>
-<a href="valtherra.html">VALTHERRA</a>
-<a href="others.html">OTHERS</a>
+    <a href="constitution.html">CONSTITUTION</a>
+    <a href="history.html">HISTORY</a>
+    <a href="government.html">GOVERNMENT</a>
+    <a href="judiciary.html">SUPREME TRIBUNAL</a>
+    <a href="legislature.html">IMPERIAL ASSEMBLY</a>
+    <a href="decrees.html">ROYAL DECREES</a>
+    <a href="provinces.html">PROVINCES</a>
+    <a href="data.html">DATA</a>
+    <a href="atlas.html">BRISTEVIA ATLAS</a>
+    <a href="valtherra.html">VALTHERRA</a>
+    <a href="others.html">OTHERS</a>
+
 </nav>
 
+<!-- =======================================================
+     SEARCH / TOOLS
+======================================================= -->
+
+<div class="control-panel">
+
+    <input
+        type="search"
+        id="constitutionSearch"
+        class="search-box"
+        placeholder="🔎 Search the Constitution..."
+        aria-label="Search Constitution"
+    >
+
+    <select
+        id="articleJump"
+        class="article-select"
+        aria-label="Jump to Article"
+    >
+        <option value="">📜 JUMP TO ARTICLE</option>
+        <option value="article1">ARTICLE I — Sovereign</option>
+        <option value="article2">ARTICLE II — Principles</option>
+        <option value="article3">ARTICLE III — Bill of Rights</option>
+        <option value="article4">ARTICLE IV — Citizenship</option>
+        <option value="article5">ARTICLE V — Suffrage</option>
+        <option value="article6">ARTICLE VI — Legislative</option>
+        <option value="article7">ARTICLE VII — Executive</option>
+        <option value="article8">ARTICLE VIII — Judiciary</option>
+        <option value="article9">ARTICLE IX — Local Government</option>
+        <option value="article10">ARTICLE X — Defense</option>
+        <option value="article11">ARTICLE XI — Finance</option>
+        <option value="article12">ARTICLE XII — Accountability</option>
+        <option value="article13">ARTICLE XIII — Commissions</option>
+        <option value="article14">ARTICLE XIV — Family</option>
+        <option value="article15">ARTICLE XV — Education</option>
+        <option value="article16">ARTICLE XVI — Amendments</option>
+        <option value="article17">ARTICLE XVII — Impeachment</option>
+        <option value="article18">ARTICLE XVIII — Appointments</option>
+        <option value="article19">ARTICLE XIX — Territory</option>
+        <option value="article20">ARTICLE XX — General Provisions</option>
+        <option value="witness">IN WITNESS THEREOF</option>
+        <option value="royal-seat">ROYAL SEAT</option>
+    </select>
+
+    <button class="control-button" id="printButton">
+        🖨 PRINT
+    </button>
+
+</div>
+
+<div class="search-message" id="searchMessage">
+    No constitutional provision found matching your search.
+</div>
 
 <!-- =======================================================
      MAIN PAGE
@@ -881,14 +1183,12 @@ footer strong{
 
 <div class="container">
 
-
 <!-- =======================================================
      ARTICLE INDEX
 ======================================================= -->
 
 <aside class="article-index">
 
-    <!-- ROYAL SYMBOL -->
     <img
         src="royal-symbol.png"
         alt="Royal Symbol"
@@ -919,26 +1219,22 @@ footer strong{
     <a href="#article20">ARTICLE XX — General Provisions</a>
 
     <a href="#witness">IN WITNESS THEREOF</a>
-
     <a href="#royal-seat">ROYAL SEAT</a>
 
 </aside>
 
-
 <!-- =======================================================
-     CONSTITUTION DOCUMENT
+     DOCUMENT
 ======================================================= -->
 
 <main class="document">
 
-
 <!-- =======================================================
-     DOCUMENT TITLE
+     TITLE
 ======================================================= -->
 
 <div class="document-title">
 
-    <!-- ROYAL SYMBOL -->
     <img
         src="royal-symbol.png"
         alt="Royal Symbol of Bristevia"
@@ -955,7 +1251,6 @@ footer strong{
     <div class="gold-line"></div>
 
 </div>
-
 
 <!-- =======================================================
      PREAMBLE
@@ -984,16 +1279,18 @@ footer strong{
 
 </section>
 
-
 <!-- =======================================================
-     ARTICLES
+     ARTICLE I
 ======================================================= -->
 
 <section class="article" id="article1">
 
 <h2 class="article-heading">
 ARTICLE I — <span>THE IMPERIAL SOVEREIGN OF BRISTEVIA</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section">
 Bristevia is a sovereign and eternal monarchy, composed of provinces and
@@ -1013,14 +1310,21 @@ allegiance is pledged to the Eternal Crown.
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE II
+======================================================= -->
 
 <section class="article" id="article2">
 
 <h2 class="article-heading">
 ARTICLE II — <span>DECLARATION OF PRINCIPLES AND IMPERIAL POLICIES</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> The State shall embody the ideals of loyalty, justice, and unity under the benevolent reign of the Souverion.</div>
 
@@ -1040,14 +1344,21 @@ ARTICLE II — <span>DECLARATION OF PRINCIPLES AND IMPERIAL POLICIES</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE III
+======================================================= -->
 
 <section class="article" id="article3">
 
 <h2 class="article-heading">
 ARTICLE III — <span>THE IMPERIAL BILL OF RIGHTS</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> All Bristevians are entitled to liberty, dignity, and justice.</div>
 
@@ -1059,14 +1370,21 @@ ARTICLE III — <span>THE IMPERIAL BILL OF RIGHTS</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE IV
+======================================================= -->
 
 <section class="article" id="article4">
 
 <h2 class="article-heading">
 ARTICLE IV — <span>CITIZENSHIP</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> Citizenship shall be defined by Imperial Law.</div>
 
@@ -1080,14 +1398,21 @@ ARTICLE IV — <span>CITIZENSHIP</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE V
+======================================================= -->
 
 <section class="article" id="article5">
 
 <h2 class="article-heading">
 ARTICLE V — <span>SUFFRAGE</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> Suffrage shall be exercised by all citizens of Bristevia not otherwise disqualified by law.</div>
 
@@ -1111,14 +1436,21 @@ ARTICLE V — <span>SUFFRAGE</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE VI
+======================================================= -->
 
 <section class="article" id="article6">
 
 <h2 class="article-heading">
 ARTICLE VI — <span>THE LEGISLATIVE DEPARTMENT</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> The legislative power shall be vested in a bicameral Imperial Assembly of Bristevia, consisting of the Magnum Consilium (Upper House of Consuls) and the Domus Curialum (Lower House of Ministers).</div>
 
@@ -1200,21 +1532,21 @@ After approval, the law shall be numbered as a Sovereign Act (SA) and recorded s
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
-
 <!-- =======================================================
-     ARTICLES VII–XX
-     
-     YOUR EXISTING ARTICLE VII THROUGH ARTICLE XX
-     CONTENT CAN BE PLACED HERE WITHOUT CHANGES.
+     ARTICLE VII
 ======================================================= -->
 
 <section class="article" id="article7">
 
 <h2 class="article-heading">
 ARTICLE VII — <span>THE IMPERIAL EXECUTIVE</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> The executive power shall be vested in the Souverion of Bristevia, the Supreme Monarch and Head of State, and the Prime Minister as Head of Government.</div>
 
@@ -1236,14 +1568,21 @@ ARTICLE VII — <span>THE IMPERIAL EXECUTIVE</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE VIII
+======================================================= -->
 
 <section class="article" id="article8">
 
 <h2 class="article-heading">
 ARTICLE VIII — <span>THE JUDICIARY</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> The judicial power shall be vested in one Supreme Tribunal and such Special Courts and lower Regional Courts as may be established by law.</div>
 
@@ -1273,13 +1612,21 @@ ARTICLE VIII — <span>THE JUDICIARY</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE IX
+======================================================= -->
 
 <section class="article" id="article9">
+
 <h2 class="article-heading">
 ARTICLE IX — <span>LOCAL GOVERNMENT ADMINISTRATION</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> The territorial and political subdivisions of Bristevia are Provinces, Cities, Towns, and Villages.</div>
 
@@ -1304,14 +1651,22 @@ ARTICLE IX — <span>LOCAL GOVERNMENT ADMINISTRATION</span>
 <div class="section"><b>Section 11.</b> Local Government Units may associate, consolidate, or coordinate their efforts in accordance with Imperial Law.</div>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
+
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE X
+======================================================= -->
 
 <section class="article" id="article10">
 
 <h2 class="article-heading">
 ARTICLE X — <span>NATIONAL DEFENSE AND SECURITY</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> The defense of the Realm shall rest upon the Imperial Armed Forces of Bristevia.</div>
 
@@ -1329,14 +1684,21 @@ ARTICLE X — <span>NATIONAL DEFENSE AND SECURITY</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE XI
+======================================================= -->
 
 <section class="article" id="article11">
 
 <h2 class="article-heading">
 ARTICLE XI — <span>FINANCE AND TAXATION</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> The power to tax and appropriate funds shall reside in the Domus Curialum, with the concurrence of the Magnum Consilium and subject to the assent of the Souverion.</div>
 
@@ -1356,14 +1718,21 @@ ARTICLE XI — <span>FINANCE AND TAXATION</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE XII
+======================================================= -->
 
 <section class="article" id="article12">
 
 <h2 class="article-heading">
 ARTICLE XII — <span>ACCOUNTABILITY OF PUBLIC OFFICERS</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> Public office is a trust.</div>
 
@@ -1381,14 +1750,21 @@ ARTICLE XII — <span>ACCOUNTABILITY OF PUBLIC OFFICERS</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE XIII
+======================================================= -->
 
 <section class="article" id="article13">
 
 <h2 class="article-heading">
 ARTICLE XIII — <span>THE CONSTITUTIONAL COMMISSIONS</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section">
 The Constitutional Commissions shall be independent and co-equal bodies consisting of the Imperial Civil Service Commission, Imperial Commission on Elections, and Imperial Commission on Audit.
@@ -1400,14 +1776,21 @@ Their powers, appointments, tenure, fiscal autonomy, and duties shall be governe
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE XIV
+======================================================= -->
 
 <section class="article" id="article14">
 
 <h2 class="article-heading">
 ARTICLE XIV — <span>THE FAMILY</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> The family is the foundation of the Bristevian Realm and shall be protected by the State.</div>
 
@@ -1421,14 +1804,21 @@ ARTICLE XIV — <span>THE FAMILY</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE XV
+======================================================= -->
 
 <section class="article" id="article15">
 
 <h2 class="article-heading">
 ARTICLE XV — <span>EDUCATION, SCIENCE, CULTURE, AND NATIONAL DEVELOPMENT</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> The State shall promote education, science, culture, and national defense.</div>
 
@@ -1438,27 +1828,41 @@ ARTICLE XV — <span>EDUCATION, SCIENCE, CULTURE, AND NATIONAL DEVELOPMENT</span
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE XVI
+======================================================= -->
 
 <section class="article" id="article16">
 
 <h2 class="article-heading">
 ARTICLE XVI — <span>AMENDMENTS OR REVISIONS</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> Amendments may be proposed by a three-fourths (3/4) vote of all Members of the Imperial Assembly or by a Constitutional Assembly convened by Imperial Decree.</div>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE XVII
+======================================================= -->
 
 <section class="article" id="article17">
 
 <h2 class="article-heading">
 ARTICLE XVII — <span>ACCOUNTABILITY AND IMPEACHMENT</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> The House of Ministers shall have the exclusive power to initiate impeachment cases.</div>
 
@@ -1498,14 +1902,21 @@ ARTICLE XVII — <span>ACCOUNTABILITY AND IMPEACHMENT</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE XVIII
+======================================================= -->
 
 <section class="article" id="article18">
 
 <h2 class="article-heading">
 ARTICLE XVIII — <span>APPOINTMENTS AND ELECTIVE OFFICES</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Division A — Appointive Officials</b></div>
 
@@ -1525,14 +1936,21 @@ ARTICLE XVIII — <span>APPOINTMENTS AND ELECTIVE OFFICES</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE XIX
+======================================================= -->
 
 <section class="article" id="article19">
 
 <h2 class="article-heading">
 ARTICLE XIX — <span>TERRITORY</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1.</b> The national territory of the Imperial Sovereign of Bristevia shall consist of all lands, islands, waters, and airspace belonging to the Realm.</div>
 
@@ -1548,14 +1966,21 @@ ARTICLE XIX — <span>TERRITORY</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
+<!-- =======================================================
+     ARTICLE XX
+======================================================= -->
 
 <section class="article" id="article20">
 
 <h2 class="article-heading">
 ARTICLE XX — <span>GENERAL PROVISIONS</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section"><b>Section 1. Supremacy of the Constitution.</b> This Constitution is the supreme law of the Imperial Sovereign of Bristevia.</div>
 
@@ -1567,18 +1992,21 @@ ARTICLE XX — <span>GENERAL PROVISIONS</span>
 
 <a class="back-top" href="#top">↑ RETURN TO TOP</a>
 
+</div>
 </section>
 
-
 <!-- =======================================================
-     IN WITNESS THEREOF
+     WITNESS
 ======================================================= -->
 
 <section class="article" id="witness">
 
 <h2 class="article-heading">
 <span>IN WITNESS THEREOF</span>
+<button class="article-toggle" type="button">−</button>
 </h2>
+
+<div class="article-body">
 
 <div class="section" style="text-align:center;font-size:20px;">
 
@@ -1604,8 +2032,8 @@ Proclaimed in the City of Stephara, this Day of the Eternal Crown.
 
 </div>
 
+</div>
 </section>
-
 
 <!-- =======================================================
      ROYAL SEAT
@@ -1613,7 +2041,6 @@ Proclaimed in the City of Stephara, this Day of the Eternal Crown.
 
 <section class="royal-seat" id="royal-seat">
 
-    <!-- LARGE ROYAL EMBLEM -->
     <img
         src="royal-emblem.png"
         alt="Royal Emblem of the Imperial Sovereign of Bristevia"
@@ -1672,10 +2099,8 @@ Proclaimed in the City of Stephara, this Day of the Eternal Crown.
 
 </section>
 
-
 </main>
 </div>
-
 
 <!-- =======================================================
      FOOTER
@@ -1702,6 +2127,321 @@ Proclaimed in the City of Stephara, this Day of the Eternal Crown.
 
 </footer>
 
+<!-- =======================================================
+     FLOATING BACK TO TOP
+======================================================= -->
+
+<button id="floatingTop" aria-label="Return to top">
+    ↑
+</button>
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
+
+/* =========================================================
+   ARTICLE COLLAPSE / EXPAND
+========================================================= */
+
+document.querySelectorAll(".article-heading").forEach(function(heading){
+
+    const button = heading.querySelector(".article-toggle");
+    const article = heading.closest(".article");
+
+    if(!button) return;
+
+    heading.addEventListener("click",function(e){
+
+        if(e.target === button || e.target === heading || e.target.tagName === "SPAN"){
+            article.classList.toggle("collapsed");
+
+            button.textContent =
+                article.classList.contains("collapsed")
+                ? "+"
+                : "−";
+        }
+
+    });
+
+});
+
+/* =========================================================
+   ARTICLE JUMP
+========================================================= */
+
+const articleJump =
+    document.getElementById("articleJump");
+
+articleJump.addEventListener("change",function(){
+
+    const targetId = this.value;
+
+    if(!targetId) return;
+
+    const target =
+        document.getElementById(targetId);
+
+    if(target){
+
+        target.classList.remove("collapsed");
+
+        const toggle =
+            target.querySelector(".article-toggle");
+
+        if(toggle){
+            toggle.textContent="−";
+        }
+
+        target.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    }
+
+    this.value="";
+
+});
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+document.getElementById("printButton")
+.addEventListener("click",function(){
+
+    document.querySelectorAll(".article")
+    .forEach(function(article){
+
+        article.classList.remove("collapsed");
+
+        const button =
+            article.querySelector(".article-toggle");
+
+        if(button){
+            button.textContent="−";
+        }
+
+    });
+
+    window.print();
+
+});
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+const searchInput =
+    document.getElementById("constitutionSearch");
+
+const searchMessage =
+    document.getElementById("searchMessage");
+
+const articles =
+    document.querySelectorAll(".article");
+
+searchInput.addEventListener("input",function(){
+
+    const query =
+        this.value.trim().toLowerCase();
+
+    if(!query){
+
+        articles.forEach(function(article){
+
+            article.classList.remove("search-hidden");
+
+            article.querySelectorAll(".section")
+            .forEach(function(section){
+                section.classList.remove("search-hidden");
+            });
+
+        });
+
+        searchMessage.style.display="none";
+        return;
+    }
+
+    let totalMatches=0;
+
+    articles.forEach(function(article){
+
+        const text =
+            article.textContent.toLowerCase();
+
+        const articleMatch =
+            text.includes(query);
+
+        let sectionMatches=0;
+
+        article.querySelectorAll(".section")
+        .forEach(function(section){
+
+            const sectionText =
+                section.textContent.toLowerCase();
+
+            if(sectionText.includes(query)){
+
+                section.classList.remove("search-hidden");
+
+                sectionMatches++;
+
+            }else{
+
+                section.classList.add("search-hidden");
+
+            }
+
+        });
+
+        if(articleMatch){
+
+            article.classList.remove("search-hidden");
+
+            article.classList.remove("collapsed");
+
+            const toggle =
+                article.querySelector(".article-toggle");
+
+            if(toggle){
+                toggle.textContent="−";
+            }
+
+            totalMatches++;
+
+        }else{
+
+            article.classList.add("search-hidden");
+
+        }
+
+    });
+
+    searchMessage.style.display =
+        totalMatches === 0
+        ? "block"
+        : "none";
+
+});
+
+/* =========================================================
+   FLOATING TOP BUTTON
+========================================================= */
+
+const floatingTop =
+    document.getElementById("floatingTop");
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY > 500){
+
+        floatingTop.classList.add("show");
+
+    }else{
+
+        floatingTop.classList.remove("show");
+
+    }
+
+});
+
+floatingTop.addEventListener("click",function(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+/* =========================================================
+   ACTIVE ARTICLE NAVIGATION
+========================================================= */
+
+const indexLinks =
+    document.querySelectorAll(".article-index a");
+
+const observedArticles =
+    document.querySelectorAll(".article");
+
+const observer =
+    new IntersectionObserver(function(entries){
+
+        entries.forEach(function(entry){
+
+            if(entry.isIntersecting){
+
+                indexLinks.forEach(function(link){
+
+                    link.classList.remove("active");
+
+                });
+
+                const activeLink =
+                    document.querySelector(
+                        '.article-index a[href="#' +
+                        entry.target.id +
+                        '"]'
+                    );
+
+                if(activeLink){
+                    activeLink.classList.add("active");
+                }
+
+            }
+
+        });
+
+    },{
+        rootMargin:"-20% 0px -70% 0px"
+    });
+
+observedArticles.forEach(function(article){
+
+    observer.observe(article);
+
+});
+
+/* =========================================================
+   SEARCH ENTER KEY
+========================================================= */
+
+searchInput.addEventListener("keydown",function(e){
+
+    if(e.key === "Escape"){
+
+        this.value="";
+
+        this.dispatchEvent(
+            new Event("input")
+        );
+
+        this.blur();
+
+    }
+
+});
+
+/* =========================================================
+   PAGE LOAD
+========================================================= */
+
+window.addEventListener("load",function(){
+
+    document.querySelectorAll(".article")
+    .forEach(function(article,index){
+
+        article.style.animationDelay =
+            (index * 0.04) + "s";
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
